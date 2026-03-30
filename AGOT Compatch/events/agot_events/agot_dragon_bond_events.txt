@@ -11,7 +11,7 @@ dragon_bond_events.0001 = { # Handler event for Bond Dragon Scheme
 			any_relation = { type = agot_dragon }
 		}
 		NOT = {
-			scope:target = {
+			scope:target ?= {
 				any_relation = { type = agot_dragon }
 			}
 		}
@@ -74,10 +74,10 @@ dragon_bond_events.1000 = { # Bond Dragon Success
 	option = {
 		name = dragon_bond_events.1000.a
 		save_scope_as = tamer
-		scope:target = {
+		scope:target ?= {
 			save_scope_as = dragon
 		}
-		scope:scheme = {
+		scope:scheme ?= {
 			end_scheme = yes
 		}
 		if = {
@@ -114,7 +114,7 @@ dragon_bond_events.1001 = { # Bond Dragon Failure - Default
 
 	option = {
 		name = dragon_bond_events.1001.a
-		scope:scheme = {
+		scope:scheme ?= {
 			end_scheme = yes
 		}
 		stress_impact = {
@@ -149,21 +149,21 @@ dragon_bond_events.1002 = { # Bond Dragon Failure - Dragon Burns You
 		base = 0
 
 		modifier = {
-			scope:target = { has_trait = dragon_bloodthirsty }
+			scope:target ?= { has_trait = dragon_bloodthirsty }
 			add = 1
 		}
 		modifier = {
-			scope:target = { has_trait = dragon_aggressive }
+			scope:target ?= { has_trait = dragon_aggressive }
 			add = 1
 		}
 		modifier = {
-			scope:target = { has_trait = dragon_impulsive }
+			scope:target ?= { has_trait = dragon_impulsive }
 			add = 1
 		}
 	}
 
 	trigger = {
-		scope:target = {
+		scope:target ?= {
 			NOT = { has_character_flag = owned_dragon }
 			OR = {
 				has_trait = dragon_bloodthirsty
@@ -192,7 +192,7 @@ dragon_bond_events.1002 = { # Bond Dragon Failure - Dragon Burns You
 			base = medium_stress_impact_gain
 			arrogant = medium_stress_impact_gain
 		}
-		scope:scheme = {
+		scope:scheme ?= {
 			end_scheme = yes
 		}
 	}
@@ -223,21 +223,21 @@ dragon_bond_events.1003 = { # Bond Dragon Failure - Dragon Kills You
 		base = 0
 
 		modifier = {
-			scope:target = { has_trait = dragon_bloodthirsty }
+			scope:target ?= { has_trait = dragon_bloodthirsty }
 			add = 1
 		}
 		modifier = {
-			scope:target = { has_trait = dragon_aggressive }
+			scope:target ?= { has_trait = dragon_aggressive }
 			add = 1
 		}
 		modifier = {
-			scope:target = { has_trait = dragon_impulsive }
+			scope:target ?= { has_trait = dragon_impulsive }
 			add = 1
 		}
 	}
 
 	trigger = {
-		scope:target = {
+		scope:target ?= {
 			NOT = { has_character_flag = owned_dragon }
 			OR = {
 				has_trait = dragon_bloodthirsty
@@ -257,7 +257,7 @@ dragon_bond_events.1003 = { # Bond Dragon Failure - Dragon Kills You
 			death_reason = death_dragon_fire_failed_tame
 			killer = scope:target
 		}
-		scope:scheme = {
+		scope:scheme ?= {
 			end_scheme = yes
 		}
 	}
@@ -313,7 +313,7 @@ dragon_bond_events.2001 = {
 		if = {
 			limit = {
 				dynasty ?= { has_dynasty_perk = dragonrider_dynasty_legacy_2 }
-				scope:target = {
+				scope:target ?= {
 					exists = var:cradlemate
 					var:cradlemate = root
 				}
@@ -341,7 +341,7 @@ dragon_bond_events.2001 = {
 				}
 			}
 		}
-		scope:target = {
+		scope:target ?= {
 			add_opinion = {
 				modifier = bonded_with_me
 				target = root
@@ -378,7 +378,7 @@ dragon_bond_events.2002 = {
 	}
 
 	immediate = {
-		scope:target = {
+		scope:target ?= {
 			add_opinion = {
 				modifier = failed_to_bond_with_me
 				target = root
@@ -413,12 +413,12 @@ dragon_bond_events.3000 = {
 		container = "custom_widgets_container"
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_fed_charred_meat_event }
 		}
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_fed_charred_meat_event
 				value = yes
@@ -434,15 +434,15 @@ dragon_bond_events.3000 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_charred_sheep_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -456,11 +456,11 @@ dragon_bond_events.3000 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_charred_sheep_failure_modifier }
 					}
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -485,15 +485,15 @@ dragon_bond_events.3000 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_charred_pig_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -507,11 +507,11 @@ dragon_bond_events.3000 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_charred_pig_failure_modifier }
 					}
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -565,20 +565,20 @@ dragon_bond_events.3001 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3001.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_charred_sheep_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_charred_pig_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 	}
@@ -607,20 +607,20 @@ dragon_bond_events.3002 = {
 
 	option = {
 		name = dragon_bond_events.3002.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_charred_sheep_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_charred_pig_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 		stress_impact = {
@@ -650,12 +650,12 @@ dragon_bond_events.3003 = {
 		container = "custom_widgets_container"
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_fed_live_meal_event }
 		}
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_fed_live_meal_event
 				value = yes
@@ -671,15 +671,15 @@ dragon_bond_events.3003 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_live_sheep_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -693,11 +693,11 @@ dragon_bond_events.3003 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_live_sheep_failure_modifier }
 					}
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -722,15 +722,15 @@ dragon_bond_events.3003 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_live_pig_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -744,11 +744,11 @@ dragon_bond_events.3003 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_live_pig_failure_modifier }
 					}
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -802,20 +802,20 @@ dragon_bond_events.3004 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3004.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_live_sheep_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_live_pig_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 	}
@@ -844,20 +844,20 @@ dragon_bond_events.3005 = {
 
 	option = {
 		name = dragon_bond_events.3005.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_live_sheep_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_live_pig_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 		stress_impact = {
@@ -887,12 +887,12 @@ dragon_bond_events.3006 = {
 		container = "custom_widgets_container"
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_fed_raw_meal_event }
 		}
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_fed_raw_meal_event
 				value = yes
@@ -908,15 +908,15 @@ dragon_bond_events.3006 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_meat_sheep_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -930,15 +930,15 @@ dragon_bond_events.3006 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_meat_sheep_failure_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:sheep
@@ -959,15 +959,15 @@ dragon_bond_events.3006 = {
 			# Success!
 			60 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_meat_pig_success_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -981,15 +981,15 @@ dragon_bond_events.3006 = {
 			# Failure!
 			40 = {
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = { type = dragon_bond_fed_meat_pig_failure_modifier }
 					}
 				}
 				modifier = {
 					add = 20
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_animal
 						value = flag:pig
@@ -1039,20 +1039,20 @@ dragon_bond_events.3007 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3007.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_meat_sheep_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_meat_pig_success_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 	}
@@ -1082,20 +1082,20 @@ dragon_bond_events.3008 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3008.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:sheep }
+					scope:owner ?= { var:selected_animal ?= flag:sheep }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_meat_sheep_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_animal ?= flag:pig }
+					scope:owner ?= { var:selected_animal ?= flag:pig }
 				}
 				add_scheme_modifier = { type = dragon_bond_fed_meat_pig_failure_modifier }
-				scope:owner = { remove_variable = selected_animal }
+				scope:owner ?= { remove_variable = selected_animal }
 			}
 		}
 		stress_impact = {
@@ -1125,13 +1125,13 @@ dragon_bond_events.3009 = {
 		container = "custom_widgets_container"
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_dragon_bond_consult_valyrian_lore }
 		}
 		agot_has_valyrian_blood_fallback_trigger = yes
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_event_dragon_bond_consult_valyrian_lore
 				value = yes
@@ -1152,9 +1152,9 @@ dragon_bond_events.3009 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = { add_scheme_modifier = { type = dragon_bond_oral_folklore_success_modifier } }
+					scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_oral_folklore_success_modifier } }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_lore
 						value = flag:folklore
@@ -1172,9 +1172,9 @@ dragon_bond_events.3009 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = { add_scheme_modifier = { type = dragon_bond_oral_folklore_failure_modifier } }
+					scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_oral_folklore_failure_modifier } }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_lore
 						value = flag:folklore
@@ -1200,9 +1200,9 @@ dragon_bond_events.3009 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = { add_scheme_modifier = { type = dragon_bond_written_lore_success_modifier } }
+					scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_written_lore_success_modifier } }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_lore
 						value = flag:tomes
@@ -1220,9 +1220,9 @@ dragon_bond_events.3009 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = { add_scheme_modifier = { type = dragon_bond_written_lore_failure_modifier } }
+					scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_written_lore_failure_modifier } }
 				}
-				scope:owner = {
+				scope:owner ?= {
 					set_variable = {
 						name = selected_lore
 						value = flag:tomes
@@ -1265,20 +1265,20 @@ dragon_bond_events.3010 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3010.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_lore ?= flag:folklore }
+					scope:owner ?= { var:selected_lore ?= flag:folklore }
 				}
 				add_scheme_modifier = { type = dragon_bond_oral_folklore_success_modifier }
-				scope:owner = { remove_variable = selected_lore }
+				scope:owner ?= { remove_variable = selected_lore }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_lore ?= flag:tomes }
+					scope:owner ?= { var:selected_lore ?= flag:tomes }
 				}
 				add_scheme_modifier = { type = dragon_bond_written_lore_success_modifier }
-				scope:owner = { remove_variable = selected_lore }
+				scope:owner ?= { remove_variable = selected_lore }
 			}
 		}
 	}
@@ -1308,20 +1308,20 @@ dragon_bond_events.3011 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3011.a
-		scope:scheme = {
+		scope:scheme ?= {
 			if = {
 				limit = {
-					scope:owner = { var:selected_lore ?= flag:folklore }
+					scope:owner ?= { var:selected_lore ?= flag:folklore }
 				}
 				add_scheme_modifier = { type = dragon_bond_oral_folklore_failure_modifier }
-				scope:owner = { remove_variable = selected_lore }
+				scope:owner ?= { remove_variable = selected_lore }
 			}
 			else_if = {
 				limit = {
-					scope:owner = { var:selected_lore ?= flag:tomes }
+					scope:owner ?= { var:selected_lore ?= flag:tomes }
 				}
 				add_scheme_modifier = { type = dragon_bond_written_lore_failure_modifier }
-				scope:owner = { remove_variable = selected_lore }
+				scope:owner ?= { remove_variable = selected_lore }
 			}
 		}
 		stress_impact = {
@@ -1354,7 +1354,7 @@ dragon_bond_events.3012 = {
 	}
 	trigger = {
 		exists = court_position:head_dragonkeeper_court_position
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_hdk_help }
 		}
 	}
@@ -1363,7 +1363,7 @@ dragon_bond_events.3012 = {
 			type = head_dragonkeeper_court_position
 			save_scope_as = head_dragonkeeper
 		}
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_event_hdk_help
 				value = yes
@@ -1387,7 +1387,7 @@ dragon_bond_events.3012 = {
 					add = scope:head_dragonkeeper.aptitude:head_dragonkeeper_court_position
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_good_hdk_assistance
 						}
@@ -1407,7 +1407,7 @@ dragon_bond_events.3012 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_bad_hdk_assistance
 						}
@@ -1458,7 +1458,7 @@ dragon_bond_events.3013 = {
 
 	option = {
 		name = dragon_bond_events.3013.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_good_hdk_assistance } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_good_hdk_assistance } }
 	}
 }
 
@@ -1485,7 +1485,7 @@ dragon_bond_events.3014 = {
 
 	option = {
 		name = dragon_bond_events.3014.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_bad_hdk_assistance } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_bad_hdk_assistance } }
 		stress_impact = {
 			base = minor_stress_impact_gain
 		}
@@ -1512,14 +1512,14 @@ dragon_bond_events.3015 = {
 		outfit_tags = { linear_camera_zoom }
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_singing_event }
 		}
 		NOT = { has_trait = mute }
 		agot_can_use_valyrian_dragon_commands_trigger = yes
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_singing_event
 				value = yes
@@ -1539,7 +1539,7 @@ dragon_bond_events.3015 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_good_singing
 						}
@@ -1559,7 +1559,7 @@ dragon_bond_events.3015 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_bad_singing
 						}
@@ -1611,7 +1611,7 @@ dragon_bond_events.3016 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3016.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_good_singing } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_good_singing } }
 	}
 }
 
@@ -1639,7 +1639,7 @@ dragon_bond_events.3017 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3017.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_bad_singing } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_bad_singing } }
 		stress_impact = {
 			base = minor_stress_impact_gain
 		}
@@ -1666,14 +1666,14 @@ dragon_bond_events.3018 = {
 		outfit_tags = { linear_camera_zoom }
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_speaking_event }
 		}
 		NOT = { has_trait = mute }
 		agot_can_use_valyrian_dragon_commands_trigger = yes
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_speaking_event
 				value = yes
@@ -1697,7 +1697,7 @@ dragon_bond_events.3018 = {
 					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_good_speaking
 						}
@@ -1721,7 +1721,7 @@ dragon_bond_events.3018 = {
 					NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_bad_speaking
 						}
@@ -1773,7 +1773,7 @@ dragon_bond_events.3019 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3019.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_good_speaking } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_good_speaking } }
 	}
 }
 
@@ -1800,7 +1800,7 @@ dragon_bond_events.3020 = {
 
 	option = {
 		name = dragon_bond_events.3020.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_bad_speaking } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_bad_speaking } }
 		stress_impact = {
 			base = minor_stress_impact_gain
 		}
@@ -1827,12 +1827,12 @@ dragon_bond_events.3021 = {
 		outfit_tags = { linear_camera_zoom }
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_riding_event }
 		}
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_riding_event
 				value = yes
@@ -1856,7 +1856,7 @@ dragon_bond_events.3021 = {
 					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_riding_success_modifier
 						}
@@ -1876,7 +1876,7 @@ dragon_bond_events.3021 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						custom_tooltip = dragon_bond_events.3021.custom_tt
 					}
 				}
@@ -1926,7 +1926,7 @@ dragon_bond_events.3022 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3022.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_riding_success_modifier } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_riding_success_modifier } }
 	}
 }
 
@@ -1953,7 +1953,7 @@ dragon_bond_events.3023 = {
 
 	option = {
 		name = dragon_bond_events.3023.a
-		scope:scheme = {
+		scope:scheme ?= {
 			custom_tooltip = dragon_bond_events.3021.custom_tt
 		}
 	}
@@ -1979,12 +1979,12 @@ dragon_bond_events.3024 = {
 		outfit_tags = { linear_camera_zoom }
 	}
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_visitation_event }
 		}
 	}
 	immediate = {
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_visitation_event
 				value = yes
@@ -2008,7 +2008,7 @@ dragon_bond_events.3024 = {
 					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						add_scheme_modifier = {
 							type = dragon_bond_visitation_modifier
 						}
@@ -2028,7 +2028,7 @@ dragon_bond_events.3024 = {
 					min = -49
 				}
 				show_as_tooltip = {
-					scope:scheme = {
+					scope:scheme ?= {
 						custom_tooltip = dragon_bond_events.3024.custom_tt
 					}
 				}
@@ -2078,7 +2078,7 @@ dragon_bond_events.3025 = {
 	# Excellent!
 	option = {
 		name = dragon_bond_events.3025.a
-		scope:scheme = { add_scheme_modifier = { type = dragon_bond_riding_success_modifier } }
+		scope:scheme ?= { add_scheme_modifier = { type = dragon_bond_riding_success_modifier } }
 	}
 }
 
@@ -2105,7 +2105,7 @@ dragon_bond_events.3026 = {
 
 	option = {
 		name = dragon_bond_events.3026.a
-		scope:scheme = {
+		scope:scheme ?= {
 			custom_tooltip = dragon_bond_events.3024.custom_tt
 		}
 		stress_impact = {
@@ -2139,15 +2139,15 @@ dragon_bond_events.3027 = { # walking in the wilderness
 	trigger = {
 		exists = scope:scheme
 
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_dragon_bond_found_sleeping }
 		}
-		scope:target = {# make sure they're not pitted
+		scope:target ?= {# make sure they're not pitted
 			NOT = {
 				has_character_flag = in_dragonpit
 			}
 		}
-		scope:owner = {
+		scope:owner ?= {
 			OR = { # ultimately the event doesn't make sense without one of the traits that kicks it off, as long as the player doesn't really know I feel like it's fine to act as though the option to sleep is special due to traits
 				has_trait = lazy
 				has_trait = eccentric
@@ -2160,7 +2160,7 @@ dragon_bond_events.3027 = { # walking in the wilderness
 			name = scheme_event_active_flag
 			value = yes
 		}
-		scope:scheme = {
+		scope:scheme ?= {
 			set_variable = {
 				name = had_event_dragon_bond_found_sleeping
 				value = yes
@@ -2254,34 +2254,34 @@ dragon_bond_events.3028 = { # find sleeping dragmon
 					#POSITIVE TRAITS
 
 					modifier = {
-						scope:target = { has_trait = dragon_friendly }
+						scope:target ?= { has_trait = dragon_friendly }
 						add = 2.5
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_cooperative }
+						scope:target ?= { has_trait = dragon_cooperative }
 						add = 2
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_supporting }
+						scope:target ?= { has_trait = dragon_supporting }
 						add = 2
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_accepting }
+						scope:target ?= { has_trait = dragon_accepting }
 						add = 2
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_cooperative }
+						scope:target ?= { has_trait = dragon_cooperative }
 						add = 2
 					}
 					modifier = { # sick dragons like hugs
 						OR = {
-							scope:target = { has_trait = dragon_burned }
-							scope:target = { has_trait = dragon_ill }
+							scope:target ?= { has_trait = dragon_burned }
+							scope:target ?= { has_trait = dragon_ill }
 						}
 						add = 3.5
 					}
 					modifier = {
-						scope:owner = {
+						scope:owner ?= {
 							agot_has_valyrian_blood_fallback_trigger = yes
 						}
 						add = 3
@@ -2290,23 +2290,23 @@ dragon_bond_events.3028 = { # find sleeping dragmon
 					#NEGATIVE TRAITS
 
 					modifier = { # maybe a better way to flip chance modifier if it has an opposite trait to the one in POSITIVE TRAITS, perchance
-						scope:target = { has_trait = dragon_aggressive }
+						scope:target ?= { has_trait = dragon_aggressive }
 						add = -4
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_voracious }
+						scope:target ?= { has_trait = dragon_voracious }
 						add = -2
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_defiant }
+						scope:target ?= { has_trait = dragon_defiant }
 						add = -2
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_bloodthirsty }
+						scope:target ?= { has_trait = dragon_bloodthirsty }
 						add = -5
 					}
 					modifier = {
-						scope:target = { has_trait = dragon_skittish }
+						scope:target ?= { has_trait = dragon_skittish }
 						add = -1.5
 					}
 					trigger_event = dragon_bond_events.3029
@@ -2421,7 +2421,7 @@ dragon_bond_events.3029 = { # waking up with it still sleeping
 	option = {
 		name = dragon_bond_events.3029.a
 
-		scope:scheme = {
+		scope:scheme ?= {
 			add_scheme_modifier = {
 				type = dragon_bond_sleep_success_modifier
 			}
@@ -2465,7 +2465,7 @@ dragon_bond_events.3030 = { # The Dragon awakens
 			limit = {
 				agot_can_use_valyrian_dragon_commands_trigger = yes
 			}
-			scope:scheme = {
+			scope:scheme ?= {
 				add_scheme_modifier = {
 					type = dragon_bond_lullaby_success_modifier
 				}
@@ -2482,7 +2482,7 @@ dragon_bond_events.3030 = { # The Dragon awakens
 
 		}
 		else = {
-			scope:scheme = {
+			scope:scheme ?= {
 				add_scheme_modifier = {
 					type = dragon_bond_lullaby_failure_modifier
 				}
@@ -2527,27 +2527,27 @@ dragon_bond_events.3031 = { # The Dragon attacks
 				custom_tooltip = dragon_bond_events.3031.custom_tt.a
 
 				modifier = {
-					scope:target = { has_trait = dragon_aggressive }
+					scope:target ?= { has_trait = dragon_aggressive }
 					add = 2
 				}
 				modifier = {
-					scope:target = { has_trait = dragon_voracious }
+					scope:target ?= { has_trait = dragon_voracious }
 					add = 2
 				}
 				modifier = {
-					scope:target = { has_trait = dragon_defiant }
+					scope:target ?= { has_trait = dragon_defiant }
 					add = 2
 				}
 				modifier = {
-					scope:target = { has_trait = dragon_bloodthirsty }
+					scope:target ?= { has_trait = dragon_bloodthirsty }
 					add = 3
 				}
 				modifier = {
-					scope:target = { has_trait = dragon_skittish }
+					scope:target ?= { has_trait = dragon_skittish }
 					add = -5
 				}
 				modifier = {
-					scope:target = { has_trait = dragon_friendly }
+					scope:target ?= { has_trait = dragon_friendly }
 					add = -2
 				}
 				hidden_effect = {
@@ -2586,21 +2586,21 @@ dragon_bond_events.3031 = { # The Dragon attacks
 				if = {
 					limit = {
 						NOR = {
-							scope:target = { has_trait = dragon_skittish }
+							scope:target ?= { has_trait = dragon_skittish }
 							trait:dragon_skittish = {
 								any_opposite_trait = {
-									scope:target = {
+									scope:target ?= {
 										NOT = {has_trait = prev}
 									}
 								}
 							}
-							scope:target = { number_of_personality_traits >= personality_trait_limit }
+							scope:target ?= { number_of_personality_traits >= personality_trait_limit }
 						}
 					}
 					hidden_effect = {
 						random = {
 							chance = 5
-							scope:target = { add_trait = dragon_skittish }
+							scope:target ?= { add_trait = dragon_skittish }
 						}
 					}
 				}

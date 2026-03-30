@@ -20,7 +20,7 @@ configure_start_dragon_combat_effect = {
 	#Make sure they're clean for setup.
 	hidden_effect = { remove_dragon_combat_info_effect = yes }
 	#Set them both to busy for the single combat.
-	scope:dsc_attacker = {
+	scope:dsc_attacker ?= {
 		set_variable = { # No simultanious vanilla combat
 			name = engaged_in_single_combat
 			value = yes
@@ -30,7 +30,7 @@ configure_start_dragon_combat_effect = {
 			value = yes
 		}
 	}
-	scope:dsc_defender = {
+	scope:dsc_defender ?= {
 		set_variable = { # No simultanious vanilla combat
 			name = engaged_in_single_combat
 			value = yes
@@ -41,20 +41,20 @@ configure_start_dragon_combat_effect = {
 		}
 	}
 	#Configure starting bonus/threshold variables.
-	scope:dsc_attacker = {
+	scope:dsc_attacker ?= {
 		set_variable = {
 			name = dsc_chance_of_winning
 			value = 50
 		}
 	}
-	scope:dsc_defender = {
+	scope:dsc_defender ?= {
 		set_variable = {
 			name = dsc_chance_of_winning
 			value = 50
 		}
 	}
 	#Configure starting round variables.
-	scope:dsc_defender = {
+	scope:dsc_defender ?= {
 		# Set up the combat rounds.
 		set_variable = {
 			name = dragon_combat_current_round
@@ -62,7 +62,7 @@ configure_start_dragon_combat_effect = {
 		}
 	}
 	#Finally, send the first event.
-	scope:dsc_defender = { trigger_event = agot_dragon_combat.1001 }
+	scope:dsc_defender ?= { trigger_event = agot_dragon_combat.1001 }
 }
 
 ####
@@ -315,13 +315,13 @@ select_dragon_tier_2_move_effect = {
 						OR = {
 							AND = {
 								this = scope:dsc_attacker
-								scope:dsc_defender = {
+								scope:dsc_defender ?= {
 									NOT = { has_trait = paranoid }
 								}
 							}
 							AND = {
 								this = scope:dsc_defender
-								scope:dsc_attacker = {
+								scope:dsc_attacker ?= {
 									NOT = { has_trait = paranoid }
 								}
 							}
@@ -355,14 +355,14 @@ select_dragon_tier_2_move_effect = {
 						OR = {
 							AND = {
 								this = scope:dsc_attacker
-								scope:dsc_defender = {
+								scope:dsc_defender ?= {
 									is_ai = yes
 									NOT = { has_trait = calm }
 								}
 							}
 							AND = {
 								this = scope:dsc_defender
-								scope:dsc_attacker = {
+								scope:dsc_attacker ?= {
 									is_ai = yes
 									NOT = { has_trait = calm }
 								}
@@ -639,7 +639,7 @@ select_special_dragon_tier_move_effect = {
 				OR = {
 					AND = {
 						this = scope:dsc_attacker
-						scope:dsc_attacker_dragon = {
+						scope:dsc_attacker_dragon ?= {
 							OR = {
 								has_trait = dragon_wounded_1
 								has_trait = dragon_wounded_2
@@ -651,7 +651,7 @@ select_special_dragon_tier_move_effect = {
 					}
 					AND = {
 						this = scope:dsc_defender
-						scope:dsc_defender_dragon = {
+						scope:dsc_defender_dragon ?= {
 							OR = {
 								has_trait = dragon_wounded_1
 								has_trait = dragon_wounded_2
@@ -725,7 +725,7 @@ select_special_dragon_tier_move_effect = {
 				OR = {
 					AND = {
 						this = scope:dsc_defender
-						scope:dsc_attacker = {
+						scope:dsc_attacker ?= {
 							exists = house
 							NOR = {
 								has_trait = peasant_leader
@@ -735,7 +735,7 @@ select_special_dragon_tier_move_effect = {
 					}
 					AND = {
 						this = scope:dsc_attacker
-						scope:dsc_defender = {
+						scope:dsc_defender ?= {
 							exists = house
 							NOR = {
 								has_trait = peasant_leader
@@ -772,7 +772,7 @@ select_special_dragon_tier_move_effect = {
 						this = scope:dsc_attacker
 						scope:dsc_attacker.prestige_level > scope:dsc_defender.prestige_level
 						# A humble opponent doesn't give two shits.
-						scope:dsc_defender = {
+						scope:dsc_defender ?= {
 							NOT = { has_trait = humble }
 						}
 					}
@@ -780,7 +780,7 @@ select_special_dragon_tier_move_effect = {
 						this = scope:dsc_defender
 						scope:dsc_defender.prestige_level > scope:dsc_attacker.prestige_level
 						# A humble opponent doesn't give two shits.
-						scope:dsc_attacker = {
+						scope:dsc_attacker ?= {
 							NOT = { has_trait = humble }
 						}
 					}
@@ -812,8 +812,8 @@ select_special_dragon_tier_move_effect = {
 				has_trait = desert_warrior
 				#Both characters being experts cancel each other out.
 				NAND = {
-					scope:dsc_attacker = { has_trait = desert_warrior }
-					scope:dsc_defender = { has_trait = desert_warrior }
+					scope:dsc_attacker ?= { has_trait = desert_warrior }
+					scope:dsc_defender ?= { has_trait = desert_warrior }
 				}
 				scope:dsc_defender.location = {
 					OR = {
@@ -848,8 +848,8 @@ select_special_dragon_tier_move_effect = {
 				has_trait = jungle_stalker
 				#Both characters being experts cancel each other out.
 				NAND = {
-					scope:dsc_attacker = { has_trait = jungle_stalker }
-					scope:dsc_defender = { has_trait = jungle_stalker }
+					scope:dsc_attacker ?= { has_trait = jungle_stalker }
+					scope:dsc_defender ?= { has_trait = jungle_stalker }
 				}
 				scope:dsc_defender.location = {
 					terrain = jungle
@@ -880,8 +880,8 @@ select_special_dragon_tier_move_effect = {
 				has_trait = open_terrain_expert
 				#Both characters being experts cancel each other out.
 				NAND = {
-					scope:dsc_attacker = { has_trait = open_terrain_expert }
-					scope:dsc_defender = { has_trait = open_terrain_expert }
+					scope:dsc_attacker ?= { has_trait = open_terrain_expert }
+					scope:dsc_defender ?= { has_trait = open_terrain_expert }
 				}
 				scope:dsc_defender.location = {
 					OR = {
@@ -916,8 +916,8 @@ select_special_dragon_tier_move_effect = {
 				has_trait = rough_terrain_expert
 				#Both characters being experts cancel each other out.
 				NAND = {
-					scope:dsc_attacker = { has_trait = rough_terrain_expert }
-					scope:dsc_defender = { has_trait = rough_terrain_expert }
+					scope:dsc_attacker ?= { has_trait = rough_terrain_expert }
+					scope:dsc_defender ?= { has_trait = rough_terrain_expert }
 				}
 				scope:dsc_defender.location = {
 					OR = {
@@ -953,8 +953,8 @@ select_special_dragon_tier_move_effect = {
 				has_trait = forest_fighter
 				#Both characters being experts cancel each other out.
 				NAND = {
-					scope:dsc_attacker = { has_trait = forest_fighter }
-					scope:dsc_defender = { has_trait = forest_fighter }
+					scope:dsc_attacker ?= { has_trait = forest_fighter }
+					scope:dsc_defender ?= { has_trait = forest_fighter }
 				}
 				scope:dsc_defender.location = {
 					OR = {
@@ -1424,19 +1424,19 @@ select_dragon_combat_options_from_pool_effect = {
 
 finalise_dragon_combat_results_effect = {
 	# Determine what death rattle is appropriate
-	scope:dsc_loser = {
+	scope:dsc_loser ?= {
 		if = {
 			limit = { this = scope:dsc_attacker }
-			scope:dsc_defender_last_move = {
+			scope:dsc_defender_last_move ?= {
 				save_scope_as = dsc_victors_last_move
 			}
 		}
 		else = {
-			scope:dsc_attacker_last_move = {
+			scope:dsc_attacker_last_move ?= {
 				save_scope_as = dsc_victors_last_move
 			}
 		}
-		scope:dsc_victors_last_move = {
+		scope:dsc_victors_last_move ?= {
 			if = {
 				limit = {
 					OR = {
@@ -1529,10 +1529,10 @@ finalise_dragon_combat_results_effect = {
 	}
 	# Send out results events.
 	## We do this before death calculation so that the loser isn't too dead to be told that they've died (if they died).
-	scope:dsc_loser = { trigger_event = agot_dragon_combat.1003 }
-	scope:dsc_victor = { trigger_event = agot_dragon_combat.1004 }
+	scope:dsc_loser ?= { trigger_event = agot_dragon_combat.1003 }
+	scope:dsc_victor ?= { trigger_event = agot_dragon_combat.1004 }
 	# Sort glory allocation.
-	scope:dsc_victor = {
+	scope:dsc_victor ?= {
 		if = {
 			limit = {
 				exists = accolade
@@ -1616,14 +1616,14 @@ finalise_dragon_combat_results_effect = {
 	# Send the final output event & clean up.
 	dragon_combat_result_grab = yes
 	remove_dragon_combat_info_effect = yes
-	scope:dsc_defender = {
+	scope:dsc_defender ?= {
 		if = {
 			limit = { is_alive = yes }
 			remove_variable = engaged_in_single_combat
 			remove_variable = engaged_in_dragon_combat
 		}
 	}
-	scope:dsc_attacker = {
+	scope:dsc_attacker ?= {
 		if = {
 			limit = { is_alive = yes }
 			remove_variable = engaged_in_single_combat
@@ -1638,7 +1638,7 @@ finalise_dragon_combat_results_effect = {
 #####
 # Clean all consequences of a dragon combat.
 remove_dragon_combat_info_effect = {
-	scope:dsc_attacker = {
+	scope:dsc_attacker ?= {
 		# Only remove variables if they're alive, as otherwise we get errors.
 		if = {
 			limit = { is_alive = yes }
@@ -1646,7 +1646,7 @@ remove_dragon_combat_info_effect = {
 			remove_dragon_combat_variables_effect = yes
 		}
 	}
-	scope:dsc_defender = {
+	scope:dsc_defender ?= {
 		# Only remove variables if they're alive, as otherwise we get errors.
 		if = {
 			limit = { is_alive = yes }
@@ -1654,7 +1654,7 @@ remove_dragon_combat_info_effect = {
 			remove_dragon_combat_variables_effect = yes
 		}
 	}
-	scope:dsc_attacker_dragon = {
+	scope:dsc_attacker_dragon ?= {
 		# Only remove variables if they're alive, as otherwise we get errors.
 		if = {
 			limit = { is_alive = yes }
@@ -1662,7 +1662,7 @@ remove_dragon_combat_info_effect = {
 			remove_dragon_combat_variables_effect = yes
 		}
 	}
-	scope:dsc_defender_dragon = {
+	scope:dsc_defender_dragon ?= {
 		# Only remove variables if they're alive, as otherwise we get errors.
 		if = {
 			limit = { is_alive = yes }
@@ -1738,7 +1738,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 0
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = 0
@@ -1758,7 +1758,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 15
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = -15
@@ -1778,7 +1778,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 30
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = -30
@@ -1798,7 +1798,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 45
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = -45
@@ -1818,7 +1818,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 60
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = -60
@@ -1838,7 +1838,7 @@ adjust_dragon_risk_reward_effect = {
 			name = dsc_chance_of_winning
 			add = 300
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			change_variable = {
 				name = dsc_chance_of_winning
 				add = -300
@@ -1857,7 +1857,7 @@ wound_dragon_visual_increment_effect = {
 			}
 			save_scope_as = story
 		}
-		scope:story = {
+		scope:story ?= {
 			change_variable = {
 				name = gene_dragon_wounded
 				add = $VALUE$
@@ -1929,20 +1929,20 @@ wound_dragon = {
 }
 
 dragon_combat_result_grab = {
-	scope:dsc_loser = {
+	scope:dsc_loser ?= {
 		if = {
 			limit = {
 				scope:dragon_death_rattle = flag:sudden_strike
 			}
 			random_list = {
 				5 = {
-					scope:dsc_loser_dragon = {
+					scope:dsc_loser_dragon ?= {
 						wound_dragon = yes
 						agot_remove_from_combat = yes
 					}
 				}
 				95 = {
-					scope:dsc_loser_dragon = {
+					scope:dsc_loser_dragon ?= {
 						death = {
 							killer = scope:dsc_victor
 							death_reason = death_dragon_duel
@@ -1961,13 +1961,13 @@ dragon_combat_result_grab = {
 			}
 			random_list = {
 				5 = {
-					scope:dsc_loser_dragon = {
+					scope:dsc_loser_dragon ?= {
 						agot_remove_from_combat = yes
 						add_trait = dragon_burned
 					}
 				}
 				95 = {
-					scope:dsc_loser_dragon = {
+					scope:dsc_loser_dragon ?= {
 						add_trait = dragon_burned
 						death = {
 							killer = scope:dsc_victor
@@ -2032,7 +2032,7 @@ dragon_combat_result_grab = {
 					}
 				}
 			}
-			scope:dsc_loser_dragon = {
+			scope:dsc_loser_dragon ?= {
 				death = {
 					killer = scope:dsc_victor
 					death_reason = death_dragon_duel
@@ -2043,7 +2043,7 @@ dragon_combat_result_grab = {
 			limit = {
 				scope:dragon_death_rattle = flag:disemboweled
 			}
-			scope:dsc_loser_dragon = {
+			scope:dsc_loser_dragon ?= {
 				death = {
 					killer = scope:dsc_victor
 					death_reason = death_dragon_duel
@@ -2077,7 +2077,7 @@ dragon_combat_result_grab = {
 			limit = {
 				scope:dragon_death_rattle = flag:eviscerated
 			}
-			scope:dsc_loser_dragon = {
+			scope:dsc_loser_dragon ?= {
 				death = {
 					killer = scope:dsc_victor
 					death_reason = death_dragon_duel
@@ -2092,7 +2092,7 @@ dragon_combat_result_grab = {
 			limit = {
 				scope:dragon_death_rattle = flag:chomp
 			}
-			scope:dsc_loser_dragon = {
+			scope:dsc_loser_dragon ?= {
 				death = {
 					killer = scope:dsc_victor
 					death_reason = death_dragon_duel_ate
@@ -2104,7 +2104,7 @@ dragon_combat_result_grab = {
 			}
 		}
 	}
-	scope:dsc_victor = {
+	scope:dsc_victor ?= {
 		add_kinslayer_trait_or_nothing_effect = { VICTIM = scope:dsc_loser }
 	}
 }
@@ -2358,7 +2358,7 @@ agot_dragon_siege_hidden_massive_effect = {
 
 agot_dragon_siege_hidden_defender_effect = {
 	hidden_effect = {
-		scope:defending_dragonrider = {
+		scope:defending_dragonrider ?= {
 			trigger_event = agot_dragon_siege.0110
 		}
 	}
@@ -2437,7 +2437,7 @@ agot_dragon_siege_disobey_order_effect = {
 
 		show_as_tooltip = { add_prestige = major_prestige_loss }
 	}
-	scope:commander = { add_opinion = { modifier = ignored_opinion target = root opinion = agot_dragon_siege_negative_opinion_value } } # Deal with opinion loss
+	scope:commander ?= { add_opinion = { modifier = ignored_opinion target = root opinion = agot_dragon_siege_negative_opinion_value } } # Deal with opinion loss
 }
 
 agot_dragon_order_obey_tooltip = {

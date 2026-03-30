@@ -525,7 +525,7 @@ agot_dragon_hatching_dragonlore.0008 = {
 		else = {
 			create_artifact_dragon_egg_silver_effect = { OWNER = root }
 		}
-		scope:newly_created_artifact = {
+		scope:newly_created_artifact ?= {
 			save_scope_as = found_dragon_egg
 		}
 	}

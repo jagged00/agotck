@@ -196,7 +196,7 @@ agot_dragon_siege.0001 = {
 			scope:other_dragon_rider ?= { agot_dragon_siege_can_deal_more_damage_trigger = yes }
 		}
 
-		scope:other_dragon_rider = { save_scope_as = sieging_rider }
+		scope:other_dragon_rider ?= { save_scope_as = sieging_rider }
 
 		ai_chance = {
 			base = 25
@@ -628,7 +628,7 @@ agot_dragon_siege.0003 = {
 			}
 		}
 
-		scope:commander = { add_opinion = { modifier = took_my_advice_opinion target = root opinion = agot_dragon_siege_positive_opinion_value } } # Deal with opinion gain
+		scope:commander ?= { add_opinion = { modifier = took_my_advice_opinion target = root opinion = agot_dragon_siege_positive_opinion_value } } # Deal with opinion gain
 
 		switch = {
 			trigger = scope:order_damage
@@ -861,7 +861,7 @@ agot_dragon_siege.0003 = {
 		}
 		add_prestige = -750
 		add_character_modifier = { modifier = agot_fled_siege_on_dragon years = 7 }
-		scope:commander = { add_opinion = { modifier = agot_disobeyed_order_opinion target = root } }
+		scope:commander ?= { add_opinion = { modifier = agot_disobeyed_order_opinion target = root } }
 
 		ai_chance = {
 			base = 0
@@ -1030,7 +1030,7 @@ agot_dragon_siege.0100 = {
 				}
 			}
 		}
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			barony ?= {
 				set_variable = {
 					name = used_dragon_sieged_today
@@ -1377,7 +1377,7 @@ agot_dragon_siege.0103 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1449,7 +1449,7 @@ agot_dragon_siege.0104 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1514,7 +1514,7 @@ agot_dragon_siege.0105 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1578,7 +1578,7 @@ agot_dragon_siege.0106 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1645,7 +1645,7 @@ agot_dragon_siege.0107 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1714,7 +1714,7 @@ agot_dragon_siege.0108 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1777,7 +1777,7 @@ agot_dragon_siege.0109 = {
 		if = { # Send toast to commander if something happened!
 			limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-			scope:commander = {
+			scope:commander ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.dragon_rider_third.t
 					left_icon = scope:sieging_rider
@@ -1830,7 +1830,7 @@ agot_dragon_siege.0110 = {
 		scope:sieging_dragon.var:current_rider = {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 		}
-		scope:sieging_dragon = {
+		scope:sieging_dragon ?= {
 			save_scope_as = enemy_dragon
 			var:current_rider = {
 				save_scope_as = sieging_dragonrider
@@ -1893,7 +1893,7 @@ agot_dragon_siege.0110 = {
 			limit = { is_ruler = yes }
 			add_legitimacy = -50
 		}
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			county = {
 				add_to_variable_list = {
 					name = agot_fled_dragonriders
@@ -1908,7 +1908,7 @@ agot_dragon_siege.0110 = {
 			years = 1
 		}
 		hidden_effect = {
-			scope:sieging_dragonrider = {
+			scope:sieging_dragonrider ?= {
 				send_interface_toast = {
 					title = agot_dragon_siege.notify_sieger_of_fleeing.t
 					left_icon = scope:defending_dragonrider
@@ -1924,7 +1924,7 @@ agot_dragon_siege.0110 = {
 			if = { # Send toast to commander if something happened!
 				limit = { NOT = { scope:commander ?= scope:sieging_rider } }
 
-				scope:commander = {
+				scope:commander ?= {
 					send_interface_toast = {
 						title = agot_dragon_siege.notify_sieger_of_fleeing.t
 						left_icon = scope:sieging_rider
@@ -1947,7 +1947,7 @@ agot_dragon_siege.0110 = {
 agot_dragon_siege.0111 = {
 	hidden = yes
 	immediate = {
-		scope:clear_fled_rider_from = {
+		scope:clear_fled_rider_from ?= {
 			remove_list_variable = {
 				name = agot_fled_dragonriders
 				target = scope:clear_this_fled_rider
@@ -1981,10 +1981,10 @@ agot_dragon_siege.0112 = {
 	}
 
 	immediate = {
-		scope:sieging_rider = {
+		scope:sieging_rider ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 		}
-		scope:fleeing_dragon = {
+		scope:fleeing_dragon ?= {
 			agot_dragon_flees_province = yes
 		}
 		scope:new_location.county.holder = {
@@ -1998,7 +1998,7 @@ agot_dragon_siege.0112 = {
 	}
 
 	after = {
-		scope:sieging_rider = {
+		scope:sieging_rider ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
 	}

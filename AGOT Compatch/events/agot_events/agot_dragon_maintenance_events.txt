@@ -263,7 +263,7 @@ agot_dragon_maintenance.0100 = {
 						}
 						modifier = {
 							add = 1000
-							scope:tamer = {
+							scope:tamer ?= {
 								any_equipped_character_artifact = {
 									artifact_type = dragon_doll
 									has_variable = modelled_dragon
@@ -375,7 +375,7 @@ agot_dragon_maintenance.0101 = {
 						}
 						modifier = {
 							add = 1000
-							scope:tamer = {
+							scope:tamer ?= {
 								any_equipped_character_artifact = {
 									artifact_type = dragon_doll
 									has_variable = modelled_dragon
@@ -461,7 +461,7 @@ agot_dragon_maintenance.0200 = {
 	right_portrait = {
 		character = scope:child
 		trigger = {
-			scope:child = {
+			scope:child ?= {
 				has_trait = dragon
 			}
 		}
@@ -484,7 +484,7 @@ agot_dragon_maintenance.0200 = {
 			container = "dynamic_birth_name"
 			controller = name_character
 			setup_scope = {
-				scope:child = { save_scope_as = name_character_target }
+				scope:child ?= { save_scope_as = name_character_target }
 			}
 		}
 	}
@@ -533,7 +533,7 @@ agot_dragon_maintenance.0800 = {
 	desc = agot_dragon_maintenance.0800.desc
 
 	theme = dragon
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 	left_portrait = {
 		character = root
 		animation = chancellor
@@ -644,7 +644,7 @@ agot_dragon_maintenance.0801 = {
 	desc = agot_dragon_maintenance.0801.desc
 
 	theme = dragon
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	widget = {
 		is_shown = {
@@ -900,7 +900,7 @@ agot_dragon_maintenance.0803 = {
 	}
 
 	theme = dragon
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	widget = {
 		is_shown = {
@@ -947,7 +947,7 @@ agot_dragon_maintenance.9999 = {
 		container = "custom_widgets_container"
 	}
 	override_background = {
-		reference = agot_dragon_forest_clearing
+		reference = study
 	}
 	left_portrait = {
 		character = var:editing_dragon

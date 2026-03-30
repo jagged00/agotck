@@ -16,13 +16,13 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 		exists = scope:enemy_dragonrider
 		exists = scope:enemy_dragonrider.var:current_dragon
 		# Everyone is alive
-		scope:dragon_in_battle = { is_alive = yes }
-		scope:dragonrider_in_battle = { is_alive = yes }
-		scope:enemy_dragonrider = { is_alive = yes }
+		scope:dragon_in_battle ?= { is_alive = yes }
+		scope:dragonrider_in_battle ?= { is_alive = yes }
+		scope:enemy_dragonrider ?= { is_alive = yes }
 		scope:enemy_dragonrider.var:current_dragon = { is_alive = yes }
 		# We're not already in a duel
 		NOT = { has_character_flag = agot_in_dragon_duel_opening }
-		NOT = { scope:enemy_dragonrider = { has_character_flag = agot_in_dragon_duel_opening } }
+		NOT = { scope:enemy_dragonrider ?= { has_character_flag = agot_in_dragon_duel_opening } }
 	}
 	desc = {
 		desc = agot_dragon_combat.0001.desc_opening
@@ -297,22 +297,22 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 	}
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			agot_clear_dragon_animation_flags = yes
 			agot_set_dragon_animation_flag_effect = {
 				FLAG = dragon_flying
 				RIDING_DRAGON = yes
 			}
 		}
-		scope:enemy_dragonrider = {
+		scope:enemy_dragonrider ?= {
 			agot_clear_dragon_animation_flags = yes
 			agot_set_dragon_animation_flag_effect = {
 				FLAG = dragon_flying
@@ -334,7 +334,7 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 			flag = agot_in_dragon_duel_opening
 			days = 3 # In case of early exit due to race condition
 		}
-		scope:enemy_dragonrider = {
+		scope:enemy_dragonrider ?= {
 			add_character_flag = {
 				flag = agot_in_dragon_duel_opening
 				days = 3
@@ -378,7 +378,7 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 			text = agot_dragon_combat.0001.a
 		}
 		custom_tooltip = agot_dragon_combat.will_attempt_engage
-		scope:enemy_dragonrider = {
+		scope:enemy_dragonrider ?= {
 			trigger_event = agot_dragon_combat.0002
 		}
 
@@ -447,7 +447,7 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 			50 = { # They notice
 				custom_tooltip = {
 					text = agot_dragon_combat.0001.b.notice
-					scope:enemy_dragonrider = {
+					scope:enemy_dragonrider ?= {
 						trigger_event = agot_dragon_combat.0003
 					}
 				}
@@ -501,9 +501,9 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 	window = agot_dragon_duel_event
 	title = agot_dragon_combat.0002.t
 	trigger = { # Everyone is still alive
-		scope:dragon_in_battle = { is_alive = yes }
-		scope:dragonrider_in_battle = { is_alive = yes }
-		scope:enemy_dragonrider = { is_alive = yes }
+		scope:dragon_in_battle ?= { is_alive = yes }
+		scope:dragonrider_in_battle ?= { is_alive = yes }
+		scope:enemy_dragonrider ?= { is_alive = yes }
 		scope:enemy_dragonrider.var:current_dragon = { is_alive = yes }
 	}
 	desc = {
@@ -724,21 +724,21 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 		}
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	immediate = {
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			save_scope_as = my_foe
 		}
-		scope:enemy_dragonrider = {
+		scope:enemy_dragonrider ?= {
 			save_scope_as = myself
 		}
 
-		scope:myself = {
+		scope:myself ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 		}
 	}
@@ -746,7 +746,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 	option = {
 		name = agot_dragon_combat.0002.a
 		custom_tooltip = agot_dragon_combat.will_engage_enemy
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			configure_start_dragon_combat_effect = {
 				DSC_INITIATOR = scope:dragonrider_in_battle
 				DSC_ATTACKER = scope:dragonrider_in_battle
@@ -802,7 +802,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 		}
 		if = {
 			limit = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_trait = dragon_swift
 				}
 			}
@@ -810,7 +810,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 		}
 		if = {
 			limit = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_trait = dragon_slow
 				}
 			}
@@ -828,13 +828,13 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 				}
 				modifier = {
 					add = 20
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_trait = dragon_swift
 					}
 				}
 				modifier = {
 					add = -15
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_trait = dragon_slow
 					}
 				}
@@ -860,7 +860,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 					text = agot_dragon_combat.0002.b.flee
 					agot_remove_from_combat = yes
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					send_interface_toast = {
 						type = event_dragon_combat_flee
 						title = agot_dragon_combat.0002.escape.t
@@ -870,7 +870,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 					}
 					agot_clear_dragon_animation_flags = yes
 				}
-				scope:enemy_dragonrider = { agot_clear_dragon_animation_flags = yes }
+				scope:enemy_dragonrider ?= { agot_clear_dragon_animation_flags = yes }
 			}
 		}
 
@@ -893,9 +893,9 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 	window = agot_dragon_character_event
 	title = agot_dragon_combat.0003.t
 	trigger = { # Everyone is still alive
-		scope:dragon_in_battle = { is_alive = yes }
-		scope:dragonrider_in_battle = { is_alive = yes }
-		scope:enemy_dragonrider = { is_alive = yes }
+		scope:dragon_in_battle ?= { is_alive = yes }
+		scope:dragonrider_in_battle ?= { is_alive = yes }
+		scope:enemy_dragonrider ?= { is_alive = yes }
 		scope:enemy_dragonrider.var:current_dragon = { is_alive = yes }
 	}
 	desc = {
@@ -911,7 +911,7 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 		camera = camera_dragon_event_combat_right
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	option = {
@@ -935,7 +935,7 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 		}
 		if = {
 			limit = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_trait = dragon_swift
 				}
 			}
@@ -943,7 +943,7 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 		}
 		if = {
 			limit = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_trait = dragon_slow
 				}
 			}
@@ -979,19 +979,19 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 			70 = {
 				custom_tooltip = {
 					text = agot_dragon_combat.0003.escape
-					scope:dragonrider_in_battle = {
+					scope:dragonrider_in_battle ?= {
 						agot_remove_from_combat = yes
 					}
 				}
 				modifier = {
 					add = 15
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_trait = dragon_swift
 					}
 				}
 				modifier = {
 					add = -20
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_trait = dragon_slow
 					}
 				}
@@ -1036,7 +1036,7 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 		name = agot_dragon_combat.0003.b
 		custom_tooltip = {
 			text = agot_dragon_combat.0003.escape
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				agot_remove_from_combat = yes
 			}
 		}
@@ -1981,11 +1981,11 @@ agot_dragon_combat.1001 = {
 
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
@@ -1999,23 +1999,23 @@ agot_dragon_combat.1001 = {
 		# Set up portraits for this event, putting the current actor always on the left.
 		if = {
 			limit = { this = scope:dsc_defender }
-			scope:dsc_defender = { save_scope_as = myself }
-			scope:dsc_attacker = { save_scope_as = my_foe }
-			scope:dsc_defender_dragon = { save_scope_as = my_dragon }
-			scope:dsc_attacker_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_defender ?= { save_scope_as = myself }
+			scope:dsc_attacker ?= { save_scope_as = my_foe }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 		else = {
-			scope:dsc_attacker = { save_scope_as = myself }
-			scope:dsc_defender = { save_scope_as = my_foe }
-			scope:dsc_attacker_dragon = { save_scope_as = my_dragon }
-			scope:dsc_defender_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_attacker ?= { save_scope_as = myself }
+			scope:dsc_defender ?= { save_scope_as = my_foe }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 
-		scope:myself = {
+		scope:myself ?= {
 			agot_clear_dragon_animation_flags = yes
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = yes }
 		}
-		scope:my_foe = {
+		scope:my_foe ?= {
 			agot_clear_dragon_animation_flags = yes
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = yes }
 		}
@@ -2048,7 +2048,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_wait_and_hope_effect = yes }
 				}
 			}
@@ -2065,7 +2065,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_unsure_attack_effect = yes }
 				}
 			}
@@ -2082,7 +2082,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_enthusiastic_onslaught_effect = yes }
 				}
 			}
@@ -2099,7 +2099,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_underbelly_effect = yes }
 				}
 			}
@@ -2116,7 +2116,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_tail_smash_effect = yes }
 				}
 			}
@@ -2133,7 +2133,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_guard_effect = yes }
 				}
 			}
@@ -2150,7 +2150,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_probing_attack_effect = yes }
 				}
 			}
@@ -2167,7 +2167,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_onslaught_effect = yes }
 				}
 			}
@@ -2184,7 +2184,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_surprise_attack_effect = yes }
 				}
 			}
@@ -2201,7 +2201,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_taunt_effect = yes }
 				}
 			}
@@ -2218,7 +2218,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_go_for_the_gonads_effect = yes }
 				}
 			}
@@ -2235,7 +2235,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_strict_guard_effect = yes }
 				}
 			}
@@ -2252,7 +2252,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_confident_attack_effect = yes }
 				}
 			}
@@ -2269,7 +2269,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_expert_onslaught_effect = yes }
 				}
 			}
@@ -2286,7 +2286,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_lightning_assault_effect = yes }
 				}
 			}
@@ -2303,7 +2303,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_tire_opponent_effect = yes }
 				}
 			}
@@ -2320,7 +2320,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_motivate_effect = yes }
 				}
 			}
@@ -2337,7 +2337,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_technique_from_legend_effect = yes }
 				}
 			}
@@ -2354,7 +2354,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_like_a_viper_effect = yes }
 				}
 			}
@@ -2371,7 +2371,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_martial_voice_effect = yes }
 				}
 			}
@@ -2388,7 +2388,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_mocking_boast_effect = yes }
 				}
 			}
@@ -2405,7 +2405,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_desert_warrior_effect = yes }
 				}
 			}
@@ -2422,7 +2422,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_jungle_stalker_effect = yes }
 				}
 			}
@@ -2439,7 +2439,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_open_terrain_expert_effect = yes }
 				}
 			}
@@ -2456,7 +2456,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_rough_terrain_expert_effect = yes }
 				}
 			}
@@ -2473,7 +2473,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_forest_fighter_effect = yes }
 				}
 			}
@@ -2490,7 +2490,7 @@ agot_dragon_combat.1001 = {
 						}
 					}
 				}
-				scope:my_foe = {
+				scope:my_foe ?= {
 					show_as_tooltip = { dragon_combat_move_special_fallback_effect = yes }
 				}
 			}
@@ -2514,7 +2514,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_wait_and_hope_effect = yes }
 		}
@@ -2548,7 +2548,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_unsure_attack_effect = yes }
 		}
@@ -2579,7 +2579,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_enthusiastic_onslaught_effect = yes }
 		}
@@ -2613,7 +2613,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_underbelly_effect = yes }
 		}
@@ -2647,7 +2647,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_tail_smash_effect = yes }
 		}
@@ -2681,7 +2681,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_guard_effect = yes }
 		}
@@ -2715,7 +2715,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_probing_attack_effect = yes }
 		}
@@ -2744,7 +2744,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_onslaught_effect = yes }
 		}
@@ -2778,7 +2778,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_surprise_attack_effect = yes }
 		}
@@ -2807,7 +2807,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_taunt_effect = yes }
 		}
@@ -2840,7 +2840,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_go_for_the_gonads_effect = yes }
 		}
@@ -2874,7 +2874,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_strict_guard_effect = yes }
 		}
@@ -2908,7 +2908,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_confident_attack_effect = yes }
 		}
@@ -2937,7 +2937,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_expert_onslaught_effect = yes }
 		}
@@ -2971,7 +2971,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_lightning_assault_effect = yes }
 		}
@@ -3005,7 +3005,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_tire_opponent_effect = yes }
 		}
@@ -3038,7 +3038,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_chomp_effect = yes }
 		}
@@ -3167,7 +3167,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_motivate_effect = yes }
 		}
@@ -3205,7 +3205,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_technique_from_legend_effect = yes }
 		}
@@ -3252,7 +3252,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_like_a_viper_effect = yes }
 		}
@@ -3299,7 +3299,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_martial_voice_effect = yes }
 		}
@@ -3339,7 +3339,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_mocking_boast_effect = yes }
 		}
@@ -3377,7 +3377,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_desert_warrior_effect = yes }
 		}
@@ -3414,7 +3414,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_jungle_stalker_effect = yes }
 		}
@@ -3451,7 +3451,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_open_terrain_expert_effect = yes }
 		}
@@ -3495,7 +3495,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_rough_terrain_expert_effect = yes }
 		}
@@ -3533,7 +3533,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_rough_terrain_expert_effect = yes }
 		}
@@ -3570,7 +3570,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_forest_fighter_effect = yes }
 		}
@@ -3604,7 +3604,7 @@ agot_dragon_combat.1001 = {
 		## Then, we check to make sure if scope:my_foe is still around to suffer the effects. This prevents errors if they die mid-combat.
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
+				scope:my_foe ?= { is_alive = yes }
 			}
 			hidden_effect = { dragon_combat_move_special_fallback_effect = yes }
 		}
@@ -3621,14 +3621,14 @@ agot_dragon_combat.1001 = {
 		if = {
 			limit = {
 				OR = {
-					scope:dsc_attacker = { is_alive = no }
-					scope:dsc_defender = { is_alive = no }
+					scope:dsc_attacker ?= { is_alive = no }
+					scope:dsc_defender ?= { is_alive = no }
 				}
 			}
 			# First, clean up assorted things around the duels.
 			hidden_effect = { remove_dragon_combat_info_effect = yes }
 			# Then manually clear the duelling flag.
-			scope:dsc_defender = {
+			scope:dsc_defender ?= {
 				if = {
 					# Restrict to live characters to prevent errors.
 					limit = { is_alive = yes }
@@ -3636,7 +3636,7 @@ agot_dragon_combat.1001 = {
 					remove_variable = engaged_in_dragon_combat
 				}
 			}
-			scope:dsc_attacker = {
+			scope:dsc_attacker ?= {
 				if = {
 					# Restrict to live characters to prevent errors.
 					limit = { is_alive = yes }
@@ -3650,7 +3650,7 @@ agot_dragon_combat.1001 = {
 			#If we're scope:dsc_defender, send scope:dsc_attacker their instance of the event.
 			if = {
 				limit = { this = scope:dsc_defender }
-				scope:dsc_attacker = { trigger_event = agot_dragon_combat.1001 }
+				scope:dsc_attacker ?= { trigger_event = agot_dragon_combat.1001 }
 			}
 			#Otherwise we're scope:dsc_attacker, so end the round.
 			else = { trigger_event = agot_dragon_combat.1002 }
@@ -3672,16 +3672,16 @@ agot_dragon_combat.1002 = {
 					# Attacker won
 					scope:dsc_attacker.var:dsc_chance_of_winning >= 100
 					# Defenders died somehow
-					scope:dsc_defender = { is_alive = no }
-					scope:dsc_defender_dragon = { is_alive = no }
+					scope:dsc_defender ?= { is_alive = no }
+					scope:dsc_defender_dragon ?= { is_alive = no }
 				}
 			}
 			save_scope_value_as = {
 				name = dsc_finished
 				value = yes
 			}
-			scope:dsc_attacker = { save_scope_as = dsc_victor }
-			scope:dsc_defender = { save_scope_as = dsc_loser }
+			scope:dsc_attacker ?= { save_scope_as = dsc_victor }
+			scope:dsc_defender ?= { save_scope_as = dsc_loser }
 			save_scope_value_as = {
 				name = victory_type
 				value = flag:skill
@@ -3694,16 +3694,16 @@ agot_dragon_combat.1002 = {
 					# Defender won
 					scope:dsc_defender.var:dsc_chance_of_winning >= 100
 					# Attackers died somehow
-					scope:dsc_attacker = { is_alive = no }
-					scope:dsc_attacker_dragon = { is_alive = no }
+					scope:dsc_attacker ?= { is_alive = no }
+					scope:dsc_attacker_dragon ?= { is_alive = no }
 				}
 			}
 			save_scope_value_as = {
 				name = dsc_finished
 				value = yes
 			}
-			scope:dsc_defender = { save_scope_as = dsc_victor }
-			scope:dsc_attacker = { save_scope_as = dsc_loser }
+			scope:dsc_defender ?= { save_scope_as = dsc_victor }
+			scope:dsc_attacker ?= { save_scope_as = dsc_loser }
 			save_scope_value_as = {
 				name = victory_type
 				value = flag:skill
@@ -3714,12 +3714,12 @@ agot_dragon_combat.1002 = {
 		if = {
 			limit = { exists = scope:dsc_finished }
 			#Save dragon variables
-			scope:dsc_loser = {
+			scope:dsc_loser ?= {
 				var:current_dragon = {
 					save_scope_as = dsc_loser_dragon
 				}
 			}
-			scope:dsc_victor = {
+			scope:dsc_victor ?= {
 				var:current_dragon = {
 					save_scope_as = dsc_victor_dragon
 				}
@@ -3737,8 +3737,8 @@ agot_dragon_combat.1002 = {
 					name = dsc_finished
 					value = yes
 				}
-				scope:dsc_attacker = { save_scope_as = dsc_victor }
-				scope:dsc_defender = { save_scope_as = dsc_loser }
+				scope:dsc_attacker ?= { save_scope_as = dsc_victor }
+				scope:dsc_defender ?= { save_scope_as = dsc_loser }
 				save_scope_value_as = {
 					name = victory_type
 					value = flag:sudden_death
@@ -3751,8 +3751,8 @@ agot_dragon_combat.1002 = {
 					name = dsc_finished
 					value = yes
 				}
-				scope:dsc_defender = { save_scope_as = dsc_victor }
-				scope:dsc_attacker = { save_scope_as = dsc_loser }
+				scope:dsc_defender ?= { save_scope_as = dsc_victor }
+				scope:dsc_attacker ?= { save_scope_as = dsc_loser }
 				save_scope_value_as = {
 					name = victory_type
 					value = flag:sudden_death
@@ -3767,8 +3767,8 @@ agot_dragon_combat.1002 = {
 							name = dsc_finished
 							value = yes
 						}
-						scope:dsc_attacker = { save_scope_as = dsc_victor }
-						scope:dsc_defender = { save_scope_as = dsc_loser }
+						scope:dsc_attacker ?= { save_scope_as = dsc_victor }
+						scope:dsc_defender ?= { save_scope_as = dsc_loser }
 						save_scope_value_as = {
 							name = victory_type
 							value = flag:sudden_death
@@ -3780,8 +3780,8 @@ agot_dragon_combat.1002 = {
 							name = dsc_finished
 							value = yes
 						}
-						scope:dsc_defender = { save_scope_as = dsc_victor }
-						scope:dsc_attacker = { save_scope_as = dsc_loser }
+						scope:dsc_defender ?= { save_scope_as = dsc_victor }
+						scope:dsc_attacker ?= { save_scope_as = dsc_loser }
 						save_scope_value_as = {
 							name = victory_type
 							value = flag:sudden_death
@@ -3790,12 +3790,12 @@ agot_dragon_combat.1002 = {
 				}
 			}
 			#Save dragon variables
-			scope:dsc_loser = {
+			scope:dsc_loser ?= {
 				var:current_dragon = {
 					save_scope_as = dsc_loser_dragon
 				}
 			}
-			scope:dsc_victor = {
+			scope:dsc_victor ?= {
 				var:current_dragon = {
 					save_scope_as = dsc_victor_dragon
 				}
@@ -3805,7 +3805,7 @@ agot_dragon_combat.1002 = {
 		}
 		# If we don't, and we've not yet hit the round_cap_limit, increment the round_number & fire off the next round.
 		else = {
-			scope:dsc_defender = {
+			scope:dsc_defender ?= {
 				# We change the round number right at the end, so that it doesn't mess up any calculations elsewhere.
 				change_variable = {
 					name = dragon_combat_current_round
@@ -4068,27 +4068,27 @@ agot_dragon_combat.1003 = {
 
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
 		#Reassign for loc
 		if = {
 			limit = { this = scope:dsc_defender }
-			scope:dsc_defender = { save_scope_as = myself }
-			scope:dsc_attacker = { save_scope_as = my_foe }
-			scope:dsc_defender_dragon = { save_scope_as = my_dragon }
-			scope:dsc_attacker_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_defender ?= { save_scope_as = myself }
+			scope:dsc_attacker ?= { save_scope_as = my_foe }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 		else = {
-			scope:dsc_attacker = { save_scope_as = myself }
-			scope:dsc_defender = { save_scope_as = my_foe }
-			scope:dsc_attacker_dragon = { save_scope_as = my_dragon }
-			scope:dsc_defender_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_attacker ?= { save_scope_as = myself }
+			scope:dsc_defender ?= { save_scope_as = my_foe }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 	}
 
@@ -4144,7 +4144,7 @@ agot_dragon_combat.1003 = {
 				is_alive = yes
 				NOT = { has_relation_rival = scope:dsc_victor }
 			}
-			scope:dsc_victor = {
+			scope:dsc_victor ?= {
 				progress_towards_rival_effect = {
 					REASON = rival_lost_duel
 					CHARACTER = scope:dsc_victor
@@ -4403,7 +4403,7 @@ agot_dragon_combat.1004 = {
 		}
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	immediate = {
@@ -4412,16 +4412,16 @@ agot_dragon_combat.1004 = {
 		#Reassign for loc
 		if = {
 			limit = { this = scope:dsc_defender }
-			scope:dsc_defender = { save_scope_as = myself }
-			scope:dsc_attacker = { save_scope_as = my_foe }
-			scope:dsc_defender_dragon = { save_scope_as = my_dragon }
-			scope:dsc_attacker_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_defender ?= { save_scope_as = myself }
+			scope:dsc_attacker ?= { save_scope_as = my_foe }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 		else = {
-			scope:dsc_attacker = { save_scope_as = myself }
-			scope:dsc_defender = { save_scope_as = my_foe }
-			scope:dsc_attacker_dragon = { save_scope_as = my_dragon }
-			scope:dsc_defender_dragon = { save_scope_as = my_foe_dragon }
+			scope:dsc_attacker ?= { save_scope_as = myself }
+			scope:dsc_defender ?= { save_scope_as = my_foe }
+			scope:dsc_attacker_dragon ?= { save_scope_as = my_dragon }
+			scope:dsc_defender_dragon ?= { save_scope_as = my_foe_dragon }
 		}
 	}
 
@@ -4431,7 +4431,7 @@ agot_dragon_combat.1004 = {
 		name = agot_dragon_combat.1004.a.sudden_strike
 		if = {
 			limit = {
-				scope:my_foe_dragon = { is_alive = yes }
+				scope:my_foe_dragon ?= { is_alive = yes }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.sudden_strike_survived
@@ -4448,8 +4448,8 @@ agot_dragon_combat.1004 = {
 		name = agot_dragon_combat.1004.a.dragonfire
 		if = {
 			limit ={
-				scope:my_foe = { is_alive = no }
-				scope:my_foe_dragon = { is_alive = no }
+				scope:my_foe ?= { is_alive = no }
+				scope:my_foe_dragon ?= { is_alive = no }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.dragonfire_both
@@ -4457,8 +4457,8 @@ agot_dragon_combat.1004 = {
 		}
 		else_if = {
 			limit = {
-				scope:my_foe = { is_alive = no }
-				scope:my_foe_dragon = { is_alive = yes }
+				scope:my_foe ?= { is_alive = no }
+				scope:my_foe_dragon ?= { is_alive = yes }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.dragonfire_dragon
@@ -4466,8 +4466,8 @@ agot_dragon_combat.1004 = {
 		}
 		else_if = {
 			limit = {
-				scope:my_foe = { is_alive = yes }
-				scope:my_foe_dragon = { is_alive = no }
+				scope:my_foe ?= { is_alive = yes }
+				scope:my_foe_dragon ?= { is_alive = no }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.dragonfire_rider
@@ -4484,7 +4484,7 @@ agot_dragon_combat.1004 = {
 		name = agot_dragon_combat.1004.a.driven_to_ground
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = no }
+				scope:my_foe ?= { is_alive = no }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.driven_to_ground_died
@@ -4501,7 +4501,7 @@ agot_dragon_combat.1004 = {
 		name = agot_dragon_combat.1004.a.disemboweled
 		if = {
 			limit = {
-				scope:my_foe = { is_alive = no }
+				scope:my_foe ?= { is_alive = no }
 			}
 			custom_tooltip = {
 				text = agot_dragon_combat.1004.f.disemboweled_died
@@ -4527,7 +4527,7 @@ agot_dragon_combat.1004 = {
 			text = agot_dragon_combat.1004.f.chomp
 			if = {
 				limit = {
-					scope:my_dragon = {
+					scope:my_dragon ?= {
 						NOT = { has_character_flag = dragon_has_eaten_dragon_before }
 					}
 				}
@@ -4535,7 +4535,7 @@ agot_dragon_combat.1004 = {
 					5 = {
 						modifier = { # Has appropriate traits
 							add = 10
-							scope:my_dragon = {
+							scope:my_dragon ?= {
 								OR = {
 									has_trait = dragon_bloodthirsty
 									has_trait = dragon_voracious
@@ -4545,7 +4545,7 @@ agot_dragon_combat.1004 = {
 						}
 						modifier = { # Does not have inappropriate traits
 							factor = 0
-							scope:my_dragon = {
+							scope:my_dragon ?= {
 								OR = {
 									has_trait = dragon_friendly
 									has_trait = dragon_restrained
@@ -4566,14 +4566,14 @@ agot_dragon_combat.1004 = {
 							title = agot_dragon_combat.1004.chomp.t
 							left_icon = scope:my_dragon
 							right_icon = scope:my_foe_dragon
-							scope:my_dragon = {
+							scope:my_dragon ?= {
 								add_trait = dragon_cannibal
 								add_character_flag = dragon_has_eaten_dragon_before
 							}
 						}
 					}
 					95 = {
-						scope:my_dragon = {
+						scope:my_dragon ?= {
 							add_character_flag = dragon_has_eaten_dragon_before
 						}
 					}
@@ -4589,19 +4589,19 @@ agot_dragon_combat.1010 = {
 	title = agot_dragon_combat.1010.t
 	desc = {
 		triggered_desc = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_commander } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_commander } }
 			desc = agot_dragon_combat.1010.desc.commander
 		}
 		triggered_desc = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_knight } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_knight } }
 			desc = agot_dragon_combat.1010.desc.knight
 		}
 		triggered_desc = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_lord } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_lord } }
 			desc = agot_dragon_combat.1010.desc.lord
 		}
 		triggered_desc = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_courtier } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_courtier } }
 			desc = agot_dragon_combat.1010.desc.courtier
 		}
 	}
@@ -4615,12 +4615,12 @@ agot_dragon_combat.1010 = {
 		animation = war_attacker
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 	trigger = { # Everyone is still alive
-		scope:dragon_in_battle = { is_alive = yes }
-		scope:dragonrider_in_battle = { is_alive = yes }
-		scope:enemy_dragonrider = { is_alive = yes }
+		scope:dragon_in_battle ?= { is_alive = yes }
+		scope:dragonrider_in_battle ?= { is_alive = yes }
+		scope:enemy_dragonrider ?= { is_alive = yes }
 		scope:enemy_dragonrider.var:current_dragon = { is_alive = yes }
 		NOT = { has_character_flag = agot_dragon_combat_1010_cooldown }
 	}
@@ -4635,27 +4635,27 @@ agot_dragon_combat.1010 = {
 	#Attack
 	option = {
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_commander } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_commander } }
 			text = agot_dragon_combat.1010.a.commander
 		}
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_knight } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_knight } }
 			text = agot_dragon_combat.1010.a.knight
 		}
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_lord } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_lord } }
 			text = agot_dragon_combat.1010.a.lord
 		}
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_courtier } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_courtier } }
 			text = agot_dragon_combat.1010.a.courtier
 		}
 		if = {
 			limit = {
 				this = scope:dragonrider_in_battle
 				OR = {
-					scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_commander }
-					scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_lord }
+					scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_commander }
+					scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_lord }
 				}
 			}
 			custom_tooltip = agot_dragon_combat.1010.a.tt
@@ -4663,7 +4663,7 @@ agot_dragon_combat.1010 = {
 		}
 		else = {
 			custom_tooltip = agot_dragon_combat.1010.a.tt.not_me
-			scope:dragonrider_in_battle = { trigger_event = agot_dragon_combat.0001 }
+			scope:dragonrider_in_battle ?= { trigger_event = agot_dragon_combat.0001 }
 		}
 	}
 
@@ -4673,24 +4673,24 @@ agot_dragon_combat.1010 = {
 		name = {
 			trigger = {
 				OR = {
-					scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_commander }
-					scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_knight }
+					scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_commander }
+					scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_knight }
 				}
 			}
 			text = agot_dragon_combat.1010.b
 		}
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_lord } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_lord } }
 			text = agot_dragon_combat.1010.b.lord
 		}
 		name = {
-			trigger = { scope:dragonrider_in_battle = { has_character_flag = dragon_duel_rider_courtier } }
+			trigger = { scope:dragonrider_in_battle ?= { has_character_flag = dragon_duel_rider_courtier } }
 			text = agot_dragon_combat.1010.b.courtier
 		}
 	}
 
 	after = {
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			if = {
 				limit = { has_character_flag = dragon_duel_rider_commander }
 				remove_character_flag = dragon_duel_rider_commander

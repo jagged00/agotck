@@ -70,7 +70,7 @@ scripted_effect agot_dragon_slay_choose_range_move_effect = {
 			exists = scope:dragon_current_move
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_last_move
 				value = scope:dragon_current_move
@@ -168,7 +168,7 @@ scripted_effect agot_dragon_slay_choose_close_move_effect = {
 			exists = scope:dragon_current_move
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_last_move
 				value = scope:dragon_current_move
@@ -203,7 +203,7 @@ scripted_effect agot_dragon_slay_choose_finisher_move_effect = {
 			exists = scope:dragon_current_move
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_last_move
 				value = scope:dragon_current_move
@@ -438,7 +438,7 @@ agot_dragon_slaying_events.0001 = {
 	}
 
 	trigger = {
-		scope:dragon = { is_alive = yes }
+		scope:dragon ?= { is_alive = yes }
 	}
 
 	immediate = {
@@ -450,7 +450,7 @@ agot_dragon_slaying_events.0001 = {
 			}
 			add_character_flag = in_dragon_combat
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = {
 					NOT = { has_character_flag = in_dragon_combat }
@@ -748,7 +748,7 @@ agot_dragon_slaying_events.0002 = {
 	}
 
 	trigger = {
-		scope:dragon = { is_alive = yes }
+		scope:dragon ?= { is_alive = yes }
 	}
 
 	immediate = {
@@ -782,7 +782,7 @@ agot_dragon_slaying_events.0002 = {
 		flavor = agot_dragon_slaying_events.0002.run.tt
 
 		remove_character_flag = in_dragon_combat
-		scope:dragon = { remove_character_flag = in_dragon_combat }
+		scope:dragon ?= { remove_character_flag = in_dragon_combat }
 
 		add_character_flag = { flag = ds_cooldown days = 90 }
 
@@ -1081,12 +1081,12 @@ agot_dragon_slaying_events.0003 = {
 	}
 
 	trigger = {
-		scope:dragon = { is_alive = yes }
+		scope:dragon ?= { is_alive = yes }
 	}
 
 	immediate = {
 		remove_character_flag = in_dragon_combat
-		scope:dragon = { remove_character_flag = in_dragon_combat }
+		scope:dragon ?= { remove_character_flag = in_dragon_combat }
 
 		add_character_flag = { flag = ds_cooldown days = 90 }
 	}
@@ -1118,7 +1118,7 @@ agot_dragon_slaying_events.0004 = {
 			scope:dragon.location = {
 			}
 		}
-		reference = agot_icecave
+		reference = study
 	}
 
 	left_portrait = {
@@ -1133,67 +1133,67 @@ agot_dragon_slaying_events.0004 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -1462,67 +1462,67 @@ agot_dragon_slaying_events.0005 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -1549,7 +1549,7 @@ agot_dragon_slaying_events.0005 = {
 				save_scope_as = peasant
 			}
 
-			scope:peasant = {
+			scope:peasant ?= {
 				add_trait = burned
 				death = {
 					death_reason = death_burned
@@ -1562,7 +1562,7 @@ agot_dragon_slaying_events.0005 = {
 				has_character_flag = ds_seal_starved
 			}
 
-			scope:dragon = { # Wink wink
+			scope:dragon ?= { # Wink wink
 				death = {
 					death_reason = death_dragon_slain
 					killer = scope:human
@@ -1708,7 +1708,7 @@ agot_dragon_slaying_events.0006 = {
 			scope:dragon.location = {
 			}
 		}
-		reference = agot_icecave
+		reference = study
 	}
 
 	left_portrait = {
@@ -1944,7 +1944,7 @@ agot_dragon_slaying_events.0100 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -1977,67 +1977,67 @@ agot_dragon_slaying_events.0100 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -2045,7 +2045,7 @@ agot_dragon_slaying_events.0100 = {
 	}
 
 	immediate = {
-		scope:dragon = { agot_dragon_slay_choose_range_move_effect = yes }
+		scope:dragon ?= { agot_dragon_slay_choose_range_move_effect = yes }
 		if = {
 			limit = { scope:dragon_current_move = flag:shake_cave }
 			play_music_cue = CK3AGOT_dragon_growl
@@ -2386,13 +2386,13 @@ agot_dragon_slaying_events.0100 = {
 				}
 				else_if = {
 					limit = {
-						scope:dragon = { has_trait = dragon_wounded_5 }
+						scope:dragon ?= { has_trait = dragon_wounded_5 }
 					}
 					add_character_flag = ds_win
 					custom_tooltip = agot_dragon_slaying_events.0100.tt.may_kill_dragon
 				}
 				else = {
-					scope:dragon = {
+					scope:dragon ?= {
 						wound_dragon = yes
 					}
 				}
@@ -2508,7 +2508,7 @@ agot_dragon_slaying_events.0100 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 
 						# Full bore and into the abyss
@@ -2711,12 +2711,12 @@ agot_dragon_slaying_events.0100 = {
 				}
 				else_if = {
 					limit = {
-						scope:dragon = { has_trait = dragon_wounded_5 }
+						scope:dragon ?= { has_trait = dragon_wounded_5 }
 					}
 					add_character_flag = ds_win
 				}
 				else = {
-					scope:dragon = {
+					scope:dragon ?= {
 						wound_dragon = yes
 					}
 				}
@@ -2831,7 +2831,7 @@ agot_dragon_slaying_events.0100 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 						if = {
 							limit = {
@@ -2993,7 +2993,7 @@ agot_dragon_slaying_events.0100 = {
 					random_list = {
 						30 = {
 							#Otherwise, we will boost the dragon's next attack
-							scope:dragon = { add_character_flag = guarded_attack }
+							scope:dragon ?= { add_character_flag = guarded_attack }
 							custom_tooltip = agot_dragon_slaying_events.0100.tt.dragon_prepares
 							# Full bore and into the abyss
 							modifier = {
@@ -3794,7 +3794,7 @@ agot_dragon_slaying_events.0100 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 
 						modifier = {
@@ -3902,7 +3902,7 @@ agot_dragon_slaying_events.0100 = {
 						else = {
 							custom_tooltip = {
 								text = agot_dragon_slaying_events.0100.tt.severely_injured
-								scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+								scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 							}
 						}
 
@@ -4214,7 +4214,7 @@ agot_dragon_slaying_events.0100 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 						if = {
 							limit = {
@@ -4328,7 +4328,7 @@ agot_dragon_slaying_events.0100 = {
 						else = {
 							custom_tooltip = {
 								text = agot_dragon_slaying_events.0100.tt.severely_injured
-								scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+								scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 							}
 						}
 
@@ -4533,7 +4533,7 @@ agot_dragon_slaying_events.0100 = {
 					}
 					70 = {
 						#Otherwise, we will boost the dragon's next attack
-						scope:dragon = { add_character_flag = guarded_attack }
+						scope:dragon ?= { add_character_flag = guarded_attack }
 						custom_tooltip = agot_dragon_slaying_events.0100.tt.dragon_prepares
 						modifier = {
 							add = 5
@@ -5043,7 +5043,7 @@ agot_dragon_slaying_events.0100 = {
 					else = {
 						custom_tooltip = {
 							text = agot_dragon_slaying_events.0100.tt.severely_injured
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 						}
 					}
 
@@ -5105,7 +5105,7 @@ agot_dragon_slaying_events.0100 = {
 						}
 					}
 					else = {
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					}
 
 					modifier = {
@@ -5376,7 +5376,7 @@ agot_dragon_slaying_events.0100 = {
 		}
 		else_if = {
 			limit = {
-				scope:human = { is_alive = yes }
+				scope:human ?= { is_alive = yes }
 			}
 
 			if = {
@@ -5521,7 +5521,7 @@ agot_dragon_slaying_events.0101 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -5553,67 +5553,67 @@ agot_dragon_slaying_events.0101 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -5621,7 +5621,7 @@ agot_dragon_slaying_events.0101 = {
 	}
 
 	immediate = {
-		scope:dragon = { agot_dragon_slay_choose_close_move_effect = yes }
+		scope:dragon ?= { agot_dragon_slay_choose_close_move_effect = yes }
 
 		#Calculate differences in skill/size between dragon and human
 		agot_ds_compare_skills_effect = { DRAGON = scope:dragon HUMAN = root }
@@ -5647,7 +5647,7 @@ agot_dragon_slaying_events.0101 = {
 						# modifier = {
 						# 	add = 10
 						# 	trigger = {
-						# 		scope:dragon = { has_character_flag = guarded_attack }
+						# 		scope:dragon ?= { has_character_flag = guarded_attack }
 						# 	}
 						# }
 
@@ -5755,14 +5755,14 @@ agot_dragon_slaying_events.0101 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 
 						# Remember the boost from the guarded attack
 						modifier = {
 							add = -5
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -5875,11 +5875,11 @@ agot_dragon_slaying_events.0101 = {
 									limit = {
 										has_trait = maimed
 									}
-									scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+									scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 								}
 								else = {
-									scope:human = { add_trait = maimed }
-									scope:human = { add_character_flag = ds_maimed }
+									scope:human ?= { add_trait = maimed }
+									scope:human ?= { add_character_flag = ds_maimed }
 								}
 							}
 						}
@@ -5888,7 +5888,7 @@ agot_dragon_slaying_events.0101 = {
 						modifier = {
 							add = -5
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -5991,7 +5991,7 @@ agot_dragon_slaying_events.0101 = {
 						modifier = {
 							add = 10
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -6104,7 +6104,7 @@ agot_dragon_slaying_events.0101 = {
 						# modifier = {
 						# 	add = 10
 						# 	trigger = {
-						# 		scope:dragon = { has_character_flag = guarded_attack }
+						# 		scope:dragon ?= { has_character_flag = guarded_attack }
 						# 	}
 						# }
 
@@ -6175,14 +6175,14 @@ agot_dragon_slaying_events.0101 = {
 							}
 						}
 						else = {
-							scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+							scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 						}
 
 						# Remember the boost from the guarded attack
 						modifier = {
 							add = -5
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -6282,9 +6282,9 @@ agot_dragon_slaying_events.0101 = {
 						else = {
 							custom_tooltip = {
 								text = agot_dragon_slaying_events.0100.tt.severely_injured_worse
-								scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
-								scope:human = { add_trait = crippled }
-								scope:human = { add_character_flag = ds_crippled }
+								scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+								scope:human ?= { add_trait = crippled }
+								scope:human ?= { add_character_flag = ds_crippled }
 							}
 						}
 
@@ -6292,7 +6292,7 @@ agot_dragon_slaying_events.0101 = {
 						modifier = {
 							add = -5
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -6386,7 +6386,7 @@ agot_dragon_slaying_events.0101 = {
 						modifier = {
 							add = 10
 							trigger = {
-								scope:dragon = { has_character_flag = guarded_attack }
+								scope:dragon ?= { has_character_flag = guarded_attack }
 							}
 						}
 
@@ -6531,7 +6531,7 @@ agot_dragon_slaying_events.0101 = {
 				# modifier = {
 				# 	add = 10
 				# 	trigger = {
-				# 		scope:dragon = { has_character_flag = guarded_attack }
+				# 		scope:dragon ?= { has_character_flag = guarded_attack }
 				# 	}
 				# }
 
@@ -6639,14 +6639,14 @@ agot_dragon_slaying_events.0101 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 				}
 
 				# Remember the boost from the guarded attack
 				modifier = {
 					add = -5
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -6760,7 +6760,7 @@ agot_dragon_slaying_events.0101 = {
 							limit = {
 								NOT = { has_trait = one_legged }
 							}
-							scope:human = { add_trait = one_legged }
+							scope:human ?= { add_trait = one_legged }
 						}
 						if = {
 							limit = {
@@ -6772,7 +6772,7 @@ agot_dragon_slaying_events.0101 = {
 							remove_trait = one_eyed
 							add_trait = blind
 						}
-						scope:human = { add_character_flag = ds_ouchie }
+						scope:human ?= { add_character_flag = ds_ouchie }
 					}
 				}
 
@@ -6780,7 +6780,7 @@ agot_dragon_slaying_events.0101 = {
 				modifier = {
 					add = -5
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -6883,7 +6883,7 @@ agot_dragon_slaying_events.0101 = {
 				modifier = {
 					add = 10
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -7094,7 +7094,7 @@ agot_dragon_slaying_events.0101 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -7102,7 +7102,7 @@ agot_dragon_slaying_events.0101 = {
 				modifier = {
 					add = -5
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -7183,7 +7183,7 @@ agot_dragon_slaying_events.0101 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -7192,7 +7192,7 @@ agot_dragon_slaying_events.0101 = {
 				modifier = {
 					add = -5
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -7276,7 +7276,7 @@ agot_dragon_slaying_events.0101 = {
 				modifier = {
 					add = 10
 					trigger = {
-						scope:dragon = { has_character_flag = guarded_attack }
+						scope:dragon ?= { has_character_flag = guarded_attack }
 					}
 				}
 
@@ -7533,7 +7533,7 @@ agot_dragon_slaying_events.0101 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 				}
 
 				modifier = {
@@ -7642,7 +7642,7 @@ agot_dragon_slaying_events.0101 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 				}
 
@@ -7911,8 +7911,8 @@ agot_dragon_slaying_events.0101 = {
 		else_if = {
 			limit = {
 				AND = {
-					scope:human = { is_alive = yes }
-					scope:dragon = { is_alive = yes }
+					scope:human ?= { is_alive = yes }
+					scope:dragon ?= { is_alive = yes }
 				}
 			}
 
@@ -8085,7 +8085,7 @@ agot_dragon_slaying_events.0102 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -8117,7 +8117,7 @@ agot_dragon_slaying_events.0102 = {
 	}
 
 	immediate = {
-		scope:dragon = { agot_dragon_slay_choose_finisher_move_effect = yes }
+		scope:dragon ?= { agot_dragon_slay_choose_finisher_move_effect = yes }
 		if = {
 			limit = { has_character_flag = ds_ouchie }
 			add_character_flag = no_hat
@@ -8129,6 +8129,7 @@ agot_dragon_slaying_events.0102 = {
 		# 	limit = {
 		# 		is_ai = yes
 		# 	}
+		# }
 
 		if = {
 			limit = {
@@ -9384,7 +9385,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -9493,7 +9494,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -9833,7 +9834,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -9947,7 +9948,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -10290,7 +10291,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -10404,7 +10405,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -10748,7 +10749,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -10857,7 +10858,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -11194,7 +11195,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -11308,7 +11309,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -11610,7 +11611,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -11719,7 +11720,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -12055,7 +12056,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -12169,7 +12170,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -12472,7 +12473,7 @@ agot_dragon_slaying_events.0102 = {
 					}
 				}
 				else = {
-					scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
+					scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 1 } }
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
 
@@ -12581,7 +12582,7 @@ agot_dragon_slaying_events.0102 = {
 				else = {
 					custom_tooltip = {
 						text = agot_dragon_slaying_events.0100.tt.severely_injured
-						scope:human = { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
+						scope:human ?= { agot_dragon_combat_inflict_wounds_effect = { RANK = 2 } }
 					}
 					custom_tooltip = agot_dragon_slaying_events.0102.tt.win
 				}
@@ -13145,7 +13146,7 @@ agot_dragon_slaying_events.0110 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -13201,67 +13202,67 @@ agot_dragon_slaying_events.0110 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -13270,7 +13271,7 @@ agot_dragon_slaying_events.0110 = {
 
 	immediate = {
 		add_character_flag = { flag = recently_fought_dragon years = 1 }
-		scope:dragon = {
+		scope:dragon ?= {
 			death = {
 				death_reason = death_dragon_slain
 				killer = root
@@ -13298,7 +13299,7 @@ agot_dragon_slaying_events.0110 = {
 
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					is_male = no
 					age >= 10
 				}
@@ -13919,7 +13920,7 @@ agot_dragon_slaying_events.0111 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -13958,67 +13959,67 @@ agot_dragon_slaying_events.0111 = {
 
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_ten_dragon_size_trigger = yes }
+				scope:dragon ?= { level_ten_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_nine_dragon_size_trigger = yes }
+				scope:dragon ?= { level_nine_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_eight_dragon_size_trigger = yes }
+				scope:dragon ?= { level_eight_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5  }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_seven_dragon_size_trigger = yes }
+				scope:dragon ?= { level_seven_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = { # VHAGAR
 			trigger = {
-				scope:dragon = { level_six_dragon_size_trigger = yes }
+				scope:dragon ?= { level_six_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.5 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_five_dragon_size_trigger = yes }
+				scope:dragon ?= { level_five_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_four_dragon_size_trigger = yes }
+				scope:dragon ?= { level_four_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
 		}
 		triggered_outfit = { # MELEYS
 			trigger = {
-				scope:dragon = { level_three_dragon_size_trigger = yes }
+				scope:dragon ?= { level_three_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_two_dragon_size_trigger = yes }
+				scope:dragon ?= { level_two_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
 		}
 		triggered_outfit = { # SYRAX
 			trigger = {
-				scope:dragon = { level_one_dragon_size_trigger = yes }
+				scope:dragon ?= { level_one_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
 		}
 		triggered_outfit = {
 			trigger = {
-				scope:dragon = { level_zero_dragon_size_trigger = yes }
+				scope:dragon ?= { level_zero_dragon_size_trigger = yes }
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
 		}
@@ -14187,7 +14188,7 @@ agot_dragon_slaying_events.0112 = {
 	title = agot_dragon_slaying_events.0112.t
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 	desc = agot_dragon_slaying_events.0112.desc
 

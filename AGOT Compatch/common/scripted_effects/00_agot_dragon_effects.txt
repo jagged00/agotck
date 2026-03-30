@@ -701,7 +701,7 @@ change_dragon_size = { # This is to be called on the dragon itself
 			}
 			save_temporary_scope_as = dragon_var_story
 		}
-		scope:dragon_var_story = {
+		scope:dragon_var_story ?= {
 			change_dragon_size_direct = {
 				VALUE = $VALUE$
 			}
@@ -1630,7 +1630,7 @@ agot_growing_dragon_cannibal_trait_chance = {
 	save_scope_as = growing_dragon
 	if = {
 		limit = {
-			scope:growing_dragon = {
+			scope:growing_dragon ?= {
 				NOT = { has_trait = dragon_cannibal }
 				NOT = { has_trait = dragon_restrained }
 				NOT = { has_trait = dragon_friendly }
@@ -1731,7 +1731,7 @@ agot_dragon_personality_input_events = {
 		random_list = {
 			1 = { # dragon_friendly
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_aggressive }
 						NOT = { has_trait = dragon_friendly }
 						NOT = { has_trait = dragon_cannibal }
@@ -1741,7 +1741,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_aggressive
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_aggressive }
 						NOT = { has_trait = dragon_friendly }
 					}
@@ -1750,7 +1750,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_skittish
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_skittish }
 						NOT = { has_trait = dragon_bloodthirsty }
 					}
@@ -1759,7 +1759,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_bloodthirsty
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_skittish }
 						NOT = { has_trait = dragon_bloodthirsty }
 					}
@@ -1768,7 +1768,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_accepting
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_accepting }
 						NOT = { has_trait = dragon_defiant }
 					}
@@ -1777,7 +1777,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_defiant
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_accepting }
 						NOT = { has_trait = dragon_defiant }
 					}
@@ -1786,7 +1786,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_supporting
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_imperious }
 						NOT = { has_trait = dragon_supporting }
 						NOT = { has_trait = dragon_cannibal }
@@ -1796,7 +1796,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_imperious
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_imperious }
 						NOT = { has_trait = dragon_supporting }
 					}
@@ -1805,7 +1805,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_calculating
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_impulsive }
 						NOT = { has_trait = dragon_calculating }
 					}
@@ -1814,7 +1814,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_impulsive
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_impulsive }
 						NOT = { has_trait = dragon_calculating }
 					}
@@ -1823,7 +1823,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_cooperative
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_cooperative }
 						NOT = { has_trait = dragon_solitary }
 					}
@@ -1832,7 +1832,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_solitary
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_cooperative }
 						NOT = { has_trait = dragon_solitary }
 					}
@@ -1841,7 +1841,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_restrained
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_restrained }
 						NOT = { has_trait = dragon_voracious }
 						NOT = { has_trait = dragon_cannibal }
@@ -1851,7 +1851,7 @@ agot_dragon_personality_input_events = {
 			}
 			1 = { # dragon_voracious
 				trigger = {
-					scope:growing_dragon = {
+					scope:growing_dragon ?= {
 						NOT = { has_trait = dragon_restrained }
 						NOT = { has_trait = dragon_voracious }
 					}
@@ -2005,7 +2005,7 @@ agot_generate_dragon_baby_name = {
 		save_scope_as = dragon_baby_reference
 	}
 
-	scope:dragon_baby_reference = {
+	scope:dragon_baby_reference ?= {
 		change_first_name = { template_character = scope:dragon }
 	}
 
@@ -2023,12 +2023,12 @@ agot_generate_dragon_baby_name = {
 	#			   yellowgreen, yellow, goldpink, whitegold, gold, green_1, green_2, greygreenyellow, blue, frost,
 	#			   darkblue, purple, palepink, pinkspot, pink, palered}
 
-	scope:dragon = {
+	scope:dragon ?= {
 		random_list = {
 			20 = {
 				trigger = {
 					OR = {
-						scope:child = { has_trait = lunatic }
+						scope:child ?= { has_trait = lunatic }
 						has_game_rule = agot_silly_mode
 					}
 				}
@@ -2043,7 +2043,7 @@ agot_generate_dragon_baby_name = {
 			1 = { save_scope_value_as = { name = name_suggestion value = flag:Ambush }
 				modifier = {
 					add = 9
-					scope:child = { has_culture = culture:crannogman }
+					scope:child ?= { has_culture = culture:crannogman }
 				}
 			}
 			1 = { save_scope_value_as = { name = name_suggestion value = flag:Doom }
@@ -2194,28 +2194,28 @@ agot_set_dragon_baby_name = {
 		hidden_effect = {
 			switch = {
 				trigger = scope:name_suggestion
-				flag:ThisIsBearPleaseSendHelp = { scope:dragon = { change_first_name = ThisIsBearPleaseSendHelp } }
-				flag:ADragonHasNoName = { scope:dragon = { change_first_name = ADragonHasNoName } }
-				flag:Ambush = { scope:dragon = { change_first_name = Ambush } }
-				flag:Doom = { scope:dragon = { change_first_name = Doom } }
-				flag:Dragonfly = { scope:dragon = { change_first_name = Dragonfly } }
-				flag:Knightslayer = { scope:dragon = { change_first_name = Knightslayer } }
-				flag:Lemoncake = { scope:dragon = { change_first_name = Lemoncake } }
-				flag:Momo = { scope:dragon = { change_first_name = Momo } }
-				flag:Moonbaby = { scope:dragon = { change_first_name = Moonbaby } }
-				flag:Orca = { scope:dragon = { change_first_name = Orca } }
-				flag:Peasantslayer = { scope:dragon = { change_first_name = Peasantslayer } }
-				flag:Porkchop = { scope:dragon = { change_first_name = Porkchop } }
-				flag:Rainbow = { scope:dragon = { change_first_name = Rainbow } }
-				flag:Raven = { scope:dragon = { change_first_name = Raven } }
-				flag:Scales = { scope:dragon = { change_first_name = Scales } }
-				flag:Silver = { scope:dragon = { change_first_name = Silver } }
-				flag:Sparkle = { scope:dragon = { change_first_name = Sparkle } }
-				flag:Sunshine = { scope:dragon = { change_first_name = Sunshine } }
-				flag:Tails = { scope:dragon = { change_first_name = Tails } }
-				flag:Toothless = { scope:dragon = { change_first_name = Toothless } }
-				flag:Wildfyre = { scope:dragon = { change_first_name = Wildfyre } }
-				flag:Zorse = { scope:dragon = { change_first_name = Zorse } }
+				flag:ThisIsBearPleaseSendHelp = { scope:dragon ?= { change_first_name = ThisIsBearPleaseSendHelp } }
+				flag:ADragonHasNoName = { scope:dragon ?= { change_first_name = ADragonHasNoName } }
+				flag:Ambush = { scope:dragon ?= { change_first_name = Ambush } }
+				flag:Doom = { scope:dragon ?= { change_first_name = Doom } }
+				flag:Dragonfly = { scope:dragon ?= { change_first_name = Dragonfly } }
+				flag:Knightslayer = { scope:dragon ?= { change_first_name = Knightslayer } }
+				flag:Lemoncake = { scope:dragon ?= { change_first_name = Lemoncake } }
+				flag:Momo = { scope:dragon ?= { change_first_name = Momo } }
+				flag:Moonbaby = { scope:dragon ?= { change_first_name = Moonbaby } }
+				flag:Orca = { scope:dragon ?= { change_first_name = Orca } }
+				flag:Peasantslayer = { scope:dragon ?= { change_first_name = Peasantslayer } }
+				flag:Porkchop = { scope:dragon ?= { change_first_name = Porkchop } }
+				flag:Rainbow = { scope:dragon ?= { change_first_name = Rainbow } }
+				flag:Raven = { scope:dragon ?= { change_first_name = Raven } }
+				flag:Scales = { scope:dragon ?= { change_first_name = Scales } }
+				flag:Silver = { scope:dragon ?= { change_first_name = Silver } }
+				flag:Sparkle = { scope:dragon ?= { change_first_name = Sparkle } }
+				flag:Sunshine = { scope:dragon ?= { change_first_name = Sunshine } }
+				flag:Tails = { scope:dragon ?= { change_first_name = Tails } }
+				flag:Toothless = { scope:dragon ?= { change_first_name = Toothless } }
+				flag:Wildfyre = { scope:dragon ?= { change_first_name = Wildfyre } }
+				flag:Zorse = { scope:dragon ?= { change_first_name = Zorse } }
 			}
 		}
 	}
@@ -2252,7 +2252,7 @@ agot_dragon_transfer_vars_to_story_cycle_effect = {
 		name = gl_dragon_variable_storage
 		target = scope:dragon_var_story
 	}
-	scope:char_to_transfer_stories_off_of = {
+	scope:char_to_transfer_stories_off_of ?= {
 		death = {
 			death_reason = death_drinking_wildfire
 		}
@@ -2299,7 +2299,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 			}
 		}
 	}
-	scope:story = {
+	scope:story ?= {
 		# Dragon Genes
 		set_variable = {
 			name = dragon_age
@@ -2487,7 +2487,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 				limit = {
 					local_var:count < 11
 				}
-				scope:dragon = { add_prowess_skill = 3 }
+				scope:dragon ?= { add_prowess_skill = 3 }
 				change_dragon_size_direct = {
 					VALUE = 3
 				}
@@ -2496,7 +2496,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 				limit = {
 					local_var:count < 15
 				}
-				scope:dragon = { add_prowess_skill = 2 }
+				scope:dragon ?= { add_prowess_skill = 2 }
 				change_dragon_size_direct = {
 					VALUE = 2
 				}
@@ -2504,12 +2504,12 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 			else = {
 				if = {
 					limit = {
-						scope:dragon = { has_character_flag = in_dragonpit }
+						scope:dragon ?= { has_character_flag = in_dragonpit }
 					}
 					random_list = {
 						20 = { always = yes }
 						80 = {
-							scope:dragon = { add_prowess_skill = 1 }
+							scope:dragon ?= { add_prowess_skill = 1 }
 							change_dragon_size_direct = {
 								VALUE = 1
 							}
@@ -2517,7 +2517,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 					}
 				}
 				else = {
-					scope:dragon = { add_prowess_skill = 1 }
+					scope:dragon ?= { add_prowess_skill = 1 }
 					change_dragon_size_direct = {
 						VALUE = 1
 					}
@@ -2534,50 +2534,50 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 				value = scope:story.var:dragon_size_base
 				# Dragon trait
 				if = {
-					limit = { scope:dragon = { has_trait = dragon} }
+					limit = { scope:dragon ?= { has_trait = dragon} }
 					add = {
 						value = dragon_base_dragon_size_value
 					}
 				}
 				# Physical
 				if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_good_3} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_good_3} }
 					multiply = {
 						value = dragon_physique_good_3_size_mult
 					}
 				}
 				else_if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_good_2} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_good_2} }
 					multiply = {
 						value = dragon_physique_good_2_size_mult
 					}
 				}
 				else_if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_good_1} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_good_1} }
 					multiply = {
 						value = dragon_physique_good_1_size_mult
 					}
 				}
 				else_if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_bad_1} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_bad_1} }
 					multiply = {
 						value = dragon_physique_bad_1_size_mult
 					}
 				}
 				else_if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_bad_2} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_bad_2} }
 					multiply = {
 						value = dragon_physique_bad_2_size_mult
 					}
 				}
 				else_if = {
-					limit = { scope:dragon = { has_trait = dragon_physique_bad_3} }
+					limit = { scope:dragon ?= { has_trait = dragon_physique_bad_3} }
 					multiply = {
 						value = dragon_physique_bad_3_size_mult
 					}
 				}
 				if = {
-					limit = { scope:dragon = { has_trait = dragon_spindly} }
+					limit = { scope:dragon ?= { has_trait = dragon_spindly} }
 					multiply = {
 						value = dragon_spindly_size_mult
 					}
@@ -2589,7 +2589,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 		name = gl_dragon_variable_storage
 		target = scope:story
 	}
-	scope:char_to_transfer_stories_off_of = {
+	scope:char_to_transfer_stories_off_of ?= {
 		death = {
 			death_reason = death_drinking_wildfire
 		}
@@ -2600,7 +2600,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 deepen_bond_end_effect = {
 	if = {
 		limit = {
-			scope:owner = {
+			scope:owner ?= {
 				NOT = {
 					has_trait_xp = {
 						trait = dragonrider
@@ -2615,7 +2615,7 @@ deepen_bond_end_effect = {
 				limit = {
 					exists = scope:scheme
 				}
-				scope:scheme = {
+				scope:scheme ?= {
 					add_scheme_progress = -10
 				}
 			}
@@ -2630,7 +2630,7 @@ deepen_bond_end_effect = {
 			custom_tooltip = deepen_bond_with_dragon_try_again
 		}
 
-		scope:owner = { # The AI never stops swaying unless we force it to, this makes them use a more even spread of schemes
+		scope:owner ?= { # The AI never stops swaying unless we force it to, this makes them use a more even spread of schemes
 			if = {
 				limit = {
 					is_ai = yes
@@ -2652,7 +2652,7 @@ deepen_bond_end_effect = {
 					}
 					random = {
 						chance = 10
-						scope:scheme = {
+						scope:scheme ?= {
 							end_scheme = yes
 						}
 					}
@@ -2667,7 +2667,7 @@ deepen_bond_end_effect = {
 					}
 					random = {
 						chance = 30
-						scope:scheme = {
+						scope:scheme ?= {
 							end_scheme = yes
 						}
 					}
@@ -2682,13 +2682,13 @@ deepen_bond_end_effect = {
 					}
 					random = {
 						chance = 30
-						scope:scheme = {
+						scope:scheme ?= {
 							end_scheme = yes
 						}
 					}
 				}
 				else = {
-					scope:scheme = {
+					scope:scheme ?= {
 						end_scheme = yes
 					}
 				}
@@ -2696,11 +2696,11 @@ deepen_bond_end_effect = {
 		}
 	}
 	else = {
-		scope:owner = {
+		scope:owner ?= {
 			send_interface_toast = {
 				title = deepen_bond_with_dragon_complete
 				left_icon = scope:target
-				scope:scheme = {
+				scope:scheme ?= {
 					end_scheme = yes
 				}
 			}

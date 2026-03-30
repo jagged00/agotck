@@ -2,85 +2,85 @@
 	$CRADLEMATE$ = { save_scope_as = owner }
 	if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_13_b }
+			scope:owner ?= { has_character_flag = is_Targaryen_13_b }
 		}
 		agot_spawn_anogaros_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_13_d }
+			scope:owner ?= { has_character_flag = is_Targaryen_13_d }
 		}
 		agot_spawn_archonei_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Belaerys_1 }
+			scope:owner ?= { has_character_flag = is_Belaerys_1 }
 		}
 		agot_spawn_terrax_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_21 }
+			scope:owner ?= { has_character_flag = is_Targaryen_21 }
 		}
 		agot_spawn_meraxes_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_30 }
+			scope:owner ?= { has_character_flag = is_Targaryen_30 }
 		}
 		agot_spawn_quicksilver_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_35 }
+			scope:owner ?= { has_character_flag = is_Targaryen_35 }
 		}
 		agot_spawn_vermithor_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_36 }
+			scope:owner ?= { has_character_flag = is_Targaryen_36 }
 		}
 		agot_spawn_silverwing_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Velaryon_35 }
+			scope:owner ?= { has_character_flag = is_Velaryon_35 }
 		}
 		agot_spawn_seasmoke_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_75 }
+			scope:owner ?= { has_character_flag = is_Targaryen_75 }
 		}
 		agot_spawn_vermax_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_76 }
+			scope:owner ?= { has_character_flag = is_Targaryen_76 }
 		}
 		agot_spawn_arrax_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_77 }
+			scope:owner ?= { has_character_flag = is_Targaryen_77 }
 		}
 		agot_spawn_tyraxes_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_78 }
+			scope:owner ?= { has_character_flag = is_Targaryen_78 }
 		}
 		agot_spawn_stormcloud_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_69 }
+			scope:owner ?= { has_character_flag = is_Targaryen_69 }
 		}
 		agot_spawn_moondancer_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_70 }
+			scope:owner ?= { has_character_flag = is_Targaryen_70 }
 		}
 		if = {
 			limit = { has_character_flag = hatched_wyrmling }
@@ -88,7 +88,7 @@
 		}
 		else = {
 			agot_spawn_rhaena_1_effect = yes
-			scope:dragon = {
+			scope:dragon ?= {
 				trigger_event = { id = agot_dragon.9000 days = 1 }
 			}
 			remove_character_flag = hatched_canon_dragon
@@ -97,40 +97,39 @@
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_72 }
+			scope:owner ?= { has_character_flag = is_Targaryen_72 }
 		}
 		agot_spawn_shrykos_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_71 }
+			scope:owner ?= { has_character_flag = is_Targaryen_71 }
 		}
 		agot_spawn_morghul_effect = yes
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Velaryon_44 }
+			scope:owner ?= { has_character_flag = is_Velaryon_44 }
 		}
 		agot_spawn_laena_1_effect = yes
 		#needs murder events
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_74 }
+			scope:owner ?= { has_character_flag = is_Targaryen_74 }
 		}
 		agot_spawn_nightfyre_effect = yes
 		#needs murder events
 	}
 	else_if = {
 		limit = {
-			scope:owner = { has_character_flag = is_Targaryen_9 }
+			scope:owner ?= { has_character_flag = is_Targaryen_9 }
 		}
 		agot_spawn_drogon_effect = yes
 	}
 	else = {
 		create_character = {
 			location = scope:owner.location
-			template = agot_dragon_hatchling_template
 			random_traits = no
 			save_scope_as = dragon
 		}
@@ -652,7 +651,7 @@ agot_spawn_nagga_effect = {  # (History id = dragon_nagga)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -908,7 +907,7 @@ agot_spawn_urrax_effect = {  # (History id = dragon_urrax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -1167,7 +1166,7 @@ agot_spawn_ancestor_5_effect = { # (History id = dragon_ancestor_5)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -1426,7 +1425,7 @@ agot_spawn_ancestor_1_effect = { # (History id = dragon_ancestor_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -1685,7 +1684,7 @@ agot_spawn_ancestor_6_effect = { # (History id = dragon_ancestor_6)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -1944,7 +1943,7 @@ agot_spawn_ancestor_2_effect = { # (History id = dragon_ancestor_2)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -2193,7 +2192,7 @@ agot_spawn_vassarion_effect = {  # (History id = dragon_vassarion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -2457,7 +2456,7 @@ agot_spawn_essovius_effect = {  # (History id = dragon_essovius)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -2705,7 +2704,7 @@ agot_spawn_valryon_effect = {  # (History id = dragon_valryon)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -2953,7 +2952,7 @@ agot_spawn_ghiscar_effect = {  # (History id = dragon_ghiscar)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -3202,7 +3201,7 @@ agot_spawn_vermithrax_effect = {  # (History id = dragon_vermithrax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -3468,7 +3467,7 @@ agot_spawn_anogaros_effect = {  # (History id = dragon_anogaros)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -3733,7 +3732,7 @@ agot_spawn_balerion_effect = {  # (History id = dragon_balerion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -4002,7 +4001,7 @@ agot_spawn_nessarion_effect = {  # (History id = dragon_nessarion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -4267,7 +4266,7 @@ agot_spawn_archonei_effect = {  # (History id = dragon_archonei)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -4531,7 +4530,7 @@ agot_spawn_terrax_effect = {  # (History id = dragon_terrax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -4779,7 +4778,7 @@ agot_spawn_ancestor_3_effect = { # (History id = dragon_ancestor_3)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -5027,7 +5026,7 @@ agot_spawn_rovax_effect = {  # (History id = dragon_rovax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -5291,7 +5290,7 @@ agot_spawn_ancestor_4_effect = { # (History id = dragon_ancestor_4)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -5539,7 +5538,7 @@ agot_spawn_neltharion_effect = {  # (History id = dragon_neltharion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -5803,7 +5802,7 @@ agot_spawn_pythax_effect = {  # (History id = dragon_pythax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -6066,7 +6065,7 @@ agot_spawn_meraxes_effect = {  # (History id = dragon_meraxes)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -6330,7 +6329,7 @@ agot_spawn_vhagar_effect = {  # (History id = dragon_vhagar)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -6595,7 +6594,7 @@ agot_spawn_quicksilver_effect = {  # (History id = dragon_quicksilver)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -6860,7 +6859,7 @@ agot_spawn_serporoth_effect = {  # (History id = dragon_serporoth)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -7130,7 +7129,7 @@ agot_spawn_cannibal_effect = {  # (History id = dragon_cannibal)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -7398,7 +7397,7 @@ agot_spawn_maegor_2_effect = { # (History id = dragon_maegor_2)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -7647,7 +7646,7 @@ agot_spawn_maegor_3_effect = { # (History id = dragon_maegor_3)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -7895,7 +7894,7 @@ agot_spawn_maegor_4_effect = { # (History id = dragon_maegor_4)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -8143,7 +8142,7 @@ agot_spawn_dreamfyre_effect = {  # (History id = dragon_dreamfyre)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -8412,7 +8411,7 @@ agot_spawn_vermithor_effect = {  # (History id = dragon_vermithor)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -8676,7 +8675,7 @@ agot_spawn_silverwing_effect = {  # (History id = dragon_silverwing)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -8944,7 +8943,7 @@ agot_spawn_maegor_6_effect = { # (History id = dragon_maegor_6)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -9192,7 +9191,7 @@ agot_spawn_maegor_5_effect = { # (History id = dragon_maegor_5)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -9440,7 +9439,7 @@ agot_spawn_maegor_7_effect = { # (History id = dragon_maegor_7)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -9688,7 +9687,7 @@ agot_spawn_maegor_8_effect = { # (History id = dragon_maegor_8)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -9937,7 +9936,7 @@ agot_spawn_meleys_effect = {  # (History id = dragon_meleys)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -10201,7 +10200,7 @@ agot_spawn_maegor_9_effect = { # (History id = dragon_maegor_9)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -10449,7 +10448,7 @@ agot_spawn_maegor_10_effect = { # (History id = dragon_maegor_10)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -10697,7 +10696,7 @@ agot_spawn_maegor_11_effect = { # (History id = dragon_maegor_11)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -10945,7 +10944,7 @@ agot_spawn_aenys_1_effect = { # (History id = dragon_aenys_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -11193,7 +11192,7 @@ agot_spawn_aenys_2_effect = { # (History id = dragon_aenys_2)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -11444,7 +11443,7 @@ agot_spawn_caraxes_effect = {  # (History id = dragon_caraxes)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -11708,7 +11707,7 @@ agot_spawn_aerea_1_effect = { # (History id = dragon_aerea_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -11957,7 +11956,7 @@ agot_spawn_aerea_2_effect = { # (History id = dragon_aerea_2)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -12205,7 +12204,7 @@ agot_spawn_aerea_3_effect = { # (History id = dragon_aerea_3)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -12467,7 +12466,7 @@ agot_spawn_sheepstealer_effect = {  # (History id = dragon_sheepstealer)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -12731,7 +12730,7 @@ agot_spawn_daenerys_1_effect = { # (History id = dragon_daenerys_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -12980,7 +12979,7 @@ agot_spawn_grey_ghost_effect = {  # (History id = dragon_grey_ghost)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -13246,7 +13245,7 @@ agot_spawn_sunfyre_effect = {  # (History id = dragon_sunfyre)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -13512,7 +13511,7 @@ agot_spawn_tessarion_effect = {  # (History id = dragon_tessarion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -13778,7 +13777,7 @@ agot_spawn_aemond_1_effect = { # (History id = dragon_aemond_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -14028,7 +14027,7 @@ agot_spawn_aemond_2_effect = { # (History id = dragon_aemond_2)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -14278,7 +14277,7 @@ agot_spawn_aemond_3_effect = { # (History id = dragon_aemond_3)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -14527,7 +14526,7 @@ agot_spawn_syrax_effect = {  # (History id = dragon_syrax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -14795,7 +14794,7 @@ agot_spawn_seasmoke_effect = {  # (History id = dragon_seasmoke)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -15061,7 +15060,7 @@ agot_spawn_moondancer_effect = {  # (History id = dragon_moondancer)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -15326,7 +15325,7 @@ agot_spawn_rhaena_1_effect = { # (History id = dragon_rhaena_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -15574,7 +15573,7 @@ agot_spawn_shrykos_effect = {  # (History id = dragon_shrykos)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -15823,7 +15822,7 @@ agot_spawn_morghul_effect = {  # (History id = dragon_morghul)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -16072,7 +16071,7 @@ agot_spawn_vermax_effect = {  # (History id = dragon_vermax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -16337,7 +16336,7 @@ agot_spawn_arrax_effect = {  # (History id = dragon_arrax)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -16602,7 +16601,7 @@ agot_spawn_tyraxes_effect = {  # (History id = dragon_tyraxes)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -16860,7 +16859,7 @@ agot_spawn_stormcloud_effect = {  # (History id = dragon_stormcloud)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -17120,7 +17119,7 @@ agot_spawn_morning_effect = {  # (History id = dragon_morning)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -17383,7 +17382,7 @@ agot_spawn_laena_1_effect = { # (History id = dragon_laena_1)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -17632,7 +17631,7 @@ agot_spawn_nightfyre_effect = {  # (History id = dragon_nightfyre)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -17899,7 +17898,7 @@ agot_spawn_the_last_effect = { # (History id = dragon_the_last)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -18153,7 +18152,7 @@ agot_spawn_drogon_effect = {  # (History id = dragon_drogon)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -18419,7 +18418,7 @@ agot_spawn_rhaegal_effect = {  # (History id = dragon_rhaegal)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}
@@ -18681,7 +18680,7 @@ agot_spawn_viserion_effect = {  # (History id = dragon_viserion)
 				limit = {
 					exists = scope:egg
 				}
-				scope:egg = {
+				scope:egg ?= {
 					set_variable = { name = currently_hatching }
 				}
 			}

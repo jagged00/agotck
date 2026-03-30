@@ -1131,7 +1131,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_white_min
 				var:gene_dragon_primary_color_value <= dragon_value_white_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:white
@@ -1144,7 +1144,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_grey_min
 				var:gene_dragon_primary_color_value <= dragon_value_grey_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:grey
@@ -1157,7 +1157,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_black_min
 				var:gene_dragon_primary_color_value <= dragon_value_black_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:black
@@ -1177,7 +1177,7 @@ agot_change_dragon_color_flags = {
 					}
 				}
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:red
@@ -1189,7 +1189,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_orange_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_orange_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:orange
@@ -1201,7 +1201,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_yellow_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_yellow_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:yellow
@@ -1213,7 +1213,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_green_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_green_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:green
@@ -1225,7 +1225,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_light_blue_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_light_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:teal
@@ -1237,7 +1237,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_blue_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:blue
@@ -1249,7 +1249,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_purple_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_purple_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:purple
@@ -1261,7 +1261,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_pink_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_pink_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:pink
@@ -1273,7 +1273,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_hue >= dragon_hue_fuschia_min
 				var:gene_dragon_primary_color_hue <= dragon_hue_fuschia_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color
 					value = flag:fuschia
@@ -1288,7 +1288,7 @@ agot_change_dragon_color_flags = {
 				# The min value is used for spawning dragons
 				var:gene_dragon_primary_color_value <= dragon_value_lightest_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color_grading
 					value = flag:lightest
@@ -1300,7 +1300,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_lighter_min
 				var:gene_dragon_primary_color_value <= dragon_value_lighter_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color_grading
 					value = flag:lighter
@@ -1312,7 +1312,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_middle_min
 				var:gene_dragon_primary_color_value <= dragon_value_middle_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color_grading
 					value = flag:middle
@@ -1324,7 +1324,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_primary_color_value >= dragon_value_darker_min
 				var:gene_dragon_primary_color_value <= dragon_value_darker_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color_grading
 					value = flag:darker
@@ -1337,7 +1337,7 @@ agot_change_dragon_color_flags = {
 				# We don't check for max here, grey and black will just fall into darkest
 				# The max value is used for spawning dragons
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = primary_color_grading
 					value = flag:darkest
@@ -1352,7 +1352,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_value >= dragon_value_white_min
 				var:gene_dragon_secondary_value <= dragon_value_white_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:white
@@ -1365,7 +1365,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_value >= dragon_value_grey_min
 				var:gene_dragon_secondary_value <= dragon_value_grey_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:grey
@@ -1378,7 +1378,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_value >= dragon_value_black_min
 				var:gene_dragon_secondary_value <= dragon_value_black_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:black
@@ -1398,7 +1398,7 @@ agot_change_dragon_color_flags = {
 					}
 				}
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:red
@@ -1410,7 +1410,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_orange_min
 				var:gene_dragon_secondary_hue <= dragon_hue_orange_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:orange
@@ -1422,7 +1422,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_yellow_min
 				var:gene_dragon_secondary_hue <= dragon_hue_yellow_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:yellow
@@ -1434,7 +1434,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_green_min
 				var:gene_dragon_secondary_hue <= dragon_hue_green_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:green
@@ -1446,7 +1446,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_light_blue_min
 				var:gene_dragon_secondary_hue <= dragon_hue_light_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:teal
@@ -1458,7 +1458,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_blue_min
 				var:gene_dragon_secondary_hue <= dragon_hue_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:blue
@@ -1470,7 +1470,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_purple_min
 				var:gene_dragon_secondary_hue <= dragon_hue_purple_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:purple
@@ -1482,7 +1482,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_pink_min
 				var:gene_dragon_secondary_hue <= dragon_hue_pink_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:pink
@@ -1494,7 +1494,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_secondary_hue >= dragon_hue_fuschia_min
 				var:gene_dragon_secondary_hue <= dragon_hue_fuschia_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = secondary_color
 					value = flag:fuschia
@@ -1509,7 +1509,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_value >= dragon_value_white_min
 				var:gene_dragon_tertiary_value <= dragon_value_white_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:white
@@ -1522,7 +1522,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_value >= dragon_value_grey_min
 				var:gene_dragon_tertiary_value <= dragon_value_grey_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:grey
@@ -1535,7 +1535,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_value >= dragon_value_black_min
 				var:gene_dragon_tertiary_value <= dragon_value_black_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:black
@@ -1555,7 +1555,7 @@ agot_change_dragon_color_flags = {
 					}
 				}
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:red
@@ -1567,7 +1567,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_orange_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_orange_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:orange
@@ -1579,7 +1579,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_yellow_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_yellow_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:yellow
@@ -1591,7 +1591,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_green_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_green_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:green
@@ -1603,7 +1603,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_light_blue_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_light_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:teal
@@ -1615,7 +1615,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_blue_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_blue_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:blue
@@ -1627,7 +1627,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_purple_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_purple_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:purple
@@ -1639,7 +1639,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_pink_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_pink_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:pink
@@ -1651,7 +1651,7 @@ agot_change_dragon_color_flags = {
 				var:gene_dragon_tertiary_hue >= dragon_hue_fuschia_min
 				var:gene_dragon_tertiary_hue <= dragon_hue_fuschia_max
 			}
-			scope:changing_dragon = {
+			scope:changing_dragon ?= {
 				set_variable = {
 					name = tertiary_color
 					value = flag:fuschia

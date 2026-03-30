@@ -15,7 +15,7 @@ agot_dragon_tree_child = {
 	saved_scopes = { tree_story }
 
 	is_shown = {
-		scope:tree_story = {
+		scope:tree_story ?= {
 			any_in_list = {
 				variable = parent_story_container
 				var:this_parent ?= root

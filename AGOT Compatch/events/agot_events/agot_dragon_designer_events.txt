@@ -69,7 +69,7 @@ scripted_effect open_dragon_customizer = {
 			}
 			save_scope_as = story
 		}
-		scope:story = {
+		scope:story ?= {
 			# Initialize Reset Variables
 			set_variable = {
 				name = gene_dragon_primary_color_value_old
@@ -275,7 +275,7 @@ agot_dragon_designer.0001 = { # A Custom Dragon - Initial Event
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -308,7 +308,7 @@ agot_dragon_designer.0002 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -440,7 +440,7 @@ agot_dragon_designer.0002 = {
 				}
 			}
 
-			scope:dragon = {
+			scope:dragon ?= {
 				remove_variable = dragon_gender_hidden
 			}
 		}
@@ -505,7 +505,7 @@ agot_dragon_designer.0003 = { # Spawned a dragon
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		set_variable = {
@@ -519,7 +519,7 @@ agot_dragon_designer.0003 = { # Spawned a dragon
 			gui = "event_window_widget_name_child"
 			container = "dynamic_birth_name"
 			controller = name_character
-			setup_scope = { scope:dragon = { save_scope_as = name_character_target } }
+			setup_scope = { scope:dragon ?= { save_scope_as = name_character_target } }
 		}
 	}
 
@@ -570,7 +570,7 @@ agot_dragon_designer.0003 = { # Spawned a dragon
 			# Make sure the dragon has at least 3 personality traits and at least one education trait
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						OR = {
 							AND = { # Doesn't have any of the education traits
 								NOT = { has_trait = education_dragon_1 }
@@ -585,7 +585,7 @@ agot_dragon_designer.0003 = { # Spawned a dragon
 				}
 				custom_tooltip = agot_dragon_designer.0003.c.needs_traits_tt
 				hidden_effect = {
-					scope:dragon = {
+					scope:dragon ?= {
 						if = {
 							limit = {
 								NOT = { has_trait = education_dragon_1 }
@@ -665,19 +665,19 @@ agot_dragon_designer.0004 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Dragon Education Traits
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = education_dragon_1 } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = education_dragon_1 } } }
 			text = agot_dragon_designer.education_dragon_1_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = education_dragon_1 } }
+			trigger = { scope:dragon ?= { has_trait = education_dragon_1 } }
 			text = agot_dragon_designer.education_dragon_1_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = education_dragon_1 } }
 				add_trait_force_tooltip = education_dragon_1
@@ -694,14 +694,14 @@ agot_dragon_designer.0004 = {
 	}
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = education_dragon_2 } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = education_dragon_2 } } }
 			text = agot_dragon_designer.education_dragon_2_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = education_dragon_2 } }
+			trigger = { scope:dragon ?= { has_trait = education_dragon_2 } }
 			text = agot_dragon_designer.education_dragon_2_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = education_dragon_2 } }
 				add_trait_force_tooltip = education_dragon_2
@@ -718,14 +718,14 @@ agot_dragon_designer.0004 = {
 	}
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = education_dragon_3 } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = education_dragon_3 } } }
 			text = agot_dragon_designer.education_dragon_3_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = education_dragon_3 } }
+			trigger = { scope:dragon ?= { has_trait = education_dragon_3 } }
 			text = agot_dragon_designer.education_dragon_3_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = education_dragon_3 } }
 				add_trait_force_tooltip = education_dragon_3
@@ -742,14 +742,14 @@ agot_dragon_designer.0004 = {
 	}
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = education_dragon_4 } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = education_dragon_4 } } }
 			text = agot_dragon_designer.education_dragon_4_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = education_dragon_4 } }
+			trigger = { scope:dragon ?= { has_trait = education_dragon_4 } }
 			text = agot_dragon_designer.education_dragon_4_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = education_dragon_4 } }
 				add_trait_force_tooltip = education_dragon_4
@@ -766,14 +766,14 @@ agot_dragon_designer.0004 = {
 	}
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = education_dragon_5 } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = education_dragon_5 } } }
 			text = agot_dragon_designer.education_dragon_5_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = education_dragon_5 } }
+			trigger = { scope:dragon ?= { has_trait = education_dragon_5 } }
 			text = agot_dragon_designer.education_dragon_5_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = education_dragon_5 } }
 				add_trait_force_tooltip = education_dragon_5
@@ -837,17 +837,17 @@ agot_dragon_designer.0005 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Upgrade Physique Trait
 	option = {
 		name = agot_dragon_designer.physique_dragon_upgrade
 		trigger = {
-			scope:dragon = {
+			scope:dragon ?= {
 				NOT = { has_trait = dragon_physique_good_3 }
 			}
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { has_trait = dragon_physique_bad_3 }
 				remove_trait = dragon_physique_bad_3
@@ -892,11 +892,11 @@ agot_dragon_designer.0005 = {
 	option = {
 		name = agot_dragon_designer.physique_dragon_downgrade
 		trigger = {
-			scope:dragon = {
+			scope:dragon ?= {
 				NOT = { has_trait = dragon_physique_bad_3 }
 			}
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { has_trait = dragon_physique_good_3 }
 				remove_trait = dragon_physique_good_3
@@ -940,14 +940,14 @@ agot_dragon_designer.0005 = {
 	# Swift
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_swift } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_swift } } }
 			text = agot_dragon_designer.pages.swift_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_swift } }
+			trigger = { scope:dragon ?= { has_trait = dragon_swift } }
 			text = agot_dragon_designer.pages.swift_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_swift } }
 				if = {
@@ -965,14 +965,14 @@ agot_dragon_designer.0005 = {
 	# Slow
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_slow } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_slow } } }
 			text = agot_dragon_designer.pages.slow_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_slow } }
+			trigger = { scope:dragon ?= { has_trait = dragon_slow } }
 			text = agot_dragon_designer.pages.slow_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_slow } }
 				if = {
@@ -990,14 +990,14 @@ agot_dragon_designer.0005 = {
 	# Majestic
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_majestic } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_majestic } } }
 			text = agot_dragon_designer.pages.majestic_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_majestic } }
+			trigger = { scope:dragon ?= { has_trait = dragon_majestic } }
 			text = agot_dragon_designer.pages.majestic_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_majestic } }
 				if = {
@@ -1015,14 +1015,14 @@ agot_dragon_designer.0005 = {
 	# Ugly
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_ugly } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_ugly } } }
 			text = agot_dragon_designer.pages.ugly_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_ugly } }
+			trigger = { scope:dragon ?= { has_trait = dragon_ugly } }
 			text = agot_dragon_designer.pages.ugly_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_ugly } }
 				if = {
@@ -1040,14 +1040,14 @@ agot_dragon_designer.0005 = {
 	# Spindly
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_spindly } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_spindly } } }
 			text = agot_dragon_designer.pages.spindly_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_spindly } }
+			trigger = { scope:dragon ?= { has_trait = dragon_spindly } }
 			text = agot_dragon_designer.pages.spindly_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_spindly } }
 				add_trait_force_tooltip = dragon_spindly
@@ -1061,14 +1061,14 @@ agot_dragon_designer.0005 = {
 	# Fertile
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_fertile } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_fertile } } }
 			text = agot_dragon_designer.pages.fertile_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_fertile } }
+			trigger = { scope:dragon ?= { has_trait = dragon_fertile } }
 			text = agot_dragon_designer.pages.fertile_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_fertile } }
 				add_trait_force_tooltip = dragon_fertile
@@ -1128,19 +1128,19 @@ agot_dragon_designer.0006 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Aggressive
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_aggressive } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_aggressive } } }
 			text = agot_dragon_designer.pages.aggressive_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_aggressive } }
+			trigger = { scope:dragon ?= { has_trait = dragon_aggressive } }
 			text = agot_dragon_designer.pages.aggressive_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_aggressive } }
 				if = {
@@ -1158,14 +1158,14 @@ agot_dragon_designer.0006 = {
 	# Friendly
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_friendly } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_friendly } } }
 			text = agot_dragon_designer.pages.friendly_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_friendly } }
+			trigger = { scope:dragon ?= { has_trait = dragon_friendly } }
 			text = agot_dragon_designer.pages.friendly_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_friendly } }
 				if = {
@@ -1183,14 +1183,14 @@ agot_dragon_designer.0006 = {
 	# Solitary
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_solitary } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_solitary } } }
 			text = agot_dragon_designer.pages.solitary_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_solitary } }
+			trigger = { scope:dragon ?= { has_trait = dragon_solitary } }
 			text = agot_dragon_designer.pages.solitary_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_solitary } }
 				if = {
@@ -1208,14 +1208,14 @@ agot_dragon_designer.0006 = {
 	# Cooperative
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_cooperative } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_cooperative } } }
 			text = agot_dragon_designer.pages.cooperative_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_cooperative } }
+			trigger = { scope:dragon ?= { has_trait = dragon_cooperative } }
 			text = agot_dragon_designer.pages.cooperative_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_cooperative } }
 				if = {
@@ -1233,14 +1233,14 @@ agot_dragon_designer.0006 = {
 	# Imperious
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_imperious } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_imperious } } }
 			text = agot_dragon_designer.pages.imperious_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_imperious } }
+			trigger = { scope:dragon ?= { has_trait = dragon_imperious } }
 			text = agot_dragon_designer.pages.imperious_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_imperious } }
 				if = {
@@ -1258,14 +1258,14 @@ agot_dragon_designer.0006 = {
 	# Supporting
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_supporting } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_supporting } } }
 			text = agot_dragon_designer.pages.supporting_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_supporting } }
+			trigger = { scope:dragon ?= { has_trait = dragon_supporting } }
 			text = agot_dragon_designer.pages.supporting_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_supporting } }
 				if = {
@@ -1318,19 +1318,19 @@ agot_dragon_designer.0007 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Impulsive
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_impulsive } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_impulsive } } }
 			text = agot_dragon_designer.pages.impulsive_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_impulsive } }
+			trigger = { scope:dragon ?= { has_trait = dragon_impulsive } }
 			text = agot_dragon_designer.pages.impulsive_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_impulsive } }
 				if = {
@@ -1348,14 +1348,14 @@ agot_dragon_designer.0007 = {
 	# Calculating
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_calculating } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_calculating } } }
 			text = agot_dragon_designer.pages.calculating_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_calculating } }
+			trigger = { scope:dragon ?= { has_trait = dragon_calculating } }
 			text = agot_dragon_designer.pages.calculating_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_calculating } }
 				if = {
@@ -1373,14 +1373,14 @@ agot_dragon_designer.0007 = {
 	# Voracious
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_voracious } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_voracious } } }
 			text = agot_dragon_designer.pages.voracious_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_voracious } }
+			trigger = { scope:dragon ?= { has_trait = dragon_voracious } }
 			text = agot_dragon_designer.pages.voracious_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_voracious } }
 				if = {
@@ -1398,14 +1398,14 @@ agot_dragon_designer.0007 = {
 	# Restrained
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_restrained } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_restrained } } }
 			text = agot_dragon_designer.pages.restrained_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_restrained } }
+			trigger = { scope:dragon ?= { has_trait = dragon_restrained } }
 			text = agot_dragon_designer.pages.restrained_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_restrained } }
 				if = {
@@ -1458,19 +1458,19 @@ agot_dragon_designer.0008 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Defiant
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_defiant } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_defiant } } }
 			text = agot_dragon_designer.pages.defiant_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_defiant } }
+			trigger = { scope:dragon ?= { has_trait = dragon_defiant } }
 			text = agot_dragon_designer.pages.defiant_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_defiant } }
 				if = {
@@ -1488,14 +1488,14 @@ agot_dragon_designer.0008 = {
 	# Accepting
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_accepting } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_accepting } } }
 			text = agot_dragon_designer.pages.accepting_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_accepting } }
+			trigger = { scope:dragon ?= { has_trait = dragon_accepting } }
 			text = agot_dragon_designer.pages.accepting_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_accepting } }
 				if = {
@@ -1513,14 +1513,14 @@ agot_dragon_designer.0008 = {
 	# Bloodthirsty
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_bloodthirsty } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_bloodthirsty } } }
 			text = agot_dragon_designer.pages.bloodthirsty_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_bloodthirsty } }
+			trigger = { scope:dragon ?= { has_trait = dragon_bloodthirsty } }
 			text = agot_dragon_designer.pages.bloodthirsty_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_bloodthirsty } }
 				if = {
@@ -1538,14 +1538,14 @@ agot_dragon_designer.0008 = {
 	# Skittish
 	option = {
 		name = {
-			trigger = { scope:dragon = { NOT = { has_trait = dragon_skittish } } }
+			trigger = { scope:dragon ?= { NOT = { has_trait = dragon_skittish } } }
 			text = agot_dragon_designer.pages.skittish_add
 		}
 		name = {
-			trigger = { scope:dragon = { has_trait = dragon_skittish } }
+			trigger = { scope:dragon ?= { has_trait = dragon_skittish } }
 			text = agot_dragon_designer.pages.skittish_remove
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			if = {
 				limit = { NOT = { has_trait = dragon_skittish } }
 				if = {
@@ -1591,7 +1591,7 @@ agot_dragon_designer.0100 = { # Actually it's an egg
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -1725,7 +1725,7 @@ agot_dragon_designer.0110 = {
 
 		if = { # MP Proofing
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_character_flag = owned_dragon }
 				}
 			}
@@ -1787,7 +1787,7 @@ agot_dragon_designer.2000 = { #Wall/BTW
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
