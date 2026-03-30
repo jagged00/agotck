@@ -1036,6 +1036,7 @@ embrace_valyrian_blood_decision = {
 
 	is_shown = {
 		is_adult = yes
+		NOT = { has_trait = agot_dragon_blooded }
 		NOT = { has_character_flag = historical_dragonseed }
 		NOT = { has_character_flag = dragonseed_potential_medium }
 		NOT = { has_character_flag = dragonseed_potential_low }
@@ -1044,19 +1045,15 @@ embrace_valyrian_blood_decision = {
 	is_valid = {
 		is_adult = yes
 		OR = {
-			has_trait = pure_blooded
+			has_trait = agot_dragon_blooded
 			has_trait = ambitious
 			has_trait = scholar
 		}
 	}
 
 	effect = {
-		add_character_flag = dragonseed_potential_low
-		if = {
-			limit = { has_trait = pure_blooded }
-			remove_character_flag = dragonseed_potential_low
-			add_character_flag = dragonseed_potential_medium
-		}
+		add_trait = agot_dragon_blooded
+		add_character_flag = dragonseed_potential_medium
 	}
 
 	cost = {
@@ -1076,7 +1073,7 @@ embrace_valyrian_blood_decision = {
 		}
 		modifier = {
 			add = 30
-			has_trait = pure_blooded
+			has_trait = agot_dragon_blooded
 		}
 	}
 }
