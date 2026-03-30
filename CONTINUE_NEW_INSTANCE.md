@@ -16,6 +16,7 @@ Rules:
 - Do work in small batches to avoid file limits.
 - At the end of each batch: stop, summarize, and ask whether to continue after merge.
 - Do not modify files outside `AGOT Compatch/` unless explicitly asked.
+- Skip non-English localization unless explicitly requested (i.e., skip French/Simp Chinese localization batches by default).
 
 Start with the next missing dragon batch (decisions, interactions, modifiers, on_actions, and remaining dragon events/localization) and preserve original script syntax.
 ```
@@ -144,6 +145,19 @@ Copied French dragon event-localization replace set:
 - `localization/replace/french/agot/event_localization/filler_events/agot_filler_events_dragon_l_french.yml`
 - `localization/replace/french/agot/event_localization/travel_events/agot_travel_events_dragon_l_french.yml`
 
+### Batch 9 (completed in this continuation)
+Applied "English-only" rule and copied remaining English dragon name replacements:
+- `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
+- `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
+
+## 3) High-Value Next Batch Targets
+
+Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
+
+### Common systems
+### Remaining localization targets (large remainder)
+- No remaining English dragon files found in current `ref ` diff check.
+- Remaining files are non-English localization only (French/Simp Chinese), currently skipped by rule.
 ## 3) High-Value Next Batch Targets
 
 Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
