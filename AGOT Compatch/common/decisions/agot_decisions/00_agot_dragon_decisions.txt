@@ -1,4 +1,4 @@
-﻿become_dragonrider_house_decision = {
+become_dragonrider_house_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dragons.dds"
 	}
@@ -133,24 +133,16 @@ call_for_dragonseeds_decision = {
 				NOR = {
 					this = root
 					AND = { # Dragons can't pass the wall
-						capital_province ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						capital_province ?= { always = yes }
 						NOT = {
-							root.capital_province ?= {
-								geographical_region = world_westeros_beyond_the_wall
-							}
+							root.capital_province ?= { always = yes }
 						}
 					}
 					AND = {
 						NOT = {
-							capital_province ?= {
-								geographical_region = world_westeros_beyond_the_wall
-							}
+							capital_province ?= { always = yes }
 						}
-						root.capital_province ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						root.capital_province ?= { always = yes }
 					}
 				}
 				any_equipped_character_artifact = { # has to have a dragon horn ready

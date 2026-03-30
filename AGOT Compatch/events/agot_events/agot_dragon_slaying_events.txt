@@ -1,4 +1,4 @@
-﻿namespace = agot_dragon_slaying_events
+namespace = agot_dragon_slaying_events
 
 ##################################
 # Slay Dragon Effects
@@ -347,25 +347,21 @@ agot_dragon_slaying_events.0001 = {
 		first_valid = { # Triggered desc for rare variants
 			triggered_desc = {
 				trigger = {
-					scope:dragon.location = { geographical_region = world_westeros_the_neck }
 				}
 				desc = agot_dragon_slaying_events.0001.neck
 			}
 			triggered_desc = {
 				trigger = {
-					scope:dragon.location = { geographical_region = world_westeros_north_of_the_twins }
 				}
 				desc = agot_dragon_slaying_events.0001.north
 			}
 			triggered_desc = {
 				trigger = {
-					scope:dragon.location = { geographical_region = world_westeros_the_vale }
 				}
 				desc = agot_dragon_slaying_events.0001.vale
 			}
 			triggered_desc = {
 				trigger = {
-					scope:dragon.location = { geographical_region = world_westeros_dorne }
 				}
 				desc = agot_dragon_slaying_events.0001.dorne
 			}
@@ -391,11 +387,7 @@ agot_dragon_slaying_events.0001 = {
 	override_background = { # Everywhere else
 		trigger = {
 			scope:dragon.location = {
-				NOR = {
-					geographical_region = world_westeros_north_of_the_twins
-					geographical_region = world_westeros_dorne
-					geographical_region = world_westeros_the_vale
-				}
+				Nalways = no
 			}
 		}
 		reference = ep2_hunt_forest_cave
@@ -404,8 +396,6 @@ agot_dragon_slaying_events.0001 = {
 	override_background = { # North of Neck
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_north_of_the_twins
-				NOT = { geographical_region = world_westeros_the_neck }
 			}
 		}
 		reference = ep2_hunt_snowy_forest
@@ -414,7 +404,6 @@ agot_dragon_slaying_events.0001 = {
 	override_background = { # The Neck
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_the_neck
 			}
 		}
 		reference = ep2_hunt_foggy_forest
@@ -423,7 +412,6 @@ agot_dragon_slaying_events.0001 = {
 	override_background = { # The Vale
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_the_vale
 			}
 		}
 		reference = wilderness_mountains
@@ -432,7 +420,6 @@ agot_dragon_slaying_events.0001 = {
 	override_background = { # Dorne
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_dorne
 			}
 		}
 		reference = drylands
@@ -578,8 +565,6 @@ agot_dragon_slaying_events.0001 = {
 		if = {
 			limit = {
 				scope:dragon.location = {
-					geographical_region = world_westeros_north_of_the_twins
-					NOT = { geographical_region = world_westeros_the_neck }
 				}
 			}
 
@@ -684,8 +669,6 @@ agot_dragon_slaying_events.0001 = {
 		if = {
 			limit = {
 				scope:dragon.location = {
-					geographical_region = world_westeros_north_of_the_twins
-					NOT = { geographical_region = world_westeros_the_neck }
 				}
 			}
 
@@ -1124,10 +1107,7 @@ agot_dragon_slaying_events.0004 = {
 	override_background = {
 		trigger = {
 			scope:dragon.location = {
-				OR = {
-					NOT = { geographical_region = world_westeros_north_of_the_twins }
-					geographical_region = world_westeros_the_neck
-				}
+				always = no
 			}
 		}
 		reference = fp3_cave
@@ -1136,8 +1116,6 @@ agot_dragon_slaying_events.0004 = {
 	override_background = {
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_north_of_the_twins
-				NOT = { geographical_region = world_westeros_the_neck }
 			}
 		}
 		reference = agot_icecave
@@ -1260,8 +1238,6 @@ agot_dragon_slaying_events.0004 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 
@@ -1294,8 +1270,6 @@ agot_dragon_slaying_events.0004 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 
@@ -1324,8 +1298,6 @@ agot_dragon_slaying_events.0004 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 
@@ -1400,11 +1372,7 @@ agot_dragon_slaying_events.0005 = {
 	override_background = { # Everywhere else
 		trigger = {
 			scope:dragon.location = {
-				NOR = {
-					geographical_region = world_westeros_north_of_the_twins
-					geographical_region = world_westeros_dorne
-					geographical_region = world_westeros_the_vale
-				}
+				Nalways = no
 			}
 		}
 		reference = ep2_hunt_forest_cave
@@ -1413,8 +1381,6 @@ agot_dragon_slaying_events.0005 = {
 	override_background = { # North of Neck
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_north_of_the_twins
-				NOT = { geographical_region = world_westeros_the_neck }
 			}
 		}
 		reference = ep2_hunt_snowy_forest
@@ -1423,7 +1389,6 @@ agot_dragon_slaying_events.0005 = {
 	override_background = { # The Neck
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_the_neck
 			}
 		}
 		reference = ep2_hunt_foggy_forest
@@ -1432,7 +1397,6 @@ agot_dragon_slaying_events.0005 = {
 	override_background = { # The Vale
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_the_vale
 			}
 		}
 		reference = wilderness_mountains
@@ -1441,7 +1405,6 @@ agot_dragon_slaying_events.0005 = {
 	override_background = { # Dorne
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_dorne
 			}
 		}
 		reference = drylands
@@ -1684,8 +1647,6 @@ agot_dragon_slaying_events.0005 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 
@@ -1736,10 +1697,7 @@ agot_dragon_slaying_events.0006 = {
 	override_background = {
 		trigger = {
 			scope:dragon.location = {
-				OR = {
-					NOT = { geographical_region = world_westeros_north_of_the_twins }
-					geographical_region = world_westeros_the_neck
-				}
+				always = no
 			}
 		}
 		reference = fp3_cave
@@ -1748,8 +1706,6 @@ agot_dragon_slaying_events.0006 = {
 	override_background = {
 		trigger = {
 			scope:dragon.location = {
-				geographical_region = world_westeros_north_of_the_twins
-				NOT = { geographical_region = world_westeros_the_neck }
 			}
 		}
 		reference = agot_icecave
@@ -1784,8 +1740,6 @@ agot_dragon_slaying_events.0006 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 
@@ -1814,8 +1768,6 @@ agot_dragon_slaying_events.0006 = {
 			if = {
 				limit = {
 					scope:dragon.location = {
-						geographical_region = world_westeros_north_of_the_twins
-						NOT = { geographical_region = world_westeros_the_neck }
 					}
 				}
 

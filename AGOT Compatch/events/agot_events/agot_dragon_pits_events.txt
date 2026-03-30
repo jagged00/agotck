@@ -1,4 +1,4 @@
-﻿namespace = agot_dragon_pits
+namespace = agot_dragon_pits
 
 
 # 0001 - Event fired after the concusion of restoring the King's Landing Dragonpit
@@ -145,9 +145,7 @@ agot_dragon_pits.0005 = {
 		desc = agot_dragon_pits.0005.desc
 		first_valid = {
 			triggered_desc = {
-				trigger = {
-					scope:generic_dragonpit = { geographical_region = world_westeros_seven_kingdoms }
-				}
+				trigger = { always = yes }
 				desc = agot_dragon_pits.0005.westeros
 			}
 			desc = agot_dragon_pits.0005.elsewhere
@@ -1642,7 +1640,7 @@ agot_dragon_pits.2006 = {
 		outfit_tags = { linear_camera_zoom }
 	}
 
-	immediate = {}
+	immediate = { always = yes }
 
 	option = {
 		name = agot_dragon_pits.2006.a
@@ -1905,9 +1903,7 @@ agot_dragon_pits.3003 = {
 		animation = boredom
 	}
 
-	immediate = {
-
-	}
+	immediate = { always = yes }
 
 	option = {
 		name = agot_dragon_pits.3003.a
