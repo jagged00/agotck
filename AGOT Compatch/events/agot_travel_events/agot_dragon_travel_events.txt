@@ -2559,6 +2559,49 @@ agot_travel_events_dragon.0056 = {
 }
 
 
+# 0060 - While traveling by dragon, you deepen your practical understanding of dragons.
+agot_travel_events_dragon.0060 = {
+	type = character_event
+	title = agot_travel_events_dragon.0060.t
+	desc = agot_travel_events_dragon.0060.desc
+	theme = travel
+
+	left_portrait = {
+		character = root
+		animation = personality_wise
+	}
+
+	right_portrait = {
+		character = var:current_dragon
+		camera = camera_dragonrider_ride_dragon_decision
+		animation = dragon_hover
+		outfit_tags = { dragonrider linear_camera_zoom }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_recent_dragon_travel_event
+			months = { 6 9 }
+		}
+		var:current_dragon = {
+			save_scope_as = pet_dragon
+		}
+		if = {
+			limit = { has_variable = dragonlore }
+			change_variable = { name = dragonlore add = 1 }
+		}
+		else = {
+			set_variable = { name = dragonlore value = 1 }
+		}
+	}
+
+	option = {
+		name = agot_travel_events_dragon.0060.a
+		ai_chance = { base = 100 }
+	}
+}
+
+
 ###########################
 # MAINTENANCE (9000-9999) #
 ###########################

@@ -8030,11 +8030,7 @@ agot_dragon_slaying_events.0102 = {
 		first_valid = { # Say a Prayer
 			triggered_desc = {
 				trigger = {
-					OR = {
-						culture = culture:high_valyrian
-						culture = culture:westerosi_valyrian
-						culture = culture:essosi_valyrian
-					}
+						agot_has_valyrian_blood_fallback_trigger = yes
 				}
 				desc = agot_dragon_slaying_events.0102.desc.valyrian
 			}

@@ -22,5 +22,6 @@
 		25 = agot_travel_events_dragon.0031
 		25 = agot_travel_events_dragon.0046
 		25 = agot_travel_events_dragon.0056
+		8  = agot_travel_events_dragon.0060
 	}
 }

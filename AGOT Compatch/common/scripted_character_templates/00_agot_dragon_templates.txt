@@ -644,7 +644,7 @@ agot_local_dragonseed_template = {
 	after_creation = {
 		if = {
 			limit = {
-				culture = culture:high_valyrian
+				agot_has_valyrian_blood_fallback_trigger = yes
 			}
 			if = {
 				limit = {
@@ -674,7 +674,7 @@ agot_valyrian_dragonseed_template = {
 	gender_female_chance = 50
 	dynasty = none
 	faith = faith:valyrian_pan_freehold
-	culture = culture:high_valyrian
+	culture = root.capital_county.culture
 	random_traits_list = {
 		count = 1
 		brave = {}
@@ -691,7 +691,7 @@ agot_valyrian_dragonseed_template = {
 				}
 			}
 			set_culture = culture:westerosi_valyrian
-			set_character_faith = title:c_dragonstone.holder.faith
+			set_character_faith = root.capital_county.faith
 		}
 		else = {
 			set_culture = culture:essosi_valyrian
@@ -736,7 +736,7 @@ agot_scaly_dragonseed_template = {
 		add_character_flag = is_scaly_allard
 		if = {
 			limit = {
-				culture = culture:high_valyrian
+				agot_has_valyrian_blood_fallback_trigger = yes
 			}
 			if = {
 				limit = {
