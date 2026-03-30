@@ -131,9 +131,16 @@ Applied English-only rule and copied remaining English dragon name replacements:
 - `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
 - `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
 
+
+### Batch 10 (completed)
+Validation-only batch using the new guide:
+- Re-ran `dragon|drac` source-vs-compatch diff checks excluding non-English paths.
+- Confirmed there are no remaining missing English dragon files under `ref `.
+- Left non-English localization (French/Simplified Chinese) deferred per rule.
+
 ## 3) Current Status (English-only mode)
 
-- English dragon migration is complete for files matched by the `dragon|drac` diff query.
+- English dragon migration is complete for files matched by the `dragon|drac` diff query (verified again in Batch 10).
 - Remaining unmatched files are non-English localization (French/Simplified Chinese) and intentionally deferred.
 - Only continue with non-English files if explicitly requested.
 
