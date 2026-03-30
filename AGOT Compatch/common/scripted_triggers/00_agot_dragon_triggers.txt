@@ -423,6 +423,17 @@ agot_has_dragonblood_culture = {
 	}
 }
 
+
+agot_has_valyrian_blood_fallback_trigger = {
+	OR = {
+		culture = { has_cultural_pillar = heritage_valyrian }
+		has_trait = agot_dragon_blooded
+		has_character_flag = historical_dragonseed
+		has_character_flag = dragonseed_potential_medium
+		has_character_flag = dragonseed_potential_low
+	}
+}
+
 agot_is_dragonblood_character = {
 	NOT = {
 		has_character_flag = dragon_by_horn
@@ -442,7 +453,7 @@ agot_is_dragonblood_character = {
 				has_game_rule = dragon_valyrian_2_gen
 				has_game_rule = dragon_valyrian_3_gen
 			}
-			culture = { has_cultural_pillar = heritage_valyrian }
+			agot_has_valyrian_blood_fallback_trigger = yes
 		}
 	}
 }
@@ -937,7 +948,7 @@ agot_has_dragonpit_requirements_trigger = {
 			text = dragons_are_extant_desc_tooltip
 			agot_is_any_dragon_alive = yes
 		}
-		AND = { # You have an egg + You are Ambitious + You have Valyrian Cultural Heritage
+		AND = { # You have an egg + You are Ambitious + Valyrian blood/cultural heritage
 			custom_tooltip = {
 				text = has_a_dragon_egg_artifact_tooltip
 				any_character_artifact = {
@@ -945,9 +956,7 @@ agot_has_dragonpit_requirements_trigger = {
 				}
 			}
 			has_trait = ambitious
-			culture = {
-				has_cultural_pillar = heritage_valyrian
-			}
+			agot_has_valyrian_blood_fallback_trigger = yes
 		}
 		AND = { # You have an egg + You are Eccentric
 			custom_tooltip = {
