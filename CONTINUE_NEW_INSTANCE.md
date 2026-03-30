@@ -16,9 +16,9 @@ Rules:
 - Do work in small batches to avoid file limits.
 - At the end of each batch: stop, summarize, and ask whether to continue after merge.
 - Do not modify files outside `AGOT Compatch/` unless explicitly asked.
-- Skip non-English localization unless explicitly requested (i.e., skip French/Simp Chinese localization batches by default).
+- Skip all non-English localization unless explicitly requested.
 
-Start with the next missing dragon batch (decisions, interactions, modifiers, on_actions, and remaining dragon events/localization) and preserve original script syntax.
+Start with the next missing English-only dragon batch and preserve original script syntax.
 ```
 
 ## 2) What Already Exists
@@ -53,7 +53,7 @@ Copied major remaining dragon event + localization set:
 - `events/agot_events/agot_dragonstone_events.txt`
 - Matching English event localization files for all of the above.
 
-### Batch 4 (completed in this continuation)
+### Batch 4 (completed)
 Copied additional dragon event systems + localization:
 - `events/agot_events/agot_dragon_canon_personality_events.txt`
 - `events/agot_events/agot_dragon_debug_events.txt`
@@ -66,7 +66,7 @@ Copied additional dragon event systems + localization:
 - `localization/english/agot/event_localization/travel_events/agot_travel_events_dragon_l_english.yml`
 - `localization/english/agot/gui/agot_dragon_tree_l_english.yml`
 
-### Batch 5 (completed in this continuation)
+### Batch 5 (completed)
 Copied dragon common-systems support files:
 - `common/script_values/00_agot_dragon_combat_values.txt`
 - `common/script_values/00_agot_dragon_dragon_size_values.txt`
@@ -86,7 +86,7 @@ Copied dragon common-systems support files:
 - `common/scripted_effects/00_agot_dragon_warfare_effects.txt`
 - `common/scripted_effects/00_agot_dragonpit_effects.txt`
 
-### Batch 6 (completed in this continuation)
+### Batch 6 (completed)
 Copied dragon supporting content for artifacts/genes/gui/scenarios:
 - `common/artifacts/types/00_agot_dragonegg_type.txt`
 - `common/artifacts/visuals/00_agot_dragon_egg_visuals.txt`
@@ -102,7 +102,7 @@ Copied dragon supporting content for artifacts/genes/gui/scenarios:
 - `common/scripted_guis/00_agot_dragon_tree_scripted_gui.txt`
 - `common/scripted_guis/00_agot_dragons_scripted_gui.txt`
 
-### Batch 7 (completed in this continuation)
+### Batch 7 (completed)
 Copied GUI + activity + lore support files:
 - `gui/custom_gui/agot_dragon_character_window.gui`
 - `gui/custom_gui/agot_dragon_siege.gui`
@@ -123,101 +123,26 @@ Copied GUI + activity + lore support files:
 - `common/nicknames/00_agot_dragon_nicknames.txt`
 - `localization/english/agot/agot_nicknames_dragons_l_english.yml`
 
-### Batch 8 (completed in this continuation)
-Copied French dragon event-localization replace set:
-- `localization/replace/french/agot/event_localization/activities/agot_dragon_hatching_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_choose_dragonpit_events_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_bond_events_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_combat_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_debug_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_designer_events_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_dreams_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_maintenance_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_personality_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_pits_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_siege_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_slaying_events_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_taming_events_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragon_warfare_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragonkeepers_l_french.yml`
-- `localization/replace/french/agot/event_localization/agot_dragonstone_l_french.yml`
-- `localization/replace/french/agot/event_localization/filler_events/agot_filler_events_dragon_l_french.yml`
-- `localization/replace/french/agot/event_localization/travel_events/agot_travel_events_dragon_l_french.yml`
+### Batch 8 (completed)
+Copied French dragon event-localization replace set (legacy pre-rule batch).
 
-### Batch 9 (completed in this continuation)
-Applied "English-only" rule and copied remaining English dragon name replacements:
+### Batch 9 (completed)
+Applied English-only rule and copied remaining English dragon name replacements:
 - `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
 - `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
 
-## 3) High-Value Next Batch Targets
 
-Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
+### Batch 10 (completed)
+Validation-only batch using the new guide:
+- Re-ran `dragon|drac` source-vs-compatch diff checks excluding non-English paths.
+- Confirmed there are no remaining missing English dragon files under `ref `.
+- Left non-English localization (French/Simplified Chinese) deferred per rule.
 
-### Common systems
-### Remaining localization targets (large remainder)
-- No remaining English dragon files found in current `ref ` diff check.
-- Remaining files are non-English localization only (French/Simp Chinese), currently skipped by rule.
+## 3) Current Status (English-only mode)
 
-### Current status snapshot (English-only mode)
-- English dragon migration is complete for files matched by the `dragon|drac` diff query.
-- Remaining unmatched files are non-English localization (French/Simp Chinese) and intentionally deferred.
-- If you want to continue despite the rule, explicitly request non-English localization batches.
-## 3) High-Value Next Batch Targets
-
-Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
-
-### Common systems
-### Remaining localization targets (large remainder)
-- `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
-- `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
-- remaining `localization/replace/french/agot/*dragon*` outside event_localization (core files, names, gui, interactions, modifiers, decisions)
-- all remaining `localization/simp_chinese/agot/*dragon*`
-- all remaining `localization/replace/simp_chinese/agot/names/*dragon*`
-## 3) High-Value Next Batch Targets
-
-Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
-
-### Common systems
-### Remaining localization targets (large remainder)
-- `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
-- `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
-- all remaining `localization/replace/french/agot/*dragon*`
-- all remaining `localization/simp_chinese/agot/*dragon*`
-- all remaining `localization/replace/simp_chinese/agot/names/*dragon*`
-## 3) High-Value Next Batch Targets
-
-Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
-
-### Common systems
-- `common/script_values/00_agot_dragon_combat_values.txt`
-- `common/script_values/00_agot_dragon_dragon_size_values.txt`
-- `common/script_values/00_agot_dragon_gene_values.txt`
-- `common/script_values/00_agot_dragon_skill_values.txt`
-- `common/script_values/00_agot_dragon_tree_values.txt`
-- `common/scripted_character_templates/00_agot_dragon_templates.txt`
-- `common/scripted_effects/00_agot_artifact_dragon_skulls_effects.txt`
-- `common/scripted_effects/00_agot_dragon_animation_effects.txt`
-- `common/scripted_effects/00_agot_dragon_appearance_effects.txt`
-- `common/scripted_effects/00_agot_dragon_canon_dragons_effects.txt`
-- `common/scripted_effects/00_agot_dragon_combat_effects.txt`
-- `common/scripted_effects/00_agot_dragon_combat_moves_effects.txt`
-- `common/scripted_effects/00_agot_dragon_congenital_traits_effects.txt`
-- `common/scripted_effects/00_agot_dragon_slay_effects.txt`
-- `common/scripted_effects/00_agot_dragon_tree_effects.txt`
-- `common/scripted_effects/00_agot_dragon_warfare_effects.txt`
-- `common/scripted_effects/00_agot_dragonpit_effects.txt`
-
-### Activities + gameplay support
-- `common/activities/activity_types/agot_dragon_hatching.txt`
-- `events/activities/agot_hatching_activity/agot_dragon_hatching_activity_events.txt`
-- `events/activities/agot_hatching_activity/agot_hatching_dragonlore_events.txt`
-- `localization/english/agot/event_localization/activities/agot_dragon_hatching_l_english.yml`
-
-### Remaining likely dragon-adjacent content
-- `common/game_concepts/00_agot_dragon_game_concepts.txt`
-- `common/nicknames/00_agot_dragon_nicknames.txt`
-- `localization/english/agot/agot_nicknames_dragons_l_english.yml`
+- English dragon migration is complete for files matched by the `dragon|drac` diff query (verified again in Batch 10).
+- Remaining unmatched files are non-English localization (French/Simplified Chinese) and intentionally deferred.
+- Only continue with non-English files if explicitly requested.
 
 ## 4) Fast Validation Commands
 
