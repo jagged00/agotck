@@ -65,11 +65,44 @@ Copied additional dragon event systems + localization:
 - `localization/english/agot/event_localization/travel_events/agot_travel_events_dragon_l_english.yml`
 - `localization/english/agot/gui/agot_dragon_tree_l_english.yml`
 
+### Batch 5 (completed in this continuation)
+Copied dragon common-systems support files:
+- `common/script_values/00_agot_dragon_combat_values.txt`
+- `common/script_values/00_agot_dragon_dragon_size_values.txt`
+- `common/script_values/00_agot_dragon_gene_values.txt`
+- `common/script_values/00_agot_dragon_skill_values.txt`
+- `common/script_values/00_agot_dragon_tree_values.txt`
+- `common/scripted_character_templates/00_agot_dragon_templates.txt`
+- `common/scripted_effects/00_agot_artifact_dragon_skulls_effects.txt`
+- `common/scripted_effects/00_agot_dragon_animation_effects.txt`
+- `common/scripted_effects/00_agot_dragon_appearance_effects.txt`
+- `common/scripted_effects/00_agot_dragon_canon_dragons_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_moves_effects.txt`
+- `common/scripted_effects/00_agot_dragon_congenital_traits_effects.txt`
+- `common/scripted_effects/00_agot_dragon_slay_effects.txt`
+- `common/scripted_effects/00_agot_dragon_tree_effects.txt`
+- `common/scripted_effects/00_agot_dragon_warfare_effects.txt`
+- `common/scripted_effects/00_agot_dragonpit_effects.txt`
+
 ## 3) High-Value Next Batch Targets
 
 Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
 
 ### Common systems
+- `common/artifacts/types/00_agot_dragonegg_type.txt`
+- `common/artifacts/visuals/00_agot_dragon_egg_visuals.txt`
+- `common/casus_belli_types/00_agot_dragon_wars.txt`
+- `common/customizable_localization/00_agot_dragon_custom_loc.txt`
+- `common/customizable_localization/99_fr_agot_dragons_loc.txt`
+- `common/ethnicities/03_agot_dragon.txt`
+- `common/genes/dragon_accessory_genes.txt`
+- `common/genes/dragon_morph_genes.txt`
+- `common/scripted_effects/00_agot_scenario_dance_of_the_dragons_effects.txt`
+- `common/scripted_effects/00_agot_scenario_dragons_effects.txt`
+- `common/scripted_guis/00_agot_dragon_editor_scripted_gui.txt`
+- `common/scripted_guis/00_agot_dragon_tree_scripted_gui.txt`
+- `common/scripted_guis/00_agot_dragons_scripted_gui.txt`
 - `common/script_values/00_agot_dragon_combat_values.txt`
 - `common/script_values/00_agot_dragon_dragon_size_values.txt`
 - `common/script_values/00_agot_dragon_gene_values.txt`
