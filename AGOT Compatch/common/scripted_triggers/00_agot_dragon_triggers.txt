@@ -125,20 +125,23 @@ can_start_dragon_combat_banned_checks_trigger = {
 	}
 }
 
+# Shared AGOT + vanilla-safe dragon building refs used by dragonpit/dragonkeeper logic
+has_any_dragonrider_building_refs = {
+	OR = {
+		has_building = generic_dragon_pit_01
+		has_building_or_higher = dragonpit_01
+		has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
+		has_building = agot_dragonmont_01 # Dragonmont Version
+		has_building_or_higher = dragon_kiln_01
+		has_building_or_higher = dragonstone_01
+	}
+}
+
 agot_can_use_dragonpit_amenities = {
 	any_held_county = {
-		OR = {
-			any_county_province = {
-				has_holding_type = castle_holding
-				has_building_or_higher = generic_dragon_pit_01
-			}
-			any_county_province = {
-				OR = {
-					has_building_or_higher = dragonpit_01 # Historical Version
-					has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
-					has_building = agot_dragonmont_01 # Dragonmont Version
-				}
-			}
+		any_county_province = {
+			has_holding_type = castle_holding
+			has_any_dragonrider_building_refs = yes
 		}
 		has_variable = has_dragonkeeper_order
 	}
@@ -147,18 +150,9 @@ agot_can_use_dragonpit_amenities = {
 # Used for character checks
 agot_has_an_active_dragonpit = {
 	any_held_county = {
-		OR = {
-			any_county_province = {
-				has_holding_type = castle_holding
-				has_building_or_higher = generic_dragon_pit_01
-			}
-			any_county_province = {
-				OR = {
-					has_building_or_higher = dragonpit_01 # Historical Version
-					has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
-					has_building = agot_dragonmont_01 # Dragonmont Version
-				}
-			}
+		any_county_province = {
+			has_holding_type = castle_holding
+			has_any_dragonrider_building_refs = yes
 		}
 		has_variable = has_dragonkeeper_order
 	}
@@ -166,18 +160,9 @@ agot_has_an_active_dragonpit = {
 
 agot_has_multiple_active_dragonpits = {
 	any_held_county = {
-		OR = {
-			any_county_province = {
-				has_holding_type = castle_holding
-				has_building_or_higher = generic_dragon_pit_01
-			}
-			any_county_province = {
-				OR = {
-					has_building_or_higher = dragonpit_01 # Historical Version
-					has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
-					has_building = agot_dragonmont_01 # Dragonmont Version
-				}
-			}
+		any_county_province = {
+			has_holding_type = castle_holding
+			has_any_dragonrider_building_refs = yes
 		}
 		has_variable = has_dragonkeeper_order
 		count > 1
@@ -187,18 +172,9 @@ agot_has_multiple_active_dragonpits = {
 # Used for title checks
 agot_title_is_an_active_dragonpit = {
 	tier = tier_county
-	OR = {
-		any_county_province = {
-			has_holding_type = castle_holding
-			has_building_or_higher = generic_dragon_pit_01
-		}
-		any_county_province = {
-			OR = {
-				has_building_or_higher = dragonpit_01 # Historical Version
-				has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
-				has_building = agot_dragonmont_01 # Dragonmont Version
-			}
-		}
+	any_county_province = {
+		has_holding_type = castle_holding
+		has_any_dragonrider_building_refs = yes
 	}
 	has_variable = has_dragonkeeper_order
 }
@@ -214,12 +190,7 @@ has_dragonmont_dragonpit = {
 
 # Used in events etc, usually inside location check
 has_any_dragonpits = {
-	OR = {
-		has_building = generic_dragon_pit_01
-		has_building_or_higher = dragonpit_01
-		has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
-		has_building = agot_dragonmont_01
-	}
+	has_any_dragonrider_building_refs = yes
 }
 
 allow_naming_of_dragon_trigger = {
@@ -363,11 +334,25 @@ has_stationed_scorpions = { # This ideally would also check for MAA in raised ar
 }
 
 agot_has_dragonblood_culture = {
-	culture = {
-		OR = {
-			any_parent_culture_or_above = {
-				#Call true for any cultures directly diverged from the 5 cultures listed below
+	OR = {
+		has_trait = agot_dragon_blooded
+		has_trait = dragonrider
+		has_trait = dragonless_dragonrider
+		has_trait = dragonwidowed
+		AND = {
+			culture = {
 				OR = {
+					any_parent_culture_or_above = {
+						#Call true for any cultures directly diverged from the 5 cultures listed below
+						OR = {
+							this = culture:high_valyrian
+							this = culture:westerosi_valyrian
+							this = culture:essosi_valyrian
+							this = culture:mantaryan
+							this = culture:tolosi
+						}
+					}
+					#call true if the culture matches the 5 cultures listed below
 					this = culture:high_valyrian
 					this = culture:westerosi_valyrian
 					this = culture:essosi_valyrian
@@ -375,20 +360,28 @@ agot_has_dragonblood_culture = {
 					this = culture:tolosi
 				}
 			}
-			#call true if the culture matches the 5 cultures listed below
-			this = culture:high_valyrian
-			this = culture:westerosi_valyrian
-			this = culture:essosi_valyrian
-			this = culture:mantaryan
-			this = culture:tolosi
-		}
-	}
-	NOT = {
-		culture = {
-			#Call false for any cultures directly diverged from the 13 cultures listed below
-			OR = {
-				any_parent_culture_or_above = {
+			NOT = {
+				culture = {
+					#Call false for any cultures directly diverged from the 13 cultures listed below
 					OR = {
+						any_parent_culture_or_above = {
+							OR = {
+								this = culture:braavosi
+								this = culture:gogossite
+								this = culture:volantene
+								this = culture:painted_clansman
+								this = culture:essarian
+								this = culture:lorathi
+								this = culture:lyseni
+								this = culture:myrish
+								this = culture:hartalari
+								this = culture:norvoshi
+								this = culture:pentoshi
+								this = culture:qohorik
+								this = culture:tyroshi
+							}
+						}
+						#call false for the 13 cultures listed below
 						this = culture:braavosi
 						this = culture:gogossite
 						this = culture:volantene
@@ -404,20 +397,6 @@ agot_has_dragonblood_culture = {
 						this = culture:tyroshi
 					}
 				}
-				#call false for the 13 cultures listed below
-				this = culture:braavosi
-				this = culture:gogossite
-				this = culture:volantene
-				this = culture:painted_clansman
-				this = culture:essarian
-				this = culture:lorathi
-				this = culture:lyseni
-				this = culture:myrish
-				this = culture:hartalari
-				this = culture:norvoshi
-				this = culture:pentoshi
-				this = culture:qohorik
-				this = culture:tyroshi
 			}
 		}
 	}

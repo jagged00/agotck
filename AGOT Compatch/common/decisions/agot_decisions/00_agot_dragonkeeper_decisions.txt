@@ -82,7 +82,7 @@ agot_restore_dragonstone_dragonkeepers = {
 	is_shown = {
 		is_landed = yes
 		any_held_title = {
-			this = title:c_dragonstone
+			agot_title_is_an_active_dragonpit = yes
 			NOT = {
 				has_variable = has_dragonkeeper_order
 			}
@@ -115,7 +115,7 @@ agot_restore_dragonstone_dragonkeepers = {
 				any_relation = { # You have a tamed dragon
 					type = agot_dragon
 				}
-				AND = { # You have an egg + You are Ambitious + You have Valyrian Cultural Heritage
+				AND = { # You have an egg + You are Ambitious + Dragonblood trait/culture fallback
 					any_character_artifact = {
 						has_variable = dragon_egg
 					}
