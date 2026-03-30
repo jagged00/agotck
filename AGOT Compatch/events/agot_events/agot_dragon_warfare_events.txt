@@ -70,7 +70,7 @@ agot_dragon_warfare.0002 = { # Enemy knight event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -128,7 +128,7 @@ agot_dragon_warfare.0003 = { # Commander event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -255,7 +255,7 @@ agot_dragon_warfare.0005 = { # Rider event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -733,7 +733,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	left_portrait = {
 		character = scope:enemy_knight
@@ -1294,7 +1294,7 @@ agot_dragon_warfare.0017 = { # Dragonrider event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	left_portrait = {
 		character = scope:enemy_commander_in_battle
@@ -1712,7 +1712,7 @@ agot_dragon_warfare.0023 = { # Dragonrider event
 	desc = agot_dragon_warfare.0023.desc
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -3581,7 +3581,7 @@ agot_dragon_warfare.0043 = { # Dragonrider event
 	desc = agot_dragon_warfare.0043.desc
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	override_effect_2d = {
 		reference = rain

@@ -275,7 +275,7 @@ agot_dragon_designer.0001 = { # A Custom Dragon - Initial Event
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -308,7 +308,7 @@ agot_dragon_designer.0002 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -505,7 +505,7 @@ agot_dragon_designer.0003 = { # Spawned a dragon
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		set_variable = {
@@ -665,7 +665,7 @@ agot_dragon_designer.0004 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Dragon Education Traits
 	option = {
@@ -837,7 +837,7 @@ agot_dragon_designer.0005 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Upgrade Physique Trait
 	option = {
@@ -1128,7 +1128,7 @@ agot_dragon_designer.0006 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Aggressive
 	option = {
@@ -1318,7 +1318,7 @@ agot_dragon_designer.0007 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Impulsive
 	option = {
@@ -1458,7 +1458,7 @@ agot_dragon_designer.0008 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	# Defiant
 	option = {
@@ -1591,7 +1591,7 @@ agot_dragon_designer.0100 = { # Actually it's an egg
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -1787,7 +1787,7 @@ agot_dragon_designer.2000 = { #Wall/BTW
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root

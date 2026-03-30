@@ -3,7 +3,6 @@
 		location = location
 		trait = dragon
 		age = { 30 100 }
-		template = agot_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -65,7 +64,6 @@ agot_spawn_owned_hatchling_from_egg_effect = {
 	else = {
 		create_character = {
 			location = $OWNER$.location
-			template = agot_dragon_hatchling_template
 			random_traits = no
 			save_scope_as = dragon
 		}
@@ -132,7 +130,6 @@ agot_spawn_bonded_hatchling_from_egg_effect = {
 agot_spawn_wild_hatchling_from_egg_effect = {
 	create_character = {
 		location = location
-		template = agot_dragon_hatchling_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -148,7 +145,6 @@ agot_spawn_wild_dragon_effect = {
 		location = capital_province
 		trait = dragon
 		age = { 30 100 }
-		template = agot_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -169,7 +165,6 @@ agot_spawn_wild_child_dragon_effect = {
 		location = capital_province
 		trait = dragon
 		age = 0
-		template = agot_dragon_hatchling_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -188,7 +183,6 @@ agot_spawn_wild_child_dragon_effect = {
 agot_spawn_young_dragon_effect = {
 	create_character = {
 		location = location
-		template = agot_young_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -206,7 +200,6 @@ agot_spawn_young_dragon_effect = {
 agot_spawn_adult_dragon_effect = {
 	create_character = {
 		location = location
-		template = agot_adult_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -224,7 +217,6 @@ agot_spawn_adult_dragon_effect = {
 agot_spawn_old_dragon_effect = {
 	create_character = {
 		location = location
-		template = agot_old_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}
@@ -242,7 +234,6 @@ agot_spawn_old_dragon_effect = {
 agot_spawn_monster_dragon_effect = {
 	create_character = {
 		location = location
-		template = agot_monster_dragon_template
 		random_traits = no
 		save_scope_as = dragon
 	}

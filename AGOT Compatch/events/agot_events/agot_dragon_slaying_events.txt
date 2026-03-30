@@ -1118,7 +1118,7 @@ agot_dragon_slaying_events.0004 = {
 			scope:dragon.location = {
 			}
 		}
-		reference = agot_icecave
+		reference = study
 	}
 
 	left_portrait = {
@@ -1708,7 +1708,7 @@ agot_dragon_slaying_events.0006 = {
 			scope:dragon.location = {
 			}
 		}
-		reference = agot_icecave
+		reference = study
 	}
 
 	left_portrait = {
@@ -1944,7 +1944,7 @@ agot_dragon_slaying_events.0100 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -5521,7 +5521,7 @@ agot_dragon_slaying_events.0101 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -8085,7 +8085,7 @@ agot_dragon_slaying_events.0102 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -13146,7 +13146,7 @@ agot_dragon_slaying_events.0110 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -13920,7 +13920,7 @@ agot_dragon_slaying_events.0111 = {
 	#Special
 	override_background = {
 		trigger = { scope:locale = flag:agot_icecave }
-		reference = agot_icecave
+		reference = study
 	}
 
 	widgets = {
@@ -14188,7 +14188,7 @@ agot_dragon_slaying_events.0112 = {
 	title = agot_dragon_slaying_events.0112.t
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 	desc = agot_dragon_slaying_events.0112.desc
 

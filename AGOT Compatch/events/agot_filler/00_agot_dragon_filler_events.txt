@@ -2355,7 +2355,7 @@ agot_filler_dragon.0025 = { # Irritable rider wants to burn neighboring holding
 		character = var:current_dragon
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 	trigger = {
 		capital_county = {
@@ -6092,7 +6092,6 @@ agot_filler_dragon.0081 = {
 	}
 	immediate = {
 		create_character = {
-			template = agot_hedgeknight_character
 			location = var:current_rider.location
 			after_creation = {
 				add_prowess_skill = { 5 12 } # They're decent or they wouldn't be here
@@ -6546,7 +6545,6 @@ agot_filler_dragon.0086 = {
 		save_scope_as = dragon
 		var:current_rider = {
 			create_character = {
-				template = agot_merchant_character
 				culture = this.location.culture
 				faith = this.location.faith
 				location = this.location

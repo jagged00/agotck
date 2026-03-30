@@ -132,7 +132,7 @@ agot_travel_events_dragon.0001 = {
 	desc = agot_travel_events_dragon.0001.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -365,7 +365,7 @@ agot_travel_events_dragon.0005 = {
 	desc = agot_travel_events_dragon.0005.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -486,7 +486,7 @@ agot_travel_events_dragon.0006 = {
 	desc = agot_travel_events_dragon.0006.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -1441,7 +1441,7 @@ agot_travel_events_dragon.0011 = {
 	desc = agot_travel_events_dragon.0011.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -1548,7 +1548,7 @@ agot_travel_events_dragon.0013 = {
 	desc = agot_travel_events_dragon.0013.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -1631,7 +1631,7 @@ agot_travel_events_dragon.0021 = {
 	desc = agot_travel_events_dragon.0021.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -1732,7 +1732,7 @@ agot_travel_events_dragon.0022 = {
 	}
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -1988,7 +1988,7 @@ agot_travel_events_dragon.0031 = {
 	desc = agot_travel_events_dragon.0031.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2084,7 +2084,7 @@ agot_travel_events_dragon.0047 = {
 	desc = agot_travel_events_dragon.0047.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2171,7 +2171,7 @@ agot_travel_events_dragon.0048 = {
 	}
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2245,7 +2245,7 @@ agot_travel_events_dragon.0049 = {
 	desc = agot_travel_events_dragon.0049.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2334,7 +2334,7 @@ agot_travel_events_dragon.0050 = {
 	desc = agot_travel_events_dragon.0050.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2405,7 +2405,7 @@ agot_travel_events_dragon.0051 = {
 	desc = agot_travel_events_dragon.0051.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root
@@ -2492,7 +2492,7 @@ agot_travel_events_dragon.0056 = {
 	desc = agot_travel_events_dragon.0056.desc
 	theme = dragon
 	override_background = {
-		reference = agot_open_sky_video
+		reference = study
 	}
 	right_portrait = {
 		character = root

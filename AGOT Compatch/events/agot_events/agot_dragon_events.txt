@@ -1196,11 +1196,11 @@ agot_dragon.0010 = { # Ride Your Dragon (Normal Outcome)
 	theme = dragon
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 	left_portrait = {
 		character = root
@@ -1416,11 +1416,11 @@ agot_dragon.0012 = { # Ride dragon decision - drunkard fall outcome
 	theme = dragon
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 	left_portrait = {
 		character = root
@@ -2784,11 +2784,11 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 	theme = dragon
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	right_portrait = {
@@ -3044,11 +3044,11 @@ agot_dragon.0024 = { # Ride Your Dragon (Lifestyle Focused)
 	theme = dragon
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 	left_portrait = {
 		character = root
@@ -4059,13 +4059,11 @@ agot_dragon.1000 = {
 	immediate = {
 		#spawn characters
 		create_character = {
-			template = agot_local_dragonseed_template
 			location = root.capital_province
 			save_scope_as = dragonseed
 		}
 		scope:dragonseed ?= { add_to_list = final_dragonseeds }
 		create_character = {
-			template = agot_valyrian_dragonseed_template
 			location = root.capital_province
 			save_scope_as = dragonseed
 		}
@@ -4073,7 +4071,6 @@ agot_dragon.1000 = {
 		random = {
 			chance = 50
 			create_character = {
-				template = agot_local_dragonseed_template
 				location = root.capital_province
 				save_scope_as = dragonseed
 			}
@@ -4082,7 +4079,6 @@ agot_dragon.1000 = {
 		random = {
 			chance = 50
 			create_character = {
-				template = agot_valyrian_dragonseed_template
 				location = root.capital_province
 				save_scope_as = dragonseed
 			}
@@ -4101,7 +4097,6 @@ agot_dragon.1000 = {
 					}
 				}
 				create_character = {
-					template = agot_scaly_dragonseed_template
 					location = root.capital_province
 					save_scope_as = dragonseed
 				}

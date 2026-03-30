@@ -10,7 +10,7 @@ agot_dragon_debug.0001 = {
 	theme = dragon
 
 	override_background = {
-		reference = agot_dragon_forest_clearing
+		reference = study
 	}
 
 	override_effect_2d = {
@@ -54,7 +54,7 @@ agot_dragon_debug.0002 = {
 	theme = dragon
 
 	override_background = {
-		reference = agot_dragonpit
+		reference = study
 	}
 
 	override_effect_2d = {
@@ -94,8 +94,8 @@ agot_dragon_debug.0003 = {
 	theme = dragon
 
 	override_background = {
-		#reference = agot_dragon_forest_clearing
-		reference = agot_dragonpit
+		#reference = study
+		reference = study
 	}
 
 
@@ -134,8 +134,8 @@ agot_dragon_debug.0004 = {
 	theme = dragon
 
 	override_background = {
-		#reference = agot_dragonpit_2
-		reference = agot_dragonpit
+		#reference = study
+		reference = study
 	}
 
 	right_portrait = {
@@ -169,7 +169,7 @@ agot_dragon_debug.0005 = {
 	theme = dragon
 
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	left_portrait = {
@@ -437,7 +437,7 @@ agot_dragon_debug.00051 = {
 	theme = dragon
 
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	left_portrait = {
@@ -703,7 +703,7 @@ agot_dragon_debug.00052 = {
 	theme = dragon
 
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	left_portrait = {

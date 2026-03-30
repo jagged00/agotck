@@ -245,7 +245,6 @@ agot_dragon_hatching.0006 = { #the ceremony - host pov
 			}
 			else = {
 				create_character = {
-					template = agot_red_priest_character
 					location = root.location
 					save_scope_as = rhllor_priest
 				}

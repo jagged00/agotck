@@ -130,7 +130,6 @@
 	else = {
 		create_character = {
 			location = scope:owner.location
-			template = agot_dragon_hatchling_template
 			random_traits = no
 			save_scope_as = dragon
 		}

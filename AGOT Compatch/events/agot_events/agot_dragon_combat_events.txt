@@ -297,11 +297,11 @@ agot_dragon_combat.0001 = { # I see enemy dragon
 	}
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
@@ -724,7 +724,7 @@ agot_dragon_combat.0002 = { # Sky Ambush - remember that ROOT is enemy scopes he
 		}
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	immediate = {
@@ -911,7 +911,7 @@ agot_dragon_combat.0003 = { # I see an enemy dragon fleeing
 		camera = camera_dragon_event_combat_right
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	option = {
@@ -1981,11 +1981,11 @@ agot_dragon_combat.1001 = {
 
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
@@ -4068,11 +4068,11 @@ agot_dragon_combat.1003 = {
 
 	override_background = {
 		trigger = { has_character_flag = dragon_night_ride }
-		reference = agot_night_sky_video
+		reference = study
 	}
 	override_background = {
 		trigger = { NOT = { has_character_flag = dragon_night_ride } }
-		reference = agot_open_sky_video
+		reference = study
 	}
 
 	immediate = {
@@ -4403,7 +4403,7 @@ agot_dragon_combat.1004 = {
 		}
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 
 	immediate = {
@@ -4615,7 +4615,7 @@ agot_dragon_combat.1010 = {
 		animation = war_attacker
 	}
 	override_background = {
-		reference = agot_open_sky
+		reference = study
 	}
 	trigger = { # Everyone is still alive
 		scope:dragon_in_battle ?= { is_alive = yes }

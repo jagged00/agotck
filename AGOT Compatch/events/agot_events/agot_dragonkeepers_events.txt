@@ -17,7 +17,7 @@ agot_dragonkeepers.0001 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -32,7 +32,6 @@ agot_dragonkeepers.0001 = {
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -57,7 +56,7 @@ agot_dragonkeepers.0002 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -110,7 +109,7 @@ agot_dragonkeepers.0100 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -124,7 +123,6 @@ agot_dragonkeepers.0100 = {
 
 	immediate = {
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -160,7 +158,7 @@ agot_dragonkeepers.0101 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -174,7 +172,6 @@ agot_dragonkeepers.0101 = {
 
 	immediate = {
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -240,7 +237,7 @@ agot_dragonkeepers.0300 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -323,7 +320,7 @@ agot_dragonkeepers.0301 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -436,7 +433,7 @@ agot_dragonkeepers.0302 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -476,7 +473,6 @@ agot_dragonkeepers.0302 = {
 			}
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			employer = root
 			culture = scope:head_dragonkeeper.culture
 			faith = scope:head_dragonkeeper.faith
@@ -512,7 +508,7 @@ agot_dragonkeepers.0303 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -532,7 +528,6 @@ agot_dragonkeepers.0303 = {
 			save_scope_as = head_dragonkeeper
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			trait = wounded_2
 			employer = root
 			culture = scope:head_dragonkeeper.culture
@@ -567,7 +562,7 @@ agot_dragonkeepers.0304 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	cooldown = { years = 5 }
 	trigger = {
@@ -619,7 +614,6 @@ agot_dragonkeepers.0304 = {
 			}
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			trait = wounded_1
 			employer = root
 			culture = root.capital_province.culture
@@ -694,7 +688,7 @@ agot_dragonkeepers.0305 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -1195,7 +1189,7 @@ agot_dragonkeepers.0306 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -1256,7 +1250,7 @@ agot_dragonkeepers.0307 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -1307,7 +1301,7 @@ agot_dragonkeepers.0308 = {
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -1380,7 +1374,7 @@ agot_dragonkeepers.0309 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1422,7 +1416,7 @@ agot_dragonkeepers.0310 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1491,7 +1485,7 @@ agot_dragonkeepers.0311 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1579,7 +1573,7 @@ agot_dragonkeepers.0312 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1733,7 +1727,7 @@ agot_dragonkeepers.0314 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1829,7 +1823,7 @@ agot_dragonkeepers.0315 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	cooldown = { years = 3 }
 
@@ -2057,7 +2051,7 @@ agot_dragonkeepers.0316 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = {
@@ -2221,7 +2215,7 @@ agot_dragonkeepers.0318 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:child_with_egg
@@ -2262,7 +2256,7 @@ agot_dragonkeepers.0319 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = {
