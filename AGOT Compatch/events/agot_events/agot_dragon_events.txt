@@ -186,7 +186,7 @@ agot_dragon.0003 = {
 			}
 			set_variable = {
 				name = lair
-				value = title:c_dragonstone.title_province
+				value = location
 			}
 		}
 		# If it doesn't have a last visited location, this is now it's last visited location
@@ -1129,14 +1129,6 @@ agot_dragon.0010 = { # Ride Your Dragon (Normal Outcome)
 					desc = agot_dragon.0010.greeny
 					desc = agot_dragon.0010.troof
 					desc = agot_dragon.0010.tukha
-					triggered_desc = {
-						trigger = {
-							capital_county = title:c_kings_landing
-							game_start_date > 8000.1.1
-							agot_has_valyrian_blood_fallback_trigger = yes
-						}
-						desc = agot_dragon.0010.aemmly
-					}
 					triggered_desc = {
 						trigger = { capital_county = title:c_harrenhal }
 						desc = agot_dragon.0010.harrenhal
@@ -2789,14 +2781,6 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 			desc = agot_dragon.0023.lord
 			desc = agot_dragon.0023.greeny
 			desc = agot_dragon.0023.tukha
-			triggered_desc = {
-				trigger = {
-					capital_county = title:c_kings_landing
-					game_start_date > 8000.1.1
-					agot_has_valyrian_blood_fallback_trigger = yes
-				}
-				desc = agot_dragon.0023.aemmly
-			}
 		}
 		desc = agot_dragon.0023.cont
 	}
@@ -3553,7 +3537,7 @@ agot_dragon.0200 = { # Opener for dealing with dragon in territory
 	immediate = {
 		if = {
 			limit = {
-				title:h_the_iron_throne.holder ?= root
+				top_liege ?= root
 				any_courtier = {
 					has_council_position = kingsguard_lord_commander
 				}
