@@ -9,7 +9,6 @@
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -22,16 +21,6 @@
 
 		agot_mw_war_valid_during_megawar = yes
 
-		NOT = {
-			AND = {
-				scope:attacker = {
-					government_has_flag = government_is_feudal
-				}
-				scope:defender = {
-					government_has_flag = government_is_theocracy
-				}
-			}
-		}
 	}
 	target_titles = all
 	target_title_tier = county
@@ -342,7 +331,6 @@ dragon_duchy_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -353,16 +341,6 @@ dragon_duchy_conquest_cb = {
 			}
 		}
 
-		NOT = {
-			AND = {
-				scope:attacker = {
-					government_has_flag = government_is_feudal
-				}
-				scope:defender = {
-					government_has_flag = government_is_theocracy
-				}
-			}
-		}
 		agot_mw_war_valid_during_megawar = yes
 	}
 	target_titles = all
@@ -725,20 +703,9 @@ dragon_ducal_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
-		NOT = {
-			AND = {
-				scope:attacker = {
-					government_has_flag = government_is_feudal
-				}
-				scope:defender = {
-					government_has_flag = government_is_theocracy
-				}
-			}
-		}
 
 		agot_mw_war_valid_during_megawar = yes
 	}
@@ -1097,7 +1064,6 @@ dragon_kingdom_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -1108,16 +1074,6 @@ dragon_kingdom_conquest_cb = {
 			}
 		}
 
-		NOT = {
-			AND = {
-				scope:attacker = {
-					government_has_flag = government_is_feudal
-				}
-				scope:defender = {
-					government_has_flag = government_is_theocracy
-				}
-			}
-		}
 		agot_mw_war_valid_during_megawar = yes
 	}
 	target_titles = all
@@ -1677,7 +1633,6 @@ dragon_subjugation_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_for_character_display_regardless = {
@@ -1714,16 +1669,6 @@ dragon_subjugation_cb = {
 			}
 		}
 
-		NOT = {
-			AND = {
-				scope:attacker = {
-					government_has_flag = government_is_feudal
-				}
-				scope:defender = {
-					government_has_flag = government_is_theocracy
-				}
-			}
-		}
 
 		agot_mw_war_valid_during_megawar = yes
 	}
