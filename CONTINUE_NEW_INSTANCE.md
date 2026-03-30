@@ -158,6 +158,11 @@ Prioritize these still-missing dragon files from `ref ` into matching paths unde
 ### Remaining localization targets (large remainder)
 - No remaining English dragon files found in current `ref ` diff check.
 - Remaining files are non-English localization only (French/Simp Chinese), currently skipped by rule.
+
+### Current status snapshot (English-only mode)
+- English dragon migration is complete for files matched by the `dragon|drac` diff query.
+- Remaining unmatched files are non-English localization (French/Simp Chinese) and intentionally deferred.
+- If you want to continue despite the rule, explicitly request non-English localization batches.
 ## 3) High-Value Next Batch Targets
 
 Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
