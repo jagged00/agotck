@@ -1,0 +1,6 @@
+# Compatibility bridge effects used by imported dragon/magic scripts.
+# Intentionally lightweight for vanilla compatch context.
+
+agot_update_glass_candles_effect = {
+	# No-op fallback: avoids missing scripted effect errors in vanilla-only loads.
+}
