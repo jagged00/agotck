@@ -1685,13 +1685,7 @@ agot_dragon_pits.3000 = {
 			limit = { agot_title_is_an_active_dragonpit = yes }
 			save_scope_as = dp_county_option
 		}
-		if = {
-			limit = { title:c_dragonstone ?= yes }
-			title:c_dragonstone ?= { save_scope_as = dragonstone }
-		}
-		else = {
-			scope:dp_county_option = { save_scope_as = dragonstone }
-		}
+		scope:dp_county_option = { save_scope_as = dragonstone }
 	}
 
 	option = {

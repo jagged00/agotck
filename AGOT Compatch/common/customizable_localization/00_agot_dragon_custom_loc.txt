@@ -258,12 +258,7 @@ DragonOwner = {
 				type = agot_dragon
 				is_alive = yes
 			}
-			title:h_the_iron_throne = {
-				place_in_line_of_succession = {
-					target = root
-					value <= 25
-				}
-			}
+			highest_held_title_tier >= tier_kingdom
 		}
 		localization_key = dragon_owner_landed
 	}
