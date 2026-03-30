@@ -200,6 +200,15 @@
 
 
  ###########################
+ # DRAGONLORE GAIN (0060)  #
+ ###########################
+ # 0060
+ agot_travel_events_dragon.0060.t:0 "Lessons in the Sky"
+ agot_travel_events_dragon.0060.desc:0 "As the journey stretches on, I find myself noticing more than just the road ahead. The rhythm of [pet_dragon.GetNamePossessive] wings, the subtle shifts before [pet_dragon.Custom('GetDragonSheHe')] banks, and the way [pet_dragon.Custom('GetDragonSheHe')] reads wind and distance all settle into memory. By the time we descend, I understand dragons better than I did when we took flight."
+ agot_travel_events_dragon.0060.a:0 "Every flight teaches me something new."
+
+
+ ###########################
  # MAINTENANCE (9000-9999) #
  ###########################
  # 9000
