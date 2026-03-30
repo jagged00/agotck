@@ -20,7 +20,7 @@
 			always = yes
 		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
+		NOT = { government_has_flag = government_is_theocracy }
 		# DLC check
 		has_dlc_feature = tours_and_tournaments
 	}
@@ -1587,7 +1587,7 @@ activity_dragon_hatching_no_dlc = {
 			always = yes
 		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
+		NOT = { government_has_flag = government_is_theocracy }
 		# DLC check
 		NOT = { has_dlc_feature = tours_and_tournaments }
 	}
