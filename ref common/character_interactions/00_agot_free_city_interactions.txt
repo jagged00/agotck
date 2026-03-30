@@ -1,0 +1,180 @@
+﻿request_war_interaction = {
+	icon = icon_coax_to_war
+	category = interaction_category_diplomacy
+	common_interaction = yes
+	interface_priority = 71
+
+	desc = request_war_desc
+
+	is_shown = {
+		NOT = { scope:recipient = scope:actor }
+		scope:recipient = { is_landed = yes }
+		scope:actor = {
+			agot_has_three_daughters_trigger = yes
+			has_realm_law = free_city_election_succession_law
+			government_has_flag = government_is_free_city
+			NOT = {
+				is_at_war_with = scope:recipient
+			}
+		}
+		NOT = { scope:actor.primary_title = { any_in_list = { variable = approved_war_targets this = scope:recipient } } }
+		trigger_if = {
+			limit = {
+				exists = global_var:three_daughters_confederation
+			}
+			NOT = {
+				scope:recipient = {
+					is_member_of_confederation = global_var:three_daughters_confederation
+				}
+			}
+		}
+		scope:actor = { is_human = yes }
+		scope:recipient = { is_human = yes }
+		NOT = {
+			AND = {
+				scope:actor = {
+					government_has_flag = government_is_feudal
+				}
+				scope:recipient = {
+					government_has_flag = government_is_nw
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				scope:actor = {
+					government_has_flag = government_is_nw
+				}
+				scope:recipient = {
+					government_has_flag = government_is_feudal
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { has_trait = incapable }
+			can_attack_in_hierarchy = scope:recipient
+			NOT = {
+				has_raised_armies = yes
+			}
+			NOT = {
+				is_allied_in_war = scope:recipient
+			}
+			custom_description = {
+				text = "is_not_bankrupt"
+				gold > 0
+			}
+			NOT = {
+				custom_description = {
+					text = "is_in_an_activity"
+					exists = involved_activity
+				}
+			}
+			trigger_if = {
+				limit = {
+					culture = { has_cultural_parameter = cannot_attack_allies }
+				}
+				NOT = {
+					is_allied_to = scope:recipient
+				}
+			}
+			trigger_if = {
+				limit = {
+					culture = { has_cultural_parameter = cannot_attack_truces }
+				}
+				NOT = {
+					has_truce = scope:recipient
+				}
+			}
+			is_imprisoned = no
+			trigger_if = {
+				limit = {
+					has_variable_list = subjugation_offer_under_consideration
+				}
+				custom_description = {
+					text = is_not_considering_offer_of_subjugation
+					NOT = {
+						is_target_in_variable_list = {
+							name = subjugation_offer_under_consideration
+							target = scope:recipient
+						}
+					}
+				}
+			}
+		}
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		scope:recipient = {
+			trigger_if = {
+				limit = { is_imprisoned = yes }
+				NOT = {
+					imprisoner = scope:actor
+				}
+			}
+		}
+
+		# Triarchy needs council permission
+		scope:actor = {
+			agot_has_three_daughters_trigger = yes
+			has_realm_law = free_city_election_succession_law
+		}
+		scope:actor = { government_has_flag = government_is_free_city }
+		NOT = { scope:actor.primary_title = { any_in_list = { variable = approved_war_targets this = scope:recipient } } }
+	}
+
+	on_accept = {
+		scope:actor = {
+			custom_tooltip = request_war_effect_tt
+		}
+		title:k_lys.holder = {
+			ordered_vassal_or_below = {
+				limit = {
+					is_adult = yes
+				}
+				order_by = current_military_strength
+				max = 11
+				add_to_global_variable_list = {
+					name = all_triarchy_magisters
+					target = this
+				}
+			}
+		}
+		title:k_myr.holder = {
+			ordered_vassal_or_below = {
+				limit = {
+					is_adult = yes
+				}
+				order_by = current_military_strength
+				max = 11
+				add_to_global_variable_list = {
+					name = all_triarchy_magisters
+					target = this
+				}
+			}
+		}
+		title:k_tyrosh.holder = {
+			ordered_vassal_or_below = {
+				limit = {
+					is_adult = yes
+				}
+				order_by = current_military_strength
+				max = 11
+				add_to_global_variable_list = {
+					name = all_triarchy_magisters
+					target = this
+				}
+			}
+		}
+		every_in_global_list = {
+			variable = all_triarchy_magisters
+			limit = { is_ai = no }
+			trigger_event = free_city_events.0005
+		}
+		scope:actor = {
+			trigger_event = { id = free_city_events.0006 days = 1 }
+		}
+	}
+
+	auto_accept = yes
+}

@@ -1,0 +1,17 @@
+﻿has_maester = {
+	scope = character
+	is_shown = {
+		culture = {
+			has_innovation = innovation_maesters
+		}
+	}
+}
+
+has_court_physician = {
+	scope = character
+	is_shown = {
+		culture = {
+			NOT = { has_innovation = innovation_maesters }
+		}
+	}
+}

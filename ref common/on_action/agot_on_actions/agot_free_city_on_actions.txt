@@ -1,0 +1,38 @@
+﻿free_city_term_empire = { # Triggers every ten years to elect a new First Magister
+	effect = {
+		every_empire = { # By doing this every empire, kingdom, duchy, county, I get every title in the game which could possible have the law
+			limit = {
+				exists = holder
+				holder = { has_realm_law = free_city_election_succession_law }
+			}
+			check_for_free_city_election = yes # Scripted effect in common/scripted_effects/agot_free_city_effects.txt
+		}
+	}
+	on_actions = {
+		delay = { years = 1 } # Triggers the next one in ten years
+		free_city_term_empire
+	}
+}
+
+free_city_term_kingdom = { # Triggers every ten years to elect a new First Magister
+	effect = {
+		every_kingdom = {
+			limit = {
+				exists = holder
+				holder = { has_realm_law = free_city_election_succession_law }
+			}
+			check_for_free_city_election = yes
+		}
+	}
+	on_actions = {
+		delay = { years = 1 } # Triggers the next one in ten years
+		free_city_term_kingdom
+	}
+}
+
+on_game_start = { # Initial term end
+	on_actions = {
+		free_city_term_empire
+		free_city_term_kingdom
+	}
+}

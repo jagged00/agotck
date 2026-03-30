@@ -1,0 +1,90 @@
+﻿agot_end_targexile_story_decision = {
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_herbs.dds"
+	}
+
+	desc = agot_end_targexile_story_decision_desc
+
+	selection_tooltip = agot_end_targexile_story_decision_tooltip
+
+	is_shown = {
+		has_targaryen_exile_story = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+	}
+	effect = {
+		custom_tooltip = agot_end_targexile_story_end_effect_tt
+		hidden_effect = {
+			random_owned_story = {
+				limit = {
+					story_type = story_agot_targaryen_exile_invasion
+				}
+				end_story = yes
+			}
+		}
+	}
+
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+agot_faegon_reclaim_identity = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = major
+	desc = agot_faegon_reclaim_identity_desc
+	selection_tooltip = reveal_identity_decision_tooltip
+	is_shown = {
+		has_variable = faegon_can_reclaim_identity
+	}
+	is_valid = {
+		is_landed_or_landless_administrative = yes
+		trigger_if = {
+			limit = {
+				capital_province = {
+					geographical_region = world_westeros_seven_kingdoms
+				}
+			}
+			highest_held_title_tier = tier_hegemony
+		}
+		trigger_else = {
+			prestige_level >= 4
+		}
+	}
+	effect = {
+		custom_tooltip = agot_faegon_reclaim_identity_effect_tt
+		hidden_effect = {
+			faegon_has_taken_throne_or_become_king_effect = yes
+		}
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 36
+		duchy = 36
+		kingdom = 36
+		empire = 36
+		hegemony = 36
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+}

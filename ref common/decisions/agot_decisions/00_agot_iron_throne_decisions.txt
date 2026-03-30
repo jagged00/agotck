@@ -1,0 +1,452 @@
+﻿agot_proclaim_iron_throne = {
+	picture = {
+		reference = "gfx/interface/illustrations/event_scenes/ironthrone/throneroom_ironthrone.dds"
+	}
+	decision_group_type = major
+	desc = agot_proclaim_iron_throne_desc
+	ai_goal = yes
+	ai_potential = { always = yes }
+	ai_will_do = { base = 10000 }
+
+	is_shown = {
+		is_independent_ruler = yes
+		primary_title.tier >= tier_kingdom
+		OR = {
+			has_title = title:e_the_crownlands
+			has_title = title:e_the_north
+			has_title = title:e_the_riverlands
+			has_title = title:e_the_iron_islands
+			has_title = title:e_the_vale
+			has_title = title:e_the_westerlands
+			has_title = title:e_the_reach
+			has_title = title:e_the_stormlands
+			has_title = title:e_dorne
+			primary_title.title_capital_county = {
+				title_province = {
+					geographical_region = world_westeros_seven_kingdoms
+				}
+			}
+		}
+		NOT = { exists = title:h_the_iron_throne.holder }
+		NOT = { government_has_flag = government_is_nw }
+	}
+
+	is_valid = {
+		custom_description = {
+			text = agot_proclaim_it
+			any_empire = {
+				title_capital_county.title_province = { geographical_region = world_westeros_seven_kingdoms }
+				save_temporary_scope_as = de_jure_empire
+				root = { completely_controls = scope:de_jure_empire }
+				is_titular = no
+				count >= 5
+			}
+		}
+		has_title = title:d_kings_landing
+		has_title = title:c_kings_landing
+		is_imprisoned = no
+		agot_is_independent_ruler = yes
+	}
+
+	effect = {
+		hidden_effect = {
+			title:e_targaryen_it_title = {
+				if = {
+					limit = {
+						NOT = {
+							has_global_variable = pk_iron_throne_historic_copy
+						}
+					}
+				}
+				copy_title_history = title:h_the_iron_throne
+				set_coa = dynn_Targaryen
+				set_global_variable = pk_iron_throne_historic_copy
+			}
+		}
+		title:h_the_iron_throne = {
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change_it
+				add_claim_on_loss = no
+			}
+			change_title_holder = {
+				holder = root
+				change = scope:change_it
+			}
+			resolve_title_and_vassal_change = scope:change_it
+			hidden_effect = {
+				copy_title_history = root.primary_title
+			}
+		}
+		every_empire = {
+			limit = {
+				any_de_jure_county = {
+					title_province = {
+						geographical_region = world_westeros_seven_kingdoms
+						NOT = { geographical_region = world_westeros_the_wall }
+					}
+				}
+			}
+			set_de_jure_liege_title = title:h_the_iron_throne
+		}
+		add_prestige = 7000
+		dynasty = { add_dynasty_prestige = 3500 }
+		add_legitimacy = 2100 #Max Legitimacy
+		add_dread = 100
+		add_tyranny = -35
+		gain_legitimizing_legend_seed_tooltip_effect = yes
+		give_nickname = nick_the_conqueror
+		agot_create_fake_iron_throne_effect = { OWNER = this }
+		change_government = lp_feudal_government
+		hidden_effect = {
+			legend_seed_great_deed_dynasty_effect = yes
+			every_vassal_or_below = {
+				limit = {
+					agot_is_valid_lp_feudal_government_target = yes
+				}
+				change_government = lp_feudal_government
+			}
+		}
+		spawn_army = {
+			name = iron_throne_decision_troops
+			men_at_arms = {
+				type = westerosi_sellswords
+				men = 100
+			}
+			men_at_arms = {
+				type = barrow_knights #replace these with a riverlands cav MAA if they ever get one
+				men = 100
+			}
+			men_at_arms = {
+				type = winged_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = summer_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = storm_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = westerlands_knights
+				men = 100
+			}
+			men_at_arms = {
+				type = sand_steeds
+				men = 100
+			}
+			inheritable = no
+			location = title:d_kings_landing.holder.capital_province
+			origin = title:d_kings_landing.holder.capital_province
+		}
+
+		hidden_effect = {
+			scope:fake_artifact = {
+				add_durability = -1000
+			}
+		}
+
+		if = {
+			limit = {
+				title:k_the_most_devout.holder ?= {
+					is_independent_ruler = yes
+					faith = root.faith
+				}
+			}
+			title:k_the_most_devout.holder ?= { agot_assign_high_septon_effect = yes }
+		}
+
+		save_scope_as = i_am_the_king
+		every_player = {
+			limit = { NOT = { this = scope:i_am_the_king } }
+			trigger_event = {
+				id = agot_proclaim.0001
+			}
+		}
+	}
+
+	cost = { gold = 7000 }
+}
+
+set_capital_kingslanding_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	}
+
+	desc = set_capital_kingslanding_decision_desc
+	selection_tooltip = set_capital_kingslanding_decision_tooltip
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 12
+		hegemony = 12
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		has_title = title:h_the_iron_throne
+		NOT = {
+			capital_county = {
+				this = title:c_kings_landing
+			}
+			title:b_hookmarket.title_province = {
+				has_holding_type = ruin_holding
+			}
+		}
+		OR = {
+			title:c_kings_landing.holder = {
+				any_liege_or_above = { this = root }
+			}
+			title:c_kings_landing.holder = { this = root }
+		}
+	}
+
+	effect = {
+		if = { #Usurp if not held personally.
+			limit = {
+				NOT = { title:c_kings_landing.holder = { this = root } }
+			}
+			title:c_kings_landing.holder = { save_scope_as = target_for_denunciation }
+			create_title_and_vassal_change = {
+				type = returned
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			title:c_kings_landing = {
+				change_title_holder = {
+					holder = root
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+
+		}
+		if = { #Usurp if not held personally.
+			limit = {
+				exists = title:d_kings_landing.holder
+				NOT = { title:d_kings_landing.holder = { this = root } }
+			}
+			title:d_kings_landing.holder = { save_scope_as = target_for_denunciation }
+			create_title_and_vassal_change = {
+				type = returned
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			title:d_kings_landing = {
+				change_title_holder = {
+					holder = root
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+
+		}
+		set_realm_capital = title:c_kings_landing
+		if = {
+			limit = {
+				exists = scope:target_for_denunciation
+			}
+			scope:target_for_denunciation = {
+				trigger_event = {
+					id = agot_events_generic.0030
+				}
+			}
+		}
+	}
+	ai_potential = {
+		primary_title.tier = tier_hegemony
+		has_title = title:h_the_iron_throne
+	}
+
+	ai_will_do = { #Do it always, for coherence.
+		base = 100
+		modifier = {
+			title:c_kings_landing.holder = {
+				any_realm_county = {
+					count < 2
+					holder = title:c_kings_landing.holder
+				}
+			}
+			factor = 0
+		}
+	}
+}
+
+build_dune_road_decision = {
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 60
+		hegemony = 60
+	}
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	desc = build_dune_road_decision_desc
+
+	cost = {
+		gold = 1000
+	}
+
+	is_shown = {
+		has_title = title:h_the_iron_throne
+		NOT = {
+			title:c_sunspear = {
+				has_county_modifier = agot_dune_road_modifier
+			}
+		}
+		any_vassal_or_below = {
+			has_title = title:e_dorne
+		}
+		any_vassal_or_below = {
+			has_title = title:e_the_stormlands
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		has_trait = diligent
+		NOT = { has_trait = greedy }
+		OR = {
+			stewardship >= 16
+			cp:councillor_steward.stewardship >= 16
+		}
+		is_at_war = no
+	}
+
+	effect = {
+		every_vassal_or_below = {
+			trigger_event = {
+				id = agot_minor_decisions_events.0003
+				days = 1
+			}
+		}
+		title:c_sunspear = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_plankytown = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_stinkwater = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_sevensdunes = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_godsgrace = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_nerandyn = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_the_bramble = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_the_scourge = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_wayguard = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_yronwood = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_blackvein = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_fangside = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_wyl = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_blackhaven = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_riskmarch = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_swellcrest = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_stonehelm = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_grinsdale = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_griffin_river = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_griffins_roost = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_highwind = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+		title:c_storms_end = {
+			add_county_modifier = {
+				modifier = agot_dune_road_modifier
+			}
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 10
+	}
+}

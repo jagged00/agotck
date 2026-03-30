@@ -1,0 +1,61 @@
+#######################################################
+################# AGOT FAITH WINDOW ###################
+#######################################################
+
+types FaithWindow
+{
+	type agot_faith_doctrine_insert = fixedgridbox
+	{
+		datamodel = "[FaithWindow.GetGroupingHelper( 'special' ).GetGrouping]"
+		flipdirection = yes
+		addcolumn = 230
+		addrow = 65
+		datamodel_wrap = 3
+
+		item = {
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				visible = "[FaithDoctrine.IsVisible]"
+
+				margin = { 17 0 }
+				margin_top = 12
+				margin_bottom = 13
+
+				datacontext = "[GuiFaithDoctrineItem.GetDoctrine]"
+				datacontext = "[GuiFaithDoctrineItem.GetFaith]"
+
+				text = "[FaithDoctrine.GetNameNoTooltip( GuiFaithDoctrineItem.GetFaith )]"
+				tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+
+				align = nobaseline
+
+				using = tooltip_es
+
+				background = {
+					using = Background_Area
+				}
+			}
+		}
+	}
+}
+
+template agot_faith_window_state_changes
+{
+	state = {
+		name = "patron_dismiss"
+		next = _show
+
+		on_start = "[GetVariableSystem.Set( 'faith_view_tabs', 'beliefs' )]"
+		trigger_when = "[And( GetVariableSystem.HasValue( 'faith_view_tabs', 'patron' ), Not(GetScriptedGui('religion_has_patron_gods').IsShown(GuiScope.SetRoot(FaithWindow.GetFaith.MakeScope).End)))]"
+		on_finish = "[GetScriptedGui('clear_patron_god_list').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+	}
+	state = {
+		name = "faith_change"
+		next = _show
+
+		on_start = "[GetScriptedGui('clear_patron_god_list').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		trigger_when = "[Not(ObjectsEqual( GetPlayer.MakeScope.Var('selected_faith').Faith, Faith.Self ))]"
+		on_finish = "[GetScriptedGui('faith_switch_effect').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('faith', FaithWindow.GetFaith.MakeScope).End)]"
+		on_finish = "[GetScriptedGui('get_patron_god_list').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('faith', FaithWindow.GetFaith.MakeScope).End)]"
+	}
+}

@@ -1,0 +1,11 @@
+﻿agot_realm_three_daughters_enabled = {
+	NOT = { has_game_rule = agot_essos_disabled }
+}
+
+agot_realm_pentos_enabled = {
+	NOT = { has_game_rule = agot_essos_disabled }
+}
+
+agot_realm_braavos_enabled = {
+	NOT = { has_game_rule = agot_essos_disabled }
+}
