@@ -122,6 +122,39 @@ Copied GUI + activity + lore support files:
 - `common/nicknames/00_agot_dragon_nicknames.txt`
 - `localization/english/agot/agot_nicknames_dragons_l_english.yml`
 
+### Batch 8 (completed in this continuation)
+Copied French dragon event-localization replace set:
+- `localization/replace/french/agot/event_localization/activities/agot_dragon_hatching_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_choose_dragonpit_events_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_bond_events_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_combat_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_debug_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_designer_events_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_dreams_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_maintenance_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_personality_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_pits_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_siege_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_slaying_events_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_taming_events_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragon_warfare_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragonkeepers_l_french.yml`
+- `localization/replace/french/agot/event_localization/agot_dragonstone_l_french.yml`
+- `localization/replace/french/agot/event_localization/filler_events/agot_filler_events_dragon_l_french.yml`
+- `localization/replace/french/agot/event_localization/travel_events/agot_travel_events_dragon_l_french.yml`
+
+## 3) High-Value Next Batch Targets
+
+Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
+
+### Common systems
+### Remaining localization targets (large remainder)
+- `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
+- `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
+- remaining `localization/replace/french/agot/*dragon*` outside event_localization (core files, names, gui, interactions, modifiers, decisions)
+- all remaining `localization/simp_chinese/agot/*dragon*`
+- all remaining `localization/replace/simp_chinese/agot/names/*dragon*`
 ## 3) High-Value Next Batch Targets
 
 Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
