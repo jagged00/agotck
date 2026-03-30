@@ -124,23 +124,11 @@
 	on_accept = {
 		hidden_effect = {
 			scope:actor = {
-				save_scope_as = tamer
-				scope:recipient = { save_scope_as = dragon }
-				if = {
-					limit = {
-						NOT = { has_relation_agot_dragon = scope:recipient }
-					}
-					trigger_event = {
-						id = dragon_taming_events.0100	# Handler for unbonded dragons
-					}
+				random_held_county = {
+					limit = { agot_title_is_an_active_dragonpit = yes }
+					save_scope_as = dp_county
 				}
-				else = {
-					trigger_event = {
-						id = dragon_taming_events.0200 # Handler for bonded dragons
-					}
-				}
-				debug_log = "AI Tried to Tame Dragon"
-				debug_log_scopes = yes
+				trigger_event = agot_dragon_pits.3001
 			}
 		}
 		scope:actor = {
@@ -239,17 +227,11 @@ bond_with_dragon_interaction = {
 	on_accept = {
 		hidden_effect = {
 			scope:actor = {
-				send_interface_toast = {
-					title = bond_dragon_notification
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					start_scheme = {
-						type = bond_with_dragon_scheme
-						target_character = scope:recipient
-					}
+				random_held_county = {
+					limit = { agot_title_is_an_active_dragonpit = yes }
+					save_scope_as = dp_county
 				}
-				debug_log = "AI Started Bond Scheme"
-				debug_log_scopes = yes
+				trigger_event = agot_dragon_pits.3001
 			}
 		}
 	}
@@ -296,15 +278,11 @@ deepen_bond_with_dragon_interaction = {
 	on_accept = {
 		hidden_effect = {
 			scope:actor = {
-				send_interface_toast = {
-					title = deepen_bond_dragon_notification
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					start_scheme = {
-						type = deepen_bond_with_dragon_scheme
-						target_character = scope:recipient
-					}
+				random_held_county = {
+					limit = { agot_title_is_an_active_dragonpit = yes }
+					save_scope_as = dp_county
 				}
+				trigger_event = agot_dragon_pits.3001
 			}
 		}
 	}
@@ -392,15 +370,7 @@ visit_dragonpit_with_child_interaction = {
 		scope:actor = {
 			is_adult = yes
 			is_ai = no
-			OR = {
-				agot_has_an_active_dragonpit = yes
-				AND = {
-					title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
-					title:c_dragonstone.holder ?= {
-						house ?= scope:actor.house
-					}
-				}
-			}
+			agot_has_an_active_dragonpit = yes
 		}
 		scope:recipient = {
 			is_human = yes
@@ -436,39 +406,18 @@ visit_dragonpit_with_child_interaction = {
 				agot_has_dragonblood_heritage = yes
 			}
 		}
-		OR = {
-			scope:actor = {
-				any_courtier = {
-					has_character_flag = in_dragonpit
-					has_trait = dragon
-					NOT = {
-						any_relation = {
-							type = agot_dragon
-						}
-					}
-					save_temporary_scope_as = dragon
-					agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
-						DRAGON = scope:dragon ACTOR = scope:recipient
+		scope:actor = {
+			any_courtier = {
+				has_character_flag = in_dragonpit
+				has_trait = dragon
+				NOT = {
+					any_relation = {
+						type = agot_dragon
 					}
 				}
-			}
-			AND = {
-				title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
-				title:c_dragonstone.holder ?= {
-					house ?= scope:actor.house
-					any_courtier = {
-						has_character_flag = in_dragonpit
-						has_trait = dragon
-						NOT = {
-							any_relation = {
-								type = agot_dragon
-							}
-						}
-						save_temporary_scope_as = dragon
-						agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
-							DRAGON = scope:dragon ACTOR = scope:recipient
-						}
-					}
+				save_temporary_scope_as = dragon
+				agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
+					DRAGON = scope:dragon ACTOR = scope:recipient
 				}
 			}
 		}
@@ -478,76 +427,11 @@ visit_dragonpit_with_child_interaction = {
 	on_accept = {
 		hidden_effect = {
 			scope:actor = {
-				if = {
-					limit = {
-						NOT = { title:c_dragonstone.holder ?= scope:actor }
-						scope:actor = {
-							any_courtier = {
-								has_character_flag = in_dragonpit
-								has_trait = dragon
-								NOT = {
-									any_relation = {
-										type = agot_dragon
-									}
-								}
-								save_temporary_scope_as = dragon
-								agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
-									DRAGON = scope:dragon ACTOR = scope:recipient
-								}
-							}
-						}
-						AND = {
-							title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
-							title:c_dragonstone.holder ?= {
-								house ?= scope:actor.house
-								any_courtier = {
-									has_character_flag = in_dragonpit
-									has_trait = dragon
-									NOT = {
-										any_relation = {
-											type = agot_dragon
-										}
-									}
-									save_temporary_scope_as = dragon
-									agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
-										DRAGON = scope:dragon ACTOR = scope:recipient
-									}
-								}
-							}
-						}
-					}
-					trigger_event = agot_dragon_pits.3000
+				random_held_county = {
+					limit = { agot_title_is_an_active_dragonpit = yes }
+					save_scope_as = dp_county
 				}
-				else_if = {
-					limit = {
-						title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
-						title:c_dragonstone.holder ?= {
-							house ?= scope:actor.house
-							any_courtier = {
-								has_character_flag = in_dragonpit
-								has_trait = dragon
-								NOT = {
-									any_relation = {
-										type = agot_dragon
-									}
-								}
-								save_temporary_scope_as = dragon
-								agot_can_tame_or_bond_or_etc_with_pitted_dragons = {
-									DRAGON = scope:dragon ACTOR = scope:recipient
-								}
-							}
-						}
-					}
-					title:c_dragonstone ?= { save_scope_as = dp_county }
-					trigger_event = agot_dragon_pits.3001
-				}
-				else = {
-					random_held_county = {
-						limit = { agot_title_is_an_active_dragonpit = yes }
-						save_scope_as = dp_county
-					}
-					trigger_event = agot_dragon_pits.3001
-				}
+				trigger_event = agot_dragon_pits.3001
 			}
 		}
 		scope:recipient = {
