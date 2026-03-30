@@ -19,7 +19,6 @@
 			}
 		}
 
-		agot_mw_war_valid_during_megawar = yes
 
 	}
 	target_titles = all
@@ -341,7 +340,6 @@ dragon_duchy_conquest_cb = {
 			}
 		}
 
-		agot_mw_war_valid_during_megawar = yes
 	}
 	target_titles = all
 	target_title_tier = duchy
@@ -707,7 +705,6 @@ dragon_ducal_conquest_cb = {
 
 	allowed_against_character = {
 
-		agot_mw_war_valid_during_megawar = yes
 	}
 	target_titles = neighbor_land
 	target_title_tier = all
@@ -1074,7 +1071,6 @@ dragon_kingdom_conquest_cb = {
 			}
 		}
 
-		agot_mw_war_valid_during_megawar = yes
 	}
 	target_titles = all
 	target_title_tier = kingdom
@@ -1636,22 +1632,15 @@ dragon_subjugation_cb = {
 	}
 
 	allowed_for_character_display_regardless = {
-		trigger_if = {
-			limit = {
-				NOT = {
-					dynasty ?= { has_dynasty_perk = dragonrider_dynasty_legacy_5 }
-				}
-			}
-			custom_description = {
-				text = declared_draconic_subjugation_war_flag_tt
-				NOT = { has_character_flag = used_draconic_subjugation_cb }
-			}
+		custom_description = {
+			text = declared_draconic_subjugation_war_flag_tt
+			NOT = { has_character_flag = used_draconic_subjugation_cb }
 		}
 	}
 
 	allowed_against_character = {
 		scope:defender = {
-			agot_is_independent_ruler = yes
+			is_independent_ruler = yes
 			trigger_if = {
 				limit = { scope:attacker = { is_ai = no } } # Already pre-filtered by the AI due to ai_only_against_neighbors = yes. any_neighboring_top_liege_realm_owner is expensive
 				scope:attacker = {
@@ -1670,7 +1659,6 @@ dragon_subjugation_cb = {
 		}
 
 
-		agot_mw_war_valid_during_megawar = yes
 	}
 
 	valid_to_start = {
@@ -1714,7 +1702,7 @@ dragon_subjugation_cb = {
 			}
 
 			scope:defender = {
-				agot_is_independent_ruler = no
+				is_independent_ruler = no
 			}
 		}
 	}
@@ -1780,14 +1768,7 @@ dragon_subjugation_cb = {
 			}
 		}
 		triggered_desc = {
-			trigger = {
-				scope:attacker = {
-					is_local_player = yes
-					NOT = {
-						dynasty ?= { has_dynasty_perk = dragonrider_dynasty_legacy_5 }
-					}
-				}
-			}
+			trigger = { scope:attacker = { is_local_player = yes } }
 			desc = declared_draconic_subjugation_war_flag_tt
 		}
 	}
