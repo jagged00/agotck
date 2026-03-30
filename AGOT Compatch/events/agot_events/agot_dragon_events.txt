@@ -2724,11 +2724,11 @@ agot_dragon.0021 = { # Killing myself with dragon - success
 
 	option = {
 		name = {
-			trigger = { knows_language = language_agot_valyrian }
+			trigger = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 			text = agot_dragon.0021.a.valyrian
 		}
 		name = {
-			trigger = { NOT = { knows_language = language_agot_valyrian } }
+			trigger = { NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 			text = agot_dragon.0021.a
 		}
 	}
@@ -2921,13 +2921,13 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 	option = {
 		name = {
 			trigger = {
-				knows_language = language_agot_valyrian
+				agot_can_use_valyrian_dragon_commands_trigger = yes
 			}
 			text = agot_dragon.0023.a.valyrian
 		}
 		name = {
 			trigger = {
-				NOT = { knows_language = language_agot_valyrian }
+				NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 			}
 			text = agot_dragon.0023.a
 		}
@@ -3301,7 +3301,7 @@ agot_dragon.0040 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:child = { knows_language = language_agot_valyrian }
+					scope:child = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 				}
 				desc = agot_dragon.0040.desc.fire_valyrian
 			}

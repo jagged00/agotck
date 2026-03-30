@@ -419,7 +419,10 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	if = {
 		limit = {
 			scope:dragon_taming_modifier_tamer = {
-				knows_language_of_culture = scope:dragon_taming_modifier_dragon.culture
+				OR = {
+					knows_language_of_culture = scope:dragon_taming_modifier_dragon.culture
+					has_trait = agot_dragon_blooded
+				}
 			}
 		}
 		add = dragon_scheme_base_common_language_value

@@ -59,7 +59,7 @@ dragon_taming_events.0101 = { # Tame unbonded dragon event
 				first_valid = {
 					triggered_desc = {
 						trigger = {
-							knows_language = language_agot_valyrian
+							agot_can_use_valyrian_dragon_commands_trigger = yes
 						}
 						desc = dragon_taming_events.0101.a.valyrian
 					}
@@ -200,7 +200,7 @@ dragon_taming_events.0201 = { # Tame bonded dragon event
 			desc = dragon_taming_events.0201.vaeron
 			triggered_desc = {
 				trigger = {
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				desc = dragon_taming_events.0201.llama
 			}

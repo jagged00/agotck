@@ -764,11 +764,11 @@ agot_travel_events_dragon.0008 = {
 
 	option = { # Something - Engage - Get it!
 		name = {
-			trigger = { knows_language = language_agot_valyrian }
+			trigger = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 			text = agot_travel_events_dragon.0008.a.valyrian
 		}
 		name = {
-			trigger = { NOT = { knows_language = language_agot_valyrian } }
+			trigger = { NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 			text = agot_travel_events_dragon.0008.a
 		}
 

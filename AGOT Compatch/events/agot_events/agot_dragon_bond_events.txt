@@ -1516,7 +1516,7 @@ dragon_bond_events.3015 = {
 			NOT = { has_variable = had_singing_event }
 		}
 		NOT = { has_trait = mute }
-		knows_language = language_agot_valyrian
+		agot_can_use_valyrian_dragon_commands_trigger = yes
 	}
 	immediate = {
 		scope:scheme = {
@@ -1670,7 +1670,7 @@ dragon_bond_events.3018 = {
 			NOT = { has_variable = had_speaking_event }
 		}
 		NOT = { has_trait = mute }
-		knows_language = language_agot_valyrian
+		agot_can_use_valyrian_dragon_commands_trigger = yes
 	}
 	immediate = {
 		scope:scheme = {
@@ -1694,7 +1694,7 @@ dragon_bond_events.3018 = {
 				}
 				modifier = {
 					add = 25
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
 					scope:scheme = {
@@ -1718,7 +1718,7 @@ dragon_bond_events.3018 = {
 				}
 				modifier = {
 					add = -50
-					NOT = { knows_language = language_agot_valyrian }
+					NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 				}
 				show_as_tooltip = {
 					scope:scheme = {
@@ -1853,7 +1853,7 @@ dragon_bond_events.3021 = {
 				}
 				modifier = {
 					add = 5
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
 					scope:scheme = {
@@ -2005,7 +2005,7 @@ dragon_bond_events.3024 = {
 				}
 				modifier = {
 					add = 5
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 				show_as_tooltip = {
 					scope:scheme = {
@@ -2463,7 +2463,7 @@ dragon_bond_events.3030 = { # The Dragon awakens
 
 		if = {
 			limit = {
-				knows_language = language_agot_valyrian
+				agot_can_use_valyrian_dragon_commands_trigger = yes
 			}
 			scope:scheme = {
 				add_scheme_modifier = {

@@ -121,7 +121,7 @@ agot_dragon_warfare.0003 = { # Commander event
 			desc = agot_dragon_warfare.0003.ending2
 			desc = agot_dragon_warfare.0003.ending3
 			triggered_desc = { # Valyrian language rare ending
-				trigger = { scope:dragonrider_in_battle = { knows_language = language_agot_valyrian } }
+				trigger = { scope:dragonrider_in_battle = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 				desc = agot_dragon_warfare.0003.ending4
 			}
 		}
@@ -304,11 +304,11 @@ agot_dragon_warfare.0005 = { # Rider event
 
 	option = {
 		name = {
-			trigger = { knows_language = language_agot_valyrian }
+			trigger = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 			text = agot_dragon_warfare.0005.a.valyrian
 		}
 		name = {
-			trigger = { NOT = { knows_language = language_agot_valyrian } }
+			trigger = { NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 			text = agot_dragon_warfare.0005.a
 		}
 		flavor = {
@@ -878,11 +878,11 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 
 	option = {
 		name = {
-			trigger = { knows_language = language_agot_valyrian }
+			trigger = { agot_can_use_valyrian_dragon_commands_trigger = yes }
 			text = agot_dragon_warfare.0012.a.valyrian
 		}
 		name = {
-			trigger = { NOT = { knows_language = language_agot_valyrian } }
+			trigger = { NOT = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 			text = agot_dragon_warfare.0012.a
 		}
 		flavor = agot_dragon_warfare.you_have_caused_buff

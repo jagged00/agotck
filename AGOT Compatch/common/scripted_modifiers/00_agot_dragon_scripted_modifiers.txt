@@ -174,7 +174,10 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	modifier = {
 		add = dragon_scheme_base_common_language_value
 		desc = YOU_SPEAK_THE_LANGUAGE
-		scope:owner = { knows_language_of_culture = scope:target.culture }
+		scope:owner = { OR = {
+			knows_language_of_culture = scope:target.culture
+			has_trait = agot_dragon_blooded
+		} }
 	}
 	# Traits in common
 	modifier = {
