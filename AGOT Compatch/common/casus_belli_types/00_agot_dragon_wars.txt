@@ -2011,7 +2011,7 @@ dragon_subjugation_cb = {
 						# If election laws, get rid of them - dragons don't respect democracy
 						if = {
 							limit = {
-								scope:defender = { government_has_flag = government_is_free_city }
+								scope:defender = { government_has_flag = government_is_republic }
 							}
 							add_to_list = main_titles
 						}
@@ -2060,7 +2060,7 @@ dragon_subjugation_cb = {
 
 		if = {
 			limit = {
-				scope:attacker = { government_has_flag = government_is_free_city }
+				scope:attacker = { government_has_flag = government_is_republic }
 			}
 			every_in_list = {
 				list = main_titles
