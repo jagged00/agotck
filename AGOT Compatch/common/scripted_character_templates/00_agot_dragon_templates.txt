@@ -461,8 +461,9 @@ agot_head_dragonkeeper_grand_funding_template = {
 		#add_character_flag = highest_fund
 		if = {
 			limit = {
+				has_trait = agot_dragon_blooded
 				NOT = {
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 			}
 			learn_language = language_agot_valyrian
@@ -509,8 +510,9 @@ agot_head_dragonkeeper_high_funding_template = {
 		#add_character_flag = high_fund
 		if = {
 			limit = {
+				has_trait = agot_dragon_blooded
 				NOT = {
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 			}
 			learn_language = language_agot_valyrian
@@ -558,8 +560,9 @@ agot_head_dragonkeeper_med_funding_template = {
 		#add_character_flag = med_fund
 		if = {
 			limit = {
+				has_trait = agot_dragon_blooded
 				NOT = {
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 			}
 			learn_language = language_agot_valyrian
@@ -596,8 +599,9 @@ agot_head_dragonkeeper_low_funding_template = {
 		#add_character_flag = low_fund
 		if = {
 			limit = {
+				has_trait = agot_dragon_blooded
 				NOT = {
-					knows_language = language_agot_valyrian
+					agot_can_use_valyrian_dragon_commands_trigger = yes
 				}
 			}
 			learn_language = language_agot_valyrian
@@ -644,7 +648,7 @@ agot_local_dragonseed_template = {
 	after_creation = {
 		if = {
 			limit = {
-				culture = culture:high_valyrian
+				agot_has_valyrian_blood_fallback_trigger = yes
 			}
 			if = {
 				limit = {
@@ -674,7 +678,7 @@ agot_valyrian_dragonseed_template = {
 	gender_female_chance = 50
 	dynasty = none
 	faith = faith:valyrian_pan_freehold
-	culture = culture:high_valyrian
+	culture = root.capital_county.culture
 	random_traits_list = {
 		count = 1
 		brave = {}
@@ -691,7 +695,7 @@ agot_valyrian_dragonseed_template = {
 				}
 			}
 			set_culture = culture:westerosi_valyrian
-			set_character_faith = title:c_dragonstone.holder.faith
+			set_character_faith = root.capital_county.faith
 		}
 		else = {
 			set_culture = culture:essosi_valyrian
@@ -736,7 +740,7 @@ agot_scaly_dragonseed_template = {
 		add_character_flag = is_scaly_allard
 		if = {
 			limit = {
-				culture = culture:high_valyrian
+				agot_has_valyrian_blood_fallback_trigger = yes
 			}
 			if = {
 				limit = {

@@ -1,0 +1,27 @@
+high_valyrian = {
+	color = { 0.71 0.37 0.60 }
+
+	ethos = ethos_courtly
+	heritage = heritage_valyrian
+	language = language_agot_valyrian
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+
+	traditions = {
+		tradition_chivalry
+	}
+
+	name_list = name_list_english
+
+	coa_gfx = { western_coa_gfx }
+	building_gfx = { western_building_gfx }
+	clothing_gfx = { western_clothing_gfx }
+	unit_gfx = { western_unit_gfx }
+
+	ethnicities = {
+		10 = caucasian_blond
+	}
+
+	# Keep out of normal play; present only as a safe script reference target
+	created = 9999.1.1
+}

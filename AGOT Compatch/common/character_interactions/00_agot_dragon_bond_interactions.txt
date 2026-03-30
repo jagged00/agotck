@@ -395,8 +395,8 @@ visit_dragonpit_with_child_interaction = {
 			OR = {
 				agot_has_an_active_dragonpit = yes
 				AND = {
-					title:c_dragonstone = { has_variable = has_dragonkeeper_order }
-					title:c_dragonstone.holder = {
+					title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
+					title:c_dragonstone.holder ?= {
 						house ?= scope:actor.house
 					}
 				}
@@ -453,8 +453,8 @@ visit_dragonpit_with_child_interaction = {
 				}
 			}
 			AND = {
-				title:c_dragonstone = { has_variable = has_dragonkeeper_order }
-				title:c_dragonstone.holder = {
+				title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
+				title:c_dragonstone.holder ?= {
 					house ?= scope:actor.house
 					any_courtier = {
 						has_character_flag = in_dragonpit
@@ -480,7 +480,7 @@ visit_dragonpit_with_child_interaction = {
 			scope:actor = {
 				if = {
 					limit = {
-						NOT = { title:c_dragonstone.holder = scope:actor }
+						NOT = { title:c_dragonstone.holder ?= scope:actor }
 						scope:actor = {
 							any_courtier = {
 								has_character_flag = in_dragonpit
@@ -497,8 +497,8 @@ visit_dragonpit_with_child_interaction = {
 							}
 						}
 						AND = {
-							title:c_dragonstone = { has_variable = has_dragonkeeper_order }
-							title:c_dragonstone.holder = {
+							title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
+							title:c_dragonstone.holder ?= {
 								house ?= scope:actor.house
 								any_courtier = {
 									has_character_flag = in_dragonpit
@@ -520,8 +520,8 @@ visit_dragonpit_with_child_interaction = {
 				}
 				else_if = {
 					limit = {
-						title:c_dragonstone = { has_variable = has_dragonkeeper_order }
-						title:c_dragonstone.holder = {
+						title:c_dragonstone ?= { has_variable = has_dragonkeeper_order }
+						title:c_dragonstone.holder ?= {
 							house ?= scope:actor.house
 							any_courtier = {
 								has_character_flag = in_dragonpit
@@ -538,7 +538,7 @@ visit_dragonpit_with_child_interaction = {
 							}
 						}
 					}
-					title:c_dragonstone = { save_scope_as = dp_county }
+					title:c_dragonstone ?= { save_scope_as = dp_county }
 					trigger_event = agot_dragon_pits.3001
 				}
 				else = {
