@@ -65,6 +65,74 @@ Copied additional dragon event systems + localization:
 - `localization/english/agot/event_localization/travel_events/agot_travel_events_dragon_l_english.yml`
 - `localization/english/agot/gui/agot_dragon_tree_l_english.yml`
 
+### Batch 5 (completed in this continuation)
+Copied dragon common-systems support files:
+- `common/script_values/00_agot_dragon_combat_values.txt`
+- `common/script_values/00_agot_dragon_dragon_size_values.txt`
+- `common/script_values/00_agot_dragon_gene_values.txt`
+- `common/script_values/00_agot_dragon_skill_values.txt`
+- `common/script_values/00_agot_dragon_tree_values.txt`
+- `common/scripted_character_templates/00_agot_dragon_templates.txt`
+- `common/scripted_effects/00_agot_artifact_dragon_skulls_effects.txt`
+- `common/scripted_effects/00_agot_dragon_animation_effects.txt`
+- `common/scripted_effects/00_agot_dragon_appearance_effects.txt`
+- `common/scripted_effects/00_agot_dragon_canon_dragons_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_moves_effects.txt`
+- `common/scripted_effects/00_agot_dragon_congenital_traits_effects.txt`
+- `common/scripted_effects/00_agot_dragon_slay_effects.txt`
+- `common/scripted_effects/00_agot_dragon_tree_effects.txt`
+- `common/scripted_effects/00_agot_dragon_warfare_effects.txt`
+- `common/scripted_effects/00_agot_dragonpit_effects.txt`
+
+### Batch 6 (completed in this continuation)
+Copied dragon supporting content for artifacts/genes/gui/scenarios:
+- `common/artifacts/types/00_agot_dragonegg_type.txt`
+- `common/artifacts/visuals/00_agot_dragon_egg_visuals.txt`
+- `common/casus_belli_types/00_agot_dragon_wars.txt`
+- `common/customizable_localization/00_agot_dragon_custom_loc.txt`
+- `common/customizable_localization/99_fr_agot_dragons_loc.txt`
+- `common/ethnicities/03_agot_dragon.txt`
+- `common/genes/dragon_accessory_genes.txt`
+- `common/genes/dragon_morph_genes.txt`
+- `common/scripted_effects/00_agot_scenario_dance_of_the_dragons_effects.txt`
+- `common/scripted_effects/00_agot_scenario_dragons_effects.txt`
+- `common/scripted_guis/00_agot_dragon_editor_scripted_gui.txt`
+- `common/scripted_guis/00_agot_dragon_tree_scripted_gui.txt`
+- `common/scripted_guis/00_agot_dragons_scripted_gui.txt`
+
+### Batch 7 (completed in this continuation)
+Copied GUI + activity + lore support files:
+- `gui/custom_gui/agot_dragon_character_window.gui`
+- `gui/custom_gui/agot_dragon_siege.gui`
+- `gui/custom_gui/agot_dragon_tree.gui`
+- `gui/event_window_widgets/agot_dragon_customizer.gui`
+- `gui/event_window_widgets/agot_dragon_egg_selection.gui`
+- `gui/event_window_widgets/agot_dragon_tree_selection.gui`
+- `gui/event_window_widgets/agot_dragonpit_selection_three_options.gui`
+- `gui/event_windows/agot_dragon_character_event.gui`
+- `gui/event_windows/agot_dragon_duel_event.gui`
+- `gui/shared/agot_dragon_event_window.gui`
+- `gui/shared/agot_dragon_portraits.gui`
+- `common/activities/activity_types/agot_dragon_hatching.txt`
+- `events/activities/agot_hatching_activity/agot_dragon_hatching_activity_events.txt`
+- `events/activities/agot_hatching_activity/agot_hatching_dragonlore_events.txt`
+- `localization/english/agot/event_localization/activities/agot_dragon_hatching_l_english.yml`
+- `common/game_concepts/00_agot_dragon_game_concepts.txt`
+- `common/nicknames/00_agot_dragon_nicknames.txt`
+- `localization/english/agot/agot_nicknames_dragons_l_english.yml`
+
+## 3) High-Value Next Batch Targets
+
+Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
+
+### Common systems
+### Remaining localization targets (large remainder)
+- `localization/replace/english/agot/names/agot_baby_dragon_names_l_english.yml`
+- `localization/replace/english/agot/names/agot_dragon_names_l_english.yml`
+- all remaining `localization/replace/french/agot/*dragon*`
+- all remaining `localization/simp_chinese/agot/*dragon*`
+- all remaining `localization/replace/simp_chinese/agot/names/*dragon*`
 ## 3) High-Value Next Batch Targets
 
 Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
