@@ -495,7 +495,7 @@ can_use_bond_with_dragon_scheme = {
 	$TARGET$ = { save_temporary_scope_as = dragon }
 	is_human = yes
 	agot_has_relationship_dragon = no
-	scope:dragon = {
+	scope:dragon ?= {
 		has_trait = dragon
 		agot_has_relationship_dragon = no
 	}
@@ -517,7 +517,7 @@ can_use_deepen_bond_with_dragon_scheme = {
 		track = dragon_bond
 		value < 100
 	}
-	scope:dragon = { has_trait = dragon }
+	scope:dragon ?= { has_trait = dragon }
 }
 
 # Since on_actions are no longer hotloadable
@@ -909,7 +909,7 @@ agot_has_dragonpit_requirements_trigger = {
 
 
 agot_can_build_or_restore_dragonpits = {
-	scope:holder = {
+	scope:holder ?= {
 		highest_held_title_tier >= tier_kingdom
 		OR = {
 			has_trait = agot_dragon_blooded
@@ -918,7 +918,7 @@ agot_can_build_or_restore_dragonpits = {
 		agot_has_dragonpit_requirements_trigger = yes
 	}
 	NOR = {
-		scope:holder = {
+		scope:holder ?= {
 			any_held_title = {
 				tier = tier_county
 				any_county_province = {
@@ -1020,31 +1020,31 @@ agot_dragonrider_opponent_selection_trigger = {
 	NOT = { has_character_flag = agot_in_dragon_duel_opening }
 	NOT = { has_variable = engaged_in_single_combat }
 	NOT = { has_variable = engaged_in_dragon_combat }
-	scope:story = {
+	scope:story ?= {
 		is_target_in_variable_list = { name = agot_dragonrider_forced_duel_list target = prev }
 	}
 	OR = {
 		is_at_war_with = scope:agot_dragonrider
 		any_liege_or_above = { is_at_war_with = scope:agot_dragonrider }
-		scope:agot_dragonrider = { any_liege_or_above = { is_at_war_with = scope:target_dragonrider } }
+		scope:agot_dragonrider ?= { any_liege_or_above = { is_at_war_with = scope:target_dragonrider } }
 	}
 	OR = {
-		scope:target_dragonrider = {
+		scope:target_dragonrider ?= {
 			OR = {
 				is_at_war_with = scope:agot_dragonrider
-				scope:agot_dragonrider = {
+				scope:agot_dragonrider ?= {
 					any_liege_or_above = {
 						is_at_war_with = scope:target_dragonrider
 					}
 				}
 			}
 		}
-		scope:target_dragonrider = {
+		scope:target_dragonrider ?= {
 			any_liege_or_above = {
 				save_temporary_scope_as = target_rider_liege
 				OR = {
 					is_at_war_with = scope:agot_dragonrider
-					scope:agot_dragonrider = {
+					scope:agot_dragonrider ?= {
 						any_liege_or_above = {
 							is_at_war_with = scope:target_rider_liege
 						}
@@ -1054,9 +1054,9 @@ agot_dragonrider_opponent_selection_trigger = {
 		}
 	}
 	NOT = { any_liege_or_above = { this = scope:agot_dragonrider } }
-	scope:agot_dragonrider = { NOT = { any_liege_or_above = { this = scope:target_dragonrider } } }
+	scope:agot_dragonrider ?= { NOT = { any_liege_or_above = { this = scope:target_dragonrider } } }
 	NOT = { any_liege_or_above = { is_allied_in_war = scope:agot_dragonrider } }
-	scope:agot_dragonrider = { NOT = { any_liege_or_above = { is_allied_in_war = scope:target_dragonrider } } }
+	scope:agot_dragonrider ?= { NOT = { any_liege_or_above = { is_allied_in_war = scope:target_dragonrider } } }
 }
 
 agot_dragon_possible_riders_trigger = {
@@ -1104,7 +1104,7 @@ agot_dragon_is_viable_siege_rider_trigger = {
 				scope:sieging_location ?= {
 					any_army_in_location = {
 						this = scope:t_rider_scope.knight_army
-						scope:t_rider_scope = { is_knight_of = prev.army_owner }
+						scope:t_rider_scope ?= { is_knight_of = prev.army_owner }
 						is_army_in_combat = no
 					}
 				}
@@ -1189,7 +1189,7 @@ agot_dragon_rider_is_bound_trigger = {
 
 agot_dragon_siege_attack_minor_trigger = {
 	NOT = { has_character_flag = agot_dragon_siege_defenders_present }
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		NOR = {
 			has_variable = dragon_siege_modifier_minor
 			has_variable = dragon_siege_modifier_medium
@@ -1201,7 +1201,7 @@ agot_dragon_siege_attack_minor_trigger = {
 
 agot_dragon_siege_attack_medium_trigger = {
 	NOT = { has_character_flag = agot_dragon_siege_defenders_present }
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		NOR = {
 			has_variable = dragon_siege_modifier_medium
 			has_variable = dragon_siege_modifier_major
@@ -1212,7 +1212,7 @@ agot_dragon_siege_attack_medium_trigger = {
 
 agot_dragon_siege_attack_major_trigger = {
 	NOT = { has_character_flag = agot_dragon_siege_defenders_present }
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		NOR = {
 			has_variable = dragon_siege_modifier_major
 			has_variable = dragon_siege_modifier_massive
@@ -1223,7 +1223,7 @@ agot_dragon_siege_attack_major_trigger = {
 
 agot_dragon_siege_attack_nuclear_trigger = {
 	NOT = { has_character_flag = agot_dragon_siege_defenders_present }
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		NOT = { has_variable = dragon_siege_modifier_massive }
 	}
 	scope:sieging_rider.var:current_dragon.dragon_combat_effectiveness >= level_eight_dragon_combat

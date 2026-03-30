@@ -443,9 +443,9 @@ agot_generate_IT_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_lowest_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:h_the_iron_throne.holder
+				culture = title:h_the_iron_throne.holder.location.culture
+				faith = title:h_the_iron_throne.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -455,9 +455,9 @@ agot_generate_IT_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_low_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:h_the_iron_throne.holder
+				culture = title:h_the_iron_throne.holder.location.culture
+				faith = title:h_the_iron_throne.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -467,9 +467,9 @@ agot_generate_IT_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_med_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:h_the_iron_throne.holder
+				culture = title:h_the_iron_throne.holder.location.culture
+				faith = title:h_the_iron_throne.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -479,9 +479,9 @@ agot_generate_IT_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_high_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:h_the_iron_throne.holder
+				culture = title:h_the_iron_throne.holder.location.culture
+				faith = title:h_the_iron_throne.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -491,9 +491,9 @@ agot_generate_IT_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_grand_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:h_the_iron_throne.holder
+				culture = title:h_the_iron_throne.holder.location.culture
+				faith = title:h_the_iron_throne.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -503,45 +503,45 @@ agot_generate_IT_head_dragonkeeper = {
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_lowest_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:h_the_iron_throne.holder
+					culture = title:h_the_iron_throne.holder.location.culture
+					faith = title:h_the_iron_throne.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_low_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:h_the_iron_throne.holder
+					culture = title:h_the_iron_throne.holder.location.culture
+					faith = title:h_the_iron_throne.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_med_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:h_the_iron_throne.holder
+					culture = title:h_the_iron_throne.holder.location.culture
+					faith = title:h_the_iron_throne.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_high_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:h_the_iron_throne.holder
+					culture = title:h_the_iron_throne.holder.location.culture
+					faith = title:h_the_iron_throne.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_grand_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:h_the_iron_throne.holder
+					culture = title:h_the_iron_throne.holder.location.culture
+					faith = title:h_the_iron_throne.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
@@ -561,9 +561,9 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_lowest_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:c_dragonstone.holder
+				culture = title:c_dragonstone.holder.location.culture
+				faith = title:c_dragonstone.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -573,9 +573,9 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_low_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:c_dragonstone.holder
+				culture = title:c_dragonstone.holder.location.culture
+				faith = title:c_dragonstone.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -585,9 +585,9 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_med_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:c_dragonstone.holder
+				culture = title:c_dragonstone.holder.location.culture
+				faith = title:c_dragonstone.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -597,9 +597,9 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_high_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:c_dragonstone.holder
+				culture = title:c_dragonstone.holder.location.culture
+				faith = title:c_dragonstone.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -609,9 +609,9 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			}
 			create_character = { # Create Head Dragonkeeper
 				template = agot_head_dragonkeeper_grand_funding_template
-				employer = root
-				culture = root.capital_province.culture
-				faith = root.capital_province.faith
+				employer = title:c_dragonstone.holder
+				culture = title:c_dragonstone.holder.location.culture
+				faith = title:c_dragonstone.holder.location.faith
 				save_scope_as = head_dragonkeeper
 			}
 		}
@@ -621,45 +621,45 @@ agot_generate_dragonstone_head_dragonkeeper = {
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_lowest_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:c_dragonstone.holder
+					culture = title:c_dragonstone.holder.location.culture
+					faith = title:c_dragonstone.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_low_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:c_dragonstone.holder
+					culture = title:c_dragonstone.holder.location.culture
+					faith = title:c_dragonstone.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_med_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:c_dragonstone.holder
+					culture = title:c_dragonstone.holder.location.culture
+					faith = title:c_dragonstone.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_high_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:c_dragonstone.holder
+					culture = title:c_dragonstone.holder.location.culture
+					faith = title:c_dragonstone.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}
 			20 = {
 				create_character = { # Create Head Dragonkeeper
 					template = agot_head_dragonkeeper_grand_funding_template
-					employer = root
-					culture = root.capital_province.culture
-					faith = root.capital_province.faith
+					employer = title:c_dragonstone.holder
+					culture = title:c_dragonstone.holder.location.culture
+					faith = title:c_dragonstone.holder.location.faith
 					save_scope_as = head_dragonkeeper
 				}
 			}

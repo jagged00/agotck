@@ -4,7 +4,7 @@ tame_dragon_interaction = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:actor = {
+					scope:actor ?= {
 						has_relation_agot_dragon = scope:recipient
 					}
 				}
@@ -20,7 +20,7 @@ tame_dragon_interaction = {
 	cooldown = { years = 1 }
 	cooldown_against_recipient = { years = 10 }
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			is_human = yes
 			NOT = { has_trait = dragonrider }
 			trigger_if = {
@@ -57,7 +57,7 @@ tame_dragon_interaction = {
 				}
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			has_trait = dragon
 			NOR = {
 				has_variable = current_rider
@@ -69,7 +69,7 @@ tame_dragon_interaction = {
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:actor = {
+		scope:actor ?= {
 			is_imprisoned = no
 			age >= 10
 			custom_tooltip = {
@@ -94,7 +94,7 @@ tame_dragon_interaction = {
 			NOT = { has_character_modifier = agot_dragon_disinterest }
 		}
 
-		scope:recipient = {
+		scope:recipient ?= {
 			has_trait = dragon
 			custom_tooltip = {
 				text = recipient_dragon_size_at_least_30
@@ -119,7 +119,7 @@ tame_dragon_interaction = {
 	}
 	on_accept = {
 		hidden_effect = {
-			scope:actor = {
+			scope:actor ?= {
 				random_held_county = {
 					limit = { agot_title_is_an_active_dragonpit = yes }
 					save_scope_as = dp_county
@@ -127,13 +127,13 @@ tame_dragon_interaction = {
 				trigger_event = agot_dragon_pits.3001
 			}
 		}
-		scope:actor = {
+		scope:actor ?= {
 			custom_tooltip = tame_dragon_interaction_tt1
 		}
 		if = {
 			limit = {
 				NOT = {
-					scope:actor = {
+					scope:actor ?= {
 						has_relation_agot_dragon = scope:recipient
 					}
 				}
@@ -153,12 +153,12 @@ bond_with_dragon_interaction = {
 	ignores_pending_interaction_block = yes
 	auto_accept = yes
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			can_use_bond_with_dragon_scheme = { TARGET = scope:recipient }
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:actor = {
+		scope:actor ?= {
 			can_start_scheme = {
 				type = bond_with_dragon_scheme
 				target_character = scope:recipient
@@ -174,7 +174,7 @@ bond_with_dragon_interaction = {
 				}
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			custom_tooltip = {
 				text = dragon_is_in_combat
 				NOT = { has_character_flag = in_dragon_combat }
@@ -196,10 +196,10 @@ bond_with_dragon_interaction = {
 		base = 0
 		modifier = {
 			OR = { # AI can do it if
-				scope:recipient = { # It is their dragon
+				scope:recipient ?= { # It is their dragon
 					is_courtier_of = scope:actor
 				}
-				scope:actor = { # Or they have a dragonrider in their family
+				scope:actor ?= { # Or they have a dragonrider in their family
 					any_close_or_extended_family_member = {
 						has_trait = dragonrider
 					}
@@ -218,7 +218,7 @@ bond_with_dragon_interaction = {
 	ai_frequency = 12
 	on_accept = {
 		hidden_effect = {
-			scope:actor = {
+			scope:actor ?= {
 				random_held_county = {
 					limit = { agot_title_is_an_active_dragonpit = yes }
 					save_scope_as = dp_county
@@ -238,12 +238,12 @@ deepen_bond_with_dragon_interaction = {
 	ignores_pending_interaction_block = yes
 	auto_accept = yes
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			can_use_deepen_bond_with_dragon_scheme = { TARGET = scope:recipient }
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:actor = {
+		scope:actor ?= {
 			can_start_scheme = {
 				type = deepen_bond_with_dragon_scheme
 				target_character = scope:recipient
@@ -269,7 +269,7 @@ deepen_bond_with_dragon_interaction = {
 	ai_frequency = 12
 	on_accept = {
 		hidden_effect = {
-			scope:actor = {
+			scope:actor ?= {
 				random_held_county = {
 					limit = { agot_title_is_an_active_dragonpit = yes }
 					save_scope_as = dp_county
@@ -291,17 +291,17 @@ blow_dragon_horn_interaction = {
 	desc = blow_dragon_horn_interaction_desc
 	cooldown = { years = 1 }
 	is_shown = {
-		scope:recipient = {
+		scope:recipient ?= {
 			has_trait = dragon
 			var:horn_binder ?= scope:actor
 		}
-		scope:actor = {
+		scope:actor ?= {
 			is_landed = yes
 		}
 	}
 
 	is_valid = {
-		scope:actor = {
+		scope:actor ?= {
 			is_imprisoned = no
 			custom_tooltip = {
 				text = must_equip_dragon_horn
@@ -339,12 +339,12 @@ blow_dragon_horn_interaction = {
 	}
 
 	on_accept = {
-		scope:actor = { save_scope_as = rider }
-		scope:recipient = {
+		scope:actor ?= { save_scope_as = rider }
+		scope:recipient ?= {
 			save_scope_as = dragon
 		}
 
-		scope:rider = { trigger_event = dragon_taming_events.0304 }
+		scope:rider ?= { trigger_event = dragon_taming_events.0304 }
 	}
 }
 
@@ -359,12 +359,12 @@ visit_dragonpit_with_child_interaction = {
 	cooldown = { years = 1 }
 	cooldown_against_recipient = { years = 2 }
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			is_adult = yes
 			is_ai = no
 			agot_has_an_active_dragonpit = yes
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			is_human = yes
 			is_ai = yes
 			age >= 10
@@ -398,7 +398,7 @@ visit_dragonpit_with_child_interaction = {
 				agot_has_dragonblood_heritage = yes
 			}
 		}
-		scope:actor = {
+		scope:actor ?= {
 			any_courtier = {
 				has_character_flag = in_dragonpit
 				has_trait = dragon
@@ -417,7 +417,7 @@ visit_dragonpit_with_child_interaction = {
 	is_valid_showing_failures_only = { always = yes }
 	on_accept = {
 		hidden_effect = {
-			scope:actor = {
+			scope:actor ?= {
 				random_held_county = {
 					limit = { agot_title_is_an_active_dragonpit = yes }
 					save_scope_as = dp_county
@@ -425,7 +425,7 @@ visit_dragonpit_with_child_interaction = {
 				trigger_event = agot_dragon_pits.3001
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			custom_tooltip = visit_dragonpit_interaction_tt
 		}
 	}

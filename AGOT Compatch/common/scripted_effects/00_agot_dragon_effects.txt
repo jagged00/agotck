@@ -1,4 +1,4 @@
-agot_apply_dragon_aging_effect = {
+﻿agot_apply_dragon_aging_effect = {
 	$DRAGON$ = {
 		save_scope_as = dragon
 		if = {
@@ -27,15 +27,11 @@ agot_apply_dragon_aging_effect = {
 				#Natural Pit check
 				if = {
 					limit = {
-						var:pitted_dragon_location ?= {
-							any_county_province = {
-								has_building = agot_dragonmont_01
-							}
-						}
+						var:pitted_dragon_location ?= title:c_dragonstone
 					}
 					# Growth is not as impinged compared to manmade pits, volcano magic
 					random_list = {
-						5 = { always = yes }
+						5 = {}
 						55 = {
 							add_prowess_skill = 1
 							change_dragon_size = {
@@ -52,7 +48,7 @@ agot_apply_dragon_aging_effect = {
 				}
 				else = {
 					random_list = {
-						30 = { always = yes } # Older dragons in a dragonpit do not grow as well
+						30 = {} # Older dragons in a dragonpit do not grow as well
 						60 = {
 							add_prowess_skill = 1
 							change_dragon_size = {
@@ -110,7 +106,7 @@ agot_apply_dragon_aging_effect = {
 			}
 			else = {
 				random_list = {
-					10 = { always = yes }
+					10 = {}
 					70 = {
 						add_prowess_skill = 1
 						change_dragon_size = {
@@ -180,7 +176,7 @@ agot_back_apply_dragon_aging_effect = { # Only apply this once on character crea
 					has_character_flag = in_dragonpit
 				}
 				random_list = {
-					20 = { always = yes }
+					20 = {}
 					80 = {
 						add_prowess_skill = 1
 						change_dragon_size_direct = {
@@ -1027,7 +1023,11 @@ agot_dragon_flees_province = {
 				random_neighboring_county = {
 					limit = {
 						title_province = {
-							always = yes
+							NOR = { # Don't go north of the wall
+								geographical_region = world_westeros_the_wall_only
+								geographical_region = world_westeros_beyond_the_wall
+								geographical_region = world_ruins
+							}
 						}
 					}
 					# We want to go a few counties away but if you can't we need a back up
@@ -1036,7 +1036,11 @@ agot_dragon_flees_province = {
 						limit = {
 							title_province = {
 								NOT = { this = scope:fleeing_province }
-								always = yes
+								NOR = { # Still don't go north of the wall
+									geographical_region = world_westeros_the_wall_only
+									geographical_region = world_westeros_beyond_the_wall
+									geographical_region = world_ruins
+								}
 							}
 						}
 						# We want to go a few counties away but if you can't we need a back up
@@ -1045,7 +1049,11 @@ agot_dragon_flees_province = {
 							limit = {
 								title_province = {
 									NOT = { this = scope:fleeing_province }
-									always = yes
+									NOR = { # Really pretty please don't go north of the wall
+										geographical_region = world_westeros_the_wall_only
+										geographical_region = world_westeros_beyond_the_wall
+										geographical_region = world_ruins
+									}
 								}
 							}
 							save_scope_as = new_location
@@ -1062,7 +1070,11 @@ agot_dragon_flees_province = {
 				limit = {
 					title_province = {
 						NOT = { this = scope:fleeing_province }
-						always = yes
+						NOR = { # Really pretty please don't go north of the wall
+							geographical_region = world_westeros_the_wall_only
+							geographical_region = world_westeros_beyond_the_wall
+							geographical_region = world_ruins
+						}
 					}
 				}
 				save_scope_as = new_location
@@ -1391,7 +1403,7 @@ agot_give_random_physical_traits = {
 			}
 		}
 		random_list = {
-			88 = { always = yes }
+			88 = { }
 			1 = {
 				add_trait = dragon_physique_good_3
 			}
@@ -1423,7 +1435,7 @@ agot_give_random_physical_traits = {
 			}
 		}
 		random_list = {
-			94 = { always = yes }
+			94 = { }
 			3 = {
 				add_trait = dragon_swift
 			}
@@ -1441,7 +1453,7 @@ agot_give_random_physical_traits = {
 			}
 		}
 		random_list = {
-			99 = { always = yes }
+			99 = { }
 			1 = {
 				add_trait = dragon_spindly
 			}
@@ -1449,7 +1461,7 @@ agot_give_random_physical_traits = {
 	}
 	# Blind trait (once more fully implemented)
 	#random_list = {
-	#	99 = { always = yes }
+	#	99 = { }
 	#	1 = {
 	#		add_trait = dragon_blind
 	#	}
@@ -1465,7 +1477,7 @@ agot_give_random_physical_traits = {
 			}
 		}
 		random_list = {
-			94 = { always = yes }
+			94 = { }
 			3 = {
 				add_trait = dragon_majestic
 			}
@@ -1483,7 +1495,7 @@ agot_give_random_physical_traits = {
 			}
 		}
 		random_list = {
-			98 = { always = yes }
+			98 = { }
 			2 = {
 				add_trait = dragon_fertile
 			}
@@ -1865,7 +1877,7 @@ agot_dragon_personality_input_events = {
 agot_dragon_personality_forced_effect = { # Called directly on dragon
 	hidden_effect = {
 		random_list = {
-			50 = { always = yes }
+			50 = {}
 			50 = {
 				random_list = {
 					33 = { # Harm taming chance
@@ -2507,7 +2519,7 @@ agot_historical_dragon_transfer_vars_to_story_cycle_effect = {
 						scope:dragon = { has_character_flag = in_dragonpit }
 					}
 					random_list = {
-						20 = { always = yes }
+						20 = {}
 						80 = {
 							scope:dragon = { add_prowess_skill = 1 }
 							change_dragon_size_direct = {

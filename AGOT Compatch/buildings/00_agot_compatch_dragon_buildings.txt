@@ -51,7 +51,7 @@ generic_dragon_pit_01 = {
 		modifier = {
 			add = 1000
 			agot_is_any_dragon_alive = yes
-			scope:holder = {
+			scope:holder ?= {
 				OR = {
 					any_relation = { type = agot_dragon }
 					any_child = {
@@ -189,7 +189,7 @@ agot_dragonmont_01 = {
 
 	can_construct_potential = {
 		building_requirement_tribal = no
-		scope:holder = {
+		scope:holder ?= {
 			OR = {
 				has_trait = agot_dragon_blooded
 				agot_has_dragonblood_heritage = yes

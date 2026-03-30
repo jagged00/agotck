@@ -17,7 +17,7 @@ agot_dragonkeepers.0001 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -32,7 +32,6 @@ agot_dragonkeepers.0001 = {
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -57,7 +56,7 @@ agot_dragonkeepers.0002 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -110,7 +109,7 @@ agot_dragonkeepers.0100 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -124,7 +123,6 @@ agot_dragonkeepers.0100 = {
 
 	immediate = {
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -160,7 +158,7 @@ agot_dragonkeepers.0101 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = {
 		character = root
@@ -174,7 +172,6 @@ agot_dragonkeepers.0101 = {
 
 	immediate = {
 		create_character = { # Create Head Dragonkeeper
-			template = agot_head_dragonkeeper_high_funding_template
 			employer = root
 			culture = root.location.culture
 			faith = root.location.faith
@@ -194,7 +191,7 @@ agot_dragonkeepers.0101 = {
 	# Yes, they raise a good point.
 	option = {
 		name = agot_dragonkeepers.0101.a
-		scope:dragonkeeper_restoration_title = {
+		scope:dragonkeeper_restoration_title ?= {
 			set_variable = { name = has_dragonkeeper_order }
 			holder = { agot_dragonpit_access_law_close_family_effect = yes }
 		}
@@ -240,7 +237,7 @@ agot_dragonkeepers.0300 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -323,7 +320,7 @@ agot_dragonkeepers.0301 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -436,7 +433,7 @@ agot_dragonkeepers.0302 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -469,14 +466,13 @@ agot_dragonkeepers.0302 = {
 			}
 			save_scope_as = dragonpit_location
 		}
-		scope:dragonpit_location = {
+		scope:dragonpit_location ?= {
 			random_in_list = {
 				variable = dragons_in_pit
 				save_scope_as = dragon
 			}
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			employer = root
 			culture = scope:head_dragonkeeper.culture
 			faith = scope:head_dragonkeeper.faith
@@ -512,7 +508,7 @@ agot_dragonkeepers.0303 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -532,7 +528,6 @@ agot_dragonkeepers.0303 = {
 			save_scope_as = head_dragonkeeper
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			trait = wounded_2
 			employer = root
 			culture = scope:head_dragonkeeper.culture
@@ -546,7 +541,7 @@ agot_dragonkeepers.0303 = {
 		name = agot_dragonkeepers.0303.a
 		add_prestige = minor_prestige_loss
 		hidden_effect = {
-			scope:injured_dragonkeeper = {
+			scope:injured_dragonkeeper ?= {
 				death = { death_reason = death_ripped_apart_limb_by_limb }
 			}
 		}
@@ -567,7 +562,7 @@ agot_dragonkeepers.0304 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	cooldown = { years = 5 }
 	trigger = {
@@ -609,7 +604,7 @@ agot_dragonkeepers.0304 = {
 			}
 			save_scope_as = dragonpit_location
 		}
-		scope:dragonpit_location = {
+		scope:dragonpit_location ?= {
 			random_in_list = {
 				variable = dragons_in_pit
 				limit = {
@@ -619,7 +614,6 @@ agot_dragonkeepers.0304 = {
 			}
 		}
 		create_character = {
-			template = agot_head_dragonkeeper_med_funding_template
 			trait = wounded_1
 			employer = root
 			culture = root.capital_province.culture
@@ -649,7 +643,7 @@ agot_dragonkeepers.0304 = {
 		name = agot_dragonkeepers.0304.b
 		trigger = { NOT = { has_trait = compassionate } }
 		add_dread = medium_dread_gain
-		scope:thief = {
+		scope:thief ?= {
 			death = {
 				death_reason = death_dragon_fire
 				killer = scope:dragon
@@ -694,7 +688,7 @@ agot_dragonkeepers.0305 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -711,7 +705,7 @@ agot_dragonkeepers.0305 = {
 			}
 			save_scope_as = dragonpit_location
 		}
-		scope:dragonpit_location = {
+		scope:dragonpit_location ?= {
 			random_in_list = {
 				variable = dragons_in_pit
 				limit = {
@@ -721,7 +715,7 @@ agot_dragonkeepers.0305 = {
 			}
 		}
 		hidden_effect = {
-			scope:dragon = {
+			scope:dragon ?= {
 				random_list = {
 					5 = {
 						modifier = {
@@ -1165,7 +1159,7 @@ agot_dragonkeepers.0305 = {
 		ai_chance = {
 			base = 0
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			remove_nickname = yes
 		}
 	}
@@ -1195,7 +1189,7 @@ agot_dragonkeepers.0306 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -1220,7 +1214,7 @@ agot_dragonkeepers.0306 = {
 
 	option = {
 		name = agot_dragonkeepers.0306.a
-		scope:child = {
+		scope:child ?= {
 			add_character_modifier = {
 				modifier = agot_child_interested_in_dragons
 				years = 5
@@ -1256,7 +1250,7 @@ agot_dragonkeepers.0307 = {
 		}
 	}
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	immediate = {
 		random_court_position_holder = {
@@ -1280,7 +1274,7 @@ agot_dragonkeepers.0307 = {
 
 	option = {
 		name = agot_dragonkeepers.0307.a
-		scope:child = {
+		scope:child ?= {
 			add_character_modifier = {
 				modifier = agot_child_terrified_by_dragons
 				years = 5
@@ -1307,7 +1301,7 @@ agot_dragonkeepers.0308 = {
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	trigger = {
 		is_available_for_dragonkeeper_flavor_events = yes
@@ -1332,7 +1326,7 @@ agot_dragonkeepers.0308 = {
 			}
 			save_scope_as = dragonpit_location
 		}
-		scope:dragonpit_location = {
+		scope:dragonpit_location ?= {
 			random_in_list = {
 				variable = dragons_in_pit
 				limit = {
@@ -1356,11 +1350,11 @@ agot_dragonkeepers.0308 = {
 		}
 		if = {
 			limit = {
-				scope:dragon_parent = {
+				scope:dragon_parent ?= {
 					has_variable = dragon_gender_hidden
 				}
 			}
-			scope:dragon_parent = {
+			scope:dragon_parent ?= {
 				agot_reveal_dragon_gender_effect = yes
 			}
 		}
@@ -1380,7 +1374,7 @@ agot_dragonkeepers.0309 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1422,7 +1416,7 @@ agot_dragonkeepers.0310 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1454,7 +1448,7 @@ agot_dragonkeepers.0310 = {
 			}
 			save_scope_as = dragonpit_location
 		}
-		scope:dragonpit_location = {
+		scope:dragonpit_location ?= {
 			random_in_list = {
 				variable = dragons_in_pit
 				limit = {
@@ -1468,7 +1462,7 @@ agot_dragonkeepers.0310 = {
 	option = {
 		name = agot_dragonkeepers.0310.a
 		add_prestige = minor_prestige_gain
-		scope:head_dragonkeeper = {
+		scope:head_dragonkeeper ?= {
 			add_character_modifier = {
 				modifier = agot_conducting_dragon_research
 				years = 10
@@ -1491,7 +1485,7 @@ agot_dragonkeepers.0311 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1579,7 +1573,7 @@ agot_dragonkeepers.0312 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1733,7 +1727,7 @@ agot_dragonkeepers.0314 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:head_dragonkeeper
@@ -1764,7 +1758,7 @@ agot_dragonkeepers.0314 = {
 				}
 			}
 			save_scope_as = dragon
-			scope:dragon = {
+			scope:dragon ?= {
 				add_trait = dragon_ill
 				trigger_event = {
 					id = agot_dragonkeepers.0313 # Event to remove sickness
@@ -1829,7 +1823,7 @@ agot_dragonkeepers.0315 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	cooldown = { years = 3 }
 
@@ -1879,7 +1873,7 @@ agot_dragonkeepers.0315 = {
 			trigger_event = agot_dragonkeepers.0316
 		}
 		else = {
-			scope:child_with_egg = {
+			scope:child_with_egg ?= {
 				random_character_artifact = {
 					limit = {
 						has_all_variables = {
@@ -1902,7 +1896,7 @@ agot_dragonkeepers.0315 = {
 				}
 				set_owner = scope:child_with_egg
 			}
-			scope:childs_egg = {
+			scope:childs_egg ?= {
 				set_owner = root
 			}
 		}
@@ -1925,7 +1919,7 @@ agot_dragonkeepers.0315 = {
 				}
 				45 = {
 					trigger = {
-						scope:child_with_egg = {
+						scope:child_with_egg ?= {
 							child_eligible_to_sneak_into_dragonpit = yes
 						}
 					}
@@ -1963,7 +1957,7 @@ agot_dragonkeepers.0315 = {
 			trigger_event = agot_dragonkeepers.0319
 		}
 		else = {
-			scope:child_with_egg = {
+			scope:child_with_egg ?= {
 				save_scope_as = tamer # Used for dragon_traits_in_common value
 				random_character_artifact = {
 					limit = {
@@ -1997,12 +1991,12 @@ agot_dragonkeepers.0315 = {
 							}
 						}
 						save_scope_as = dragon
-						scope:tamer = {
+						scope:tamer ?= {
 							start_scheme = {
 								type = bond_with_dragon_scheme
 								target_character = scope:dragon
 							}
-							scope:childs_egg = {
+							scope:childs_egg ?= {
 								set_owner = root
 							}
 						}
@@ -2019,7 +2013,7 @@ agot_dragonkeepers.0315 = {
 	# Tell them no
 	option = {
 		name = agot_dragonkeepers.0315.d
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			add_opinion = {
 				modifier = hurt_opinion
 				opinion = -25
@@ -2034,7 +2028,7 @@ agot_dragonkeepers.0315 = {
 				}
 				70 = {
 					trigger = {
-						scope:child_with_egg = {
+						scope:child_with_egg ?= {
 							child_eligible_to_sneak_into_dragonpit = yes
 						}
 					}
@@ -2057,7 +2051,7 @@ agot_dragonkeepers.0316 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = {
@@ -2094,7 +2088,7 @@ agot_dragonkeepers.0316 = {
 				}
 			}
 		}
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			random_character_artifact = {
 				limit = {
 					has_all_variables = {
@@ -2113,7 +2107,7 @@ agot_dragonkeepers.0316 = {
 		var:selected_artifact = {
 			set_owner = scope:child_with_egg
 		}
-		scope:childs_egg = {
+		scope:childs_egg ?= {
 			set_owner = root
 		}
 		clear_variable_list = possible_dragon_eggs
@@ -2124,7 +2118,7 @@ agot_dragonkeepers.0316 = {
 		name = agot_dragonkeepers.0316.b
 		clear_variable_list = possible_dragon_eggs
 		remove_variable = selected_artifact
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			add_opinion = {
 				modifier = hurt_opinion
 				opinion = -25
@@ -2138,7 +2132,7 @@ agot_dragonkeepers.0316 = {
 agot_dragonkeepers.0317 = {
 	hidden = yes
 	immediate = {
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			save_scope_as = tamer
 			court_owner = {
 				random_courtier_or_guest = {
@@ -2188,7 +2182,7 @@ agot_dragonkeepers.0318 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:child_with_egg = {
+					scope:child_with_egg ?= {
 						any_relation = {
 							type = agot_dragon
 						}
@@ -2199,7 +2193,7 @@ agot_dragonkeepers.0318 = {
 			triggered_desc = {
 				trigger = {
 					NOT = {
-						scope:child_with_egg = {
+						scope:child_with_egg ?= {
 							any_relation = {
 								type = agot_dragon
 							}
@@ -2210,7 +2204,7 @@ agot_dragonkeepers.0318 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:child_with_egg = {
+					scope:child_with_egg ?= {
 						is_alive = no
 					}
 				}
@@ -2221,7 +2215,7 @@ agot_dragonkeepers.0318 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = scope:child_with_egg
@@ -2230,13 +2224,13 @@ agot_dragonkeepers.0318 = {
 	immediate = {
 		if = {
 			limit = {
-				scope:child_with_egg = {
+				scope:child_with_egg ?= {
 					any_relation = {
 						type = agot_dragon
 					}
 				}
 			}
-			scope:child_with_egg = {
+			scope:child_with_egg ?= {
 				random_relation = {
 					type = agot_dragon
 					limit = {
@@ -2262,7 +2256,7 @@ agot_dragonkeepers.0319 = {
 
 	theme = dragon
 
-	override_background = { reference = agot_dragonpit }
+	override_background = { reference = study }
 
 	left_portrait = root
 	right_portrait = {
@@ -2277,7 +2271,7 @@ agot_dragonkeepers.0319 = {
 		container = "custom_widgets_container"
 	}
 	immediate = {
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			random_character_artifact = {
 				limit = {
 					has_all_variables = {
@@ -2314,13 +2308,13 @@ agot_dragonkeepers.0319 = {
 		var:si_selected_character = {
 			save_scope_as = dragonpit_dragon
 		}
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			start_scheme = {
 				type = bond_with_dragon_scheme
 				target_character = scope:dragonpit_dragon
 			}
 		}
-		scope:childs_egg = {
+		scope:childs_egg ?= {
 			set_owner = root
 		}
 		remove_variable = si_selected_character
@@ -2329,7 +2323,7 @@ agot_dragonkeepers.0319 = {
 	# Never mind!
 	option = {
 		name = agot_dragonkeepers.0319.b
-		scope:child_with_egg = {
+		scope:child_with_egg ?= {
 			add_opinion = {
 				modifier = hurt_opinion
 				opinion = -25

@@ -15,31 +15,31 @@ agot_dragon_warfare.0001 = { # Handler event
 	immediate = {
 		agot_debug_log_effect = { MSG = agot_debug_msg_agot_dragon_warfare_0001 }
 		# Trigger events
-		scope:enemy_knight = {
+		scope:enemy_knight ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0002 #Send this to the knight
 			}
 		}
 		if = {
 			limit = { NOT = { scope:dragon_commander_in_battle = scope:dragonrider_in_battle } }
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				trigger_event = {
 					id = agot_dragon_warfare.0003 #Send this to the commander
 				}
 			}
 		}
-		scope:enemy_commander_in_battle = {
+		scope:enemy_commander_in_battle ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0004 #Send this to the enemy commander
 			}
 		}
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0005 #Send this to the rider
 			}
 		}
 		# Trigger effect
-		scope:dragon_commander_in_battle = {
+		scope:dragon_commander_in_battle ?= {
 			dragon_combat_modifier_effect = {
 				DRAGON = scope:dragon_in_battle
 			}
@@ -70,7 +70,7 @@ agot_dragon_warfare.0002 = { # Enemy knight event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -92,7 +92,7 @@ agot_dragon_warfare.0002 = { # Enemy knight event
 		add_prestige = -300
 		add_stress = scope:dragon_in_battle.dragon_draconic_dread_stress_impact
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -121,14 +121,14 @@ agot_dragon_warfare.0003 = { # Commander event
 			desc = agot_dragon_warfare.0003.ending2
 			desc = agot_dragon_warfare.0003.ending3
 			triggered_desc = { # Valyrian language rare ending
-				trigger = { scope:dragonrider_in_battle = { agot_can_use_valyrian_dragon_commands_trigger = yes } }
+				trigger = { scope:dragonrider_in_battle ?= { agot_can_use_valyrian_dragon_commands_trigger = yes } }
 				desc = agot_dragon_warfare.0003.ending4
 			}
 		}
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -149,7 +149,7 @@ agot_dragon_warfare.0003 = { # Commander event
 		play_music_cue = CK3AGOT_dragon_roar
 		add_prestige = -300
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -209,7 +209,7 @@ agot_dragon_warfare.0004 = { # Enemy commander event
 			target = scope:enemy_knight
 		}
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -255,7 +255,7 @@ agot_dragon_warfare.0005 = { # Rider event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -284,7 +284,7 @@ agot_dragon_warfare.0005 = { # Rider event
 			}
 		}
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -333,7 +333,7 @@ agot_dragon_warfare.0006 = { # Handler event
 	immediate = {
 		agot_debug_log_effect = { MSG = agot_debug_msg_agot_dragon_warfare_0006 }
 		# Trigger events
-		scope:enemy_knight = {
+		scope:enemy_knight ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0007 #Send this to the knight
 			}
@@ -416,7 +416,7 @@ agot_dragon_warfare.0007 = { # Knight event
 						multiply = 0.8
 					}
 				}
-				scope:dragon_commander_in_battle = {
+				scope:dragon_commander_in_battle ?= {
 					dragon_combat_modifier_effect = {
 						DRAGON = scope:dragon_in_battle
 					}
@@ -445,7 +445,7 @@ agot_dragon_warfare.0007 = { # Knight event
 					LEADER = scope:combat_side.enemy_side.side_primary_participant
 					LOCATION = scope:combat_side.combat.location
 				}
-				scope:combat_side = {
+				scope:combat_side ?= {
 					battle_event = {
 						key = "dragon_ate_enemy"
 						left_portrait = scope:dragon_in_battle
@@ -466,7 +466,7 @@ agot_dragon_warfare.0007 = { # Knight event
 						add_glory = minor_glory_gain
 					}
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					add_character_flag = {
 						flag = enemy_knight_died
 						days = 1
@@ -483,8 +483,8 @@ agot_dragon_warfare.0007 = { # Knight event
 						multiply = 0.8
 					}
 				}
-				scope:dragon_in_battle = {
-					scope:combat_side = {
+				scope:dragon_in_battle ?= {
+					scope:combat_side ?= {
 						battle_event = {
 							key = "knight_killed_by_enemy"
 							left_portrait = scope:dragon_in_battle
@@ -523,7 +523,7 @@ agot_dragon_warfare.0007 = { # Knight event
 						add_glory = major_glory_gain
 					}
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					add_character_flag = {
 						flag = enemy_knight_killed
 						days = 1
@@ -539,12 +539,12 @@ agot_dragon_warfare.0007 = { # Knight event
 		name = agot_dragon_warfare.0007.b
 		ai_chance = { base = 0 }
 		add_stress = scope:dragon_in_battle.dragon_draconic_dread_stress_impact
-		scope:dragon_commander_in_battle = {
+		scope:dragon_commander_in_battle ?= {
 			dragon_combat_modifier_effect = {
 				DRAGON = scope:dragon_in_battle
 			}
 		}
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			add_character_flag = {
 				flag = enemy_knight_fled
 				days = 1
@@ -655,7 +655,7 @@ agot_dragon_warfare.0008 = { # Dragonrider event
 		}
 		flavor = agot_dragon_warfare.you_have_caused_buff
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -670,7 +670,7 @@ agot_dragon_warfare.0008 = { # Dragonrider event
 		}
 		flavor = agot_dragon_warfare.0008.b.f
 		add_character_flag = already_fighting
-		scope:enemy_knight = { add_character_flag = already_fighting }
+		scope:enemy_knight ?= { add_character_flag = already_fighting }
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = scope:dragonrider_in_battle
 			SC_ATTACKER = scope:dragonrider_in_battle
@@ -699,7 +699,7 @@ agot_dragon_warfare.0011 = { # Handler event
 	immediate = {
 		agot_debug_log_effect = { MSG = agot_debug_msg_agot_dragon_warfare_0011 }
 		# Trigger events
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0012 #Send this to the dragonrider
 			}
@@ -733,7 +733,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	left_portrait = {
 		character = scope:enemy_knight
@@ -753,7 +753,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 		scope:dragon_in_battle.var:current_rider ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
 		clear_variable_list = bbqed_knights
 		clear_variable_list = burned_knights
-		scope:dragon_commander_in_battle = {
+		scope:dragon_commander_in_battle ?= {
 			dragon_combat_modifier_effect = {
 				DRAGON = scope:dragon_in_battle
 			}
@@ -768,7 +768,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					20 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragonrider_in_battle = {
+							scope:dragonrider_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -779,7 +779,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					80 = {
 						modifier = {
 							factor = 0
-							scope:dragonrider_in_battle = {
+							scope:dragonrider_in_battle ?= {
 								OR = { # Don't add too many - looks silly in large battles
 									any_in_list = {
 										variable = bbqed_knights
@@ -792,7 +792,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 								}
 							}
 						}
-						scope:dragonrider_in_battle = {
+						scope:dragonrider_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -820,7 +820,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					20 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragonrider_in_battle = {
+							scope:dragonrider_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -831,7 +831,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					80 = { # Add to the list of knights that were BBQed or burned
 						modifier = {
 							factor = 0
-							scope:dragonrider_in_battle = {
+							scope:dragonrider_in_battle ?= {
 								OR = { # Don't add too many - looks silly in large battles
 									any_in_list = {
 										variable = bbqed_knights
@@ -844,7 +844,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 								}
 							}
 						}
-						scope:dragonrider_in_battle = {
+						scope:dragonrider_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -929,7 +929,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					id = agot_dragon_warfare.0013 # I was burned event
 				}
 			}
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "dragon_killed_enemy_with_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -963,7 +963,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 			trigger_event = {
 				id = agot_dragon_warfare.0013 # I was burned event
 			}
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "wounded_by_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -976,7 +976,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 		if = {
 			limit = {
 				exists = scope:enemy_commander_in_battle
-				scope:enemy_commander_in_battle = {
+				scope:enemy_commander_in_battle ?= {
 					any_in_list = {
 						variable = bbqed_knights
 						NOT = { this = prev }
@@ -987,7 +987,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 					}
 				}
 			}
-			scope:enemy_commander_in_battle = {
+			scope:enemy_commander_in_battle ?= {
 				trigger_event = {
 					id = agot_dragon_warfare.0014 # Event for enemy commander if they aren't in the lists
 				}
@@ -998,7 +998,7 @@ agot_dragon_warfare.0012 = { # Dragonrider event
 				exists = scope:dragon_commander_in_battle
 				NOT = { this = scope:dragon_commander_in_battle }
 			}
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				trigger_event = {
 					id = agot_dragon_warfare.0015 # Event for dragon commander if they aren't the rider
 				}
@@ -1080,7 +1080,7 @@ agot_dragon_warfare.0013 = { # I was burned / died event
 	immediate = {
 		scope:dragon_in_battle.var:current_rider ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
 		show_as_tooltip = {
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				ordered_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -1101,7 +1101,7 @@ agot_dragon_warfare.0013 = { # I was burned / died event
 		name = agot_dragon_warfare.0013.a
 		flavor = agot_dragon_warfare.enemy_has_received_buff
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -1159,12 +1159,12 @@ agot_dragon_warfare.0014 = { # Enemy commander event
 	immediate = {
 		scope:dragon_in_battle.var:current_rider ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				ordered_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -1212,12 +1212,12 @@ agot_dragon_warfare.0015 = { # Dragon commander event
 	}
 
 	immediate = {
-		scope:dragonrider_in_battle = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
+		scope:dragonrider_in_battle ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
 		show_as_tooltip = {
 			dragon_combat_modifier_effect = {
 				DRAGON = scope:dragon_in_battle
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				ordered_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -1240,7 +1240,7 @@ agot_dragon_warfare.0015 = { # Dragon commander event
 	}
 
 	after = {
-		scope:dragonrider_in_battle = { agot_clear_dragon_animation_flags = yes }
+		scope:dragonrider_in_battle ?= { agot_clear_dragon_animation_flags = yes }
 	}
 }
 
@@ -1251,12 +1251,12 @@ agot_dragon_warfare.0016 = {
 		agot_debug_log_effect = { MSG = agot_debug_msg_agot_dragon_warfare_0016 }
 		if = {
 			limit = {
-				scope:enemy_commander_in_battle = {
+				scope:enemy_commander_in_battle ?= {
 					is_alive = yes
 					is_current_dragonrider_warfare = no
 				}
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				trigger_event = {
 					id = agot_dragon_warfare.0017 #Send this to the dragonrider
 				}
@@ -1294,7 +1294,7 @@ agot_dragon_warfare.0017 = { # Dragonrider event
 	}
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	left_portrait = {
 		character = scope:enemy_commander_in_battle
@@ -1331,14 +1331,14 @@ agot_dragon_warfare.0017 = { # Dragonrider event
 			base = 100
 		}
 		show_as_tooltip = {
-			scope:enemy_commander_in_battle = {
+			scope:enemy_commander_in_battle ?= {
 				death = {
 					death_reason = death_battle_dragon
 					killer = scope:dragon_in_battle
 				}
 			}
 		}
-		scope:combat_side = {
+		scope:combat_side ?= {
 			battle_event = {
 				key = "killed_by_dragon_tail_knight"
 				left_portrait = scope:dragon_in_battle
@@ -1347,12 +1347,12 @@ agot_dragon_warfare.0017 = { # Dragonrider event
 				target_right = yes
 			}
 		}
-		scope:enemy_commander_in_battle = {
+		scope:enemy_commander_in_battle ?= {
 			trigger_event = {
 				id = agot_dragon_warfare.0018
 			}
 		}
-		scope:dragon_commander_in_battle = {
+		scope:dragon_commander_in_battle ?= {
 			if = {
 				limit = { NOT = { this = scope:dragonrider_in_battle } }
 				trigger_event = {
@@ -1491,7 +1491,7 @@ agot_dragon_warfare.0020 = { # Handler event
 	immediate = {
 		agot_debug_log_effect = { MSG = agot_debug_msg_agot_dragon_warfare_0020 }
 		# Trigger events
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			if = {
 				limit = { is_ai = no }
 				trigger_event = {
@@ -1502,7 +1502,7 @@ agot_dragon_warfare.0020 = { # Handler event
 		}
 		if = {
 			limit = { NOT = { scope:dragon_commander_in_battle = scope:dragonrider_in_battle } }
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				if = {
 					limit = {
 						is_ai = no
@@ -1515,7 +1515,7 @@ agot_dragon_warfare.0020 = { # Handler event
 				}
 			}
 		}
-		scope:enemy_commander_in_battle = {
+		scope:enemy_commander_in_battle ?= {
 			if = {
 				limit = {
 					is_ai = no
@@ -1527,7 +1527,7 @@ agot_dragon_warfare.0020 = { # Handler event
 				save_scope_as = dragon_died
 			}
 		}
-		scope:combat_side = {
+		scope:combat_side ?= {
 			every_side_knight = {
 				limit = { NOT = { this = scope:dragonrider_in_battle } }
 				if = {
@@ -1562,7 +1562,7 @@ agot_dragon_warfare.0020 = { # Handler event
 					exists = scope:dragon_died
 				}
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				var:current_dragon = {
 					death = {
 						death_reason = death_dragon_scorpion
@@ -1624,9 +1624,9 @@ agot_dragon_warfare.0021 = { # Dragon commander event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_scorpion
@@ -1688,9 +1688,9 @@ agot_dragon_warfare.0022 = { # Enemy commander event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_scorpion
@@ -1712,7 +1712,7 @@ agot_dragon_warfare.0023 = { # Dragonrider event
 	desc = agot_dragon_warfare.0023.desc
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 
 	left_portrait = {
@@ -1790,9 +1790,9 @@ agot_dragon_warfare.0024 = { # Dragonrider knights event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_scorpion
@@ -1855,9 +1855,9 @@ agot_dragon_warfare.0025 = { # Enemy knights event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_scorpion
@@ -1905,7 +1905,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 	}
 
 	immediate = {
-		scope:dragon_in_battle = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
+		scope:dragon_in_battle ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes } }
 		clear_variable_list = bbqed_knights
 		clear_variable_list = burned_knights
 		dragon_combat_modifier_effect = { # Tehe
@@ -1920,7 +1920,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 					20 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -1929,7 +1929,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 						}
 					} # Add to the list of knights that were BBQed or burned
 					80 = {
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -1954,7 +1954,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 					20 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -1963,7 +1963,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 						}
 					}
 					80 = { # Add to the list of knights that were BBQed or burned
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -1998,18 +1998,18 @@ agot_dragon_warfare.0026 = { # Fights on your side
 		}
 
 		# For fun loc purposes in a relevant event - 0034
-		scope:dragon_in_battle = {
+		scope:dragon_in_battle ?= {
 			# Add for loc purposes later some of the dead from this event
 			if = {
 				limit = {
 					has_character_flag = wild_dragon_warfare_event_0026
 				}
 				# Then the only people in the bbq list are on the enemy commander's side
-				scope:dragon_commander_in_battle = {
+				scope:dragon_commander_in_battle ?= {
 					every_in_list = {
 						variable = bbqed_knights
 						save_scope_as = knight
-						scope:dragon_in_battle = {
+						scope:dragon_in_battle ?= {
 							add_to_variable_list = {
 								name = enemy_bbqed_knights
 								target = scope:knight
@@ -2020,17 +2020,17 @@ agot_dragon_warfare.0026 = { # Fights on your side
 			}
 			else = {
 				# We do a mix
-				scope:dragon_commander_in_battle = {
+				scope:dragon_commander_in_battle ?= {
 					every_in_list = {
 						variable = bbqed_knights
 						save_scope_as = knight
 
-						scope:combat_side = {
+						scope:combat_side ?= {
 							random_side_commander = {
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = side_bbqed_knights
 										target = scope:knight
@@ -2042,7 +2042,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = side_bbqed_knights
 										target = scope:knight
@@ -2056,7 +2056,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = enemy_bbqed_knights
 										target = scope:knight
@@ -2068,7 +2068,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name =enemy_bbqed_knights
 										target = scope:knight
@@ -2126,7 +2126,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 				add_character_flag = death_by_dragonfire
 				trigger_event = agot_dragon_warfare.0027
 			}
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "dragon_killed_enemy_with_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -2150,7 +2150,7 @@ agot_dragon_warfare.0026 = { # Fights on your side
 				participants = { wounding_dragon = scope:dragon_in_battle }
 			}
 			trigger_event = agot_dragon_warfare.0027
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "wounded_by_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -2250,9 +2250,9 @@ agot_dragon_warfare.0027 = { # I was burned / died event
 	}
 
 	immediate = {
-		scope:dragon_in_battle = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
+		scope:dragon_in_battle ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				every_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -2273,7 +2273,7 @@ agot_dragon_warfare.0027 = { # I was burned / died event
 		name = agot_dragon_warfare.0027.a
 		flavor = agot_dragon_warfare.enemy_has_received_buff
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
@@ -2288,7 +2288,7 @@ agot_dragon_warfare.0027 = { # I was burned / died event
 		}
 	}
 	after = {
-		scope:dragon_in_battle = { agot_clear_dragon_animation_flags = yes }
+		scope:dragon_in_battle ?= { agot_clear_dragon_animation_flags = yes }
 	}
 }
 
@@ -2331,14 +2331,14 @@ agot_dragon_warfare.0028 = { # Enemy commander event
 	}
 
 	immediate = {
-		scope:dragon_in_battle = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
+		scope:dragon_in_battle ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				dragon_combat_modifier_effect = {
 					DRAGON = scope:dragon_in_battle
 				}
 			}
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				every_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -2402,7 +2402,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 		clear_variable_list = bbqed_knights
 		clear_variable_list = burned_knights
 
-		scope:combat_side = {
+		scope:combat_side ?= {
 			every_side_knight = { #Scaling the weights down because we will be adding knights on the playerside too
 				limit = {
 					NOT = { this = scope:dragon_commander_in_battle } # Keep them alive because of variable storage
@@ -2412,7 +2412,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 					40 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -2421,7 +2421,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 						}
 					} # Add to the list of knights that were BBQed or burned
 					60 = {
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -2449,7 +2449,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 					40 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -2458,7 +2458,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 						}
 					}
 					60 = { # Add to the list of knights that were BBQed or burned
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -2489,7 +2489,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 					40 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -2498,7 +2498,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 						}
 					} # Add to the list of knights that were BBQed or burned
 					60 = {
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -2526,7 +2526,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 					40 = { # Do nothing
 						modifier = {
 							factor = 0
-							scope:dragon_commander_in_battle = {
+							scope:dragon_commander_in_battle ?= {
 								any_in_list = {
 									variable = bbqed_knights
 									count = 0
@@ -2535,7 +2535,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 						}
 					}
 					60 = { # Add to the list of knights that were BBQed or burned
-						scope:dragon_commander_in_battle = {
+						scope:dragon_commander_in_battle ?= {
 							random_list = {
 								70 = {
 									add_to_variable_list = {
@@ -2568,18 +2568,18 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 			}
 		}
 		# For fun loc purposes in a relevant event - 0034
-		scope:dragon_in_battle = {
+		scope:dragon_in_battle ?= {
 			# Add for loc purposes later some of the dead from this event
 			if = {
 				limit = {
 					has_character_flag = wild_dragon_warfare_event_0026
 				}
 				# Then the only people in the bbq list are on the enemy commander's side
-				scope:dragon_commander_in_battle = {
+				scope:dragon_commander_in_battle ?= {
 					every_in_list = {
 						variable = bbqed_knights
 						save_scope_as = knight
-						scope:dragon_in_battle = {
+						scope:dragon_in_battle ?= {
 							add_to_variable_list = {
 								name = enemy_bbqed_knights
 								target = scope:knight
@@ -2590,17 +2590,17 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 			}
 			else = {
 				# We do a mix
-				scope:dragon_commander_in_battle = {
+				scope:dragon_commander_in_battle ?= {
 					every_in_list = {
 						variable = bbqed_knights
 						save_scope_as = knight
 
-						scope:combat_side = {
+						scope:combat_side ?= {
 							random_side_commander = {
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = side_bbqed_knights
 										target = scope:knight
@@ -2612,7 +2612,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = side_bbqed_knights
 										target = scope:knight
@@ -2626,7 +2626,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name = enemy_bbqed_knights
 										target = scope:knight
@@ -2638,7 +2638,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 								limit = {
 									this = scope:knight
 								}
-								scope:dragon_in_battle = {
+								scope:dragon_in_battle ?= {
 									add_to_variable_list = {
 										name =enemy_bbqed_knights
 										target = scope:knight
@@ -2697,7 +2697,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 				add_character_flag = death_by_dragonfire
 				trigger_event = agot_dragon_warfare.0030
 			}
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "dragon_killed_enemy_with_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -2721,7 +2721,7 @@ agot_dragon_warfare.0029 = { # The dragon is indiscriminate in its onslaught
 				participants = { wounding_dragon = scope:dragon_in_battle }
 			}
 			trigger_event = agot_dragon_warfare.0030
-			scope:combat_side = {
+			scope:combat_side ?= {
 				battle_event = {
 					key = "wounded_by_dragon_fire"
 					left_portrait = scope:dragon_in_battle
@@ -2813,9 +2813,9 @@ agot_dragon_warfare.0030 = { # I was burned / died event
 	}
 
 	immediate = {
-		scope:dragon_in_battle = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
+		scope:dragon_in_battle ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no } }
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				every_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -2844,7 +2844,7 @@ agot_dragon_warfare.0030 = { # I was burned / died event
 		}
 	}
 	after = {
-		scope:dragon_in_battle = { agot_clear_dragon_animation_flags = yes }
+		scope:dragon_in_battle ?= { agot_clear_dragon_animation_flags = yes }
 	}
 }
 
@@ -2888,7 +2888,7 @@ agot_dragon_warfare.0031 = { # Enemy commander event
 
 	immediate = {
 		show_as_tooltip = {
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				every_in_list = {
 					variable = bbqed_knights
 					death = {
@@ -2916,12 +2916,12 @@ agot_dragon_warfare.0032 = { # Handler for potential end of battle interactions 
 	immediate = {
 		random_list = {
 			100 = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					if = { # One potential loser
 						limit = { # Doesn't really make sense to be mad if you were already outnumbered
 							NOT = { scope:combat_side.side_strength > scope:combat_side.enemy_side.vastly_outnumbered_combat_side_threshold }
 							has_character_flag = wild_dragon_warfare_event_0026
-							scope:enemy_commander_in_battle = { is_alive = yes }
+							scope:enemy_commander_in_battle ?= { is_alive = yes }
 						}
 
 						set_variable = {
@@ -2940,7 +2940,7 @@ agot_dragon_warfare.0032 = { # Handler for potential end of battle interactions 
 
 						if = {
 							limit = {
-								scope:dragon_commander_in_battle = { is_alive = yes }
+								scope:dragon_commander_in_battle ?= { is_alive = yes }
 							}
 							set_variable = {
 								name = dragon_commander
@@ -2950,7 +2950,7 @@ agot_dragon_warfare.0032 = { # Handler for potential end of battle interactions 
 
 						if = {
 							limit = {
-								scope:enemy_commander_in_battle = { is_alive = yes }
+								scope:enemy_commander_in_battle ?= { is_alive = yes }
 							}
 							set_variable = {
 								name = enemy_commander
@@ -3042,7 +3042,7 @@ agot_dragon_warfare.0033 = { # 0034 handler
 
 		if = {
 			limit = {
-				scope:dragon_in_battle = { has_character_flag = wild_dragon_warfare_event_0026 }
+				scope:dragon_in_battle ?= { has_character_flag = wild_dragon_warfare_event_0026 }
 			}
 			# Then we only need to search the enemy_commander variable
 			random_side_commander = {
@@ -3098,7 +3098,7 @@ agot_dragon_warfare.0033 = { # 0034 handler
 		}
 		else = {
 			# Something went wrong, run clean up
-			scope:dragon_in_battle = { trigger_event = agot_dragon_warfare.0035 }
+			scope:dragon_in_battle ?= { trigger_event = agot_dragon_warfare.0035 }
 		}
 	}
 }
@@ -3174,12 +3174,12 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 		if = {
 			limit = {
 				scope:dragon_in_battle.var:enemy_commander ?= root
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_variable_list = enemy_bbqed_knights
 				}
 			}
 
-			scope:dragon_in_battle = {
+			scope:dragon_in_battle ?= {
 				random_in_list = {
 					variable = enemy_bbqed_knights
 					save_scope_as = knight_one
@@ -3188,11 +3188,11 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 
 			if = {
 				limit = {
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_variable_list = enemy_bbqed_knights
 					}
 				}
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					random_in_list = {
 						limit = {
 							NOT = { this = scope:knight_one }
@@ -3205,12 +3205,12 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 
 			if = {
 				limit = {
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_variable_list = enemy_bbqed_knights
 					}
 				}
 
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					random_in_list = {
 						limit = {
 							NOR = {
@@ -3226,12 +3226,12 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 		}
 		else_if = { # Else we are side commander
 			limit = {
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					has_variable_list = side_bbqed_knights
 				}
 			}
 
-			scope:dragon_in_battle = {
+			scope:dragon_in_battle ?= {
 				random_in_list = {
 					variable = side_bbqed_knights
 					save_scope_as = knight_one
@@ -3240,11 +3240,11 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 
 			if = {
 				limit = {
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_variable_list = side_bbqed_knights
 					}
 				}
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					random_in_list = {
 						limit = {
 							NOT = { this = scope:knight_one }
@@ -3257,12 +3257,12 @@ agot_dragon_warfare.0034 = { # You find the wild dragon feasting on the remains 
 
 			if = {
 				limit = {
-					scope:dragon_in_battle = {
+					scope:dragon_in_battle ?= {
 						has_variable_list = side_bbqed_knights
 					}
 				}
 
-				scope:dragon_in_battle = {
+				scope:dragon_in_battle ?= {
 					random_in_list = {
 						limit = {
 							NOR = {
@@ -3355,7 +3355,7 @@ agot_dragon_warfare.0040 = { # Handler event
 	hidden = yes
 	immediate = {
 		# Trigger events
-		scope:dragonrider_in_battle = {
+		scope:dragonrider_in_battle ?= {
 			if = {
 				limit = { is_ai = no }
 				trigger_event = {
@@ -3366,7 +3366,7 @@ agot_dragon_warfare.0040 = { # Handler event
 		}
 		if = {
 			limit = { NOT = { scope:dragon_commander_in_battle = scope:dragonrider_in_battle } }
-			scope:dragon_commander_in_battle = {
+			scope:dragon_commander_in_battle ?= {
 				if = {
 					limit = {
 						is_ai = no
@@ -3379,7 +3379,7 @@ agot_dragon_warfare.0040 = { # Handler event
 				}
 			}
 		}
-		scope:enemy_commander_in_battle = {
+		scope:enemy_commander_in_battle ?= {
 			if = {
 				limit = {
 					is_ai = no
@@ -3391,7 +3391,7 @@ agot_dragon_warfare.0040 = { # Handler event
 				save_scope_as = dragon_died
 			}
 		}
-		scope:combat_side = {
+		scope:combat_side ?= {
 			every_side_knight = {
 				limit = { NOT = { this = scope:dragonrider_in_battle } }
 				if = {
@@ -3426,7 +3426,7 @@ agot_dragon_warfare.0040 = { # Handler event
 					exists = scope:dragon_died
 				}
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				var:current_dragon = {
 					death = {
 						death_reason = death_dragon_water_wizard
@@ -3490,9 +3490,9 @@ agot_dragon_warfare.0041 = { # Dragon commander event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_water_wizard
@@ -3557,9 +3557,9 @@ agot_dragon_warfare.0042 = { # Enemy commander event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_water_wizard
@@ -3581,7 +3581,7 @@ agot_dragon_warfare.0043 = { # Dragonrider event
 	desc = agot_dragon_warfare.0043.desc
 	theme = war
 	override_background = {
-		reference = agot_flying_over_field
+		reference = study
 	}
 	override_effect_2d = {
 		reference = rain
@@ -3662,9 +3662,9 @@ agot_dragon_warfare.0044 = { # Dragonrider knights event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_water_wizard
@@ -3727,9 +3727,9 @@ agot_dragon_warfare.0045 = { # Enemy knights event
 		hidden_effect = {
 			if = {
 				limit = {
-					scope:dragon_in_battle = { is_alive = yes }
+					scope:dragon_in_battle ?= { is_alive = yes }
 				}
-				scope:dragonrider_in_battle = {
+				scope:dragonrider_in_battle ?= {
 					var:current_dragon = {
 						death = {
 							death_reason = death_dragon_water_wizard

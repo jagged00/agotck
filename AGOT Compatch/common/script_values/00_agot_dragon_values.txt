@@ -133,28 +133,28 @@ dragon_traits_in_common = {
 		limit = { NOT = { exists = scope:dragon_traits_in_common_human } } # If it's defined by species already we can progress
 		if = { # Defined in a scheme
 			limit = { exists = scope:owner }
-			scope:owner = { # If it's defined in a scheme then owner is human
+			scope:owner ?= { # If it's defined in a scheme then owner is human
 				save_temporary_scope_as = dragon_traits_in_common_human
 			}
-			scope:target = { # And target is dragon
+			scope:target ?= { # And target is dragon
 				save_temporary_scope_as = dragon_traits_in_common_dragon
 			}
 		}
 		else_if = { # Defined in effect
 			limit = { exists = scope:tamer }
-			scope:tamer = { # If it's defined in an effect then tamer is human
+			scope:tamer ?= { # If it's defined in an effect then tamer is human
 				save_temporary_scope_as = dragon_traits_in_common_human
 			}
-			scope:dragon = { # And dragon is dragon
+			scope:dragon ?= { # And dragon is dragon
 				save_temporary_scope_as = dragon_traits_in_common_dragon
 			}
 		}
 		else_if = { # Defined in value
 			limit = { exists = scope:dragon_taming_modifier_tamer }
-			scope:dragon_taming_modifier_tamer = { # If it's defined in an effect then tamer is human
+			scope:dragon_taming_modifier_tamer ?= { # If it's defined in an effect then tamer is human
 				save_temporary_scope_as = dragon_traits_in_common_human
 			}
-			scope:dragon_taming_modifier_dragon = { # And dragon is dragon
+			scope:dragon_taming_modifier_dragon ?= { # And dragon is dragon
 				save_temporary_scope_as = dragon_traits_in_common_dragon
 			}
 		}
@@ -162,8 +162,8 @@ dragon_traits_in_common = {
 
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_aggressive }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_aggressive }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = wrathful
 					has_trait = vengeful
@@ -177,8 +177,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_friendly }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_friendly }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = calm
 					has_trait = compassionate
@@ -191,8 +191,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_solitary }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_solitary }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = shy
 					has_trait = callous
@@ -205,8 +205,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_cooperative }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_cooperative }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = gregarious
 					has_trait = forgiving
@@ -219,8 +219,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_imperious }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_imperious }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = arrogant
 					has_trait = ambitious
@@ -234,8 +234,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_supporting }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_supporting }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = humble
 					has_trait = content
@@ -248,8 +248,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_impulsive }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_impulsive }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = impatient
 					has_trait = arbitrary
@@ -262,8 +262,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_calculating }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_calculating }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = patient
 					has_trait = deceitful
@@ -276,8 +276,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_voracious }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_voracious }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = gluttonous
 					has_trait = greedy
@@ -290,8 +290,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_restrained }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_restrained }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = temperate
 					has_trait = chaste
@@ -304,8 +304,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_defiant }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_defiant }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = stubborn
 					has_trait = arbitrary
@@ -319,8 +319,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_accepting }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_accepting }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = trusting
 					has_trait = forgiving
@@ -333,8 +333,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_bloodthirsty }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_bloodthirsty }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = sadistic
 					has_trait = callous
@@ -350,8 +350,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_skittish }
-			scope:dragon_traits_in_common_human = {
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_skittish }
+			scope:dragon_traits_in_common_human ?= {
 				OR = {
 					has_trait = paranoid
 					has_trait = craven
@@ -364,8 +364,8 @@ dragon_traits_in_common = {
 	}
 	if = {
 		limit = {
-			scope:dragon_traits_in_common_dragon = { has_trait = dragon_cannibal }
-			scope:dragon_traits_in_common_human = { has_trait = cannibal }
+			scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_cannibal }
+			scope:dragon_traits_in_common_human ?= { has_trait = cannibal }
 		}
 		add = 1
 	}
@@ -374,10 +374,10 @@ dragon_traits_in_common = {
 dragon_scheme_base_depressed_value = {
 	value = 0
 	if = {
-		limit = { scope:dragon_traits_in_common_dragon = { has_trait = dragon_depressed } }
+		limit = { scope:dragon_traits_in_common_dragon ?= { has_trait = dragon_depressed } }
 		add = -30
 		if = {
-			limit = { scope:dragon_traits_in_common_human = { has_trait = depressed } }
+			limit = { scope:dragon_traits_in_common_human ?= { has_trait = depressed } }
 			add = 15
 		}
 	}
@@ -388,7 +388,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Base
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				has_relation_agot_dragon = scope:dragon_taming_modifier_dragon
 			}
 		}
@@ -400,7 +400,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Dragon is wild
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_dragon = {
+			scope:dragon_taming_modifier_dragon ?= {
 				NOT = { has_character_flag = owned_dragon }
 			}
 		}
@@ -409,7 +409,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Dragonless dragonrider debuff
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				has_trait = dragonless_dragonrider
 			}
 		}
@@ -418,7 +418,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	#Language
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				OR = {
 					knows_language_of_culture = scope:dragon_taming_modifier_dragon.culture
 					has_trait = agot_dragon_blooded
@@ -435,7 +435,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Diligent / Lazy
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				has_trait = diligent
 			}
 		}
@@ -443,7 +443,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	}
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				has_trait = lazy
 			}
 		}
@@ -455,7 +455,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Dragon is pitted
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_dragon = {
+			scope:dragon_taming_modifier_dragon ?= {
 				has_character_flag = in_dragonpit
 			}
 		}
@@ -464,14 +464,14 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	# Taught Dragonlore
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = { has_character_modifier = agot_taught_dragonlore }
+			scope:dragon_taming_modifier_tamer ?= { has_character_modifier = agot_taught_dragonlore }
 		}
 		add = 10
 	}
 	# Head Dragonkeeper Buffs - AGOT TODO BALANCE - Alternatively, maybe a special interaction 'Aid with Dragon Taming' that adds a scheme modifier instead? Or both?
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				exists = court_position:head_dragonkeeper_court_position
 				court_position:head_dragonkeeper_court_position = {
 					aptitude:head_dragonkeeper_court_position = 0
@@ -482,7 +482,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	}
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				exists = court_position:head_dragonkeeper_court_position
 				court_position:head_dragonkeeper_court_position = {
 					aptitude:head_dragonkeeper_court_position = 1
@@ -493,7 +493,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	}
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				exists = court_position:head_dragonkeeper_court_position
 				court_position:head_dragonkeeper_court_position = {
 					aptitude:head_dragonkeeper_court_position = 2
@@ -504,7 +504,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	}
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				exists = court_position:head_dragonkeeper_court_position
 				court_position:head_dragonkeeper_court_position = {
 					aptitude:head_dragonkeeper_court_position = 3
@@ -515,7 +515,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 	}
 	if = {
 		limit = {
-			scope:dragon_taming_modifier_tamer = {
+			scope:dragon_taming_modifier_tamer ?= {
 				exists = court_position:head_dragonkeeper_court_position
 				court_position:head_dragonkeeper_court_position = {
 					aptitude:head_dragonkeeper_court_position = 4
@@ -542,7 +542,7 @@ dragon_taming_attempt_chance = { # Uses scope:dragon_taming_modifier_tamer and s
 		max = 85
 		if = {
 			limit = {
-				scope:dragon_taming_modifier_tamer = {
+				scope:dragon_taming_modifier_tamer ?= {
 					has_relation_agot_dragon = scope:dragon_taming_modifier_dragon
 				}
 			}

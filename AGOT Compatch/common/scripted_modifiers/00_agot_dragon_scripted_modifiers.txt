@@ -30,7 +30,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	# Dragon is wild
 	modifier = {
-		scope:target = {
+		scope:target ?= {
 			NOT = { has_character_flag = owned_dragon }
 		}
 		add = dragon_scheme_base_wild_value
@@ -51,12 +51,12 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	# Diligent / Lazy
 	modifier = {
-		scope:owner = { has_trait = diligent }
+		scope:owner ?= { has_trait = diligent }
 		add = dragon_scheme_diligent_value
 		desc = "SCHEME_BOND_OWNER_DILIGENT"
 	}
 	modifier = {
-		scope:owner = { has_trait = lazy }
+		scope:owner ?= { has_trait = lazy }
 		add = dragon_scheme_lazy_value
 		desc = "SCHEME_BOND_OWNER_LAZY"
 	}
@@ -71,13 +71,13 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	# Ex-dragonrider
 	modifier = {
-		scope:owner = { has_trait = dragonless_dragonrider }
+		scope:owner ?= { has_trait = dragonless_dragonrider }
 		add = -30
 		desc = "SCHEME_EX_DRAGONRIDER"
 	}
 	# Dragon is pitted
 	modifier = {
-		scope:target = {
+		scope:target ?= {
 			has_character_flag = in_dragonpit
 		}
 		add = 15
@@ -85,14 +85,14 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	# Taught Dragonlore
 	modifier = {
-		scope:owner = { has_character_modifier = agot_taught_dragonlore }
+		scope:owner ?= { has_character_modifier = agot_taught_dragonlore }
 		add = 5
 		desc = scheme_taught_dragonlore
 	}
 	# Head Dragonkeeper Buffs - AGOT TODO BALANCE - Alternatively, maybe a special interaction 'Aid with Dragon Taming' that adds a scheme modifier instead? Or both?
 	modifier = {
 		add = 1
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 0
@@ -102,7 +102,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 2
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 1
@@ -112,7 +112,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 5
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 2
@@ -122,7 +122,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 10
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 3
@@ -132,7 +132,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 15
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 4
@@ -150,7 +150,7 @@ agot_dragon_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 20
-		scope:owner = {
+		scope:owner ?= {
 			dynasty ?= { has_dynasty_perk = dragonrider_dynasty_legacy_2 }
 		}
 		desc = "SCHEME_BOND_DYNASTY_LEGACY"
@@ -174,7 +174,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	modifier = {
 		add = dragon_scheme_base_common_language_value
 		desc = YOU_SPEAK_THE_LANGUAGE
-		scope:owner = { OR = {
+		scope:owner ?= { OR = {
 			knows_language_of_culture = scope:target.culture
 			has_trait = agot_dragon_blooded
 		} }
@@ -189,12 +189,12 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	# Diligent / Lazy
 	modifier = {
-		scope:owner = { has_trait = diligent }
+		scope:owner ?= { has_trait = diligent }
 		add = dragon_scheme_diligent_value
 		desc = "SCHEME_BOND_OWNER_DILIGENT"
 	}
 	modifier = {
-		scope:owner = { has_trait = lazy }
+		scope:owner ?= { has_trait = lazy }
 		add = dragon_scheme_lazy_value
 		desc = "SCHEME_BOND_OWNER_LAZY"
 	}
@@ -232,7 +232,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	# Dragon is pitted
 	modifier = {
-		scope:target = {
+		scope:target ?= {
 			has_character_flag = in_dragonpit
 		}
 		add = -5
@@ -240,14 +240,14 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	# Taught Dragon Lore
 	modifier = {
-		scope:owner = { has_character_modifier = agot_taught_dragonlore }
+		scope:owner ?= { has_character_modifier = agot_taught_dragonlore }
 		add = 5
 		desc = scheme_taught_dragonlore
 	}
 	# Head Dragonkeeper Buffs - AGOT TODO BALANCE - Alternatively, maybe a special interaction 'Aid with Dragon Taming' that adds a scheme modifier instead? Or both?
 	modifier = {
 		add = 1
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 0
@@ -257,7 +257,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 2
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 1
@@ -267,7 +267,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 5
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 2
@@ -277,7 +277,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 10
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 3
@@ -287,7 +287,7 @@ agot_dragon_deepen_bonding_scheme_modifier = {
 	}
 	modifier = {
 		add = 15
-		scope:owner = {
+		scope:owner ?= {
 			exists = court_position:head_dragonkeeper_court_position
 			court_position:head_dragonkeeper_court_position = {
 				aptitude:head_dragonkeeper_court_position = 4
@@ -392,7 +392,7 @@ agot_hatching_hatching_weights = {
 	}
 	modifier = {
 		add = 10
-		scope:province = {
+		scope:province ?= {
 			has_building = dragonpit_01 # Historical Version
 			has_building = dragonpit_ruins_03 # Fully Restored Ruin Version
 			has_building_or_higher = dragonstone_01 # Dragonmont not included to avoid double up with Dragonstone modifier
@@ -400,7 +400,7 @@ agot_hatching_hatching_weights = {
 	}
 	modifier = {
 		add = -10
-		scope:province = {
+		scope:province ?= {
 			this = province:4797
 		}
 	}
@@ -410,43 +410,43 @@ agot_hatching_hatching_weights = {
 dragon_scorpion_siege_event_modifiers = {
 	modifier = {
 		add = 10
-		scope:sieging_location = { has_stationed_scorpions = yes }
+		scope:sieging_location ?= { has_stationed_scorpions = yes }
 	}
 	modifier = {
 		add = 10
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			fort_level >= 10
 			county.culture = { has_innovation = innovation_agot_anti_dragon_fighting }
 		}
 	}
 	modifier = {
 		add = 10
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			fort_level >= 20
 			county.culture = { has_innovation = innovation_agot_anti_dragon_fighting }
 		}
 	}
 	modifier = {
 		add = 5
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			has_building_or_higher = workshops_05
 		}
 	}
 	modifier = {
 		add = 5
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			has_building_or_higher = workshops_06
 		}
 	}
 	modifier = {
 		add = 5
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			has_building_or_higher = workshops_07
 		}
 	}
 	modifier = {
 		add = 5
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			has_building_or_higher = workshops_08
 		}
 	}
@@ -455,7 +455,7 @@ dragon_scorpion_siege_event_modifiers = {
 dragon_scorpion_battle_event_modifiers = {
 	modifier = {
 		add = 5
-		scope:combat_side = {
+		scope:combat_side ?= {
 			enemy_side = {
 				has_maa_of_type = scorpions
 			}
@@ -469,12 +469,12 @@ dragon_scorpion_battle_event_modifiers = {
 dragon_water_wizard_battle_event_modifiers = {
 	modifier = {
 		add = 70
-		scope:combat_side = {
+		scope:combat_side ?= {
 			enemy_side = {
 				has_maa_of_type = water_wizards
 			}
 		}
-		scope:battle_location = {
+		scope:battle_location ?= {
 			OR = {
 				is_coastal = yes
 				is_riverside_province = yes
@@ -721,7 +721,7 @@ agot_dragon_siege_attack_major_modifier = {
 	modifier = {
 		add = 10
 		NOT = { has_trait = compassionate }
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			barony.holder = {
 				has_relation_rival = scope:sieging_rider
 				location = scope:sieging_location
@@ -792,7 +792,7 @@ agot_dragon_siege_attack_nuclear_modifier = {
 	modifier = {
 		add = 10
 		NOT = { has_trait = compassionate }
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			barony.holder = {
 				has_relation_rival = scope:sieging_rider
 				location = scope:sieging_location
@@ -809,7 +809,7 @@ agot_dragon_siege_attack_nuclear_modifier = {
 	modifier = {
 		add = 10
 		NOT = { has_trait = compassionate }
-		scope:sieging_location = {
+		scope:sieging_location ?= {
 			barony.holder = {
 				has_relation_rival = scope:sieging_rider
 				location = scope:sieging_location
