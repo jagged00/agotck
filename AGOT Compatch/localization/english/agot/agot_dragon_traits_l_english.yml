@@ -182,3 +182,6 @@
  trait_dragon_depressed: "$trait_depressed_1$"
  trait_dragon_depressed_desc: "This dragon has suffered a great emotional loss after their previous rider passed away. As a result, they have begun to shun human interaction and remain alone, seeking solace in isolation."
  trait_dragon_depressed_character_desc: "[ROOT.Char.GetFirstNameNoTooltip] has suffered a great emotional loss after [ROOT.Char.Custom('GetDragonHerHis')] previous rider passed away. As a result, [ROOT.Char.Custom('GetDragonSheHe')] has begun to shun human interaction and remain alone, seeking solace in isolation."
+ trait_agot_dragon_blooded:0 "Dragon Blooded"
+ trait_agot_dragon_blooded_desc:0 "This character carries the blood-markers associated with dragon affinity."
+ trait_agot_dragon_blooded_character_desc:0 "This character carries the blood-markers associated with dragon affinity, improving their connection to dragon-related rites and opportunities."

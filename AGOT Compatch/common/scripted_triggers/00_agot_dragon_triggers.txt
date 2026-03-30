@@ -427,7 +427,7 @@ agot_has_dragonblood_culture = {
 agot_has_valyrian_blood_fallback_trigger = {
 	OR = {
 		culture = { has_cultural_pillar = heritage_valyrian }
-		has_trait = pure_blooded
+		has_trait = agot_dragon_blooded
 		has_character_flag = historical_dragonseed
 		has_character_flag = dragonseed_potential_medium
 		has_character_flag = dragonseed_potential_low
