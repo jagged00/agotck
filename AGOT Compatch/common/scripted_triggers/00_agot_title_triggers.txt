@@ -1,0 +1,5 @@
+# Vanilla-safe minimal AGOT title trigger compatibility set.
+
+agot_kingdom_tier_is_real_kingdom_trigger = {
+	highest_held_title_tier >= tier_kingdom
+}
