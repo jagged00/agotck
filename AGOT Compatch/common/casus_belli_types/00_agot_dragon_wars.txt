@@ -14,10 +14,8 @@
 			limit = {
 				has_targaryen_exile_story = yes
 			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
+			# Vanilla/EK2-safe: no hard dependency on AGOT-specific throne titles
+			always = yes
 		}
 	}
 
@@ -356,10 +354,8 @@ dragon_duchy_conquest_cb = {
 			limit = {
 				has_targaryen_exile_story = yes
 			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
+			# Vanilla/EK2-safe: no hard dependency on AGOT-specific throne titles
+			always = yes
 		}
 	}
 
@@ -748,10 +744,8 @@ dragon_ducal_conquest_cb = {
 			limit = {
 				has_targaryen_exile_story = yes
 			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
+			# Vanilla/EK2-safe: no hard dependency on AGOT-specific throne titles
+			always = yes
 		}
 	}
 
@@ -1129,10 +1123,8 @@ dragon_kingdom_conquest_cb = {
 			limit = {
 				has_targaryen_exile_story = yes
 			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
+			# Vanilla/EK2-safe: no hard dependency on AGOT-specific throne titles
+			always = yes
 		}
 	}
 
@@ -1718,10 +1710,8 @@ dragon_subjugation_cb = {
 			limit = {
 				has_targaryen_exile_story = yes
 			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
+			# Vanilla/EK2-safe: no hard dependency on AGOT-specific throne titles
+			always = yes
 		}
 	}
 
@@ -1909,57 +1899,9 @@ dragon_subjugation_cb = {
 
 		if = {
 			limit = {
-				OR = {
-					scope:defender = { has_title = title:e_dorne }
-					scope:defender = { has_title = title:e_the_iron_islands }
-					scope:defender = { has_title = title:e_the_north }
-					scope:defender = { has_title = title:e_the_reach }
-					scope:defender = { has_title = title:e_the_riverlands }
-					scope:defender = { has_title = title:e_the_stormlands }
-					scope:defender = { has_title = title:e_the_vale }
-					scope:defender = { has_title = title:e_the_westerlands }
-				}
-				OR = {
-					scope:attacker = { has_title = title:h_the_iron_throne }
-					title:h_the_iron_throne = { is_title_created = no }
-				}
+				scope:defender.primary_title.tier <= scope:attacker.primary_title.tier
 			}
-			if = {
-				limit = {
-					title:h_the_iron_throne = { is_title_created = no }
-					scope:attacker.primary_title.tier <= tier_empire
-				}
-				create_title_and_vassal_change = {
-					type = created
-					save_scope_as = iron_throne_created
-					add_claim_on_loss = no
-				}
-				title:h_the_iron_throne = {
-					change_title_holder = {
-						holder = scope:attacker
-						change = scope:iron_throne_created
-					}
-				}
-				resolve_title_and_vassal_change = scope:iron_throne_created
-			}
-			scope:defender = {
-				every_held_title = {
-					limit = {
-						OR = {
-							this = title:e_dorne
-							this = title:e_the_iron_islands
-							this = title:e_the_north
-							this = title:e_the_reach
-							this = title:e_the_riverlands
-							this = title:e_the_stormlands
-							this = title:e_the_vale
-							this = title:e_the_westerlands
-						}
-					}
-					set_de_jure_liege_title = title:h_the_iron_throne
-				}
-			}
-			# Set liege for defender
+			# Vanilla/EK2-safe fallback: enforce vassalization without AGOT-specific title creation/de-jure rewiring.
 			scope:defender = {
 				change_liege = {
 					liege = scope:attacker

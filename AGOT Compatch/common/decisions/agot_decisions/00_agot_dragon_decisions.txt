@@ -667,11 +667,8 @@ drink_wildfire_decision = {
 			has_trait = lunatic_genetic
 		}
 		OR = {
-			has_title = title:h_the_iron_throne
-			any_close_or_extended_family_member = {
-				is_alive = yes
-				has_title = title:h_the_iron_throne
-			}
+			has_trait = agot_dragon_blooded
+			agot_has_dragonblood_heritage = yes
 		}
 		NOT = { has_title = title:k_the_wall }
 	}

@@ -934,7 +934,7 @@ agot_has_dragonpit_requirements_trigger = {
 			text = dragons_are_extant_desc_tooltip
 			agot_is_any_dragon_alive = yes
 		}
-		AND = { # You have an egg + You are Ambitious + Valyrian blood/cultural heritage
+		AND = { # You have an egg + You are Ambitious + Dragonblood
 			custom_tooltip = {
 				text = has_a_dragon_egg_artifact_tooltip
 				any_character_artifact = {
@@ -942,7 +942,10 @@ agot_has_dragonpit_requirements_trigger = {
 				}
 			}
 			has_trait = ambitious
-			agot_has_valyrian_blood_fallback_trigger = yes
+			OR = {
+				has_trait = agot_dragon_blooded
+				agot_has_dragonblood_heritage = yes
+			}
 		}
 		AND = { # You have an egg + You are Eccentric
 			custom_tooltip = {
@@ -956,17 +959,39 @@ agot_has_dragonpit_requirements_trigger = {
 	}
 }
 
+
+agot_can_build_or_restore_dragonpits = {
+	scope:holder = {
+		highest_held_title_tier >= tier_kingdom
+		OR = {
+			has_trait = agot_dragon_blooded
+			agot_has_dragonblood_heritage = yes
+		}
+		agot_has_dragonpit_requirements_trigger = yes
+	}
+	NOR = {
+		scope:holder = {
+			any_held_title = {
+				tier = tier_county
+				any_county_province = {
+					has_building_or_higher = generic_dragon_pit_01
+				}
+			}
+		}
+		has_any_dragonpits = yes
+		county = {
+			any_county_province = {
+				has_any_dragonpits = yes
+			}
+		}
+	}
+}
+
 can_this_dragonpit_be_destroyed_when_dragonpit_building_is_replaced = {
 	has_variable = has_dragonkeeper_order
 	NOR = {
 		any_county_province = {
 			has_building_or_higher = generic_dragon_pit_01
-		}
-		any_county_province = {
-			OR = {
-				this = title:b_rhaenyss_hill.title_province
-				this = title:b_dragonstone.title_province
-			}
 		}
 	}
 }

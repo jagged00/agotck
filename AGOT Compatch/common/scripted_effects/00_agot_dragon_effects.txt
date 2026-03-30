@@ -27,7 +27,11 @@
 				#Natural Pit check
 				if = {
 					limit = {
-						var:pitted_dragon_location ?= title:c_dragonstone
+						var:pitted_dragon_location ?= {
+							any_county_province = {
+								has_building = agot_dragonmont_01
+							}
+						}
 					}
 					# Growth is not as impinged compared to manmade pits, volcano magic
 					random_list = {
