@@ -1,0 +1,9 @@
+namespace = agot_debug
+
+# Vanilla-safe compatibility stub: external references only.
+agot_debug.2000 = {
+	type = character_event
+	hidden = yes
+
+	immediate = { }
+}

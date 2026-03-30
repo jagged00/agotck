@@ -1,0 +1,19 @@
+# Vanilla-safe minimal AGOT character trigger compatibility set.
+
+agot_is_dummy_character = {
+	OR = {
+		has_trait = ruin
+		has_trait = unknown
+		has_trait = wilderness
+		has_trait = agot_dummy_trait
+	}
+}
+
+agot_boring_character_trigger = {
+	is_ruler = no
+	is_councillor = no
+	has_any_court_position = no
+	is_knight = no
+	NOT = { has_trait = dragon }
+	NOT = { agot_is_dummy_character = yes }
+}

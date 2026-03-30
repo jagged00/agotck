@@ -1,0 +1,5 @@
+# Vanilla-safe minimal AGOT petition effect compatibility set.
+
+agot_petition_liege_0101_paramount_effect = {
+	# AGOT-specific title hierarchy transfer logic is intentionally omitted for vanilla compatibility.
+}
