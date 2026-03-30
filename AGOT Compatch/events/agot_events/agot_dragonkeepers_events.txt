@@ -181,12 +181,21 @@ agot_dragonkeepers.0101 = {
 			faith = root.location.faith
 			save_scope_as = head_dragonkeeper
 		}
+		root = {
+			random_held_title = {
+				limit = {
+					agot_title_is_an_active_dragonpit = yes
+					NOT = { has_variable = has_dragonkeeper_order }
+				}
+				save_scope_as = dragonkeeper_restoration_title
+			}
+		}
 	}
 
 	# Yes, they raise a good point.
 	option = {
 		name = agot_dragonkeepers.0101.a
-		title:c_dragonstone = {
+		scope:dragonkeeper_restoration_title = {
 			set_variable = { name = has_dragonkeeper_order }
 			holder = { agot_dragonpit_access_law_close_family_effect = yes }
 		}
