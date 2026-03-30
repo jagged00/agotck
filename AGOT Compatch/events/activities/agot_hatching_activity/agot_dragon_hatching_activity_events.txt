@@ -1,4 +1,4 @@
-﻿namespace = agot_dragon_hatching
+namespace = agot_dragon_hatching
 
 ###                             ###
 #                                 #
@@ -287,9 +287,7 @@ agot_dragon_hatching.0006 = { #the ceremony - host pov
 			# No else for FoTS as they don't really seem the type to help if not asked directly
 			if = {
 				limit = {
-					capital_province = {
-						geographical_region = world_westeros_seven_kingdoms
-					}
+					capital_province = { always = yes }
 				}
 				random_living_maester = {
 					limit = { has_inactive_trait = archmaester_vs }

@@ -1,4 +1,4 @@
-﻿yearly_global_pulse = {
+yearly_global_pulse = {
 	on_actions = {
 		on_dragon_lay_master_on_action
 		on_dragon_cooldown_pass
@@ -52,16 +52,10 @@ on_dragon_cooldown_pass = {
 						modifier = {
 							OR = {
 								artifact_owner.capital_county.title_province ?= {
-									OR = {
-										geographical_region = world_westeros_beyond_the_wall
-										geographical_region = world_westeros_the_wall
-									}
+									always = no
 								}
 								artifact_owner.liege_or_court_owner.domicile.domicile_location ?= {
-									OR = {
-										geographical_region = world_westeros_beyond_the_wall
-										geographical_region = world_westeros_the_wall
-									}
+									always = no
 								}
 								AND = {
 									exists = artifact_owner.liege_or_court_owner
@@ -69,19 +63,13 @@ on_dragon_cooldown_pass = {
 										AND = {
 											exists = artifact_owner.liege_or_court_owner.capital_county.title_province
 											artifact_owner.liege_or_court_owner.capital_county.title_province ?= {
-												OR = {
-													geographical_region = world_westeros_beyond_the_wall
-													geographical_region = world_westeros_the_wall
-												}
+												always = no
 											}
 										}
 										AND = {
 											exists = artifact_owner.liege_or_court_owner.domicile
 											artifact_owner.liege_or_court_owner.domicile.domicile_location ?= {
-												OR = {
-													geographical_region = world_westeros_beyond_the_wall
-													geographical_region = world_westeros_the_wall
-												}
+												always = no
 											}
 										}
 									}

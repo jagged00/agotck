@@ -1,4 +1,4 @@
-﻿namespace = agot_dragon
+namespace = agot_dragon
 
 # This file is for events that are contextually called that relate to dragons. e.g.
 # the death of the rider, the death of the dragon, etc.
@@ -130,7 +130,7 @@ agot_dragon.0002 = {
 			}
 
 			random_list = {
-				70 = {}
+				70 = { always = yes }
 				25 = { death = { death_reason = death_flew_away_to_valyria } }
 				5 = { death = { death_reason = death_flew_away_to_sothoryos } }
 			}
@@ -152,11 +152,7 @@ agot_dragon.0003 = {
 		modifier = {
 			add = 10
 			location ?= {
-				OR = {
-					geographical_region = world_westeros_the_wall_only
-					geographical_region = world_westeros_beyond_the_wall
-					geographical_region = world_ruins
-				}
+				always = no
 			}
 		}
 	}
@@ -167,11 +163,7 @@ agot_dragon.0003 = {
 			limit = {
 				NOT = { exists = root.var:lair }
 				location ?= {
-					NOR = { # Don't go north of the wall
-						geographical_region = world_westeros_the_wall_only
-						geographical_region = world_westeros_beyond_the_wall
-						geographical_region = world_ruins
-					}
+					always = yes
 				}
 			}
 			set_variable = {
@@ -210,11 +202,7 @@ agot_dragon.0003 = {
 							NOT = { scope:lair.county = this } # Don't go back to your lair
 							NOT = { scope:dragon.var:last_visited_location.county = this } # Don't go back to where you just were
 							title_province = {
-								NOR = { # Don't go north of the wall
-									geographical_region = world_westeros_the_wall_only
-									geographical_region = world_westeros_beyond_the_wall
-									geographical_region = world_ruins
-								}
+								always = yes
 							}
 						}
 						add_to_list = "possible_destinations"
@@ -227,11 +215,7 @@ agot_dragon.0003 = {
 									NOT = { scope:lair.county = this } # Don't go back to your lair
 									NOT = { scope:dragon.var:last_visited_location.county = this } # Don't go back to where you just were
 									title_province = {
-										NOR = { # Don't go north of the wall
-											geographical_region = world_westeros_the_wall_only
-											geographical_region = world_westeros_beyond_the_wall
-											geographical_region = world_ruins
-										}
+										always = yes
 									}
 								}
 								add_to_list = "possible_destinations"
@@ -333,7 +317,7 @@ agot_dragon.0003 = {
 										days = { 2 14 }
 									}
 								}
-								95 = {}
+								95 = { always = yes }
 							}
 						}
 					}
@@ -552,7 +536,7 @@ agot_dragon.0007 = { # Terror campaign
 								NOT = { has_trait = sadistic }
 							}
 							random_list = {
-								95 = {}
+								95 = { always = yes }
 								5 = {
 									add_character_flag = {
 										flag = terror_campaign_nightmares
@@ -1148,10 +1132,7 @@ agot_dragon.0010 = { # Ride Your Dragon (Normal Outcome)
 					triggered_desc = {
 						trigger = {
 							any_realm_county = { is_coastal_county = yes }
-							NOR = {
-								capital_county.title_province = { geographical_region = world_westeros_beyond_the_wall }
-								capital_county.title_province = { geographical_region = world_westeros_the_north }
-							}
+							Nalways = no
 						}
 						desc = agot_dragon.0010.coastal
 					}
@@ -4056,7 +4037,7 @@ scripted_trigger valid_dragonseed_trigger = {
 		has_trait = silent_sister
 	}
 	in_diplomatic_range = root
-	NOT = { any_heir_title = {} }
+	NOT = { any_heir_title = { always = yes } }
 	agot_has_dragonblood_heritage = yes
 	NOT = {
 		any_relation = {
@@ -4309,24 +4290,16 @@ agot_dragon.1002 = {
 					scope:dragon_horn.var:binder = { is_alive = yes }
 					NOR = {
 						AND = {
-							scope:dragon_horn.var:binder.capital_province ?= {
-								geographical_region = world_westeros_beyond_the_wall
-							}
+							scope:dragon_horn.var:binder.capital_province ?= { always = yes }
 							NOT = {
-								capital_province ?= {
-									geographical_region = world_westeros_beyond_the_wall
-								}
+								capital_province ?= { always = yes }
 							}
 						}
 						AND = {
 							NOT = {
-								scope:dragon_horn.var:binder.capital_province ?= {
-									geographical_region = world_westeros_beyond_the_wall
-								}
+								scope:dragon_horn.var:binder.capital_province ?= { always = yes }
 							}
-							location ?= {
-								geographical_region = world_westeros_beyond_the_wall
-							}
+							location ?= { always = yes }
 						}
 					}
 				}
@@ -4630,7 +4603,7 @@ agot_dragon.1003 = {
 						has_trait = bastard
 						root = { is_allowed_to_legitimize_children_trigger = no }
 					}
-					hidden_effect = { create_cadet_branch = {} }
+					hidden_effect = { create_cadet_branch = { always = yes } }
 					custom_tooltip = agot_dragon.1010.b_tt
 					remove_trait = bastard
 					add_trait = bastard_founder
@@ -4704,7 +4677,7 @@ agot_dragon.1003 = {
 							has_trait = bastard
 							root = { is_allowed_to_legitimize_children_trigger = no }
 						}
-						hidden_effect = { create_cadet_branch = {} }
+						hidden_effect = { create_cadet_branch = { always = yes } }
 						custom_tooltip = agot_dragon.1010.b_tt
 						remove_trait = bastard
 						add_trait = bastard_founder
@@ -5877,9 +5850,7 @@ agot_dragon.1010 = {
 		animation = personality_bold
 	}
 
-	immediate = {
-
-	}
+	immediate = { always = yes }
 
 	# Legitimize
 	option = {
@@ -5908,7 +5879,7 @@ agot_dragon.1010 = {
 		custom_tooltip = agot_dragon.1010.b_tt
 		hidden_effect = {
 			scope:recipient = {
-				create_cadet_branch = {}
+				create_cadet_branch = { always = yes }
 			}
 		}
 		scope:recipient = {

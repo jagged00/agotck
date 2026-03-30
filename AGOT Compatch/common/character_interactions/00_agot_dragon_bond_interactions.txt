@@ -1,4 +1,4 @@
-﻿tame_dragon_interaction = {
+tame_dragon_interaction = {
 	icon = icon_scheme_dragon
 	desc = {
 		first_valid = {
@@ -83,14 +83,10 @@
 			custom_tooltip = {
 				text = dragon_beyond_the_wall
 				NOR = {
-					capital_county.title_province ?= {
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					capital_county.title_province ?= { always = yes }
 					AND = {
 						exists = liege_or_court_owner
-						liege.capital_county.title_province ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						liege.capital_county.title_province ?= { always = yes }
 					}
 				}
 			}
@@ -170,14 +166,10 @@ bond_with_dragon_interaction = {
 			custom_tooltip = {
 				text = dragon_beyond_the_wall
 				NOR = {
-					capital_county.title_province ?= {
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					capital_county.title_province ?= { always = yes }
 					AND = {
 						exists = liege_or_court_owner
-						liege.capital_county.title_province ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						liege.capital_county.title_province ?= { always = yes }
 					}
 				}
 			}
@@ -422,8 +414,7 @@ visit_dragonpit_with_child_interaction = {
 			}
 		}
 	}
-	is_valid_showing_failures_only = {
-	}
+	is_valid_showing_failures_only = { always = yes }
 	on_accept = {
 		hidden_effect = {
 			scope:actor = {

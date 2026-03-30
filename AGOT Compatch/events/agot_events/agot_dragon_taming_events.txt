@@ -1,4 +1,4 @@
-﻿namespace = dragon_taming_events
+namespace = dragon_taming_events
 
 ### Event IDs ###
 ## 0100 - 0199 Tame Unbonded Dragon Events ##
@@ -728,24 +728,16 @@ dragon_taming_events.0301 = { # The Horn is blown and consequences are made clea
 			NOR = {
 				scope:binder = root
 				AND = {
-					scope:binder.capital_province ?= { # If the binder is north of the wall, the dragon has to be
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					scope:binder.capital_province ?= { always = yes }
 					NOT = {
-						scope:dragon.location ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						scope:dragon.location ?= { always = yes }
 					}
 				}
 				AND = {
 					NOT = {
-						scope:binder.capital_province ?= { # If the binder is south of the wall, the dragon has to be
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						scope:binder.capital_province ?= { always = yes }
 					}
-					scope:dragon.location ?= {
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					scope:dragon.location ?= { always = yes }
 				}
 			}
 			scope:rebinding_outcome ?= flag:success
@@ -835,24 +827,16 @@ dragon_taming_events.0301 = { # The Horn is blown and consequences are made clea
 				NOT = { exists = scope:binder }
 				scope:rebinding_outcome ?= flag:failure
 				AND = {
-					scope:binder.capital_province ?= { # If the binder is north of the wall, the dragon has to be
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					scope:binder.capital_province ?= { always = yes }
 					NOT = {
-						scope:dragon.location ?= {
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						scope:dragon.location ?= { always = yes }
 					}
 				}
 				AND = {
 					NOT = {
-						scope:binder.capital_province ?= { # If the binder is south of the wall, the dragon has to be
-							geographical_region = world_westeros_beyond_the_wall
-						}
+						scope:binder.capital_province ?= { always = yes }
 					}
-					scope:dragon.location ?= {
-						geographical_region = world_westeros_beyond_the_wall
-					}
+					scope:dragon.location ?= { always = yes }
 				}
 			}
 		}
