@@ -6,21 +6,7 @@
 				has_variable = destined_eggs # TargExile/Faegon Blocker
 			}
 		}
-		trigger_if = {
-			limit = {
-				has_game_rule = agot_targaryen_exile_invasion_special_content
-			}
-			NOT = {
-				any_owned_story = {
-					story_type = story_agot_targaryen_exile_invasion
-				}
-			}
-		}
-		trigger_else = {
-			always = yes
-		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
 		# DLC check
 		has_dlc_feature = tours_and_tournaments
 	}
@@ -37,11 +23,6 @@
 				game_start_date = 8258.12.21
 				years_from_game_start < 10
 				NOT = { has_game_rule = agot_story_sandbox }
-			}
-		}
-		NOT = {
-			capital_province ?= {
-				geographical_region = world_westeros_beyond_the_wall
 			}
 		}
 	}
@@ -1040,7 +1021,6 @@
 			NOT = { scope:host.location = scope:activity.activity_location }
 			scope:host.location = {
 				is_riverside_province = yes
-				geographical_region = world_westeros_seven_kingdoms
 				OR = {
 					agot_is_farmlands_terrain = yes
 					agot_is_plains_terrain = yes
@@ -1573,21 +1553,7 @@ activity_dragon_hatching_no_dlc = {
 				has_variable = destined_eggs # TargExile/Faegon Blocker
 			}
 		}
-		trigger_if = {
-			limit = {
-				has_game_rule = agot_targaryen_exile_invasion_special_content
-			}
-			NOT = {
-				any_owned_story = {
-					story_type = story_agot_targaryen_exile_invasion
-				}
-			}
-		}
-		trigger_else = {
-			always = yes
-		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
 		# DLC check
 		NOT = { has_dlc_feature = tours_and_tournaments }
 	}
@@ -1604,11 +1570,6 @@ activity_dragon_hatching_no_dlc = {
 				game_start_date = 8258.12.21
 				years_from_game_start < 10
 				NOT = { has_game_rule = agot_story_sandbox }
-			}
-		}
-		NOT = {
-			capital_province ?= {
-				geographical_region = world_westeros_beyond_the_wall
 			}
 		}
 	}
@@ -2606,7 +2567,6 @@ activity_dragon_hatching_no_dlc = {
 			NOT = { scope:host.location = scope:activity.activity_location }
 			scope:host.location = {
 				is_riverside_province = yes
-				geographical_region = world_westeros_seven_kingdoms
 				OR = {
 					agot_is_farmlands_terrain = yes
 					agot_is_plains_terrain = yes
