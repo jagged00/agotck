@@ -1,0 +1,222 @@
+﻿#############################
+# AGOT Compatch: Dragons Only
+#############################
+
+# Vanilla-safe dragonpit chain for dragon/dragonrider gameplay.
+# This intentionally avoids hard ties to AGOT-only provinces/titles.
+
+generic_dragon_pit_01 = {
+	construction_time = very_slow_construction_time
+
+	can_construct_potential = {
+		agot_can_build_or_restore_dragonpits = yes
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	effect_desc = building_dragonpit_effect
+
+	on_complete = {
+		county.holder = {
+			trigger_event = agot_dragon_pits.0005
+		}
+	}
+
+	cost_gold = expensive_building_tier_8_cost
+
+	province_modifier = {
+		monthly_income = -0.5
+	}
+	county_modifier = {
+		county_opinion_add = -10
+	}
+	character_modifier = {
+		dread_gain_mult = 0.05
+		monthly_dynasty_prestige_mult = 0.05
+		owned_legend_spread_mult = 0.05
+		intimidated_vassal_tax_contribution_mult = 0.05
+	}
+	county_holder_character_modifier = {
+		dread_gain_mult = 0.05
+		monthly_dynasty_prestige_mult = 0.05
+		owned_legend_spread_mult = 0.05
+		intimidated_vassal_tax_contribution_mult = 0.05
+	}
+	type_icon = "icon_building_dragonpit.dds"
+
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 1000
+			agot_is_any_dragon_alive = yes
+			scope:holder = {
+				OR = {
+					any_relation = { type = agot_dragon }
+					any_child = {
+						any_relation = { type = agot_dragon }
+					}
+				}
+			}
+		}
+	}
+}
+
+dragonpit_01 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_lanns_sept.dds"
+	cost_gold = expensive_building_tier_1_cost
+	next_building = dragonpit_02
+	type = special
+	flag = travel_point_of_interest_religious
+	flag = holy_building
+}
+
+dragonpit_02 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_hadrians_wall.dds"
+	cost_gold = expensive_building_tier_1_cost
+	next_building = dragonpit_03
+	county_modifier = {
+		county_opinion_add = -10
+	}
+	type = special
+	flag = travel_point_of_interest_martial
+	flag = special_building_enabled_in_ruin_county
+}
+
+dragonpit_03 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_building_dragonpit.dds"
+	effect_desc = building_dragonpit_effect
+
+	can_construct = {
+		agot_can_build_or_restore_dragonpits = yes
+	}
+
+	cost_gold = expensive_building_tier_8_cost
+
+	county_holder_character_modifier = {
+		dread_gain_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
+		owned_legend_spread_mult = 0.1
+		intimidated_vassal_tax_contribution_mult = 0.1
+	}
+
+	character_modifier = {
+		dread_gain_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
+		owned_legend_spread_mult = 0.1
+		intimidated_vassal_tax_contribution_mult = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = -5
+	}
+
+	county_modifier = {
+		county_opinion_add = -5
+	}
+
+	type = special
+	flag = travel_point_of_interest_martial
+}
+
+dragonpit_ruins_01 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_lanns_sept.dds"
+	can_construct = { always = no }
+	next_building = dragonpit_ruins_02
+	type = special
+	flag = travel_point_of_interest_religious
+	flag = holy_building
+}
+
+dragonpit_ruins_02 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_hadrians_wall.dds"
+	can_construct = { always = no }
+	next_building = dragonpit_ruins_03
+	province_modifier = { travel_danger = 10 }
+	county_modifier = {
+		epidemic_resistance = -10
+		county_opinion_add = 5
+	}
+	type = special
+	flag = travel_point_of_interest_religious
+	flag = special_building_enabled_in_ruin_county
+}
+
+dragonpit_ruins_03 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_building_dragonpit.dds"
+	can_construct = {
+		agot_can_build_or_restore_dragonpits = yes
+	}
+	on_complete = {
+		county.holder = {
+			trigger_event = agot_dragon_pits.0001
+		}
+	}
+	effect_desc = building_dragonpit_effect
+	cost_gold = expensive_building_tier_8_cost
+	county_holder_character_modifier = {
+		dread_gain_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
+		owned_legend_spread_mult = 0.1
+		intimidated_vassal_tax_contribution_mult = 0.1
+	}
+	character_modifier = {
+		dread_gain_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
+		owned_legend_spread_mult = 0.1
+		intimidated_vassal_tax_contribution_mult = 0.1
+	}
+	province_modifier = {
+		monthly_income = -5
+	}
+	county_modifier = {
+		county_opinion_add = -5
+	}
+	type = special
+	flag = travel_point_of_interest_martial
+}
+
+agot_dragonmont_01 = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_dragonmont.dds"
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		scope:holder = {
+			OR = {
+				has_trait = agot_dragon_blooded
+				agot_has_dragonblood_heritage = yes
+			}
+		}
+	}
+
+	effect_desc = building_dragonmont_dragonpit_effect
+
+	duchy_capital_county_modifier = {
+		levy_size = -0.20
+		tax_mult = low_building_tax_mult_tier_1
+	}
+
+	county_modifier = {
+		hostile_raid_time = 0.3
+		defender_holding_advantage = 5
+	}
+
+	province_modifier = {
+		fort_level = 2
+	}
+
+	ai_value = {
+		base = 100
+	}
+
+	type = duchy_capital
+	flag = special_building_enabled_in_ruin_county
+}
