@@ -30,7 +30,7 @@ agot_dragon_dreams.0001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:scheme = {
+					scope:scheme ?= {
 						scheme_type = murder
 					}
 				}
@@ -38,7 +38,7 @@ agot_dragon_dreams.0001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:scheme = {
+					scope:scheme ?= {
 						scheme_type = abduct
 					}
 				}
@@ -46,7 +46,7 @@ agot_dragon_dreams.0001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:scheme = {
+					scope:scheme ?= {
 						scheme_type = elope
 					}
 				}
@@ -54,7 +54,7 @@ agot_dragon_dreams.0001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:scheme = {
+					scope:scheme ?= {
 						scheme_type = steal_back_artifact
 					}
 				}
@@ -81,7 +81,7 @@ agot_dragon_dreams.0001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:dragon_dreamer = {
+					scope:dragon_dreamer ?= {
 						has_character_flag = dragon_dreams
 						is_child_of = root
 					}
@@ -90,7 +90,7 @@ agot_dragon_dreams.0001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:dragon_dreamer = {
+					scope:dragon_dreamer ?= {
 						has_character_flag = dragon_dreams
 						this = root
 					}
@@ -99,7 +99,7 @@ agot_dragon_dreams.0001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:dragon_dreamer = {
+					scope:dragon_dreamer ?= {
 						has_character_flag = dragon_dreams
 					}
 				}
@@ -129,7 +129,7 @@ agot_dragon_dreams.0001 = {
 
 	immediate = {
 		play_music_cue = "mx_cue_murder"
-		scope:dragon_dreamer = {
+		scope:dragon_dreamer ?= {
 			add_stress = major_stress_gain
 			add_character_flag = {
 				flag = dreamt
@@ -141,7 +141,7 @@ agot_dragon_dreams.0001 = {
 	#Schemes are bad
 	option = {
 		trait = dragon_dreams
-		scope:dragon_dreamer = {
+		scope:dragon_dreamer ?= {
 			if = {
 				limit = { has_character_flag = dragon_dreams }
 				remove_character_flag = dragon_dreams
@@ -150,10 +150,10 @@ agot_dragon_dreams.0001 = {
 		}
 
 		name = hostile_scheme_discovery.2001.a
-		scope:scheme = {
+		scope:scheme ?= {
 			expose_scheme = yes
 		}
-		scope:owner = {
+		scope:owner ?= {
 			trigger_event = hostile_scheme_discovery.3002
 		}
 	}

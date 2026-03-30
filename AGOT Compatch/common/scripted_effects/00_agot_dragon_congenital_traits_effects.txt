@@ -4,7 +4,7 @@
 ## Physique
 agot_dragon_physique_good_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		## Physique 3
 		random = {
 			chance = {
@@ -65,14 +65,14 @@ agot_dragon_physique_good_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_good_2
 							has_trait = dragon_physique_good_1
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_good_3 }
+				scope:dragon ?= { add_trait = dragon_physique_good_3 }
 			}
 		}
 		## Physique 2
@@ -135,14 +135,14 @@ agot_dragon_physique_good_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_good_3
 							has_trait = dragon_physique_good_1
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_good_2 }
+				scope:dragon ?= { add_trait = dragon_physique_good_2 }
 			}
 		}
 		## Physique 1
@@ -205,19 +205,19 @@ agot_dragon_physique_good_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_good_3
 							has_trait = dragon_physique_good_2
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_good_1 }
+				scope:dragon ?= { add_trait = dragon_physique_good_1 }
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_good_3
 						has_trait = dragon_physique_good_2
@@ -285,7 +285,7 @@ agot_dragon_physique_good_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_good_3
 								has_trait = dragon_physique_good_2
@@ -293,13 +293,13 @@ agot_dragon_physique_good_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_good_3 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_good_3 }
 				}
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_good_3
 						has_trait = dragon_physique_good_2
@@ -368,7 +368,7 @@ agot_dragon_physique_good_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_good_3
 								has_trait = dragon_physique_good_2
@@ -377,13 +377,13 @@ agot_dragon_physique_good_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_good_2 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_good_2 }
 				}
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_good_3
 						has_trait = dragon_physique_good_2
@@ -453,7 +453,7 @@ agot_dragon_physique_good_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_good_3
 								has_trait = dragon_physique_good_2
@@ -463,7 +463,7 @@ agot_dragon_physique_good_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_good_1 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_good_1 }
 				}
 			}
 		}
@@ -473,7 +473,7 @@ agot_dragon_physique_good_effect = {
 ## Swift
 agot_dragon_swift_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -523,11 +523,11 @@ agot_dragon_swift_effect = {
 					add = agot_dragon_inheritance_one_parent_has_inactive_trait_value
 				}
 			}
-			scope:dragon = { add_trait = dragon_swift }
+			scope:dragon ?= { add_trait = dragon_swift }
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_swift }
 				}
 			}
@@ -580,7 +580,7 @@ agot_dragon_swift_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_swift }
+				scope:dragon ?= { make_trait_inactive = dragon_swift }
 			}
 		}
 	}
@@ -589,7 +589,7 @@ agot_dragon_swift_effect = {
 ## Majestic
 agot_dragon_majestic_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -639,11 +639,11 @@ agot_dragon_majestic_effect = {
 					add = agot_dragon_inheritance_one_parent_has_inactive_trait_value
 				}
 			}
-			scope:dragon = { add_trait = dragon_majestic }
+			scope:dragon ?= { add_trait = dragon_majestic }
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_majestic }
 				}
 			}
@@ -696,7 +696,7 @@ agot_dragon_majestic_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_majestic }
+				scope:dragon ?= { make_trait_inactive = dragon_majestic }
 			}
 		}
 	}
@@ -705,7 +705,7 @@ agot_dragon_majestic_effect = {
 ## Fertile
 agot_dragon_fertile_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -759,11 +759,11 @@ agot_dragon_fertile_effect = {
 			make_trait_inactive = dragon_fertile
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						is_female = yes
 					}
 				}
-				scope:dragon = {
+				scope:dragon ?= {
 					set_variable = {
 						name = dragon_is_fertile
 						value = yes
@@ -773,7 +773,7 @@ agot_dragon_fertile_effect = {
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_fertile }
 				}
 			}
@@ -826,7 +826,7 @@ agot_dragon_fertile_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_fertile }
+				scope:dragon ?= { make_trait_inactive = dragon_fertile }
 			}
 		}
 	}
@@ -836,7 +836,7 @@ agot_dragon_fertile_effect = {
 ## Physique
 agot_dragon_physique_bad_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		## Physique 3
 		random = {
 			chance = {
@@ -897,14 +897,14 @@ agot_dragon_physique_bad_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_bad_2
 							has_trait = dragon_physique_bad_1
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_bad_3 }
+				scope:dragon ?= { add_trait = dragon_physique_bad_3 }
 			}
 		}
 		## Physique 2
@@ -967,14 +967,14 @@ agot_dragon_physique_bad_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_bad_3
 							has_trait = dragon_physique_bad_1
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_bad_2 }
+				scope:dragon ?= { add_trait = dragon_physique_bad_2 }
 			}
 		}
 		## Physique 1
@@ -1037,19 +1037,19 @@ agot_dragon_physique_bad_effect = {
 			}
 			if = {
 				limit = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOR = {
 							has_trait = dragon_physique_bad_3
 							has_trait = dragon_physique_bad_2
 						}
 					}
 				}
-				scope:dragon = { add_trait = dragon_physique_bad_1 }
+				scope:dragon ?= { add_trait = dragon_physique_bad_1 }
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_bad_3
 						has_trait = dragon_physique_bad_2
@@ -1117,7 +1117,7 @@ agot_dragon_physique_bad_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_bad_3
 								has_trait = dragon_physique_bad_2
@@ -1125,13 +1125,13 @@ agot_dragon_physique_bad_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_bad_3 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_bad_3 }
 				}
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_bad_3
 						has_trait = dragon_physique_bad_2
@@ -1200,7 +1200,7 @@ agot_dragon_physique_bad_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_bad_3
 								has_trait = dragon_physique_bad_2
@@ -1209,13 +1209,13 @@ agot_dragon_physique_bad_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_bad_2 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_bad_2 }
 				}
 			}
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOR = {
 						has_trait = dragon_physique_bad_3
 						has_trait = dragon_physique_bad_2
@@ -1285,7 +1285,7 @@ agot_dragon_physique_bad_effect = {
 				}
 				if = {
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							NOR = {
 								has_trait = dragon_physique_bad_3
 								has_trait = dragon_physique_bad_2
@@ -1295,7 +1295,7 @@ agot_dragon_physique_bad_effect = {
 							}
 						}
 					}
-					scope:dragon = { make_trait_inactive = dragon_physique_bad_1 }
+					scope:dragon ?= { make_trait_inactive = dragon_physique_bad_1 }
 				}
 			}
 		}
@@ -1305,7 +1305,7 @@ agot_dragon_physique_bad_effect = {
 ## Slow
 agot_dragon_slow_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -1355,11 +1355,11 @@ agot_dragon_slow_effect = {
 					add = agot_dragon_inheritance_one_parent_has_inactive_trait_value
 				}
 			}
-			scope:dragon = { add_trait = dragon_slow }
+			scope:dragon ?= { add_trait = dragon_slow }
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_slow }
 				}
 			}
@@ -1412,7 +1412,7 @@ agot_dragon_slow_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_slow }
+				scope:dragon ?= { make_trait_inactive = dragon_slow }
 			}
 		}
 	}
@@ -1421,7 +1421,7 @@ agot_dragon_slow_effect = {
 ## Ugly
 agot_dragon_ugly_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -1471,11 +1471,11 @@ agot_dragon_ugly_effect = {
 					add = agot_dragon_inheritance_one_parent_has_inactive_trait_value
 				}
 			}
-			scope:dragon = { add_trait = dragon_ugly }
+			scope:dragon ?= { add_trait = dragon_ugly }
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_ugly }
 				}
 			}
@@ -1528,7 +1528,7 @@ agot_dragon_ugly_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_ugly }
+				scope:dragon ?= { make_trait_inactive = dragon_ugly }
 			}
 		}
 	}
@@ -1537,7 +1537,7 @@ agot_dragon_ugly_effect = {
 ## Spindly
 agot_dragon_spindly_effect = {
 	$DRAGON$ = { save_scope_as = dragon }
-	scope:dragon = {
+	scope:dragon ?= {
 		random = {
 			chance = {
 				value = 0
@@ -1587,11 +1587,11 @@ agot_dragon_spindly_effect = {
 					add = agot_dragon_inheritance_one_parent_has_inactive_trait_value
 				}
 			}
-			scope:dragon = { add_trait = dragon_spindly }
+			scope:dragon ?= { add_trait = dragon_spindly }
 		}
 		if = {
 			limit = {
-				scope:dragon = {
+				scope:dragon ?= {
 					NOT = { has_trait = dragon_spindly }
 				}
 			}
@@ -1644,7 +1644,7 @@ agot_dragon_spindly_effect = {
 						add = agot_dragon_inactive_inheritance_one_parent_has_inactive_trait_value
 					}
 				}
-				scope:dragon = { make_trait_inactive = dragon_spindly }
+				scope:dragon ?= { make_trait_inactive = dragon_spindly }
 			}
 		}
 	}

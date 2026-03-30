@@ -17,7 +17,7 @@
 	ai_frequency = 84
 
 	can_be_picked_artifact = {
-		scope:target = {
+		scope:target ?= {
 			has_variable = dragon_egg
 			has_none_of_variables = {
 				name = cradled_egg
@@ -28,7 +28,7 @@
 
 
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			this = scope:recipient
 			any_character_artifact = {
 				has_variable = dragon_egg
@@ -43,7 +43,7 @@
 	}
 
 	is_valid_showing_failures_only = {
-		scope:actor = {
+		scope:actor ?= {
 			custom_tooltip = {
 				text = has_a_dragon
 				any_relation = {
@@ -56,7 +56,7 @@
 	}
 
 	on_accept = {
-		scope:actor = {
+		scope:actor ?= {
 			send_interface_toast = {
 				type = dragon_neutral_toast
 				title = started_cradling_egg_notification_title
@@ -81,7 +81,7 @@
 			}
 		}
 
-		scope:target = {
+		scope:target ?= {
 			set_variable = cradled_egg
 			set_variable = { name = cradled_egg_year value = current_year }
 			equip_artifact_to_owner_replace = yes
@@ -121,11 +121,11 @@ give_egg = {
 	}
 
 	can_be_picked_artifact = {
-		scope:target = {
+		scope:target ?= {
 			has_variable = dragon_egg
 			trigger_if = {
 				limit = {
-					scope:actor = { is_ai = yes }
+					scope:actor ?= { is_ai = yes }
 				}
 				has_none_of_variables = {
 					name = cradled_egg
@@ -138,7 +138,7 @@ give_egg = {
 	}
 
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			is_human = yes
 			any_character_artifact = {
 				has_variable = dragon_egg
@@ -146,13 +146,13 @@ give_egg = {
 			}
 			NOT = { this = scope:recipient }
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			is_human = yes
 		}
 	}
 
 	on_accept = {
-		scope:actor = {
+		scope:actor ?= {
 			send_interface_toast = {
 				type = dragon_neutral_toast
 				title = gave_egg_for_cradling_notification_title
@@ -162,7 +162,7 @@ give_egg = {
 			}
 		}
 
-		scope:recipient = {
+		scope:recipient ?= {
 			send_interface_toast = {
 				type = dragon_neutral_toast
 				title = received_egg_for_cradling_notification_title
@@ -192,7 +192,7 @@ give_egg = {
 			}
 		}
 
-		scope:target = {
+		scope:target ?= {
 			set_owner = scope:recipient
 			equip_artifact_to_owner_replace = yes
 		}
@@ -206,14 +206,14 @@ give_egg = {
 		#Give eggs to your children
 		modifier = {
 			add = 25
-			scope:recipient = {
+			scope:recipient ?= {
 				is_child_of = scope:actor
 			}
 		}
 		#especially heir
 		modifier = {
 			add = 75
-			scope:recipient = {
+			scope:recipient ?= {
 				is_heir_of = scope:actor
 			}
 		}
@@ -225,7 +225,7 @@ give_egg = {
 		#Give eggs to lover
 		modifier = {
 			add = 10
-			scope:recipient = {
+			scope:recipient ?= {
 				has_relation_lover = scope:actor
 				has_relation_soulmate = scope:actor
 			}
@@ -233,7 +233,7 @@ give_egg = {
 		#bonus points
 		modifier = {
 			factor = 5
-			scope:recipient = {
+			scope:recipient ?= {
 				OR = {
 					has_relation_friend = scope:actor
 					has_relation_best_friend = scope:actor
@@ -243,7 +243,7 @@ give_egg = {
 		#If you are weak, less chance to get an egg
 		modifier = {
 			add = -40
-			scope:recipient = {
+			scope:recipient ?= {
 				OR = {
 					has_trait = physique_bad_1
 					has_trait = physique_bad_2
@@ -254,7 +254,7 @@ give_egg = {
 		#don't give eggs to people who can't ride, or to our nemesis/rival
 		modifier = {
 			factor = 0
-			scope:recipient = {
+			scope:recipient ?= {
 				OR = {
 					has_trait = incapable
 					has_trait = crippled
@@ -275,10 +275,10 @@ give_egg = {
 		modifier = {
 			factor = 0
 			AND = {
-				scope:recipient = {
+				scope:recipient ?= {
 					NOT = { is_child_of = scope:actor }
 				}
-				scope:actor = {
+				scope:actor ?= {
 					any_child = {
 						AND = {
 							any_relation = {
@@ -299,7 +299,7 @@ give_egg = {
 		#Already has a dragon
 		modifier = {
 			factor = 0
-			scope:recipient = {
+			scope:recipient ?= {
 				OR = {
 					any_relation = {
 						type = agot_dragon
@@ -318,8 +318,8 @@ give_egg = {
 			factor = 0
 			agot_canon_dragons_enabled = yes
 			AND = {
-				scope:recipient = { agot_is_canon_rider = yes }
-				scope:recipient = { agot_has_canon_cradle_egg = no }
+				scope:recipient ?= { agot_is_canon_rider = yes }
+				scope:recipient ?= { agot_has_canon_cradle_egg = no }
 			}
 		}
 	}
@@ -338,7 +338,7 @@ agot_instruct_to_conduct_terror_campaign = {
 			scope:recipient.employer ?= scope:actor
 			scope:recipient.top_liege ?= scope:actor
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			is_current_dragonrider = yes
 			NOT = { has_character_flag = conducting_terror_campaign }
 		}
@@ -346,7 +346,7 @@ agot_instruct_to_conduct_terror_campaign = {
 	}
 
 	is_valid_showing_failures_only = {
-		scope:recipient = {
+		scope:recipient ?= {
 			is_adult = yes
 			var:current_dragon = {
 				dragon_can_do_terror_campaign = yes
@@ -359,7 +359,7 @@ agot_instruct_to_conduct_terror_campaign = {
 	}
 
 	on_accept = {
-		scope:recipient = {
+		scope:recipient ?= {
 			trigger_event = {
 				id = agot_dragon.0008
 			}
@@ -418,7 +418,7 @@ agot_stop_conducting_terror_campaign = {
 
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
-		scope:recipient = { has_character_flag = conducting_terror_campaign }
+		scope:recipient ?= { has_character_flag = conducting_terror_campaign }
 		OR = {
 			scope:recipient.employer ?= scope:actor
 			scope:recipient.top_liege ?= scope:actor
@@ -428,14 +428,14 @@ agot_stop_conducting_terror_campaign = {
 	is_valid_showing_failures_only = {
 		custom_tooltip = {
 			text = agot_refusing_stop_conducting_terror_campaign_tt
-			scope:recipient = {
+			scope:recipient ?= {
 				NOT = { has_character_flag = refusing_to_stop_terror_campaign }
 			}
 		}
 	}
 
 	on_accept = {
-		scope:recipient = {
+		scope:recipient ?= {
 			trigger_event = {
 				id = agot_dragon.0009
 			}
@@ -473,19 +473,19 @@ slay_dragon_interaction = {
 	auto_accept = yes
 
 	is_shown = {
-		scope:actor = { is_ai = no }
-		scope:recipient = {
+		scope:actor ?= { is_ai = no }
+		scope:recipient ?= {
 			has_trait = dragon
 			NOT = { has_character_flag = owned_dragon }
 		}
 		OR = {
-			scope:actor = {
+			scope:actor ?= {
 				any_realm_province = {
 					scope:recipient.location = this
 				}
 			}
 
-			scope:actor = {
+			scope:actor ?= {
 				any_memory = {
 					OR = {
 						has_memory_type = spouse_died
@@ -511,7 +511,7 @@ slay_dragon_interaction = {
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:recipient = {
+		scope:recipient ?= {
 			custom_tooltip = {
 				text = dragon_is_in_dragonpit
 				NOT = { has_character_flag = in_dragonpit }
@@ -521,7 +521,7 @@ slay_dragon_interaction = {
 				NOT = { has_character_flag = in_dragon_combat }
 			}
 		}
-		scope:actor = {
+		scope:actor ?= {
 			is_available_adult = yes
 			prowess >= 20
 			NOT = { has_trait = craven }
@@ -536,21 +536,21 @@ slay_dragon_interaction = {
 		}
 	}
 	on_accept = {
-		scope:actor = {
+		scope:actor ?= {
 			save_scope_as = human
-			scope:recipient = { save_scope_as = dragon }
+			scope:recipient ?= { save_scope_as = dragon }
 
 			scope:dragon.location = { save_scope_as = background_wilderness_scope }
 
 			# To prevent multiple dragon slaying attempts at the same time from player
 			# and for dragon
-			scope:human = { add_character_flag = in_dragon_combat }
-			scope:dragon = { add_character_flag = in_dragon_combat }
+			scope:human ?= { add_character_flag = in_dragon_combat }
+			scope:dragon ?= { add_character_flag = in_dragon_combat }
 			# Will be removed during events as needed
 
 			if = {
 				limit = {
-					scope:actor = {
+					scope:actor ?= {
 						any_memory = {
 							OR = {
 								has_memory_type = spouse_died
@@ -576,7 +576,7 @@ slay_dragon_interaction = {
 					}
 				}
 
-				scope:dragon_kill = { save_scope_as = vengeance_candidate }
+				scope:dragon_kill ?= { save_scope_as = vengeance_candidate }
 			}
 			random_list = {
 
@@ -590,7 +590,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_friendly
 							}
 						}
@@ -598,7 +598,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_impulsive
 							}
 						}
@@ -630,7 +630,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_skittish
 							}
 						}
@@ -638,7 +638,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_restrained
 							}
 						}
@@ -646,7 +646,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_solitary
 							}
 						}
@@ -664,7 +664,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_aggressive
 							}
 						}
@@ -672,7 +672,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_defiant
 							}
 						}
@@ -680,7 +680,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_voracious
 							}
 						}
@@ -688,7 +688,7 @@ slay_dragon_interaction = {
 					}
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_bloodthirsty
 							}
 						}
@@ -698,7 +698,7 @@ slay_dragon_interaction = {
 					# Friendly dragons don't attack... usually
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_friendly
 							}
 						}
@@ -708,7 +708,7 @@ slay_dragon_interaction = {
 					# Dragon injuries
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_wounded_1
 							}
 						}
@@ -717,7 +717,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_wounded_2
 							}
 						}
@@ -726,7 +726,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_wounded_3
 							}
 						}
@@ -735,7 +735,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_wounded_4
 							}
 						}
@@ -744,7 +744,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_wounded_5
 							}
 						}
@@ -753,7 +753,7 @@ slay_dragon_interaction = {
 
 					modifier = {
 						trigger = {
-							scope:dragon = {
+							scope:dragon ?= {
 								has_trait = dragon_ill
 							}
 						}
@@ -775,23 +775,23 @@ rename_dragon_interaction = {
 	auto_accept = yes
 
 	is_shown = {
-		scope:actor = {
+		scope:actor ?= {
 			is_human = yes
 			is_ai = no
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			has_trait = dragon
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:actor = {
+		scope:actor ?= {
 			allow_naming_of_dragon_trigger = { DRAGON = scope:recipient }
 		}
 	}
 
 	on_accept = {
-		scope:actor = {
-			scope:recipient = {
+		scope:actor ?= {
+			scope:recipient ?= {
 				save_scope_as = child
 			}
 			trigger_event = agot_dragon_maintenance.0200

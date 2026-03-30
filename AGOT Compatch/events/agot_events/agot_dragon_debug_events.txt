@@ -181,8 +181,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_ten_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_ten_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_ten_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_ten_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
@@ -190,8 +190,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_nine_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_nine_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_nine_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_nine_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
@@ -199,8 +199,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_eight_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_eight_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_eight_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_eight_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
@@ -208,8 +208,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_seven_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_seven_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_seven_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_seven_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
@@ -217,8 +217,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_six_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_six_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_six_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_six_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.6 }
@@ -226,8 +226,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_five_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_five_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_five_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_five_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
@@ -235,8 +235,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_four_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_four_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_four_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_four_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
@@ -244,8 +244,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_three_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_three_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_three_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_three_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.3 }
@@ -253,8 +253,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_two_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_two_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_two_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_two_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.2 }
@@ -262,8 +262,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_one_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_one_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_one_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_one_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.1 }
@@ -271,8 +271,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_zero_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_zero_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_zero_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_zero_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.0 }
@@ -289,8 +289,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_ten_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_ten_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_ten_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_ten_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_1.0 }
@@ -298,8 +298,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_nine_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_nine_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_nine_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_nine_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.9 }
@@ -307,8 +307,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_eight_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_eight_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_eight_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_eight_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.8 }
@@ -316,8 +316,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_seven_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_seven_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_seven_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_seven_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.7 }
@@ -325,8 +325,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_six_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_six_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_six_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_six_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.6 }
@@ -334,8 +334,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_five_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_five_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_five_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_five_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.5 }
@@ -343,8 +343,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_four_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_four_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_four_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_four_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.4 }
@@ -352,8 +352,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_three_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_three_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_three_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_three_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.3 }
@@ -361,8 +361,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_two_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_two_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_two_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_two_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.2 }
@@ -370,8 +370,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_one_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_one_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_one_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_one_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.1 }
@@ -379,8 +379,8 @@ agot_dragon_debug.0005 = {
 		triggered_outfit = {
 			trigger = {
 				OR = {
-					scope:lh_portrait = { level_zero_dragon_size_trigger = yes }
-					scope:rh_portrait = { level_zero_dragon_size_trigger = yes }
+					scope:lh_portrait ?= { level_zero_dragon_size_trigger = yes }
+					scope:rh_portrait ?= { level_zero_dragon_size_trigger = yes }
 				}
 			}
 			outfit_tags = { dynamic_camera_zoom_0.0 }
@@ -406,19 +406,19 @@ agot_dragon_debug.0005 = {
 			save_scope_as = rh_portrait
 		}
 
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = no }
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = no }
 		}
 	}
 
 	after = {
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
 	}
@@ -672,19 +672,19 @@ agot_dragon_debug.00051 = {
 			}
 		}
 
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = yes }
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = yes }
 		}
 	}
 
 	after = {
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
 	}
@@ -741,19 +741,19 @@ agot_dragon_debug.00052 = {
 			}
 		}
 
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_hover RIDING_DRAGON = yes }
 		}
 	}
 
 	after = {
-		scope:lh_portrait = {
+		scope:lh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
-		scope:rh_portrait = {
+		scope:rh_portrait ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
 	}
@@ -930,7 +930,7 @@ agot_dragon_debug.0008 = { #0008
 
 	immediate = {
 		var:current_dragon = { save_scope_as = dragon_in_battle }
-		#scope:dragon_in_battle = {
+		#scope:dragon_in_battle ?= {
 		#	agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = no }
 		#	#add_character_flag = dragon_flying
 		#}
@@ -960,6 +960,6 @@ agot_dragon_debug.0008 = { #0008
 
 	after = {
 		agot_clear_dragon_animation_flags = yes
-		scope:dragon_in_battle = { agot_clear_dragon_animation_flags = yes }
+		scope:dragon_in_battle ?= { agot_clear_dragon_animation_flags = yes }
 	}
 }

@@ -40,9 +40,9 @@ agot_spawn_owned_hatchling_from_egg_effect = {
 				NOT = { has_character_flag = hatched_canon_dragon }
 			}
 		}
-		scope:cradlemate = { add_character_flag = hatched_canon_dragon }
+		scope:cradlemate ?= { add_character_flag = hatched_canon_dragon }
 		agot_spawn_canon_cradle_dragon_effect = { CRADLEMATE = scope:cradlemate }
-		scope:dragon = {
+		scope:dragon ?= {
 			add_character_flag = {
 				flag = agot_no_silly_name
 				months = 1
@@ -55,7 +55,7 @@ agot_spawn_owned_hatchling_from_egg_effect = {
 			agot_is_valid_unpaired_canon_dragon_birth = { EGG = scope:egg }
 		}
 		agot_spawn_unpaired_canon_dragon = { EGG = scope:egg }
-		scope:dragon = {
+		scope:dragon ?= {
 			add_character_flag = {
 				flag = agot_no_silly_name
 				months = 1
@@ -114,14 +114,14 @@ agot_spawn_bonded_hatchling_from_egg_effect = {
 
 	if = {
 		limit = { exists = scope:cradlemate }
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = cradlemate
 				value = scope:cradlemate
 			}
 			if = {
 				limit = {
-					scope:cradlemate = { has_variable = destiny_child }
+					scope:cradlemate ?= { has_variable = destiny_child }
 				}
 				add_trait = dragon_destined
 			}

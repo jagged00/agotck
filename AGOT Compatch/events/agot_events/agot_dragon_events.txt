@@ -63,7 +63,7 @@ agot_dragon.0001 = {
 				type = agot_dragon
 				save_scope_as = bonded_human
 			}
-			scope:bonded_human = {
+			scope:bonded_human ?= {
 				# Add character memory
 				create_character_memory = {
 					type = agot_dragon_died
@@ -305,7 +305,7 @@ agot_dragon.0003 = {
 								}
 							}
 						}
-						scope:dragon = { # Set up a new event to move the dragon again soon
+						scope:dragon ?= { # Set up a new event to move the dragon again soon
 							trigger_event = {
 								id = agot_dragon.0003
 								days = { 14 62 } # Two weeks to two months
@@ -528,7 +528,7 @@ agot_dragon.0007 = { # Terror campaign
 						county_controller.top_liege = { is_at_war_with = root.top_liege } # Don't burn occupied holdings
 					}
 					# We're now damaging an enemy, so trigger guilt event if relevant
-					scope:terror_dragonrider = {
+					scope:terror_dragonrider ?= {
 						if = {
 							limit = {
 								NOT = { has_character_flag = terror_campaign_nightmares }
@@ -652,7 +652,7 @@ agot_dragon.0007 = { # Terror campaign
 					# Now do everyone relevant to the rider if its in the same realm - foreign realms they don't care about (see: Daemon in the stepstones)
 					if = {
 						limit = { county = { target_is_de_jure_liege_or_above = scope:terror_dragonrider.top_liege.primary_title } }
-						scope:terror_dragonrider = {
+						scope:terror_dragonrider ?= {
 							every_close_or_extended_family_member = { # Family doesn't respect it
 								limit = {
 									NOT = { has_trait = callous }
@@ -720,7 +720,7 @@ agot_dragon.0007 = { # Terror campaign
 			# If instructed, add instructor opinion
 			if = {
 				limit = {
-					scope:terror_dragonrider = { has_character_flag = instructed_terror_campaign }
+					scope:terror_dragonrider ?= { has_character_flag = instructed_terror_campaign }
 				}
 				scope:terror_dragonrider.location = {
 					if = {
@@ -831,7 +831,7 @@ agot_dragon.0007 = { # Terror campaign
 						# Now do everyone relevant to the rider if its in the same realm - foreign realms they don't care about (see: Daemon in the stepstones)
 						if = {
 							limit = { county = { target_is_de_jure_liege_or_above = scope:terror_dragonrider.top_liege.primary_title } }
-							scope:terror_dragonrider = {
+							scope:terror_dragonrider ?= {
 								every_close_or_extended_family_member = { # Family doesn't respect it
 									limit = {
 										NOT = { has_trait = callous }
@@ -952,7 +952,7 @@ agot_dragon.0008 = { # Asked to take up terror campaign event
 				}
 			}
 		}
-		scope:actor = {
+		scope:actor ?= {
 			add_opinion = {
 				modifier = grateful_opinion
 				opinion = 30
@@ -982,7 +982,7 @@ agot_dragon.0008 = { # Asked to take up terror campaign event
 			flag = rejecting_terror_campaign
 			years = 2
 		}
-		scope:actor = {
+		scope:actor ?= {
 			add_opinion = {
 				modifier = rejected_terror_campaign
 				target = scope:recipient
@@ -1043,7 +1043,7 @@ agot_dragon.0009 = { # Asked to stop terror campaign event
 			remove_character_flag = instructed_terror_campaign
 			remove_variable = terror_campaign_instructor
 		}
-		scope:actor = {
+		scope:actor ?= {
 			send_interface_toast = {
 				type = dragon_neutral_toast
 				title = agot_dragon.0009.accept.t
@@ -1067,7 +1067,7 @@ agot_dragon.0009 = { # Asked to stop terror campaign event
 	option = { # No
 		name = agot_dragon.0009.b
 		flavor = agot_dragon.0009.b.f
-		scope:actor = {
+		scope:actor ?= {
 			add_opinion = {
 				modifier = treachery_opinion
 				target = scope:recipient
@@ -1080,7 +1080,7 @@ agot_dragon.0009 = { # Asked to stop terror campaign event
 				right_icon = scope:recipient.var:current_dragon
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			add_character_flag = refusing_to_stop_terror_campaign
 		}
 		ai_chance = {
@@ -1609,14 +1609,14 @@ agot_dragon.0013 = { # Regrets terror campaign
 						culture = root.culture
 						save_scope_as = beautiful_peasant
 					}
-					scope:beautiful_peasant = {
+					scope:beautiful_peasant ?= {
 						set_sexuality = bisexual
 					}
 					if = {
 						limit = {
 							is_male = yes
 							exists = scope:beautiful_peasant
-							scope:beautiful_peasant = {
+							scope:beautiful_peasant ?= {
 								age < define:NChildbirth|MAX_FEMALE_REPRODUCTION_AGE
 							}
 						}
@@ -1765,10 +1765,10 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 	}
 
 	immediate = { # Scoping needed for script values from interaction base
-		scope:attacker = {
+		scope:attacker ?= {
 			save_scope_as = actor
 		}
-		scope:defender = {
+		scope:defender ?= {
 			save_scope_as = recipient
 		}
 	}
@@ -1783,24 +1783,24 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = { # Is the Rightful Liege of recipient
 				trigger = {
-					scope:attacker = { is_rightful_liege_of = scope:defender }
+					scope:attacker ?= { is_rightful_liege_of = scope:defender }
 				}
 				add = 20
 			}
 			modifier = { #Is not the Rightful Liege of recipient
 				trigger = {
 					NOT = {
-						scope:attacker = { is_rightful_liege_of = scope:defender }
+						scope:attacker ?= { is_rightful_liege_of = scope:defender }
 					}
 				}
 				add = -20
 			}
 			modifier = { #Ageism modifier vs kids.
 				trigger = {
-					scope:attacker = {
+					scope:attacker ?= {
 						age < 12
 					}
-					scope:defender = {
+					scope:defender ?= {
 						age > 16
 					}
 				}
@@ -1810,10 +1810,10 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 				trigger = {
 					OR = {
 						AND = {
-							scope:attacker = {
+							scope:attacker ?= {
 								has_trait = bastard
 							}
-							scope:defender = {
+							scope:defender ?= {
 								faith = { NOT = { has_doctrine = doctrine_bastardry_none } }
 							}
 						}
@@ -1825,7 +1825,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = {
 				add = intimidated_external_reason_value
-				scope:defender = {
+				scope:defender ?= {
 					has_dread_level_towards = {
 						target = scope:attacker
 						level = 1
@@ -1834,7 +1834,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = {
 				add = cowed_external_reason_value
-				scope:defender = {
+				scope:defender ?= {
 					has_dread_level_towards = {
 						target = scope:attacker
 						level = 2
@@ -1843,10 +1843,10 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			opinion_modifier = { #Compare Opinion modifier - Clans care more about opinion
 				trigger = {
-					scope:attacker = {
+					scope:attacker ?= {
 						government_has_flag = government_is_clan
 					}
-					scope:defender = {
+					scope:defender ?= {
 						government_has_flag = government_is_clan
 					}
 				}
@@ -1857,10 +1857,10 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			opinion_modifier = { #Compare Opinion modifier.
 				trigger = {
 					OR = {
-						scope:attacker = {
+						scope:attacker ?= {
 							NOT = { government_has_flag = government_is_clan }
 						}
-						scope:defender = {
+						scope:defender ?= {
 							NOT = { government_has_flag = government_is_clan }
 						}
 					}
@@ -1872,7 +1872,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			modifier = { # Cultural Acceptance
 				add = offer_vassalage_acceptance_value
 				trigger = {
-					scope:attacker = {
+					scope:attacker ?= {
 						NOT = { has_same_culture_as = scope:defender }
 						culture = {
 							cultural_acceptance = { target = scope:defender.culture value <= 90 }
@@ -1882,7 +1882,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = { #Different faith, no pluralism.
 				trigger = {
-					scope:defender = {
+					scope:defender ?= {
 						NOR = { #Of two different faiths AND the potential vassal's faith is not pluralistic.
 							faith = scope:attacker.faith
 							faith = { has_doctrine = doctrine_pluralism_pluralistic }
@@ -1917,7 +1917,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = { #Different faith, pluralism.
 				trigger = {
-					scope:defender = {
+					scope:defender ?= {
 						NOT = {
 							faith = scope:attacker.faith
 						}
@@ -1955,7 +1955,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = { #Different faith, both have pluralism.
 				trigger = {
-					scope:defender = {
+					scope:defender ?= {
 						NOT = {
 							faith = scope:attacker.faith
 						}
@@ -1991,13 +1991,13 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			}
 			modifier = { #Greater title tier
 				trigger = {
-					scope:defender = { highest_held_title_tier > scope:attacker.highest_held_title_tier }
+					scope:defender ?= { highest_held_title_tier > scope:attacker.highest_held_title_tier }
 				}
 				add = {
 					value = -50
 					if = {
 						limit = {
-							scope:defender = {
+							scope:defender ?= {
 								OR = {
 									government_has_flag = government_is_republic
 									government_has_flag = government_is_theocracy
@@ -2037,7 +2037,7 @@ agot_dragon.0014 = { # Dragon subjugation surrender option event
 			end_war = attacker
 		}
 
-		scope:attacker = {
+		scope:attacker ?= {
 			add_opinion = {
 				modifier = agreed_to_dragon_conquest
 				target = root
@@ -2153,7 +2153,7 @@ agot_dragon.0016 = { # Generic dragon gender reveal
 			triggered_desc = { # My owned dragon but not tamed
 				trigger = {
 					exists = scope:revealing
-					scope:dragon = {
+					scope:dragon ?= {
 						has_character_flag = owned_dragon
 						employer = root
 					}
@@ -2162,7 +2162,7 @@ agot_dragon.0016 = { # Generic dragon gender reveal
 			}
 			triggered_desc = { # My owned dragon but not tamed
 				trigger = {
-					scope:dragon = {
+					scope:dragon ?= {
 						has_character_flag = owned_dragon
 						employer = root
 					}
@@ -2171,7 +2171,7 @@ agot_dragon.0016 = { # Generic dragon gender reveal
 			}
 			triggered_desc = { # Wild dragon
 				trigger = {
-					scope:dragon = {
+					scope:dragon ?= {
 						NOT = { has_character_flag = owned_dragon }
 					}
 				}
@@ -2180,11 +2180,11 @@ agot_dragon.0016 = { # Generic dragon gender reveal
 		}
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:dragon = { is_male = yes } }
+				trigger = { scope:dragon ?= { is_male = yes } }
 				desc = agot_dragon.0016.desc.confirm
 			}
 			triggered_desc = {
-				trigger = { scope:dragon = { is_female = yes } }
+				trigger = { scope:dragon ?= { is_female = yes } }
 				desc = agot_dragon.0016.desc.actually
 			}
 		}
@@ -2209,7 +2209,7 @@ agot_dragon.0016 = { # Generic dragon gender reveal
 		}
 	}
 	immediate = {
-		scope:dragon = {
+		scope:dragon ?= {
 			agot_reveal_dragon_gender_effect = yes
 			var:current_rider ?= {
 				save_scope_as = dragonrider
@@ -2334,7 +2334,7 @@ agot_dragon.0017 = { # Choose capital of Three Daughters conquest
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
-		scope:target_title_1 = {
+		scope:target_title_1 ?= {
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -2416,7 +2416,7 @@ agot_dragon.0017 = { # Choose capital of Three Daughters conquest
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
-		scope:target_title_2 = {
+		scope:target_title_2 ?= {
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -2498,7 +2498,7 @@ agot_dragon.0017 = { # Choose capital of Three Daughters conquest
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
-		scope:target_title_3 = {
+		scope:target_title_3 ?= {
 			change_title_holder = {
 				holder = root
 				change = scope:change
@@ -2571,7 +2571,7 @@ agot_dragon.0017 = { # Choose capital of Three Daughters conquest
 		}
 		if = {
 			limit = {
-				scope:current_capital = {
+				scope:current_capital ?= {
 					empire = title:e_three_daughters
 				}
 			}
@@ -2896,7 +2896,7 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 			}
 			save_scope_as = cannibal_dragon
 		}
-		scope:cannibal_dragon = { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = NO } }
+		scope:cannibal_dragon ?= { agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = NO } }
 	}
 
 	option = {
@@ -2930,16 +2930,16 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 						}
 					}
 					OR = {
-						scope:ridden_dragon = { has_trait = dragon_slow }
-						scope:cannibal_dragon = { has_trait = dragon_swift }
+						scope:ridden_dragon ?= { has_trait = dragon_slow }
+						scope:cannibal_dragon ?= { has_trait = dragon_swift }
 					}
 				}
 				modifier = {
 					add = 60
 					NOT = { has_game_rule = agot_silly_mode }
-					scope:ridden_dragon = { dragon_combat_effectiveness >= level_three_dragon_combat }
+					scope:ridden_dragon ?= { dragon_combat_effectiveness >= level_three_dragon_combat }
 				}
-				scope:ridden_dragon = {
+				scope:ridden_dragon ?= {
 					death = {
 						death_reason = death_dragon_ate
 						killer = scope:cannibal_dragon
@@ -2950,7 +2950,7 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 					killer = scope:cannibal_dragon
 				}
 				hidden_effect = {
-					scope:cannibal_dragon = {
+					scope:cannibal_dragon ?= {
 						change_dragon_size = {
 							VALUE = 1
 						}
@@ -2973,8 +2973,8 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 						}
 					}
 					OR = {
-						scope:ridden_dragon = { has_trait = dragon_swift }
-						scope:cannibal_dragon = { has_trait = dragon_slow }
+						scope:ridden_dragon ?= { has_trait = dragon_swift }
+						scope:cannibal_dragon ?= { has_trait = dragon_slow }
 					}
 				}
 				send_interface_toast = {
@@ -3000,7 +3000,7 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 			remove_character_flag = currently_riding_dragon
 			agot_clear_dragon_animation_flags = yes
 		}
-		scope:cannibal_dragon = {
+		scope:cannibal_dragon ?= {
 			if = {
 				limit = {
 					is_alive = yes
@@ -3238,7 +3238,7 @@ agot_dragon.0030 = { # Child reveals bonded dragon's gender
 	}
 
 	immediate = {
-		scope:dragon = {
+		scope:dragon ?= {
 			agot_reveal_dragon_gender_effect = yes
 		}
 		if = {
@@ -3282,7 +3282,7 @@ agot_dragon.0040 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:child = { agot_can_use_valyrian_dragon_commands_trigger = yes }
+					scope:child ?= { agot_can_use_valyrian_dragon_commands_trigger = yes }
 				}
 				desc = agot_dragon.0040.desc.fire_valyrian
 			}
@@ -3314,10 +3314,10 @@ agot_dragon.0040 = {
 	}
 
 	trigger = {
-		NOT = { scope:dragon = { has_character_flag = in_dragonpit } }
+		NOT = { scope:dragon ?= { has_character_flag = in_dragonpit } }
 	}
 	immediate = {
-		scope:dragon = { add_character_flag = { flag = agot_dragon.0040 years = 5 } } # 5 years should be more than long enough
+		scope:dragon ?= { add_character_flag = { flag = agot_dragon.0040 years = 5 } } # 5 years should be more than long enough
 	}
 
 	option = {
@@ -3516,7 +3516,7 @@ agot_dragon.0200 = { # Opener for dealing with dragon in territory
 			limit = {
 				exists = scope:wild_dragon
 			}
-			scope:wild_dragon = {
+			scope:wild_dragon ?= {
 				is_alive = yes
 				NOT = { has_character_flag = owned_dragon }
 			}
@@ -3632,7 +3632,7 @@ agot_dragon.0200 = { # Opener for dealing with dragon in territory
 			exists = scope:court_combatant
 		}
 		name = agot_dragon.0200.c
-		scope:court_combatant = {
+		scope:court_combatant ?= {
 			save_scope_as = dragon_fighter
 		}
 		ai_chance = {
@@ -3683,8 +3683,8 @@ agot_dragon.0200 = { # Opener for dealing with dragon in territory
 				save_scope_as = ds_court_owner
 			}
 
-			scope:wild_dragon = { save_scope_as = dragon }
-			scope:dragon_fighter = {
+			scope:wild_dragon ?= { save_scope_as = dragon }
+			scope:dragon_fighter ?= {
 				save_scope_as = human
 				trigger_event = agot_dragon_slaying_events.0001
 			}
@@ -3825,7 +3825,7 @@ agot_dragon.0201 = {
 			target = scope:candidate_merc
 			gold = 250
 		}
-		scope:candidate_merc = {
+		scope:candidate_merc ?= {
 			save_scope_as = dragon_fighter
 		}
 	}
@@ -3836,14 +3836,14 @@ agot_dragon.0201 = {
 			target = scope:candidate_knight
 			gold = 100
 		}
-		scope:candidate_knight = {
+		scope:candidate_knight ?= {
 			save_scope_as = dragon_fighter
 		}
 	}
 
 	option = { # Send a personal knight
 		name = agot_dragon.0201.personal_knight
-		scope:candidate_personal_knight = {
+		scope:candidate_personal_knight ?= {
 			save_scope_as = dragon_fighter
 		}
 	}
@@ -3853,7 +3853,7 @@ agot_dragon.0201 = {
 			exists = scope:candidate_child
 		}
 		name = agot_dragon.0201.c
-		scope:candidate_child = {
+		scope:candidate_child ?= {
 			save_scope_as = dragon_fighter
 			add_prestige = major_prestige_gain
 		}
@@ -3881,27 +3881,27 @@ agot_dragon.0201 = {
 			hidden_effect = {
 				switch = {
 					trigger = scope:dragon_fighter
-					scope:candidate_merc = {
-						scope:candidate_knight = {
+					scope:candidate_merc ?= {
+						scope:candidate_knight ?= {
 							death = {
 								death_reason = death_vanished
 							}
 						}
 					}
-					scope:candidate_knight = {
-						scope:candidate_merc = {
+					scope:candidate_knight ?= {
+						scope:candidate_merc ?= {
 							death = {
 								death_reason = death_vanished
 							}
 						}
 					}
 					fallback = {
-						scope:candidate_merc = {
+						scope:candidate_merc ?= {
 							death = {
 								death_reason = death_vanished
 							}
 						}
-						scope:candidate_knight = {
+						scope:candidate_knight ?= {
 							death = {
 								death_reason = death_vanished
 							}
@@ -3917,8 +3917,8 @@ agot_dragon.0201 = {
 				save_scope_as = ds_court_owner
 			}
 
-			scope:wild_dragon = { save_scope_as = dragon }
-			scope:dragon_fighter = {
+			scope:wild_dragon ?= { save_scope_as = dragon }
+			scope:dragon_fighter ?= {
 				save_scope_as = human
 				trigger_event = agot_dragon_slaying_events.0001
 			}
@@ -3926,12 +3926,12 @@ agot_dragon.0201 = {
 		}
 		else = {
 			hidden_effect = {
-				scope:candidate_merc = {
+				scope:candidate_merc ?= {
 					death = {
 						death_reason = death_vanished
 					}
 				}
-				scope:candidate_knight = {
+				scope:candidate_knight ?= {
 					death = {
 						death_reason = death_vanished
 					}
@@ -3949,7 +3949,7 @@ agot_dragon.0202 = {
 	theme = dragon
 
 	trigger = {
-		scope:dragon = { is_alive = no }
+		scope:dragon ?= { is_alive = no }
 	}
 	override_background = {
 		reference = throne_room
@@ -3980,7 +3980,7 @@ agot_dragon.0203 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:dragon_fighter = { is_alive = yes } }
+				trigger = { scope:dragon_fighter ?= { is_alive = yes } }
 				desc = agot_dragon.0203.desc_run
 			}
 			desc = agot_dragon.0203.desc_dead
@@ -3988,7 +3988,7 @@ agot_dragon.0203 = {
 	}
 
 	trigger = {
-		scope:dragon = { is_alive = yes }
+		scope:dragon ?= { is_alive = yes }
 	}
 
 	theme = dragon
@@ -4063,13 +4063,13 @@ agot_dragon.1000 = {
 			location = root.capital_province
 			save_scope_as = dragonseed
 		}
-		scope:dragonseed = { add_to_list = final_dragonseeds }
+		scope:dragonseed ?= { add_to_list = final_dragonseeds }
 		create_character = {
 			template = agot_valyrian_dragonseed_template
 			location = root.capital_province
 			save_scope_as = dragonseed
 		}
-		scope:dragonseed = { add_to_list = final_dragonseeds }
+		scope:dragonseed ?= { add_to_list = final_dragonseeds }
 		random = {
 			chance = 50
 			create_character = {
@@ -4077,7 +4077,7 @@ agot_dragon.1000 = {
 				location = root.capital_province
 				save_scope_as = dragonseed
 			}
-			scope:dragonseed = { add_to_list = final_dragonseeds }
+			scope:dragonseed ?= { add_to_list = final_dragonseeds }
 		}
 		random = {
 			chance = 50
@@ -4086,7 +4086,7 @@ agot_dragon.1000 = {
 				location = root.capital_province
 				save_scope_as = dragonseed
 			}
-			scope:dragonseed = { add_to_list = final_dragonseeds }
+			scope:dragonseed ?= { add_to_list = final_dragonseeds }
 		}
 		# Easter Egg Dragonseeds.. slot in more than one easter egg character template when they exist, ideally in a random_list within this block.
 		random = {
@@ -4105,7 +4105,7 @@ agot_dragon.1000 = {
 					location = root.capital_province
 					save_scope_as = dragonseed
 				}
-				scope:dragonseed = { add_to_list = final_dragonseeds }
+				scope:dragonseed ?= { add_to_list = final_dragonseeds }
 			}
 		}
 
@@ -4260,7 +4260,7 @@ agot_dragon.1001 = {
 						generate_history = no
 					}
 				}
-				scope:false_seed = {
+				scope:false_seed ?= {
 					if = {
 						limit = {
 							NOT = { employer = scope:false_seed_sower }
@@ -4508,7 +4508,7 @@ agot_dragon.1003 = {
 							target = scope:recipient
 							type = loyalty_hook
 						}
-						scope:recipient = {
+						scope:recipient ?= {
 							ai_honor >= 50
 						}
 					}
@@ -4523,7 +4523,7 @@ agot_dragon.1003 = {
 							target = scope:recipient
 							type = favor_hook
 						}
-						scope:recipient = {
+						scope:recipient ?= {
 							ai_honor >= 0
 						}
 					}
@@ -4560,7 +4560,7 @@ agot_dragon.1003 = {
 							target = scope:recipient
 							type = loyalty_hook
 						}
-						scope:recipient = {
+						scope:recipient ?= {
 							ai_honor >= 50
 						}
 					}
@@ -4575,7 +4575,7 @@ agot_dragon.1003 = {
 							target = scope:recipient
 							type = favor_hook
 						}
-						scope:recipient = {
+						scope:recipient ?= {
 							ai_honor >= 0
 						}
 					}
@@ -4585,7 +4585,7 @@ agot_dragon.1003 = {
 					}
 				}
 			}
-			scope:recipient = {
+			scope:recipient ?= {
 				if = {
 					limit = {
 						exists = house
@@ -4638,7 +4638,7 @@ agot_dragon.1003 = {
 							target = scope:recipient
 							type = loyalty_hook
 						}
-						scope:recipient = {
+						scope:recipient ?= {
 							ai_honor >= 0
 						}
 					}
@@ -4659,7 +4659,7 @@ agot_dragon.1003 = {
 						target = scope:recipient
 					}
 				}
-				scope:recipient = {
+				scope:recipient ?= {
 					if = {
 						limit = {
 							exists = house
@@ -4775,7 +4775,7 @@ agot_dragon.1004 = { # Someone has blown the horn and succeeded
 
 	immediate = {
 
-		scope:dragon_horn = {
+		scope:dragon_horn ?= {
 			set_owner = {
 				target = root
 				history = {
@@ -4888,7 +4888,7 @@ agot_dragon.1004 = { # Someone has blown the horn and succeeded
 		}
 
 		show_as_tooltip = {
-			scope:false_seed = {
+			scope:false_seed ?= {
 				death = { death_reason = death_horn_blow killer = scope:dragon_horn.var:binder }
 			}
 		}
@@ -4941,7 +4941,7 @@ agot_dragon.1004 = { # Someone has blown the horn and succeeded
 					days = 1
 				}
 			}
-			scope:false_seed_sower = {
+			scope:false_seed_sower ?= {
 				trigger_event = {
 					id = agot_dragon.1007
 					days = 2
@@ -4963,7 +4963,7 @@ agot_dragon.1004 = { # Someone has blown the horn and succeeded
 
 	after = {
 		hidden_effect = {
-			scope:false_seed = {
+			scope:false_seed ?= {
 				agot_burn_effect = { MIN = 100 MAX = 100 }
 				death = { death_reason = death_horn_blow killer = scope:dragon_horn.var:binder }
 			}
@@ -5063,7 +5063,7 @@ agot_dragon.1005 = { # Dragons from false seed event arrive
 				exists = scope:dragon_horn
 			}
 
-			scope:dragon_two = {
+			scope:dragon_two ?= {
 				set_variable = {
 					name = horn_binder
 					value = root
@@ -5075,7 +5075,7 @@ agot_dragon.1005 = { # Dragons from false seed event arrive
 				}
 			}
 
-			scope:dragon_horn = {
+			scope:dragon_horn ?= {
 				add_to_variable_list = {
 					name = tamed_dragons
 					target = scope:dragon_two
@@ -5148,7 +5148,7 @@ agot_dragon.1005 = { # Dragons from false seed event arrive
 				exists = scope:dragon_horn
 			}
 
-			scope:dragon_one = {
+			scope:dragon_one ?= {
 				set_variable = {
 					name = horn_binder
 					value = root
@@ -5160,7 +5160,7 @@ agot_dragon.1005 = { # Dragons from false seed event arrive
 				}
 			}
 
-			scope:dragon_horn = {
+			scope:dragon_horn ?= {
 				add_to_variable_list = {
 					name = tamed_dragons
 					target = scope:dragon_one
@@ -5396,7 +5396,7 @@ agot_dragon.1006 = { # Someone else used false seed and you were the true binder
 				exists = scope:dragon_horn
 			}
 
-			scope:dragon_two = {
+			scope:dragon_two ?= {
 				set_variable = {
 					name = horn_binder
 					value = root
@@ -5408,7 +5408,7 @@ agot_dragon.1006 = { # Someone else used false seed and you were the true binder
 				}
 			}
 
-			scope:dragon_horn = {
+			scope:dragon_horn ?= {
 				add_to_variable_list = {
 					name = tamed_dragons
 					target = scope:dragon_two
@@ -5481,7 +5481,7 @@ agot_dragon.1006 = { # Someone else used false seed and you were the true binder
 				exists = scope:dragon_horn
 			}
 
-			scope:dragon_one = {
+			scope:dragon_one ?= {
 				set_variable = {
 					name = horn_binder
 					value = root
@@ -5493,7 +5493,7 @@ agot_dragon.1006 = { # Someone else used false seed and you were the true binder
 				}
 			}
 
-			scope:dragon_horn = {
+			scope:dragon_horn ?= {
 				add_to_variable_list = {
 					name = tamed_dragons
 					target = scope:dragon_one
@@ -5692,7 +5692,7 @@ agot_dragon.1008 = { # False seed blew the horn and it failed
 	immediate = {
 
 		# Dragon horn blower dies
-		scope:dragon_horn = {
+		scope:dragon_horn ?= {
 			set_owner = {
 				target = root
 				history = {
@@ -5703,12 +5703,12 @@ agot_dragon.1008 = { # False seed blew the horn and it failed
 		}
 
 		show_as_tooltip = {
-			scope:false_seed = {
+			scope:false_seed ?= {
 				death = { death_reason = death_horn_blow killer = scope:false_seed_sower }
 			}
 		}
 
-		scope:false_seed = {
+		scope:false_seed ?= {
 			remove_from_list = final_dragonseeds
 		}
 
@@ -5739,7 +5739,7 @@ agot_dragon.1008 = { # False seed blew the horn and it failed
 	option = {
 		name = agot_dragon.1008.a
 		trigger_event = agot_dragon.1002 # The false seed is dead, we can safely use 1002
-		scope:false_seed_sower = {
+		scope:false_seed_sower ?= {
 			trigger_event = agot_dragon.1009
 		}
 		ai_chance = { base = 100 }
@@ -5763,7 +5763,7 @@ agot_dragon.1008 = { # False seed blew the horn and it failed
 
 	after = {
 		hidden_effect = {
-			scope:false_seed = {
+			scope:false_seed ?= {
 				agot_burn_effect = { MIN = 100 MAX = 100 }
 				death = { death_reason = death_horn_blow killer = scope:false_seed_sower }
 			}
@@ -5793,7 +5793,7 @@ agot_dragon.1009 = { # Your false seed failed
 
 	immediate = {
 		show_as_tooltip = {
-			scope:dragon_horn = {
+			scope:dragon_horn ?= {
 				set_owner = {
 					target = root
 					history = {
@@ -5805,12 +5805,12 @@ agot_dragon.1009 = { # Your false seed failed
 		}
 
 		show_as_tooltip = {
-			scope:false_seed = {
+			scope:false_seed ?= {
 				death = { death_reason = death_horn_blow killer = scope:dragon_horn.var:binder }
 			}
 		}
 
-		scope:dragon_keeper = {
+		scope:dragon_keeper ?= {
 			if = {
 				limit = {
 					NOR = {
@@ -5878,11 +5878,11 @@ agot_dragon.1010 = {
 		name = agot_dragon.1010.b
 		custom_tooltip = agot_dragon.1010.b_tt
 		hidden_effect = {
-			scope:recipient = {
+			scope:recipient ?= {
 				create_cadet_branch = { always = yes }
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			remove_trait = bastard
 			add_trait = bastard_founder
 		}
@@ -5897,14 +5897,14 @@ agot_dragon.1010 = {
 
 		if = {
 			limit = {
-				scope:recipient = {
+				scope:recipient ?= {
 					can_add_hook = {
 						target = root
 						type = favor_hook
 					}
 				}
 			}
-			scope:recipient = {
+			scope:recipient ?= {
 				add_hook = {
 					type = favor_hook
 					target = root
@@ -5921,7 +5921,7 @@ agot_dragon.1010 = {
 				gold = medium_gold_value
 			}
 		}
-		scope:recipient = {
+		scope:recipient ?= {
 			add_opinion = {
 				target = root
 				modifier = disappointed_opinion

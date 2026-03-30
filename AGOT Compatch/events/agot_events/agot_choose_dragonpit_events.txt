@@ -37,9 +37,9 @@ agot_choose_dragonpit_event.0001 = {
 		}
 		if = {
 			limit = {
-				scope:dragon = { exists = var:current_rider }
+				scope:dragon ?= { exists = var:current_rider }
 			}
-			scope:dragon = {
+			scope:dragon ?= {
 				var:current_rider = { save_scope_as = rider }
 			}
 		}
@@ -84,11 +84,11 @@ agot_choose_dragonpit_event.0001 = {
 		show_as_unavailable = {
 			custom_tooltip = {
 				text = CANT_SENT_TO_DRAGONPIT_TT
-				scope:dragon = { owns_story_of_type = story_dragon_at_war }
+				scope:dragon ?= { owns_story_of_type = story_dragon_at_war }
 			}
 			custom_tooltip = {
 				text = CANT_SENT_TO_DRAGONPIT_TRAVELING_TT
-				scope:dragon = {
+				scope:dragon ?= {
 					trigger_if = {
 						limit = {
 							exists = var:current_rider
@@ -109,7 +109,7 @@ agot_choose_dragonpit_event.0001 = {
 				text = agot_choose_dragonpit_event.0001.a.tt
 				if = { # If owned, send to dragonpit as normal
 					limit = {
-						scope:dragon = {
+						scope:dragon ?= {
 							has_character_flag = owned_dragon
 						}
 					}
@@ -129,7 +129,7 @@ agot_choose_dragonpit_event.0001 = {
 			}
 			if = {
 				limit = { NOT = { var:selected_title = capital_county } }
-				scope:dragon = { add_character_flag = dragon_put_in_different_pit }
+				scope:dragon ?= { add_character_flag = dragon_put_in_different_pit }
 			}
 			if = {
 				limit = {
@@ -157,8 +157,8 @@ agot_choose_dragonpit_event.0001 = {
 	option = {
 		name = agot_choose_dragonpit_event.0001.b
 		trigger = {
-			scope:dragon = { has_character_flag = in_dragonpit }
-			scope:dragon = { exists = var:pitted_dragon_location }
+			scope:dragon ?= { has_character_flag = in_dragonpit }
+			scope:dragon ?= { exists = var:pitted_dragon_location }
 		}
 		scope:dragon.var:pitted_dragon_location = { save_scope_as = dragon_pit_location }
 		agot_remove_from_dragonpit_effect = { DRAGON = scope:dragon DRAGONPIT_HOLDER = root DRAGONPIT_COUNTY = scope:dragon_pit_location }
@@ -168,7 +168,7 @@ agot_choose_dragonpit_event.0001 = {
 	option = {
 		name = agot_choose_dragonpit_event.0001.c
 		trigger = {
-			scope:dragon = { has_character_flag = in_dragonpit }
+			scope:dragon ?= { has_character_flag = in_dragonpit }
 		}
 	}
 
@@ -176,7 +176,7 @@ agot_choose_dragonpit_event.0001 = {
 	option = {
 		name = agot_choose_dragonpit_event.0001.d
 		trigger = {
-			scope:dragon = {
+			scope:dragon ?= {
 				NOT = { has_character_flag = in_dragonpit }
 			}
 		}

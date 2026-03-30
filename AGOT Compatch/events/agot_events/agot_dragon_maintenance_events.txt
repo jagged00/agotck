@@ -263,7 +263,7 @@ agot_dragon_maintenance.0100 = {
 						}
 						modifier = {
 							add = 1000
-							scope:tamer = {
+							scope:tamer ?= {
 								any_equipped_character_artifact = {
 									artifact_type = dragon_doll
 									has_variable = modelled_dragon
@@ -375,7 +375,7 @@ agot_dragon_maintenance.0101 = {
 						}
 						modifier = {
 							add = 1000
-							scope:tamer = {
+							scope:tamer ?= {
 								any_equipped_character_artifact = {
 									artifact_type = dragon_doll
 									has_variable = modelled_dragon
@@ -461,7 +461,7 @@ agot_dragon_maintenance.0200 = {
 	right_portrait = {
 		character = scope:child
 		trigger = {
-			scope:child = {
+			scope:child ?= {
 				has_trait = dragon
 			}
 		}
@@ -484,7 +484,7 @@ agot_dragon_maintenance.0200 = {
 			container = "dynamic_birth_name"
 			controller = name_character
 			setup_scope = {
-				scope:child = { save_scope_as = name_character_target }
+				scope:child ?= { save_scope_as = name_character_target }
 			}
 		}
 	}

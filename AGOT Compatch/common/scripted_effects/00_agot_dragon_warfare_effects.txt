@@ -621,12 +621,12 @@ agot_call_dragon_warfare_events = {
 			exists = scope:enemy_dragonrider
 			exists = scope:enemy_dragonrider.var:current_dragon
 			# And none are currently in a dragon combat event already
-			scope:enemy_dragonrider = {
+			scope:enemy_dragonrider ?= {
 				NOT = { has_character_flag = agot_in_dragon_duel_opening }
 				NOT = { has_variable = engaged_in_single_combat }
 				NOT = { has_variable = engaged_in_dragon_combat }
 			}
-			scope:dragonrider_in_battle = {
+			scope:dragonrider_in_battle ?= {
 				NOT = { has_character_flag = agot_in_dragon_duel_opening }
 				NOT = { has_variable = engaged_in_single_combat }
 				NOT = { has_variable = engaged_in_dragon_combat }
@@ -648,7 +648,7 @@ agot_call_dragon_warfare_events = {
 			200 = { # Nothing
 				modifier = {
 					factor = 2
-					scope:combat_side = {
+					scope:combat_side ?= {
 						enemy_side = {
 							has_maa_of_type = scorpions
 						}
@@ -700,7 +700,7 @@ agot_call_dragon_warfare_events = {
 				modifier = { # If enemy commander is at least decent, reduce chance, this is pretty dumb
 					factor = 0.5
 					exists = scope:enemy_commander_in_battle
-					scope:enemy_commander_in_battle = {
+					scope:enemy_commander_in_battle ?= {
 						martial < decent_skill_rating
 					}
 				}
@@ -724,7 +724,7 @@ agot_call_dragon_warfare_events = {
 					factor = 0
 					OR = {
 						NOT = { exists = scope:enemy_commander_in_battle }
-						scope:enemy_commander_in_battle = {
+						scope:enemy_commander_in_battle ?= {
 							has_trait = craven
 						}
 					}
@@ -744,7 +744,7 @@ agot_call_dragon_warfare_events = {
 				modifier = { # But good commanders will see the folly of it
 					factor = 0.5
 					exists = scope:enemy_commander_in_battle
-					scope:enemy_commander_in_battle = {
+					scope:enemy_commander_in_battle ?= {
 						martial > very_high_skill_rating
 					}
 				}
@@ -1107,7 +1107,7 @@ agot_dragon_damage_county_change_effect = {
 # Siege effects expect sieging_location and sieging_dragon scopes, and are called in the sieger's scope
 # Siege effect - minor
 agot_dragon_siege_fort_damage_minor_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		set_variable = {
 			name = dragon_siege_modifier_minor
 			value = 1
@@ -1156,7 +1156,7 @@ agot_dragon_siege_fort_damage_minor_effect = {
 	}
 }
 agot_dragon_siege_fort_damage_minor_remove_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		if = {
 			limit = {
 				has_province_modifier = dragon_siege_modifier_1
@@ -1185,7 +1185,7 @@ agot_dragon_siege_fort_damage_minor_remove_effect = {
 }
 # Siege effect - medium
 agot_dragon_siege_fort_damage_medium_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		set_variable = {
 			name = dragon_siege_modifier_medium
 			value = 1
@@ -1254,7 +1254,7 @@ agot_dragon_siege_fort_damage_medium_effect = {
 	}
 }
 agot_dragon_siege_fort_damage_medium_remove_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		if = {
 			limit = {
 				has_province_modifier = dragon_siege_modifier_5
@@ -1283,7 +1283,7 @@ agot_dragon_siege_fort_damage_medium_remove_effect = {
 }
 # Siege effect - major
 agot_dragon_siege_fort_damage_major_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		agot_dragon_siege_fort_damage_minor_remove_effect = yes
 		agot_dragon_siege_fort_damage_medium_remove_effect = yes
 		set_variable = {
@@ -1489,7 +1489,7 @@ agot_dragon_siege_fort_damage_major_effect = {
 	}
 }
 agot_dragon_siege_fort_damage_massive_remove_effect = {
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		if = {
 			limit = {
 				has_province_modifier = dragon_siege_modifier_9
@@ -1543,7 +1543,7 @@ agot_dragon_siege_fort_damage_massive_remove_effect = {
 # Siege effect - massive
 agot_dragon_siege_fort_damage_massive_effect = {
 	play_music_cue = CK3AGOT_dragon_burn_holding
-	scope:sieging_location = {
+	scope:sieging_location ?= {
 		agot_dragon_siege_fort_damage_minor_remove_effect = yes
 		agot_dragon_siege_fort_damage_medium_remove_effect = yes
 		agot_dragon_siege_fort_damage_massive_remove_effect = yes
@@ -1952,18 +1952,18 @@ agot_hire_scorpions_effect = {
 }
 
 agot_dragon_duel_effect = {
-	scope:agot_target_rider = {
+	scope:agot_target_rider ?= {
 		save_scope_as = enemy_dragonrider
 		location = { save_scope_as = battle_location }
 	}
-	scope:agot_dragonrider = {
+	scope:agot_dragonrider ?= {
 		save_scope_as = dragonrider_in_battle
 		location = { save_scope_as = home_location }
 
 		# Save the Commanders
 		if = {
-			limit = { scope:enemy_dragonrider = { is_commanding_army = yes } }
-			scope:enemy_dragonrider = { save_scope_as = enemy_commander_in_battle }
+			limit = { scope:enemy_dragonrider ?= { is_commanding_army = yes } }
+			scope:enemy_dragonrider ?= { save_scope_as = enemy_commander_in_battle }
 		}
 		else_if = {
 			limit = { exists = scope:enemy_dragonrider.liege_or_court_owner }
@@ -2001,7 +2001,7 @@ agot_dragon_duel_effect = {
 				months = 3
 			}
 
-			scope:enemy_dragonrider = {
+			scope:enemy_dragonrider ?= {
 				add_character_flag = {
 					flag = agot_more_dragon_duel
 					months = 3
@@ -2023,13 +2023,13 @@ agot_dragon_duel_effect = {
 				months = 3
 			}
 
-			scope:enemy_dragonrider = {
+			scope:enemy_dragonrider ?= {
 				add_character_flag = {
 					flag = agot_more_dragon_duel
 					months = 3
 				}
 			}
-			scope:dragon_commander_in_battle = { trigger_event = agot_dragon_combat.1010 }
+			scope:dragon_commander_in_battle ?= { trigger_event = agot_dragon_combat.1010 }
 		}
 		# Defend your home.
 		else_if = {
@@ -2053,7 +2053,7 @@ agot_dragon_duel_effect = {
 				months = 3
 			}
 
-			scope:enemy_dragonrider = {
+			scope:enemy_dragonrider ?= {
 				add_character_flag = {
 					flag = agot_more_dragon_duel
 					months = 3
@@ -2083,7 +2083,7 @@ agot_dragon_duel_effect = {
 				months = 3
 			}
 
-			scope:enemy_dragonrider = {
+			scope:enemy_dragonrider ?= {
 				add_character_flag = {
 					flag = agot_more_dragon_duel
 					months = 3

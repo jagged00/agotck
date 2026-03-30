@@ -76,7 +76,7 @@ agot_add_to_dragon_tree = {
 					save_scope_as = parent_story
 				}
 			}
-			scope:parent_story = { # Create list of children and add this child to it
+			scope:parent_story ?= { # Create list of children and add this child to it
 				add_to_variable_list = {
 					name = child_container
 					target = scope:child
@@ -117,13 +117,13 @@ agot_add_to_dragon_tree = {
 				save_scope_as = tree_story
 			}
 		}
-		scope:parent_story = { # Create list of children and add this child to it
+		scope:parent_story ?= { # Create list of children and add this child to it
 			add_to_variable_list = {
 				name = child_container
 				target = scope:child
 			}
 		}
-		scope:tree_story = { # Assign founder position for the tree
+		scope:tree_story ?= { # Assign founder position for the tree
 			set_variable = {
 				name = dragon_tree_founder
 				value = scope:parent

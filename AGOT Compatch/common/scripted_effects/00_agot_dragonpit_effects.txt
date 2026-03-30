@@ -153,7 +153,7 @@ agot_force_wild_dragon_into_dragonpit_effect = {
 
 agot_change_dragonpit_status = {
 	save_scope_as = dragon
-	scope:owner = {
+	scope:owner ?= {
 		if = {
 			limit = {
 				agot_has_multiple_active_dragonpits = yes
@@ -180,7 +180,7 @@ agot_change_dragonpit_status = {
 				}
 				save_scope_as = dragon_pit_location
 			}
-			scope:dragon = {
+			scope:dragon ?= {
 				if = {
 					limit = {
 						has_character_flag = in_dragonpit
