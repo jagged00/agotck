@@ -123,13 +123,12 @@ agot_dragon_pits.0001 = {
 			}
 		}
 		else = {
-			title:c_kings_landing = {
+			random_held_county = {
+				limit = { agot_title_is_an_active_dragonpit = yes }
 				set_variable = { name = has_dragonkeeper_order }
 				holder = {
 					if = {
-						limit = {
-							agot_has_any_dragonpit_access_law = no
-						}
+						limit = { agot_has_any_dragonpit_access_law = no }
 						agot_dragonpit_access_law_close_family_effect = yes
 					}
 				}
@@ -1682,16 +1681,23 @@ agot_dragon_pits.3000 = {
 	}
 
 	immediate = {
-		title:c_dragonstone = { save_scope_as = dragonstone }
 		random_held_county = {
 			limit = { agot_title_is_an_active_dragonpit = yes }
 			save_scope_as = dp_county_option
+		}
+		if = {
+			limit = { title:c_dragonstone ?= yes }
+			title:c_dragonstone ?= { save_scope_as = dragonstone }
+		}
+		else = {
+			scope:dp_county_option = { save_scope_as = dragonstone }
 		}
 	}
 
 	option = {
 		name = agot_dragon_pits.3000.a
-		title:c_dragonstone = { save_scope_as = dp_county }
+		trigger = { exists = scope:dragonstone }
+		scope:dragonstone = { save_scope_as = dp_county }
 		trigger_event = agot_dragon_pits.3001
 	}
 

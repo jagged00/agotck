@@ -152,11 +152,6 @@ on_dragon_cooldown_pass = {
 						97 = { }
 
 						2 = {
-							modifier = {
-								add = 1
-								var:pitted_egg = title:c_dragonstone
-							}
-
 							var:pitted_egg.holder = {
 								trigger_event = {
 									id = agot_dragon_pits.2005
