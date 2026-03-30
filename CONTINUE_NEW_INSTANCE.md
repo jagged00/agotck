@@ -133,6 +133,39 @@ Prioritize these still-missing dragon files from `ref ` into matching paths unde
 - all remaining `localization/replace/french/agot/*dragon*`
 - all remaining `localization/simp_chinese/agot/*dragon*`
 - all remaining `localization/replace/simp_chinese/agot/names/*dragon*`
+## 3) High-Value Next Batch Targets
+
+Prioritize these still-missing dragon files from `ref ` into matching paths under `AGOT Compatch/`:
+
+### Common systems
+- `common/script_values/00_agot_dragon_combat_values.txt`
+- `common/script_values/00_agot_dragon_dragon_size_values.txt`
+- `common/script_values/00_agot_dragon_gene_values.txt`
+- `common/script_values/00_agot_dragon_skill_values.txt`
+- `common/script_values/00_agot_dragon_tree_values.txt`
+- `common/scripted_character_templates/00_agot_dragon_templates.txt`
+- `common/scripted_effects/00_agot_artifact_dragon_skulls_effects.txt`
+- `common/scripted_effects/00_agot_dragon_animation_effects.txt`
+- `common/scripted_effects/00_agot_dragon_appearance_effects.txt`
+- `common/scripted_effects/00_agot_dragon_canon_dragons_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_effects.txt`
+- `common/scripted_effects/00_agot_dragon_combat_moves_effects.txt`
+- `common/scripted_effects/00_agot_dragon_congenital_traits_effects.txt`
+- `common/scripted_effects/00_agot_dragon_slay_effects.txt`
+- `common/scripted_effects/00_agot_dragon_tree_effects.txt`
+- `common/scripted_effects/00_agot_dragon_warfare_effects.txt`
+- `common/scripted_effects/00_agot_dragonpit_effects.txt`
+
+### Activities + gameplay support
+- `common/activities/activity_types/agot_dragon_hatching.txt`
+- `events/activities/agot_hatching_activity/agot_dragon_hatching_activity_events.txt`
+- `events/activities/agot_hatching_activity/agot_hatching_dragonlore_events.txt`
+- `localization/english/agot/event_localization/activities/agot_dragon_hatching_l_english.yml`
+
+### Remaining likely dragon-adjacent content
+- `common/game_concepts/00_agot_dragon_game_concepts.txt`
+- `common/nicknames/00_agot_dragon_nicknames.txt`
+- `localization/english/agot/agot_nicknames_dragons_l_english.yml`
 
 ## 4) Fast Validation Commands
 
