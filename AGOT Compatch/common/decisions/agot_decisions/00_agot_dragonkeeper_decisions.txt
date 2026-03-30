@@ -120,9 +120,7 @@ agot_restore_dragonstone_dragonkeepers = {
 						has_variable = dragon_egg
 					}
 					has_trait = ambitious
-					culture = {
-						has_cultural_pillar = heritage_valyrian
-					}
+					agot_has_valyrian_blood_fallback_trigger = yes
 				}
 			}
 		}

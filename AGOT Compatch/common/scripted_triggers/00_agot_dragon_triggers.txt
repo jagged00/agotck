@@ -423,6 +423,17 @@ agot_has_dragonblood_culture = {
 	}
 }
 
+
+agot_has_valyrian_blood_fallback_trigger = {
+	OR = {
+		culture = { has_cultural_pillar = heritage_valyrian }
+		has_trait = pure_blooded
+		has_character_flag = historical_dragonseed
+		has_character_flag = dragonseed_potential_medium
+		has_character_flag = dragonseed_potential_low
+	}
+}
+
 agot_is_dragonblood_character = {
 	NOT = {
 		has_character_flag = dragon_by_horn
@@ -442,13 +453,7 @@ agot_is_dragonblood_character = {
 				has_game_rule = dragon_valyrian_2_gen
 				has_game_rule = dragon_valyrian_3_gen
 			}
-			OR = {
-				culture = { has_cultural_pillar = heritage_valyrian }
-				has_trait = pure_blooded
-				has_character_flag = historical_dragonseed
-				has_character_flag = dragonseed_potential_medium
-				has_character_flag = dragonseed_potential_low
-			}
+			agot_has_valyrian_blood_fallback_trigger = yes
 		}
 	}
 }
@@ -951,15 +956,7 @@ agot_has_dragonpit_requirements_trigger = {
 				}
 			}
 			has_trait = ambitious
-			OR = {
-				culture = {
-					has_cultural_pillar = heritage_valyrian
-				}
-				has_trait = pure_blooded
-				has_character_flag = historical_dragonseed
-				has_character_flag = dragonseed_potential_medium
-				has_character_flag = dragonseed_potential_low
-			}
+			agot_has_valyrian_blood_fallback_trigger = yes
 		}
 		AND = { # You have an egg + You are Eccentric
 			custom_tooltip = {

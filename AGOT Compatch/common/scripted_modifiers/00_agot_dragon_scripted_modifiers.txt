@@ -564,9 +564,7 @@ unlanded_tame_bond_etc_pulse_scripted_modifier = {
 		add = 200
 		OR = {
 			house ?= { has_house_modifier = dragonrider_house_modifier }
-			culture = {
-				has_cultural_pillar = heritage_valyrian
-			}
+			agot_has_valyrian_blood_fallback_trigger = yes
 			agot_has_dragonblood_heritage = yes
 			any_ancestor = {
 				even_if_dead = yes
