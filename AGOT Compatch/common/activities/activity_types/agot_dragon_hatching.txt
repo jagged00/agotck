@@ -6,21 +6,7 @@
 				has_variable = destined_eggs # TargExile/Faegon Blocker
 			}
 		}
-		trigger_if = {
-			limit = {
-				has_game_rule = agot_targaryen_exile_invasion_special_content
-			}
-			NOT = {
-				any_owned_story = {
-					story_type = story_agot_targaryen_exile_invasion
-				}
-			}
-		}
-		trigger_else = {
-			always = yes
-		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
 		# DLC check
 		has_dlc_feature = tours_and_tournaments
 	}
@@ -1573,21 +1559,7 @@ activity_dragon_hatching_no_dlc = {
 				has_variable = destined_eggs # TargExile/Faegon Blocker
 			}
 		}
-		trigger_if = {
-			limit = {
-				has_game_rule = agot_targaryen_exile_invasion_special_content
-			}
-			NOT = {
-				any_owned_story = {
-					story_type = story_agot_targaryen_exile_invasion
-				}
-			}
-		}
-		trigger_else = {
-			always = yes
-		}
 		agot_dragon_population_extinct = yes
-		NOT = { government_has_flag = government_is_nw }
 		# DLC check
 		NOT = { has_dlc_feature = tours_and_tournaments }
 	}
