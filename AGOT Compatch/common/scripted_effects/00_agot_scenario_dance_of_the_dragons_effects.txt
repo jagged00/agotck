@@ -120,7 +120,7 @@
 				}
 			}
 
-			scope:mw_rebel_story = {
+			scope:mw_rebel_story ?= {
 				add_to_variable_list = {
 					name = mw_rebel_supporter_list
 					target = prev
@@ -447,7 +447,7 @@
 				agot_is_high_septon = no
 			}
 
-			scope:mw_crown_story = {
+			scope:mw_crown_story ?= {
 				add_to_variable_list = {
 					name = mw_loyalist_list
 					target = prev

@@ -44,16 +44,16 @@
 	if = {
 		limit = {
 			OR = {
-				scope:dragon = {
+				scope:dragon ?= {
 					is_human = yes
 				}
-				scope:human = {
+				scope:human ?= {
 					is_human = no
 				}
 			}
 		}
 
-		scope:initiator = {
+		scope:initiator ?= {
 			trigger_event = { saved_event_id = scope:invalidation_event }
 		}
 	}
@@ -63,7 +63,7 @@
 			NOT = { scope:human = scope:dragon }
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_signature_weapon_effect = yes
 		}
 		## Note where the fight is taking place, if we're using a specific location.
@@ -107,7 +107,7 @@
 					scope:locale = flag:throne_room
 				}
 			}
-			scope:dragon = {
+			scope:dragon ?= {
 				add_character_flag = can_fly
 			}
 		}
@@ -120,7 +120,7 @@
 					scope:locale = flag:agot_icecave
 				}
 			}
-			scope:dragon = {
+			scope:dragon ?= {
 				add_character_flag = can_shake
 			}
 		}
@@ -129,14 +129,14 @@
 		# Send appropriate event to human
 		switch = {
 			trigger = scope:proximity
-			2 = { scope:human = { trigger_event = agot_dragon_slaying_events.0100 } }
-			1 = { scope:human = { trigger_event = agot_dragon_slaying_events.0100 } }
-			0 = { scope:human = { trigger_event = agot_dragon_slaying_events.0101 } }
+			2 = { scope:human ?= { trigger_event = agot_dragon_slaying_events.0100 } }
+			1 = { scope:human ?= { trigger_event = agot_dragon_slaying_events.0100 } }
+			0 = { scope:human ?= { trigger_event = agot_dragon_slaying_events.0101 } }
 		}
 	}
 	# Otherwise, invalidate the duel immediately.
 	else = {
-		scope:initiator = {
+		scope:initiator ?= {
 			trigger_event = { saved_event_id = scope:invalidation_event }
 		}
 	}
@@ -405,7 +405,7 @@ agot_ds_get_dragon_skill_effect = {
 		limit = {
 			scope:dragon.ds_combat_effectiveness < level_two_dragon_size
 		}
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 1
@@ -417,7 +417,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_three_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 2
@@ -429,7 +429,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_four_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 3
@@ -441,7 +441,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_five_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 4
@@ -453,7 +453,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_six_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 5
@@ -465,7 +465,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_seven_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 6
@@ -477,7 +477,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_eight_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 7
@@ -489,7 +489,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_nine_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 8
@@ -501,7 +501,7 @@ agot_ds_get_dragon_skill_effect = {
 			scope:dragon.ds_combat_effectiveness < level_ten_dragon_size
 		}
 
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 9
@@ -509,7 +509,7 @@ agot_ds_get_dragon_skill_effect = {
 		}
 	}
 	else = {
-		scope:dragon = {
+		scope:dragon ?= {
 			set_variable = {
 				name = dragon_skill
 				value = 10
@@ -523,7 +523,7 @@ agot_ds_get_human_skill_effect = {
 		limit = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_2
 		}
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 1
@@ -535,7 +535,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_3
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 2
@@ -547,7 +547,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_4
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 3
@@ -559,7 +559,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_5
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 4
@@ -571,7 +571,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_6
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 5
@@ -583,7 +583,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_7
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 6
@@ -595,7 +595,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_8
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 7
@@ -607,7 +607,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_9
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 8
@@ -619,7 +619,7 @@ agot_ds_get_human_skill_effect = {
 			scope:human.ds_human_combat_effectiveness < ds_human_combat_rating_10
 		}
 
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 9
@@ -627,7 +627,7 @@ agot_ds_get_human_skill_effect = {
 		}
 	}
 	else = {
-		scope:human = {
+		scope:human ?= {
 			set_variable = {
 				name = human_skill
 				value = 10
@@ -656,7 +656,7 @@ agot_ds_compare_skills_effect = {
 
 # Clean up effects
 agot_ds_clean_up_effect = {
-	scope:human = {
+	scope:human ?= {
 		if = {
 			limit = {
 				is_alive = yes
@@ -667,7 +667,7 @@ agot_ds_clean_up_effect = {
 		}
 	}
 
-	scope:dragon = {
+	scope:dragon ?= {
 		if = {
 			limit = {
 				is_alive = yes

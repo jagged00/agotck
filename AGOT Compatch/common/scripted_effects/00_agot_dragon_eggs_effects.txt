@@ -1420,7 +1420,7 @@ create_artifact_dragon_egg_effect = {
 			if = {
 				limit = {
 					exists = scope:dragon_parent
-					scope:dragon_parent = { has_trait = dragon }
+					scope:dragon_parent ?= { has_trait = dragon }
 				}
 				set_variable = {
 					name = dragon_parent
@@ -1430,7 +1430,7 @@ create_artifact_dragon_egg_effect = {
 				if = {
 					limit = {
 						exists = scope:dragon_parent_other
-						scope:dragon_parent_other = { has_trait = dragon }
+						scope:dragon_parent_other ?= { has_trait = dragon }
 					}
 					set_variable = {
 						name = dragon_parent_other
@@ -1474,7 +1474,7 @@ agot_set_dragon_parents = {
 						limit = {
 							is_female = yes
 						}
-						scope:dragon = {
+						scope:dragon ?= {
 							set_mother = prev
 							if = {
 								limit = {
@@ -1485,7 +1485,7 @@ agot_set_dragon_parents = {
 						}
 					}
 					else = {
-						scope:dragon = {
+						scope:dragon ?= {
 							set_father = prev
 							if = {
 								limit = {
@@ -1505,7 +1505,7 @@ agot_set_dragon_parents = {
 							limit = {
 								is_female = yes
 							}
-							scope:dragon = {
+							scope:dragon ?= {
 								set_mother = prev
 								if = {
 									limit = {
@@ -1516,7 +1516,7 @@ agot_set_dragon_parents = {
 							}
 						}
 						else = {
-							scope:dragon = {
+							scope:dragon ?= {
 								set_father = prev
 								if = {
 									limit = {
@@ -2463,5 +2463,5 @@ agot_dragon_assign_parent_congenital_traits = {
 	}
 
 	# Random Traits
-	scope:dragon = { agot_give_random_physical_traits = yes }
+	scope:dragon ?= { agot_give_random_physical_traits = yes }
 }

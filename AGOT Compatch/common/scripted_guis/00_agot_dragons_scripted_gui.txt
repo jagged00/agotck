@@ -72,7 +72,7 @@ dragon = {
 	}
 	is_shown = {
 		exists = scope:char
-		scope:char = { has_trait = dragon }
+		scope:char ?= { has_trait = dragon }
 	}
 }
 
@@ -309,7 +309,7 @@ capture_wild_dragon = {
 	}
 
 	is_valid = {
-		scope:owner = {
+		scope:owner ?= {
 			custom_tooltip = {
 				text = agot_capture_dragon_cd_gui_tt
 				NOT = {
@@ -678,7 +678,7 @@ agot_show_dragon_past_rider_when_dead = {
 	scope = character
 	saved_scopes = {dragon}
 	is_shown = {
-		scope:dragon = {
+		scope:dragon ?= {
 			is_alive = no
 		}
 		AND = {
@@ -703,7 +703,7 @@ agot_show_dragon_past_rider_when_dead = {
 				save_scope_as = story
 			}
 		}
-		scope:story = {
+		scope:story ?= {
 			every_in_list = {
 				variable = past_riders
 				root = {

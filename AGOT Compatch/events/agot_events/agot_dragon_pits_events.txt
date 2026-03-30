@@ -486,7 +486,7 @@ agot_dragon_pits.1100 = {
 	}
 
 	immediate = {
-		scope:dragon_pit_location = {
+		scope:dragon_pit_location ?= {
 			change_county_control = -25
 			add_county_modifier = {
 				modifier = agot_roaming_dragon
@@ -575,7 +575,7 @@ agot_dragon_pits.1200 = {
 		trigger = {
 			employs_court_position = head_dragonkeeper_court_position
 		}
-		scope:head_dragonkeeper = {
+		scope:head_dragonkeeper ?= {
 			duel = {
 				skills = { learning }
 				value = high_skill_rating
@@ -615,11 +615,11 @@ agot_dragon_pits.1200 = {
 					}
 					modifier = {
 						add = 30
-						scope:wild_dragon = { agot_dragon_is_wounded_or_ill_trigger = yes }
+						scope:wild_dragon ?= { agot_dragon_is_wounded_or_ill_trigger = yes }
 					}
 					modifier = {
 						add = 20
-						scope:wild_dragon = {
+						scope:wild_dragon ?= {
 							dragon_passes_vibe_check_for_capturing = yes
 						}
 					}
@@ -627,12 +627,12 @@ agot_dragon_pits.1200 = {
 						send_interface_toast = {
 							title = agot_dragon_pits.1200.a.success
 							left_icon = scope:wild_dragon
-							scope:head_dragonkeeper = {
+							scope:head_dragonkeeper ?= {
 								add_prestige = medium_prestige_gain
 							}
 						}
 					}
-					scope:wild_dragon = {
+					scope:wild_dragon ?= {
 						agot_set_as_owned_dragon = { OWNER = root DRAGON = scope:wild_dragon}
 						agot_send_to_dragonpit_effect = { DRAGON = scope:wild_dragon DRAGONPIT_HOLDER = root DRAGONPIT_COUNTY = scope:dragon_pit_location }
 					}
@@ -649,7 +649,7 @@ agot_dragon_pits.1200 = {
 					}
 					modifier = {
 						add = 25
-						scope:wild_dragon = {
+						scope:wild_dragon ?= {
 							dragon_is_menacing_or_mean = yes
 						}
 					}
@@ -659,7 +659,7 @@ agot_dragon_pits.1200 = {
 							left_icon = scope:wild_dragon
 							random_list = {
 								60 = {
-									scope:head_dragonkeeper = {
+									scope:head_dragonkeeper ?= {
 										custom_tooltip = {
 											text = reason_death_dragon_burned_keeper
 											death = {
@@ -670,7 +670,7 @@ agot_dragon_pits.1200 = {
 									}
 								}
 								40 = {
-									scope:head_dragonkeeper = {
+									scope:head_dragonkeeper ?= {
 										custom_tooltip = {
 											text = reason_death_dragon_ate_keeper
 											death = {
@@ -681,7 +681,7 @@ agot_dragon_pits.1200 = {
 									}
 								}
 								10 = {
-									scope:head_dragonkeeper = {
+									scope:head_dragonkeeper ?= {
 										increase_wounds_effect = { REASON = dragon }
 									}
 								}
@@ -743,11 +743,11 @@ agot_dragon_pits.1200 = {
 				}
 				modifier = {
 					add = 25
-					scope:wild_dragon = { agot_dragon_is_wounded_or_ill_trigger = yes }
+					scope:wild_dragon ?= { agot_dragon_is_wounded_or_ill_trigger = yes }
 				}
 				modifier = {
 					add = 15
-					scope:wild_dragon = {
+					scope:wild_dragon ?= {
 						dragon_passes_vibe_check_for_capturing = yes
 					}
 				}
@@ -756,7 +756,7 @@ agot_dragon_pits.1200 = {
 					left_icon = scope:wild_dragon
 					add_prestige = medium_prestige_gain
 				}
-				scope:wild_dragon = {
+				scope:wild_dragon ?= {
 					agot_set_as_owned_dragon = { OWNER = root DRAGON = scope:wild_dragon}
 					agot_send_to_dragonpit_effect = { DRAGON = scope:wild_dragon DRAGONPIT_HOLDER = root DRAGONPIT_COUNTY = scope:dragon_pit_location }
 				}
@@ -774,7 +774,7 @@ agot_dragon_pits.1200 = {
 				}
 				modifier = {
 					add = 25
-					scope:wild_dragon = {
+					scope:wild_dragon ?= {
 						dragon_is_menacing_or_mean = yes
 					}
 				}
@@ -914,7 +914,7 @@ agot_dragon_pits.1201 = {
 		random_list = {
 			30 = {
 				trigger = {
-					scope:wild_dragon = { dragon_is_menacing_or_mean = yes }
+					scope:wild_dragon ?= { dragon_is_menacing_or_mean = yes }
 				}
 				send_interface_toast = {
 					title = agot_dragon_pits.1201.refusal.t
@@ -923,13 +923,13 @@ agot_dragon_pits.1201 = {
 				}
 				modifier = {
 					add = 100
-					scope:knight = {
+					scope:knight ?= {
 						has_trait = craven
 					}
 				}
 			}
 			70 = {
-				scope:knight = {
+				scope:knight ?= {
 					duel = {
 						skills = { prowess }
 						target = scope:wild_dragon
@@ -967,11 +967,11 @@ agot_dragon_pits.1201 = {
 							}
 							modifier = {
 								add = 25
-								scope:wild_dragon = { agot_dragon_is_wounded_or_ill_trigger = yes }
+								scope:wild_dragon ?= { agot_dragon_is_wounded_or_ill_trigger = yes }
 							}
 							modifier = {
 								add = 15
-								scope:wild_dragon = {
+								scope:wild_dragon ?= {
 									dragon_passes_vibe_check_for_capturing = yes
 								}
 							}
@@ -979,12 +979,12 @@ agot_dragon_pits.1201 = {
 								send_interface_toast = {
 									title = agot_dragon_pits.1200.a.success
 									left_icon = scope:wild_dragon
-									scope:knight = {
+									scope:knight ?= {
 										add_prestige = medium_prestige_gain
 									}
 								}
 							}
-							scope:wild_dragon = {
+							scope:wild_dragon ?= {
 								agot_set_as_owned_dragon = { OWNER = root DRAGON = scope:wild_dragon}
 								agot_send_to_dragonpit_effect = { DRAGON = scope:wild_dragon DRAGONPIT_HOLDER = root DRAGONPIT_COUNTY = scope:dragon_pit_location }
 							}
@@ -1001,7 +1001,7 @@ agot_dragon_pits.1201 = {
 							}
 							modifier = {
 								add = 25
-								scope:wild_dragon = {
+								scope:wild_dragon ?= {
 									dragon_is_menacing_or_mean = yes
 								}
 							}
@@ -1011,7 +1011,7 @@ agot_dragon_pits.1201 = {
 									left_icon = scope:wild_dragon
 									random_list = {
 										60 = {
-											scope:knight = {
+											scope:knight ?= {
 												death = {
 													death_reason = death_dragon_fire
 													killer = scope:wild_dragon
@@ -1019,7 +1019,7 @@ agot_dragon_pits.1201 = {
 											}
 										}
 										40 = {
-											scope:knight = {
+											scope:knight ?= {
 												death = {
 													death_reason = death_dragon_ate
 													killer = scope:wild_dragon
@@ -1027,7 +1027,7 @@ agot_dragon_pits.1201 = {
 											}
 										}
 										10 = {
-											scope:knight = {
+											scope:knight ?= {
 												increase_wounds_effect = { REASON = dragon }
 											}
 										}
@@ -1039,7 +1039,7 @@ agot_dragon_pits.1201 = {
 				}
 				modifier = {
 					add = 50
-					scope:knight = {
+					scope:knight ?= {
 						OR = {
 							has_trait = loyal
 							root = {
@@ -1050,7 +1050,7 @@ agot_dragon_pits.1201 = {
 				}
 				modifier = {
 					add = 30
-					scope:knight = {
+					scope:knight ?= {
 						OR = {
 							has_trait = ambitious
 							has_trait = brave
@@ -1059,7 +1059,7 @@ agot_dragon_pits.1201 = {
 				}
 				modifier = {
 					add = 30
-					scope:knight = {
+					scope:knight ?= {
 						has_trait = dragonslayer
 					}
 				}
@@ -1069,7 +1069,7 @@ agot_dragon_pits.1201 = {
 				}
 				modifier = {
 					add = 50
-					scope:wild_dragon = { dragon_is_menacing_or_mean = no }
+					scope:wild_dragon ?= { dragon_is_menacing_or_mean = no }
 				}
 			}
 		}
@@ -1116,7 +1116,7 @@ agot_dragon_pits.1300 = {
 			save_scope_as = dragonrider
 		}
 		save_scope_as = baby_dragon
-		scope:dragonrider = {
+		scope:dragonrider ?= {
 			trigger_event = agot_dragon_pits.1301
 		}
 	}
@@ -1311,7 +1311,7 @@ agot_dragon_pits.2000 = {
 
 	option = {
 		name = agot_dragon_pits.2000.a
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1328,7 +1328,7 @@ agot_dragon_pits.2000 = {
 	option = {
 		trigger = { exists = scope:option_2 }
 		name = agot_dragon_pits.2000.b
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1345,7 +1345,7 @@ agot_dragon_pits.2000 = {
 	option = {
 		trigger = { exists = scope:option_3 }
 		name = agot_dragon_pits.2000.c
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1362,7 +1362,7 @@ agot_dragon_pits.2000 = {
 	option = {
 		trigger = { exists = scope:option_4 }
 		name = agot_dragon_pits.2000.d
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1379,7 +1379,7 @@ agot_dragon_pits.2000 = {
 	option = {
 		trigger = { exists = scope:option_5 }
 		name = agot_dragon_pits.2000.e
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1396,7 +1396,7 @@ agot_dragon_pits.2000 = {
 	option = {
 		trigger = { exists = scope:option_6 }
 		name = agot_dragon_pits.2000.f
-		scope:recipient = {
+		scope:recipient ?= {
 			every_character_artifact = {
 				limit = {
 					has_variable = being_pitted
@@ -1424,7 +1424,7 @@ agot_dragon_pits.2001 = {
 
 	immediate = {
 		save_scope_as = head_dragonkeeper
-		scope:old_employer = {
+		scope:old_employer ?= {
 			trigger_event = agot_dragon_pits.2002
 		}
 	}
@@ -1437,7 +1437,7 @@ agot_dragon_pits.2002 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:head_dragonkeeper = { is_alive = no }
+					scope:head_dragonkeeper ?= { is_alive = no }
 				}
 				desc = agot_dragon_pits.2002.desc_dead
 			}
@@ -1460,7 +1460,7 @@ agot_dragon_pits.2002 = {
 	}
 
 	trigger = {
-		scope:head_dragonkeeper = {
+		scope:head_dragonkeeper ?= {
 			OR = {
 				is_alive = no
 				any_character_artifact = {
@@ -1477,13 +1477,13 @@ agot_dragon_pits.2002 = {
 	immediate = {
 		if = {
 			limit = {
-				scope:head_dragonkeeper = { is_alive = no }
+				scope:head_dragonkeeper ?= { is_alive = no }
 				exists = scope:moved_egg
 			}
 			custom_tooltip = agot_dragon_pits.2002.pitted_eggs_return
 		}
 		else = {
-			scope:head_dragonkeeper = {
+			scope:head_dragonkeeper ?= {
 				remove_character_flag = head_dragonkeeper
 				every_character_artifact = {
 					limit = {
@@ -1543,9 +1543,9 @@ agot_dragon_pits.2003 = {
 			set_owner = root
 			if = {
 				limit = {
-					scope:previous_holder = { is_alive = yes }
+					scope:previous_holder ?= { is_alive = yes }
 				}
-				scope:previous_holder = { add_personal_artifact_claim = prev }
+				scope:previous_holder ?= { add_personal_artifact_claim = prev }
 			}
 		}
 	}
@@ -1576,7 +1576,7 @@ agot_dragon_pits.2004 = {
 	}
 
 	immediate = {
-		scope:egg = {
+		scope:egg ?= {
 			agot_dudify_egg = yes
 			set_owner = root
 		}
@@ -1592,7 +1592,7 @@ agot_dragon_pits.2005 = {
 	hidden = yes
 
 	immediate = {
-		scope:egg = {
+		scope:egg ?= {
 			var:pitted_egg = { save_scope_as = dragonpit_county }
 		}
 		agot_spawn_owned_hatchling_from_egg_effect = { OWNER = root EGG = scope:egg }
@@ -1623,7 +1623,7 @@ agot_dragon_pits.2006 = {
 		gui = "event_window_widget_name_child"
 		container = "dynamic_birth_name"
 		controller = name_character
-		setup_scope = { scope:dragon = { save_scope_as = name_character_target } }
+		setup_scope = { scope:dragon ?= { save_scope_as = name_character_target } }
 	}
 
 	left_portrait = {
@@ -1688,20 +1688,20 @@ agot_dragon_pits.3000 = {
 			title:c_dragonstone ?= { save_scope_as = dragonstone }
 		}
 		else = {
-			scope:dp_county_option = { save_scope_as = dragonstone }
+			scope:dp_county_option ?= { save_scope_as = dragonstone }
 		}
 	}
 
 	option = {
 		name = agot_dragon_pits.3000.a
 		trigger = { exists = scope:dragonstone }
-		scope:dragonstone = { save_scope_as = dp_county }
+		scope:dragonstone ?= { save_scope_as = dp_county }
 		trigger_event = agot_dragon_pits.3001
 	}
 
 	option = {
 		name = agot_dragon_pits.3000.b
-		scope:dp_county_option = { save_scope_as = dp_county }
+		scope:dp_county_option ?= { save_scope_as = dp_county }
 		trigger_event = agot_dragon_pits.3001
 	}
 }
@@ -1711,7 +1711,7 @@ agot_dragon_pits.3001 = {
 	hidden = yes
 
 	immediate = {
-		scope:recipient = { save_scope_as = dragon_traits_in_common_human }
+		scope:recipient ?= { save_scope_as = dragon_traits_in_common_human }
 		scope:dp_county.holder = {
 			random_courtier_or_guest = {
 				limit = {
@@ -1761,7 +1761,7 @@ agot_dragon_pits.3001 = {
 			limit = {
 				agot_is_canon_rider_dragon_pair = { RIDER = scope:recipient DRAGON = scope:dragon }
 			}
-			scope:dragon = { save_scope_as = canon_dragon }
+			scope:dragon ?= { save_scope_as = canon_dragon }
 		}
 
 		random_list = {
@@ -1804,7 +1804,7 @@ agot_dragon_pits.3001 = {
 			}
 			20 = { #Attempts Taming
 				trigger = {
-					scope:dragon = { dragon_size >= dragon_taming_minimum_size }
+					scope:dragon ?= { dragon_size >= dragon_taming_minimum_size }
 				}
 				modifier = {
 					add = {
@@ -1821,7 +1821,7 @@ agot_dragon_pits.3001 = {
 					DRAGON = scope:dragon
 				}
 				if = {
-					limit = { scope:recipient = { has_trait = dragonrider } }
+					limit = { scope:recipient ?= { has_trait = dragonrider } }
 					trigger_event = agot_dragon_pits.3006
 				}
 				else = {
@@ -1855,9 +1855,9 @@ agot_dragon_pits.3002 = {
 	immediate = {
 		if = {
 			limit = {
-				scope:recipient = { has_character_modifier = agot_child_terrified_by_dragons }
+				scope:recipient ?= { has_character_modifier = agot_child_terrified_by_dragons }
 			}
-			scope:recipient = {
+			scope:recipient ?= {
 				remove_character_modifier = agot_child_terrified_by_dragons
 				add_character_modifier = agot_dragon_disinterest
 			}
@@ -1865,14 +1865,14 @@ agot_dragon_pits.3002 = {
 		else = {
 			random_list = {
 				80 = {
-					scope:recipient = { add_character_modifier = agot_child_terrified_by_dragons }
+					scope:recipient ?= { add_character_modifier = agot_child_terrified_by_dragons }
 				}
 				20 = {
 					modifier = {
-						scope:recipient = { has_trait = craven }
+						scope:recipient ?= { has_trait = craven }
 						add = 60
 					}
-					scope:recipient = { add_character_modifier = agot_dragon_disinterest }
+					scope:recipient ?= { add_character_modifier = agot_dragon_disinterest }
 				}
 			}
 		}

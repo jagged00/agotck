@@ -61,7 +61,7 @@ dragon_combat_move_enthusiastic_onslaught_effect = {
 		}
 		random_list = {
 			30 = {
-				scope:dsc_attacker_dragon = {
+				scope:dsc_attacker_dragon ?= {
 					wound_dragon = yes
 				}
 			}
@@ -76,7 +76,7 @@ dragon_combat_move_enthusiastic_onslaught_effect = {
 		}
 		random_list = {
 			30 = {
-				scope:dsc_defender_dragon = {
+				scope:dsc_defender_dragon ?= {
 					wound_dragon = yes
 				}
 			}
@@ -96,23 +96,23 @@ dragon_combat_move_underbelly_effect = {
 	#Change the last move registered for loc purposes.
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender = {
+		scope:dsc_defender ?= {
 			random_list = {
 				50 = {
 				}
 				50 = {
-					scope:dsc_defender_dragon = {
+					scope:dsc_defender_dragon ?= {
 						wound_dragon = yes
 					}
 				}
 			}
 		}
-		scope:dsc_attacker = {
+		scope:dsc_attacker ?= {
 			random_list = {
 				50 = {
 				}
 				50 = {
-					scope:dsc_attacker_dragon = {
+					scope:dsc_attacker_dragon ?= {
 						wound_dragon = yes
 					}
 				}
@@ -125,23 +125,23 @@ dragon_combat_move_underbelly_effect = {
 	}
 	if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker = {
+		scope:dsc_attacker ?= {
 			random_list = {
 				50 = {
 				}
 				50 = {
-					scope:dsc_attacker_dragon = {
+					scope:dsc_attacker_dragon ?= {
 						wound_dragon = yes
 					}
 				}
 			}
 		}
-		scope:dsc_defender = {
+		scope:dsc_defender ?= {
 			random_list = {
 				50 = {
 				}
 				50 = {
-					scope:dsc_defender_dragon = {
+					scope:dsc_defender_dragon ?= {
 						wound_dragon = yes
 					}
 				}
@@ -165,7 +165,7 @@ dragon_combat_move_tail_smash_effect = {
 	#Change the last move registered for loc purposes.
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 		save_scope_value_as = {
@@ -175,7 +175,7 @@ dragon_combat_move_tail_smash_effect = {
 	}
 	if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 		save_scope_value_as = {
@@ -222,7 +222,7 @@ dragon_combat_move_probing_attack_effect = {
 			name = dsc_attacker_last_move
 			value = flag:dragon_probing_attack
 		}
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			random_list = {
 				90 = {}
 				20 = {
@@ -237,7 +237,7 @@ dragon_combat_move_probing_attack_effect = {
 			name = dsc_defender_last_move
 			value = flag:dragon_probing_attack
 		}
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			random_list = {
 				90 = {}
 				20 = {
@@ -303,11 +303,11 @@ dragon_combat_move_surprise_attack_effect = {
 			OR = {
 				AND = {
 					this = scope:dsc_attacker
-					scope:dsc_defender = { has_trait = trusting }
+					scope:dsc_defender ?= { has_trait = trusting }
 				}
 				AND = {
 					this = scope:dsc_defender
-					scope:dsc_attacker = { has_trait = trusting }
+					scope:dsc_attacker ?= { has_trait = trusting }
 				}
 			}
 		}
@@ -339,13 +339,13 @@ dragon_combat_move_taunt_effect = {
 	#Your AI opponent becomes enraged.
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender = {
+		scope:dsc_defender ?= {
 			add_character_modifier = { modifier = dragon_combat_move_taunt_modifier }
 		}
 	}
 	if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker = {
+		scope:dsc_attacker ?= {
 			add_character_modifier = { modifier = dragon_combat_move_taunt_modifier }
 		}
 	}
@@ -381,7 +381,7 @@ dragon_combat_move_go_for_the_gonads_effect = {
 			name = dsc_attacker_last_move
 			value = flag:dragon_go_for_the_gonads
 		}
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			random_list = {
 				80 = {}
 				20 = {
@@ -396,7 +396,7 @@ dragon_combat_move_go_for_the_gonads_effect = {
 			name = dsc_defender_last_move
 			value = flag:dragon_go_for_the_gonads
 		}
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			random_list = {
 				80 = {}
 				20 = {
@@ -447,7 +447,7 @@ dragon_combat_move_confident_attack_effect = {
 			name = dsc_attacker_last_move
 			value = flag:dragon_confident_attack
 		}
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			random_list = {
 				25 = {}
 				75 = {
@@ -462,7 +462,7 @@ dragon_combat_move_confident_attack_effect = {
 			name = dsc_defender_last_move
 			value = flag:dragon_confident_attack
 		}
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			random_list = {
 				25 = {}
 				75 = {
@@ -511,7 +511,7 @@ dragon_combat_move_lightning_assault_effect = {
 			name = dsc_attacker_last_move
 			value = flag:dragon_lightning_assault
 		}
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -521,7 +521,7 @@ dragon_combat_move_lightning_assault_effect = {
 			name = dsc_defender_last_move
 			value = flag:dragon_lightning_assault
 		}
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -561,13 +561,13 @@ dragon_combat_move_chomp_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
 		show_as_tooltip = {
-			scope:dsc_defender = {
+			scope:dsc_defender ?= {
 				death = {
 					killer = scope:dsc_attacker
 					death_reason = death_dragon_duel_ate
 				}
 			}
-			scope:dsc_defender_dragon = {
+			scope:dsc_defender_dragon ?= {
 				death = {
 					killer = scope:dsc_attacker
 					death_reason = death_dragon_duel_ate
@@ -583,13 +583,13 @@ dragon_combat_move_chomp_effect = {
 	if = {
 		limit = { this = scope:dsc_defender }
 		show_as_tooltip = {
-			scope:dsc_attacker = {
+			scope:dsc_attacker ?= {
 				death = {
 					killer = scope:dsc_defender
 					death_reason = death_dragon_duel_ate
 				}
 			}
-			scope:dsc_attacker_dragon = {
+			scope:dsc_attacker_dragon ?= {
 				death = {
 					killer = scope:dsc_defender
 					death_reason = death_dragon_duel_ate
@@ -614,7 +614,7 @@ dragon_combat_move_motivate_effect = {
 	#Change the last move registered for loc purposes.
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			if = {
 				limit = { has_trait = dragon_wounded_5 }
 				remove_trait = dragon_wounded_5
@@ -646,7 +646,7 @@ dragon_combat_move_motivate_effect = {
 	}
 	if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			if = {
 				limit = { has_trait = dragon_wounded_5 }
 				remove_trait = dragon_wounded_5
@@ -692,7 +692,7 @@ dragon_combat_move_technique_from_legend_effect = {
 			name = dsc_attacker_last_move
 			value = flag:dragon_technique_from_legend
 		}
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			random_list = {
 				50 = {}
 				50 = { add_trait = dragon_burned }
@@ -705,7 +705,7 @@ dragon_combat_move_technique_from_legend_effect = {
 			name = dsc_defender_last_move
 			value = flag:dragon_technique_from_legend
 		}
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			random_list = {
 				50 = {}
 				50 = { add_trait = dragon_burned }
@@ -768,7 +768,7 @@ dragon_combat_move_mocking_boast_effect = {
 	add_prestige = 200
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender = {
+		scope:dsc_defender ?= {
 			# Arrogant characters are a bit more susceptible.
 			if = {
 				limit = { has_trait = arrogant }
@@ -780,7 +780,7 @@ dragon_combat_move_mocking_boast_effect = {
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker = {
+		scope:dsc_attacker ?= {
 			# Arrogant characters are a bit more susceptible.
 			if = {
 				limit = { has_trait = arrogant }
@@ -816,14 +816,14 @@ dragon_combat_move_mocking_boast_effect = {
 dragon_combat_move_desert_warrior_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -852,14 +852,14 @@ dragon_combat_move_desert_warrior_effect = {
 dragon_combat_move_jungle_stalker_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -888,14 +888,14 @@ dragon_combat_move_jungle_stalker_effect = {
 dragon_combat_move_open_terrain_expert_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -924,14 +924,14 @@ dragon_combat_move_open_terrain_expert_effect = {
 dragon_combat_move_rough_terrain_expert_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}
@@ -960,14 +960,14 @@ dragon_combat_move_rough_terrain_expert_effect = {
 dragon_combat_move_forest_fighter_effect = {
 	if = {
 		limit = { this = scope:dsc_attacker }
-		scope:dsc_defender_dragon = {
+		scope:dsc_defender_dragon ?= {
 			wound_dragon = yes
 		}
 	}
 	## Then we look at scope:dsc_defender.
 	else_if = {
 		limit = { this = scope:dsc_defender }
-		scope:dsc_attacker_dragon = {
+		scope:dsc_attacker_dragon ?= {
 			wound_dragon = yes
 		}
 	}

@@ -151,7 +151,7 @@ agot_dragon_hatchling_template = {
 			limit = {
 				exists = scope:egg
 			}
-			scope:egg = {
+			scope:egg ?= {
 				set_variable = { name = currently_hatching }
 			}
 		}

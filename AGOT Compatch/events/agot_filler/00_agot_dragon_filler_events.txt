@@ -590,7 +590,7 @@ agot_filler_dragon.0004 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:dragon_investigating_child = { is_alive = yes }
+					scope:dragon_investigating_child ?= { is_alive = yes }
 				}
 				desc = agot_filler_dragon.0004.desc.burned
 			}
@@ -655,7 +655,7 @@ agot_filler_dragon.0004 = {
 				save_scope_as = dragon_investigating_child
 			}
 		}
-		scope:dragon_investigating_child = {
+		scope:dragon_investigating_child ?= {
 			random_list = {
 				50 = {
 					random_list = {
@@ -679,7 +679,7 @@ agot_filler_dragon.0004 = {
 					}
 				}
 				50 = {
-					scope:dragon_investigating_child = {
+					scope:dragon_investigating_child ?= {
 						add_trait = burned
 						add_trait_xp = {
 							trait = burned
@@ -703,7 +703,7 @@ agot_filler_dragon.0004 = {
 			just = -20
 		}
 
-		scope:visited_dragon = {
+		scope:visited_dragon ?= {
 			add_character_modifier = {
 				modifier = agot_chain_dragon_filler_modifier
 				years = 1
@@ -719,7 +719,7 @@ agot_filler_dragon.0004 = {
 			just = 20
 		}
 
-		scope:dragon_investigating_child = {
+		scope:dragon_investigating_child ?= {
 			every_close_family_member = {
 				limit = {
 					NOT = {
@@ -850,7 +850,7 @@ agot_filler_dragon.0008 = {
 	}
 
 	immediate = {
-		scope:worshiping_county = {
+		scope:worshiping_county ?= {
 			set_local_variable = { # For loc tracking
 				name = worshiped_dragon
 				value = scope:worshiped_dragon
@@ -912,7 +912,7 @@ agot_filler_dragon.0008 = {
 			}
 		}
 
-		scope:worshiping_county = {
+		scope:worshiping_county ?= {
 			remove_county_modifier = agot_worshiping_dragon
 			add_county_modifier = {
 				modifier = agot_restricted_dragon_worship
@@ -1001,7 +1001,7 @@ agot_filler_dragon.0009 = {
 
 	immediate = {
 		hidden_effect = { # Do all the back end stuff
-			scope:worshiping_county = { # Needed for character template
+			scope:worshiping_county ?= { # Needed for character template
 				save_scope_as = project_county
 			}
 			create_character = {
@@ -1029,7 +1029,7 @@ agot_filler_dragon.0009 = {
 				save_scope_as = change
 				add_claim_on_loss = no
 			}
-			scope:new_title = {
+			scope:new_title ?= {
 				set_capital_county = scope:worshiping_county
 				set_landless_title = yes
 				set_destroy_on_succession = yes
@@ -1043,10 +1043,10 @@ agot_filler_dragon.0009 = {
 				}
 			}
 			resolve_title_and_vassal_change = scope:change
-			scope:peasant_leader = {
+			scope:peasant_leader ?= {
 				if = {
 					limit = {
-						scope:worshiped_dragon = {
+						scope:worshiped_dragon ?= {
 							NOT = { is_courtier_of = scope:peasant_leader }
 						}
 					}
@@ -1071,7 +1071,7 @@ agot_filler_dragon.0009 = {
 			}
 		}
 		show_as_tooltip = { # Only show the war declaration though
-			scope:peasant_leader = {
+			scope:peasant_leader ?= {
 				start_war = {
 					casus_belli = dragon_county_conquest_cb
 					claimant = scope:peasant_leader
@@ -1268,7 +1268,7 @@ agot_filler_dragon.0011 = {
 			triggered_desc = {
 				trigger = {
 					has_character_flag = dragon_worship_watch
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_ate
 					}
 				}
@@ -1277,7 +1277,7 @@ agot_filler_dragon.0011 = {
 			triggered_desc = {
 				trigger = {
 					has_character_flag = dragon_worship_watch
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_attacked
 					}
 				}
@@ -1286,7 +1286,7 @@ agot_filler_dragon.0011 = {
 			triggered_desc = {
 				trigger = {
 					has_character_flag = dragon_worship_participate
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_ate
 					}
 				}
@@ -1295,7 +1295,7 @@ agot_filler_dragon.0011 = {
 			triggered_desc = {
 				trigger = {
 					has_character_flag = dragon_worship_participate
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_attacked
 					}
 				}
@@ -1317,7 +1317,7 @@ agot_filler_dragon.0011 = {
 		triggered_animation = {
 			trigger = {
 				has_character_flag = dragon_worship_participate
-				scope:worshiped_dragon = {
+				scope:worshiped_dragon ?= {
 					has_character_flag = dragon_worship_attacked
 				}
 			}
@@ -1341,7 +1341,7 @@ agot_filler_dragon.0011 = {
 			limit = {
 				has_character_flag = dragon_worship_massacre
 			}
-			scope:worshiping_county = {
+			scope:worshiping_county ?= {
 				remove_county_modifier = agot_worshiping_dragon
 				remove_county_modifier = agot_restricted_dragon_worship
 				add_county_modifier = {
@@ -1351,7 +1351,7 @@ agot_filler_dragon.0011 = {
 			}
 		}
 		else = { # Else need to check what happened
-			scope:worshiped_dragon = { # What did the dragon do?
+			scope:worshiped_dragon ?= { # What did the dragon do?
 				random_list = {
 					50 = {
 						modifier = {
@@ -1404,11 +1404,11 @@ agot_filler_dragon.0011 = {
 			if = {
 				limit = { # I watched, dragon attacked
 					has_character_flag = dragon_worship_watch
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_attacked
 					}
 				}
-				scope:worshiping_county = {
+				scope:worshiping_county ?= {
 					remove_county_modifier = agot_worshiping_dragon
 					remove_county_modifier = agot_restricted_dragon_worship
 					add_county_modifier = {
@@ -1420,7 +1420,7 @@ agot_filler_dragon.0011 = {
 			else_if = {
 				limit = { # I watched, dragon ate
 					has_character_flag = dragon_worship_watch
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_ate
 					}
 				}
@@ -1431,7 +1431,7 @@ agot_filler_dragon.0011 = {
 			else_if = {
 				limit = { # I participated, dragon attacked
 					has_character_flag = dragon_worship_participate
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_attacked
 					}
 				}
@@ -1441,7 +1441,7 @@ agot_filler_dragon.0011 = {
 						death_reason = death_dragon_ate
 					}
 				}
-				scope:worshiping_county = {
+				scope:worshiping_county ?= {
 					remove_county_modifier = agot_worshiping_dragon
 					remove_county_modifier = agot_restricted_dragon_worship
 					add_county_modifier = {
@@ -1453,7 +1453,7 @@ agot_filler_dragon.0011 = {
 			else_if = {
 				limit = { # I participated, dragon ate
 					has_character_flag = dragon_worship_participate
-					scope:worshiped_dragon = {
+					scope:worshiped_dragon ?= {
 						has_character_flag = dragon_worship_ate
 					}
 				}
@@ -1495,7 +1495,7 @@ agot_filler_dragon.0011 = {
 		flavor = agot_filler_dragon.0011.b.f
 		trigger = {
 			has_character_flag = dragon_worship_watch
-			scope:worshiped_dragon = {
+			scope:worshiped_dragon ?= {
 				has_character_flag = dragon_worship_ate
 			}
 		}
@@ -1510,7 +1510,7 @@ agot_filler_dragon.0011 = {
 		flavor = agot_filler_dragon.0011.c.f
 		trigger = {
 			has_character_flag = dragon_worship_watch
-			scope:worshiped_dragon = {
+			scope:worshiped_dragon ?= {
 				has_character_flag = dragon_worship_attacked
 			}
 		}
@@ -1528,7 +1528,7 @@ agot_filler_dragon.0011 = {
 		flavor = agot_filler_dragon.0011.d.f
 		trigger = {
 			has_character_flag = dragon_worship_participate
-			scope:worshiped_dragon = {
+			scope:worshiped_dragon ?= {
 				has_character_flag = dragon_worship_ate
 			}
 		}
@@ -1543,7 +1543,7 @@ agot_filler_dragon.0011 = {
 		flavor = agot_filler_dragon.0011.e.f
 		trigger = {
 			has_character_flag = dragon_worship_participate
-			scope:worshiped_dragon = {
+			scope:worshiped_dragon ?= {
 				has_character_flag = dragon_worship_attacked
 			}
 		}
@@ -1559,7 +1559,7 @@ agot_filler_dragon.0011 = {
 		remove_character_flag = dragon_worship_massacre
 		remove_character_flag = dragon_worship_watch
 		remove_character_flag = dragon_worship_participate
-		scope:worshiped_dragon = {
+		scope:worshiped_dragon ?= {
 			remove_character_flag = dragon_worship_ate
 			remove_character_flag = dragon_worship_attacked
 		}
@@ -1753,12 +1753,12 @@ agot_filler_dragon.0015 = { # Contrite finds out lover secret, wonders if they s
 				}
 				save_scope_as = secret
 			}
-			scope:secret = {
+			scope:secret ?= {
 				secret_owner = { save_scope_as = court_lover }
 				secret_target = { save_scope_as = court_lover_partner }
 			}
 		}
-		scope:secret = {
+		scope:secret ?= {
 			reveal_to = root
 		}
 	}
@@ -1797,7 +1797,7 @@ agot_filler_dragon.0015 = { # Contrite finds out lover secret, wonders if they s
 		stress_impact = {
 			contrite = medium_stress_impact_loss
 		}
-		scope:secret = {
+		scope:secret ?= {
 			expose_secret = root
 		}
 	}
@@ -1927,7 +1927,7 @@ agot_filler_dragon.0017 = { # Drunkard promised dragon ride
 				has_trait = lazy
 			}
 		}
-		scope:courtier = {
+		scope:courtier ?= {
 			add_opinion = {
 				modifier = refused_me_dragon_ride
 				target = root
@@ -1961,7 +1961,7 @@ agot_filler_dragon.0017 = { # Drunkard promised dragon ride
 		random_list = {
 			95 = {
 				desc = agot_filler_dragon.0017.b.live
-				scope:courtier = {
+				scope:courtier ?= {
 					add_opinion = {
 						modifier = let_me_dragon_ride
 						target = root
@@ -1970,7 +1970,7 @@ agot_filler_dragon.0017 = { # Drunkard promised dragon ride
 			}
 			5 = {
 				desc = agot_filler_dragon.0017.b.death
-				scope:courtier = {
+				scope:courtier ?= {
 					death = {
 						death_reason = death_fell_from_other_dragon
 					}
@@ -2391,7 +2391,7 @@ agot_filler_dragon.0025 = { # Irritable rider wants to burn neighboring holding
 				has_trait = compassionate
 			}
 		}
-		scope:target_county= {
+		scope:target_county ?= {
 			agot_dragon_damage_county_effect = yes
 			# Opinion effect
 			# Firstly, owner of county + liege
@@ -2694,7 +2694,7 @@ agot_filler_dragon.0029 = { # Rakish is asked to take prostitute with them
 			75 = {
 				desc = agot_filler_dragon.0029.a.good
 				agot_add_dragon_training_xp = { VALUE = 5 }
-				scope:prostitute_character = {
+				scope:prostitute_character ?= {
 					add_opinion = {
 						modifier = let_me_dragon_ride
 						target = root
@@ -2715,7 +2715,7 @@ agot_filler_dragon.0029 = { # Rakish is asked to take prostitute with them
 				desc = agot_filler_dragon.0029.a.bad
 				random_list = {
 					33 = {
-						scope:prostitute_character = {
+						scope:prostitute_character ?= {
 							death = {
 								death_reason = death_fell_from_other_dragon
 							}
@@ -2725,7 +2725,7 @@ agot_filler_dragon.0029 = { # Rakish is asked to take prostitute with them
 						}
 					}
 					33 = {
-						scope:prostitute_character = {
+						scope:prostitute_character ?= {
 							death = {
 								death_reason = death_fell_from_other_dragon
 							}
@@ -3295,7 +3295,7 @@ agot_filler_dragon.0041 = { # Contemplate using dragon to help with vassals
 				}
 			}
 		}
-		scope:flight_offer_vassal = {
+		scope:flight_offer_vassal ?= {
 			add_opinion = {
 				modifier = let_me_dragon_ride
 				target = root
@@ -3323,7 +3323,7 @@ agot_filler_dragon.0041 = { # Contemplate using dragon to help with vassals
 				}
 			}
 		}
-		scope:threaten_offer_vassal = {
+		scope:threaten_offer_vassal ?= {
 			add_opinion = {
 				modifier = threatened_opinion
 				target = root
@@ -3686,18 +3686,18 @@ agot_filler_dragon.0047 = {
 		}
 		custom_tooltip = {
 			text = agot_filler_dragon.0047.a.tt
-			scope:prisoner_secret = {
+			scope:prisoner_secret ?= {
 				reveal_to = root
 			}
 		}
-		scope:prisoner = {
+		scope:prisoner ?= {
 			add_opinion = {
 				modifier = threatened_opinion
 				target = root
 			}
 			save_scope_as = target
 		}
-		scope:prisoner_secret = {
+		scope:prisoner_secret ?= {
 			save_scope_as = target_secret
 		}
 	}
@@ -3718,18 +3718,18 @@ agot_filler_dragon.0047 = {
 		}
 		custom_tooltip = {
 			text = agot_filler_dragon.0047.b.tt
-			scope:family_secret = {
+			scope:family_secret ?= {
 				reveal_to = root
 			}
 		}
-		scope:family_member = {
+		scope:family_member ?= {
 			add_opinion = {
 				modifier = threatened_opinion
 				target = root
 			}
 			save_scope_as = target
 		}
-		scope:family_secret = {
+		scope:family_secret ?= {
 			save_scope_as = target_secret
 		}
 	}
@@ -3750,18 +3750,18 @@ agot_filler_dragon.0047 = {
 		}
 		custom_tooltip = {
 			text = agot_filler_dragon.0047.c.tt
-			scope:vassal_secret = {
+			scope:vassal_secret ?= {
 				reveal_to = root
 			}
 		}
-		scope:vassal = {
+		scope:vassal ?= {
 			add_opinion = {
 				modifier = threatened_opinion
 				target = root
 			}
 			save_scope_as = target
 		}
-		scope:vassal_secret = {
+		scope:vassal_secret ?= {
 			save_scope_as = target_secret
 		}
 	}
@@ -3782,18 +3782,18 @@ agot_filler_dragon.0047 = {
 		}
 		custom_tooltip = {
 			text = agot_filler_dragon.0047.d.tt
-			scope:courtier_secret = {
+			scope:courtier_secret ?= {
 				reveal_to = root
 			}
 		}
-		scope:courtier = {
+		scope:courtier ?= {
 			add_opinion = {
 				modifier = threatened_opinion
 				target = root
 			}
 			save_scope_as = target
 		}
-		scope:courtier_secret = {
+		scope:courtier_secret ?= {
 			save_scope_as = target_secret
 		}
 	}
@@ -3912,7 +3912,7 @@ agot_filler_dragon.0049 = {
 				}
 			}
 		}
-		scope:investigate_culture = {
+		scope:investigate_culture ?= {
 			change_cultural_acceptance= {
 				target = root.culture
 				value = 10
@@ -4819,7 +4819,7 @@ agot_filler_dragon.0065 = {
 	court_scene = {
 		button_position_character = scope:proposing_courtier
 		roles = {
-			scope:proposing_courtier = {
+			scope:proposing_courtier ?= {
 				group = event_group
 				animation = admiration
 			}
@@ -4866,7 +4866,7 @@ agot_filler_dragon.0065 = {
 			target = scope:proposing_courtier
 			opinion = -20
 		}
-		scope:proposing_courtier = {
+		scope:proposing_courtier ?= {
 			add_opinion = {
 				modifier = insulted_courtier
 				target = root
@@ -4907,7 +4907,7 @@ agot_filler_dragon.0065 = {
 			}
 		}
 		hidden_effect = {
-			scope:proposing_courtier = {
+			scope:proposing_courtier ?= {
 				create_artifact = {
 					name = dragon_blood_and_bones_potion
 					description = dragon_blood_and_bones_potion_desc
@@ -4931,7 +4931,7 @@ agot_filler_dragon.0065 = {
 		}
 		send_interface_toast = {
 			title = agot_filler_dragon.0059.toast.t
-			scope:potion = {
+			scope:potion ?= {
 				set_owner = root
 			}
 			create_story = story_dragonkind_elixir
@@ -4958,7 +4958,7 @@ agot_filler_dragon.0065 = {
 				ai_sociability = -0.1
 			}
 		}
-		scope:proposing_courtier = {
+		scope:proposing_courtier ?= {
 			add_opinion = {
 				modifier = disappointed_opinion
 				target = root
@@ -4971,7 +4971,7 @@ agot_filler_dragon.0065 = {
 		root = {
 			clear_court_event_participation = yes
 		}
-		scope:proposing_courtier = {
+		scope:proposing_courtier ?= {
 			clear_court_event_participation = yes
 		}
 	}
@@ -6123,7 +6123,7 @@ agot_filler_dragon.0082 = { # Royal Court Version
 	court_scene = {
 		button_position_character = scope:brave_knight
 		roles = {
-			scope:brave_knight = {
+			scope:brave_knight ?= {
 				group = event_group
 				animation = personality_bold
 			}
@@ -6161,7 +6161,7 @@ agot_filler_dragon.0082 = { # Royal Court Version
 					modifier = {
 						add = var:current_dragon.dragon_size
 					}
-					scope:brave_knight = {
+					scope:brave_knight ?= {
 						random_list = {
 							33 = {
 								death = {
@@ -6191,7 +6191,7 @@ agot_filler_dragon.0082 = { # Royal Court Version
 						add = -20
 						scope:brave_knight.prowess > 20 # Only decent warriors even have a chance
 					}
-					scope:brave_knight = {
+					scope:brave_knight ?= {
 						add_prestige = 1000
 						set_variable = {
 							name = slain_dragon
@@ -6294,7 +6294,7 @@ agot_filler_dragon.0083 = { # DLC-Free Version
 					modifier = {
 						add = var:current_dragon.dragon_size
 					}
-					scope:brave_knight = {
+					scope:brave_knight ?= {
 						random_list = {
 							33 = {
 								death = {
@@ -6324,7 +6324,7 @@ agot_filler_dragon.0083 = { # DLC-Free Version
 						add = -20
 						scope:brave_knight.prowess > 20 # Only decent warriors even have a chance
 					}
-					scope:brave_knight = {
+					scope:brave_knight ?= {
 						add_prestige = 1000
 						set_variable = {
 							name = slain_dragon
@@ -6386,15 +6386,15 @@ agot_filler_dragon.0084 = { # Dragon won the duel
 	desc = {
 		desc = agot_filler_dragon.0084.desc
 		triggered_desc = {
-			trigger = { scope:brave_knight = { death_reason = death_dragon_ate } }
+			trigger = { scope:brave_knight ?= { death_reason = death_dragon_ate } }
 			desc = agot_filler_dragon.0084.desc.eaten
 		}
 		triggered_desc = {
-			trigger = { scope:brave_knight = { death_reason = death_dragon_stomped } }
+			trigger = { scope:brave_knight ?= { death_reason = death_dragon_stomped } }
 			desc = agot_filler_dragon.0084.desc.crushed
 		}
 		triggered_desc = {
-			trigger = { scope:brave_knight = { death_reason = death_dragon_fire } }
+			trigger = { scope:brave_knight ?= { death_reason = death_dragon_fire } }
 			desc = agot_filler_dragon.0084.desc.burned
 		}
 		desc = agot_filler_dragon.0084.desc_end
@@ -6437,7 +6437,7 @@ agot_filler_dragon.0085 = { # Knight won the duel
 
 	immediate = {
 		show_as_tooltip = {
-			scope:brave_knight = {
+			scope:brave_knight ?= {
 				add_prestige = 1000
 				set_variable = {
 					name = slain_dragon
@@ -6650,7 +6650,7 @@ agot_filler_dragon.0087 = {
 		add_gold = medium_gold_value
 		add_prestige = medium_prestige_loss
 		add_dread = minor_dread_gain
-		scope:merchant_petitioner = {
+		scope:merchant_petitioner ?= {
 			death = {
 				death_reason = death_dropped_from_dragon
 				killer = root.var:current_dragon
@@ -7022,23 +7022,23 @@ agot_filler_dragon.0093 = {
 		}
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:child = { has_trait = bossy } }
+				trigger = { scope:child ?= { has_trait = bossy } }
 				desc = agot_filler_dragon.0093.desc_bossy
 			}
 			triggered_desc = {
-				trigger = { scope:child = { has_trait = charming } }
+				trigger = { scope:child ?= { has_trait = charming } }
 				desc = agot_filler_dragon.0093.desc_charming
 			}
 			triggered_desc = {
-				trigger = { scope:child = { has_trait = curious } }
+				trigger = { scope:child ?= { has_trait = curious } }
 				desc = agot_filler_dragon.0093.desc_curious
 			}
 			triggered_desc = {
-				trigger = { scope:child = { has_trait = pensive } }
+				trigger = { scope:child ?= { has_trait = pensive } }
 				desc = agot_filler_dragon.0093.desc_pensive
 			}
 			triggered_desc = {
-				trigger = { scope:child = { has_trait = rowdy } }
+				trigger = { scope:child ?= { has_trait = rowdy } }
 				desc = agot_filler_dragon.0093.desc_rowdy
 			}
 		}
@@ -7060,7 +7060,7 @@ agot_filler_dragon.0093 = {
 		animation = personality_greedy
 		triggered_animation = {
 			trigger = {
-				scope:child = {
+				scope:child ?= {
 					has_trait = charming
 				}
 			}
@@ -7068,7 +7068,7 @@ agot_filler_dragon.0093 = {
 		}
 		triggered_animation = {
 			trigger = {
-				scope:child = {
+				scope:child ?= {
 					has_trait = curious
 				}
 			}
@@ -7076,7 +7076,7 @@ agot_filler_dragon.0093 = {
 		}
 		triggered_animation = {
 			trigger = {
-				scope:child = {
+				scope:child ?= {
 					has_trait = pensive
 				}
 			}
@@ -7084,7 +7084,7 @@ agot_filler_dragon.0093 = {
 		}
 		triggered_animation = {
 			trigger = {
-				scope:child = {
+				scope:child ?= {
 					has_trait = rowdy
 				}
 			}
@@ -7128,7 +7128,7 @@ agot_filler_dragon.0093 = {
 				}
 			}
 		}
-		scope:child = {
+		scope:child ?= {
 			add_opinion = {
 				modifier = disappointed_opinion
 				target = ROOT
@@ -7143,7 +7143,7 @@ agot_filler_dragon.0093 = {
 				random_list = {
 					50 = {
 						desc = agot_filler_dragon.0093.a.cowardly
-						scope:child = {
+						scope:child ?= {
 							add_trait = craven
 						}
 					}
@@ -7228,7 +7228,7 @@ agot_filler_dragon.0093 = {
 		random_list = {
 			90 = {
 				desc = agot_filler_dragon.0093.b.good
-				scope:child = {
+				scope:child ?= {
 					add_opinion = {
 						modifier = grateful_opinion
 						target = ROOT
@@ -7265,7 +7265,7 @@ agot_filler_dragon.0093 = {
 			}
 			10 = {
 				desc = agot_filler_dragon.0093.b.bad
-				scope:child = {
+				scope:child ?= {
 					death = {
 						death_reason = death_fell_from_other_dragon
 					}
@@ -7297,7 +7297,7 @@ agot_filler_dragon.0093 = {
 				}
 			}
 		}
-		scope:child = {
+		scope:child ?= {
 			add_opinion = {
 				modifier = grateful_opinion
 				target = ROOT
@@ -7345,7 +7345,7 @@ agot_filler_dragon.0093 = {
 		ai_chance = {
 			base = 100
 		}
-		scope:child = {
+		scope:child ?= {
 			if = {
 				limit = {
 					NOT = { has_relation_rival = root }
@@ -7368,7 +7368,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:child = {
+					scope:child ?= {
 						is_alive = yes
 					}
 				}
@@ -7393,7 +7393,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 		animation = severely_injured
 		triggered_animation = {
 			trigger = {
-				scope:child = {
+				scope:child ?= {
 					is_alive = yes
 				}
 			}
@@ -7405,7 +7405,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 		var:current_dragon = {
 			save_scope_as = dragon
 		}
-		scope:child = {
+		scope:child ?= {
 			random_list = {
 				50 = {
 					if = {
@@ -7452,7 +7452,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 		name = agot_filler_dragon.0094.a
 		flavor = agot_filler_dragon.0094.a.f
 		trigger = {
-			scope:child = {
+			scope:child ?= {
 				is_alive = yes
 			}
 		}
@@ -7464,7 +7464,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 		trigger = {
 			NOT = { has_trait = sadistic }
 			NOT = { has_trait = callous }
-			scope:child = {
+			scope:child ?= {
 				is_alive = no
 			}
 		}
@@ -7478,7 +7478,7 @@ agot_filler_dragon.0094 = { # Child snuck in to ride dragon!
 				has_trait = sadistic
 				has_trait = callous
 			}
-			scope:child = {
+			scope:child ?= {
 				is_alive = no
 			}
 		}
@@ -8035,7 +8035,7 @@ agot_filler_dragon.0102 = {
 	}
 
 	immediate = {
-		scope:dragonrider_in_court = {
+		scope:dragonrider_in_court ?= {
 			agot_set_dragon_animation_flag_effect = { FLAG = dragon_flying RIDING_DRAGON = yes }
 			var:current_dragon = {
 				save_scope_as = dragon_of_courtier
@@ -8089,7 +8089,7 @@ agot_filler_dragon.0102 = {
 			}
 			modifier = {
 				factor = 3
-				scope:dragonrider_in_court = {
+				scope:dragonrider_in_court ?= {
 					OR = {
 						is_landed = yes
 						any_spouse = {
@@ -8100,7 +8100,7 @@ agot_filler_dragon.0102 = {
 			}
 			modifier = {
 				factor = 1.25
-				scope:dragonrider_in_court = {
+				scope:dragonrider_in_court ?= {
 					has_trait = beauty_good
 				}
 			}
@@ -8113,7 +8113,7 @@ agot_filler_dragon.0102 = {
 					value = 0.1
 					if = {
 						limit = {
-							scope:dragonrider_in_court = {
+							scope:dragonrider_in_court ?= {
 								opinion = {
 									target = root
 									value < -20
@@ -8123,7 +8123,7 @@ agot_filler_dragon.0102 = {
 						value = 0
 					}
 				}
-				scope:dragonrider_in_court = {
+				scope:dragonrider_in_court ?= {
 					opinion = {
 						target = root
 						value < 0
@@ -8189,7 +8189,7 @@ agot_filler_dragon.0102 = {
 
 
 	after = {
-		scope:dragonrider_in_court = {
+		scope:dragonrider_in_court ?= {
 			agot_clear_dragon_animation_flags = yes
 		}
 	}

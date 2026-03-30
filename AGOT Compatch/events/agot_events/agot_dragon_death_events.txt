@@ -58,7 +58,7 @@ agot_dragon_death.0001 = {
 				save_scope_as = dragonwidowed
 			}
 		}
-		scope:dead_dragon = {
+		scope:dead_dragon ?= {
 			if = {
 				limit = {
 					exists = killer

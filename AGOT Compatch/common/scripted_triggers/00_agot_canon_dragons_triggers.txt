@@ -212,9 +212,9 @@ agot_is_canon_rider_dragon_pair = {
 	$DRAGON$ = { save_temporary_scope_as = canon_dragon }
 	trigger_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_vermithrax = yes }
+			scope:canon_dragon ?= { is_character_dragon_vermithrax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_13_a
 				has_character_flag = is_Targaryen_13
@@ -223,9 +223,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_anogaros = yes }
+			scope:canon_dragon ?= { is_character_dragon_anogaros = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_13_b
 				has_character_flag = is_Targaryen_14
@@ -236,9 +236,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_balerion = yes }
+			scope:canon_dragon ?= { is_character_dragon_balerion = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_15
 				has_character_flag = is_Targaryen_17
@@ -252,9 +252,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_nessarion = yes }
+			scope:canon_dragon ?= { is_character_dragon_nessarion = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_13_c
 			}
@@ -262,9 +262,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_archonei = yes }
+			scope:canon_dragon ?= { is_character_dragon_archonei = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_13_d
 				has_character_flag = is_Targaryen_16
@@ -275,9 +275,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_meraxes = yes }
+			scope:canon_dragon ?= { is_character_dragon_meraxes = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_21
 				has_character_flag = is_Targaryen_24
@@ -288,9 +288,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_vhagar = yes }
+			scope:canon_dragon ?= { is_character_dragon_vhagar = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_28
 				has_character_flag = is_Targaryen_46
@@ -301,9 +301,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_quicksilver = yes }
+			scope:canon_dragon ?= { is_character_dragon_quicksilver = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_30
 				has_character_flag = is_Targaryen_33
@@ -312,9 +312,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_dreamfyre = yes }
+			scope:canon_dragon ?= { is_character_dragon_dreamfyre = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_32
 				has_character_flag = is_Targaryen_66
@@ -323,9 +323,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_vermithor = yes }
+			scope:canon_dragon ?= { is_character_dragon_vermithor = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_35
 				has_character_flag = is_Hammer_1
@@ -334,9 +334,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_silverwing = yes }
+			scope:canon_dragon ?= { is_character_dragon_silverwing = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_36
 				has_character_flag = is_White_1
@@ -345,9 +345,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_meleys = yes }
+			scope:canon_dragon ?= { is_character_dragon_meleys = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_47
 				has_character_flag = is_Targaryen_59
@@ -356,9 +356,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_caraxes = yes }
+			scope:canon_dragon ?= { is_character_dragon_caraxes = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_45
 				has_character_flag = is_Targaryen_61
@@ -367,9 +367,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_sheepstealer = yes }
+			scope:canon_dragon ?= { is_character_dragon_sheepstealer = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Farseed_1
 			}
@@ -377,9 +377,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_sunfyre = yes }
+			scope:canon_dragon ?= { is_character_dragon_sunfyre = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_65
 			}
@@ -387,9 +387,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_tessarion = yes }
+			scope:canon_dragon ?= { is_character_dragon_tessarion = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_68
 			}
@@ -397,9 +397,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_syrax = yes }
+			scope:canon_dragon ?= { is_character_dragon_syrax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_63
 			}
@@ -407,9 +407,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_seasmoke = yes }
+			scope:canon_dragon ?= { is_character_dragon_seasmoke = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Velaryon_35
 				has_character_flag = is_Velaryon_43
@@ -418,9 +418,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_moondancer = yes }
+			scope:canon_dragon ?= { is_character_dragon_moondancer = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_69
 			}
@@ -428,9 +428,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_rhaena_1 = yes }
+			scope:canon_dragon ?= { is_character_dragon_rhaena_1 = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_70
 			}
@@ -438,9 +438,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_shrykos = yes }
+			scope:canon_dragon ?= { is_character_dragon_shrykos = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_72
 			}
@@ -448,9 +448,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_morghul = yes }
+			scope:canon_dragon ?= { is_character_dragon_morghul = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_71
 			}
@@ -458,9 +458,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_vermax = yes }
+			scope:canon_dragon ?= { is_character_dragon_vermax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_75
 			}
@@ -468,9 +468,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_arrax = yes }
+			scope:canon_dragon ?= { is_character_dragon_arrax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_76
 			}
@@ -478,9 +478,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_tyraxes = yes }
+			scope:canon_dragon ?= { is_character_dragon_tyraxes = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_77
 			}
@@ -488,9 +488,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_stormcloud = yes }
+			scope:canon_dragon ?= { is_character_dragon_stormcloud = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_78
 			}
@@ -498,9 +498,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_morning = yes }
+			scope:canon_dragon ?= { is_character_dragon_morning = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_70
 			}
@@ -508,9 +508,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_nightfyre = yes }
+			scope:canon_dragon ?= { is_character_dragon_nightfyre = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_74
 			}
@@ -518,9 +518,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_drogon = yes }
+			scope:canon_dragon ?= { is_character_dragon_drogon = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Targaryen_9
 			}
@@ -528,9 +528,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_vassarion = yes }
+			scope:canon_dragon ?= { is_character_dragon_vassarion = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Varezys_1
 			}
@@ -538,9 +538,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_rovax = yes }
+			scope:canon_dragon ?= { is_character_dragon_rovax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Urnebar_1
 			}
@@ -548,9 +548,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_neltharion = yes }
+			scope:canon_dragon ?= { is_character_dragon_neltharion = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Sonaryen_1
 			}
@@ -558,9 +558,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_pythax = yes }
+			scope:canon_dragon ?= { is_character_dragon_pythax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Mataeryon_1
 			}
@@ -568,9 +568,9 @@ agot_is_canon_rider_dragon_pair = {
 	}
 	trigger_else_if = {
 		limit = {
-			scope:canon_dragon = { is_character_dragon_terrax = yes }
+			scope:canon_dragon ?= { is_character_dragon_terrax = yes }
 		}
-		scope:canon_rider = {
+		scope:canon_rider ?= {
 			OR = {
 				has_character_flag = is_Belaerys_1
 			}
@@ -622,7 +622,7 @@ agot_is_valid_vhagar_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:vhagar_birth_reserved }
 	current_date >= 7949.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_nessarion = yes }
 	}
 	NOT = { exists = character:dragon_vhagar }
@@ -638,7 +638,7 @@ agot_is_valid_serporoth_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:serporoth_birth_reserved }
 	current_date >= 8009.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_meraxes = yes }
 	}
 	NOT = { exists = character:dragon_serporoth }
@@ -654,7 +654,7 @@ agot_is_valid_cannibal_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:cannibal_birth_reserved }
 	current_date >= 8017.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_meraxes = yes }
 	}
 	NOT = { exists = character:dragon_cannibal }
@@ -670,7 +670,7 @@ agot_is_valid_maegor_2_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_2_birth_reserved }
 	current_date >= 8022.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_serporoth = yes }
 	}
 	NOT = { exists = character:dragon_maegor_2 }
@@ -686,7 +686,7 @@ agot_is_valid_maegor_3_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_3_birth_reserved }
 	current_date >= 8022.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_serporoth = yes }
 	}
 	NOT = { exists = character:dragon_maegor_3 }
@@ -702,7 +702,7 @@ agot_is_valid_maegor_4_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_4_birth_reserved }
 	current_date >= 8024.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_serporoth = yes }
 	}
 	NOT = { exists = character:dragon_maegor_4 }
@@ -718,7 +718,7 @@ agot_is_valid_dreamfyre_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:dreamfyre_birth_reserved }
 	current_date >= 8029.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_vhagar = yes }
 	}
 	NOT = { exists = character:dragon_dreamfyre }
@@ -734,7 +734,7 @@ agot_is_valid_maegor_6_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_6_birth_reserved }
 	current_date >= 8023.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_quicksilver = yes }
 	}
 	NOT = { exists = character:dragon_maegor_6 }
@@ -750,7 +750,7 @@ agot_is_valid_maegor_5_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_5_birth_reserved }
 	current_date >= 8030.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_quicksilver = yes }
 	}
 	NOT = { exists = character:dragon_maegor_5 }
@@ -766,7 +766,7 @@ agot_is_valid_maegor_7_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_7_birth_reserved }
 	current_date >= 8031.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_quicksilver = yes }
 	}
 	NOT = { exists = character:dragon_maegor_7 }
@@ -782,7 +782,7 @@ agot_is_valid_maegor_8_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_8_birth_reserved }
 	current_date >= 8031.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_quicksilver = yes }
 	}
 	NOT = { exists = character:dragon_maegor_8 }
@@ -798,7 +798,7 @@ agot_is_valid_meleys_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:meleys_birth_reserved }
 	current_date >= 8036.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_quicksilver = yes }
 	}
 	NOT = { exists = character:dragon_meleys }
@@ -814,7 +814,7 @@ agot_is_valid_maegor_9_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_9_birth_reserved }
 	current_date >= 8034.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_maegor_3 = yes }
 	}
 	NOT = { exists = character:dragon_maegor_9 }
@@ -830,7 +830,7 @@ agot_is_valid_maegor_10_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_10_birth_reserved }
 	current_date >= 8034.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_maegor_3 = yes }
 	}
 	NOT = { exists = character:dragon_maegor_10 }
@@ -846,7 +846,7 @@ agot_is_valid_maegor_11_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:maegor_11_birth_reserved }
 	current_date >= 8034.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_maegor_3 = yes }
 	}
 	NOT = { exists = character:dragon_maegor_11 }
@@ -862,7 +862,7 @@ agot_is_valid_aenys_1_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aenys_1_birth_reserved }
 	current_date >= 8038.10.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_maegor_6 = yes }
 	}
 	NOT = { exists = character:dragon_aenys_1 }
@@ -878,7 +878,7 @@ agot_is_valid_aenys_2_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aenys_2_birth_reserved }
 	current_date >= 8038.10.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_maegor_6 = yes }
 	}
 	NOT = { exists = character:dragon_aenys_2 }
@@ -894,7 +894,7 @@ agot_is_valid_caraxes_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:caraxes_birth_reserved }
 	current_date >= 8050.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -911,7 +911,7 @@ agot_is_valid_aerea_1_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aerea_1_birth_reserved }
 	current_date >= 8052.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_dreamfyre = yes }
 	}
 	NOT = { exists = character:dragon_aerea_1 }
@@ -927,7 +927,7 @@ agot_is_valid_aerea_2_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aerea_2_birth_reserved }
 	current_date >= 8052.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_dreamfyre = yes }
 	}
 	NOT = { exists = character:dragon_aerea_2 }
@@ -943,7 +943,7 @@ agot_is_valid_aerea_3_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aerea_3_birth_reserved }
 	current_date >= 8054.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_dreamfyre = yes }
 	}
 	NOT = { exists = character:dragon_aerea_3 }
@@ -959,7 +959,7 @@ agot_is_valid_sheepstealer_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:sheepstealer_birth_reserved }
 	current_date >= 8056.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_dreamfyre = yes }
 	}
 	NOT = { exists = character:dragon_sheepstealer }
@@ -975,7 +975,7 @@ agot_is_valid_daenerys_1_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:daenerys_1_birth_reserved }
 	current_date >= 8059.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_dreamfyre = yes }
 	}
 	NOT = { exists = character:dragon_daenerys_1 }
@@ -991,7 +991,7 @@ agot_is_valid_grey_ghost_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:grey_ghost_birth_reserved }
 	current_date >= 8087.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1008,7 +1008,7 @@ agot_is_valid_sunfyre_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:sunfyre_birth_reserved }
 	current_date >= 8088.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1025,7 +1025,7 @@ agot_is_valid_tessarion_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:tessarion_birth_reserved }
 	current_date >= 8100.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1042,7 +1042,7 @@ agot_is_valid_aemond_1_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aemond_1_birth_reserved }
 	current_date >= 8118.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1059,7 +1059,7 @@ agot_is_valid_aemond_2_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aemond_2_birth_reserved }
 	current_date >= 8118.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1076,7 +1076,7 @@ agot_is_valid_aemond_3_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:aemond_3_birth_reserved }
 	current_date >= 8119.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_silverwing = yes }
 		var:dragon_parent_other ?= { is_character_dragon_vermithor = yes }
 	}
@@ -1093,7 +1093,7 @@ agot_is_valid_syrax_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:syrax_birth_reserved }
 	current_date >= 8087.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_meleys = yes }
 	}
 	NOT = { exists = character:dragon_syrax }
@@ -1109,7 +1109,7 @@ agot_is_valid_the_last_birth = {
 	$EGG$ = { save_temporary_scope_as = temp_egg }
 	NOT = { exists = scope:the_last_birth_reserved }
 	current_date >= 8148.1.1
-	scope:temp_egg = {
+	scope:temp_egg ?= {
 		var:dragon_parent ?= { is_character_dragon_morning = yes }
 	}
 	NOT = { exists = character:dragon_the_last }

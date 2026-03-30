@@ -27,7 +27,7 @@ agot_dragon_skin_color_menu = {
 	}
 	effect = {
 		save_scope_as = dragon
-		scope:player = {
+		scope:player ?= {
 			set_variable = {
 				name = editing_dragon
 				value = scope:dragon
@@ -96,7 +96,7 @@ agot_dragon_skin_color_menu = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				# Initialize Reset Variables
 				set_variable = {
 					name = gene_dragon_primary_color_value_old
@@ -351,7 +351,7 @@ agot_dragon_skin_color_plus = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				change_variable = {
 					name = gene_dragon_primary_color_value
 					add = root.agotaddvalue_to_change
@@ -398,7 +398,7 @@ agot_dragon_skin_color_minus = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				change_variable = {
 					name = gene_dragon_primary_color_value
 					subtract = root.agotsubvalue_to_change
@@ -430,7 +430,7 @@ agot_dragon_skin_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_primary_color_value
 					value = var:gene_dragon_primary_color_value_old
@@ -479,7 +479,7 @@ agot_dragon_primary_color_hue_color_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_primary_color_hue
 						add = root.agotaddvalue_to_change
@@ -528,7 +528,7 @@ agot_dragon_primary_color_hue_color_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_primary_color_hue
 						subtract = root.agotsubvalue_to_change
@@ -561,7 +561,7 @@ agot_dragon_primary_color_hue_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_primary_color_hue
 					value = var:gene_dragon_primary_color_hue_old
@@ -610,7 +610,7 @@ agot_dragon_secondary_value_color_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_secondary_value
 						add = root.agotaddvalue_to_change
@@ -659,7 +659,7 @@ agot_dragon_secondary_value_color_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_secondary_value
 						subtract = root.agotsubvalue_to_change
@@ -692,7 +692,7 @@ agot_dragon_secondary_value_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_secondary_value
 					value = var:gene_dragon_secondary_value_old
@@ -741,7 +741,7 @@ agot_dragon_secondary_hue_color_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_secondary_hue
 						add = root.agotaddvalue_to_change
@@ -790,7 +790,7 @@ agot_dragon_secondary_hue_color_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_secondary_hue
 						subtract = root.agotsubvalue_to_change
@@ -823,7 +823,7 @@ agot_dragon_secondary_hue_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_secondary_hue
 					value = var:gene_dragon_secondary_hue_old
@@ -872,7 +872,7 @@ agot_dragon_tertiary_value_color_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tertiary_value
 						add = root.agotaddvalue_to_change
@@ -921,7 +921,7 @@ agot_dragon_tertiary_value_color_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tertiary_value
 						subtract = root.agotsubvalue_to_change
@@ -954,7 +954,7 @@ agot_dragon_tertiary_value_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_tertiary_value
 					value = var:gene_dragon_tertiary_value_old
@@ -1003,7 +1003,7 @@ agot_dragon_tertiary_hue_color_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tertiary_hue
 						add = root.agotaddvalue_to_change
@@ -1052,7 +1052,7 @@ agot_dragon_tertiary_hue_color_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tertiary_hue
 						subtract = root.agotsubvalue_to_change
@@ -1085,7 +1085,7 @@ agot_dragon_tertiary_hue_color_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_tertiary_hue
 					value = var:gene_dragon_tertiary_hue_old
@@ -1136,7 +1136,7 @@ agot_dragon_horn_color_value_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horn_color_value
 						add = root.agotaddvalue_to_change
@@ -1185,7 +1185,7 @@ agot_dragon_horn_color_value_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horn_color_value
 						subtract = root.agotsubvalue_to_change
@@ -1218,7 +1218,7 @@ agot_dragon_horn_color_value_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_horn_color_value
 					value = var:gene_dragon_horn_color_value_old
@@ -1268,7 +1268,7 @@ agot_dragon_horn_color_hue_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horn_color_hue
 						add = root.agotaddvalue_to_change
@@ -1317,7 +1317,7 @@ agot_dragon_horn_color_hue_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horn_color_hue
 						subtract = root.agotsubvalue_to_change
@@ -1350,7 +1350,7 @@ agot_dragon_horn_color_hue_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_horn_color_hue
 					value = var:gene_dragon_horn_color_hue_old
@@ -1400,7 +1400,7 @@ agot_dragon_eye_color_value_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_eye_color_value
 						add = root.agotaddvalue_to_change
@@ -1449,7 +1449,7 @@ agot_dragon_eye_color_value_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_eye_color_value
 						subtract = root.agotsubvalue_to_change
@@ -1482,7 +1482,7 @@ agot_dragon_eye_color_value_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_eye_color_value
 					value = var:gene_dragon_eye_color_value_old
@@ -1532,7 +1532,7 @@ agot_dragon_eye_color_hue_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_eye_color_hue
 						add = root.agotaddvalue_to_change
@@ -1581,7 +1581,7 @@ agot_dragon_eye_color_hue_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_eye_color_hue
 						subtract = root.agotsubvalue_to_change
@@ -1614,7 +1614,7 @@ agot_dragon_eye_color_hue_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_eye_color_hue
 					value = var:gene_dragon_eye_color_hue_old
@@ -1664,7 +1664,7 @@ agot_dragon_brow_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_brow_width
 						add = root.agotaddvalue_to_change
@@ -1713,7 +1713,7 @@ agot_dragon_brow_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_brow_width
 						subtract = root.agotsubvalue_to_change
@@ -1746,7 +1746,7 @@ agot_dragon_brow_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_brow_width
 					value = var:gene_dragon_brow_width_old
@@ -1796,7 +1796,7 @@ agot_dragon_cheek_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_cheek_width
 						add = root.agotaddvalue_to_change
@@ -1845,7 +1845,7 @@ agot_dragon_cheek_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_cheek_width
 						subtract = root.agotsubvalue_to_change
@@ -1878,7 +1878,7 @@ agot_dragon_cheek_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_cheek_width
 					value = var:gene_dragon_cheek_width_old
@@ -1928,7 +1928,7 @@ agot_dragon_chin_profile_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_chin_profile
 						add = root.agotaddvalue_to_change
@@ -1977,7 +1977,7 @@ agot_dragon_chin_profile_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_chin_profile
 						subtract = root.agotsubvalue_to_change
@@ -2010,7 +2010,7 @@ agot_dragon_chin_profile_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_chin_profile
 					value = var:gene_dragon_chin_profile_old
@@ -2060,7 +2060,7 @@ agot_dragon_crest_depth_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_crest_depth
 						add = root.agotaddvalue_to_change
@@ -2109,7 +2109,7 @@ agot_dragon_crest_depth_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_crest_depth
 						subtract = root.agotsubvalue_to_change
@@ -2142,7 +2142,7 @@ agot_dragon_crest_depth_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_crest_depth
 					value = var:gene_dragon_crest_depth_old
@@ -2192,7 +2192,7 @@ agot_dragon_head_roundness_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_head_roundness
 						add = root.agotaddvalue_to_change
@@ -2241,7 +2241,7 @@ agot_dragon_head_roundness_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_head_roundness
 						subtract = root.agotsubvalue_to_change
@@ -2274,7 +2274,7 @@ agot_dragon_head_roundness_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_head_roundness
 					value = var:gene_dragon_head_roundness_old
@@ -2324,7 +2324,7 @@ agot_dragon_horns_eyebrow_length_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horns_eyebrow_length
 						add = root.agotaddvalue_to_change
@@ -2373,7 +2373,7 @@ agot_dragon_horns_eyebrow_length_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horns_eyebrow_length
 						subtract = root.agotsubvalue_to_change
@@ -2406,7 +2406,7 @@ agot_dragon_horns_eyebrow_length_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_horns_eyebrow_length
 					value = var:gene_dragon_horns_eyebrow_length_old
@@ -2456,7 +2456,7 @@ agot_dragon_jaw_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_jaw_width
 						add = root.agotaddvalue_to_change
@@ -2505,7 +2505,7 @@ agot_dragon_jaw_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_jaw_width
 						subtract = root.agotsubvalue_to_change
@@ -2538,7 +2538,7 @@ agot_dragon_jaw_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_jaw_width
 					value = var:gene_dragon_jaw_width_old
@@ -2588,7 +2588,7 @@ agot_dragon_lower_jaw_height_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_lower_jaw_height
 						add = root.agotaddvalue_to_change
@@ -2637,7 +2637,7 @@ agot_dragon_lower_jaw_height_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_lower_jaw_height
 						subtract = root.agotsubvalue_to_change
@@ -2670,7 +2670,7 @@ agot_dragon_lower_jaw_height_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_lower_jaw_height
 					value = var:gene_dragon_lower_jaw_height_old
@@ -2720,7 +2720,7 @@ agot_dragon_lower_jaw_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_lower_jaw_width
 						add = root.agotaddvalue_to_change
@@ -2769,7 +2769,7 @@ agot_dragon_lower_jaw_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_lower_jaw_width
 						subtract = root.agotsubvalue_to_change
@@ -2802,7 +2802,7 @@ agot_dragon_lower_jaw_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_lower_jaw_width
 					value = var:gene_dragon_lower_jaw_width_old
@@ -2852,7 +2852,7 @@ agot_dragon_old_neck_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_old_neck
 						add = root.agotaddvalue_to_change
@@ -2901,7 +2901,7 @@ agot_dragon_old_neck_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_old_neck
 						subtract = root.agotsubvalue_to_change
@@ -2934,7 +2934,7 @@ agot_dragon_old_neck_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_old_neck
 					value = var:gene_dragon_old_neck_old
@@ -2984,7 +2984,7 @@ agot_dragon_outer_brow_height_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_outer_brow_height
 						add = root.agotaddvalue_to_change
@@ -3033,7 +3033,7 @@ agot_dragon_outer_brow_height_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_outer_brow_height
 						subtract = root.agotsubvalue_to_change
@@ -3066,7 +3066,7 @@ agot_dragon_outer_brow_height_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_outer_brow_height
 					value = var:gene_dragon_outer_brow_height_old
@@ -3116,7 +3116,7 @@ agot_dragon_snout_height_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_height
 						add = root.agotaddvalue_to_change
@@ -3165,7 +3165,7 @@ agot_dragon_snout_height_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_height
 						subtract = root.agotsubvalue_to_change
@@ -3198,7 +3198,7 @@ agot_dragon_snout_height_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_snout_height
 					value = var:gene_dragon_snout_height_old
@@ -3248,7 +3248,7 @@ agot_dragon_snout_length_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_length
 						add = root.agotaddvalue_to_change
@@ -3297,7 +3297,7 @@ agot_dragon_snout_length_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_length
 						subtract = root.agotsubvalue_to_change
@@ -3330,7 +3330,7 @@ agot_dragon_snout_length_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_snout_length
 					value = var:gene_dragon_snout_length_old
@@ -3380,7 +3380,7 @@ agot_dragon_snout_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_width
 						add = root.agotaddvalue_to_change
@@ -3429,7 +3429,7 @@ agot_dragon_snout_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_width
 						subtract = root.agotsubvalue_to_change
@@ -3462,7 +3462,7 @@ agot_dragon_snout_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_snout_width
 					value = var:gene_dragon_snout_width_old
@@ -3512,7 +3512,7 @@ agot_dragon_upper_jaw_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_upper_jaw_width
 						add = root.agotaddvalue_to_change
@@ -3561,7 +3561,7 @@ agot_dragon_upper_jaw_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_upper_jaw_width
 						subtract = root.agotsubvalue_to_change
@@ -3594,7 +3594,7 @@ agot_dragon_upper_jaw_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_upper_jaw_width
 					value = var:gene_dragon_upper_jaw_width_old
@@ -3644,7 +3644,7 @@ agot_dragon_center_fin_size_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_center_fin_size
 						add = root.agotaddvalue_to_change
@@ -3693,7 +3693,7 @@ agot_dragon_center_fin_size_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_center_fin_size
 						subtract = root.agotsubvalue_to_change
@@ -3726,7 +3726,7 @@ agot_dragon_center_fin_size_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_center_fin_size
 					value = var:gene_dragon_center_fin_size_old
@@ -3776,7 +3776,7 @@ agot_dragon_back_spike_size_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_back_spike_size
 						add = root.agotaddvalue_to_change
@@ -3825,7 +3825,7 @@ agot_dragon_back_spike_size_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_back_spike_size
 						subtract = root.agotsubvalue_to_change
@@ -3858,7 +3858,7 @@ agot_dragon_back_spike_size_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_back_spike_size
 					value = var:gene_dragon_back_spike_size_old
@@ -3908,7 +3908,7 @@ agot_dragon_horns_eyebrow_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horns_eyebrow
 						add = root.agotaddvalue_to_change
@@ -3957,7 +3957,7 @@ agot_dragon_horns_eyebrow_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_horns_eyebrow
 						subtract = root.agotsubvalue_to_change
@@ -3990,7 +3990,7 @@ agot_dragon_horns_eyebrow_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_horns_eyebrow
 					value = var:gene_dragon_horns_eyebrow_old
@@ -4040,7 +4040,7 @@ agot_dragon_neck_spike_size_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_neck_spike_size
 						add = root.agotaddvalue_to_change
@@ -4089,7 +4089,7 @@ agot_dragon_neck_spike_size_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_neck_spike_size
 						subtract = root.agotsubvalue_to_change
@@ -4122,7 +4122,7 @@ agot_dragon_neck_spike_size_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_neck_spike_size
 					value = var:gene_dragon_neck_spike_size_old
@@ -4172,7 +4172,7 @@ agot_dragon_side_fin_size_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_side_fin_size
 						add = root.agotaddvalue_to_change
@@ -4221,7 +4221,7 @@ agot_dragon_side_fin_size_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_side_fin_size
 						subtract = root.agotsubvalue_to_change
@@ -4254,7 +4254,7 @@ agot_dragon_side_fin_size_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_side_fin_size
 					value = var:gene_dragon_side_fin_size_old
@@ -4304,7 +4304,7 @@ agot_dragon_snout_end_width_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_end_width
 						add = root.agotaddvalue_to_change
@@ -4353,7 +4353,7 @@ agot_dragon_snout_end_width_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_end_width
 						subtract = root.agotsubvalue_to_change
@@ -4386,7 +4386,7 @@ agot_dragon_snout_end_width_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_snout_end_width
 					value = var:gene_dragon_snout_end_width_old
@@ -4436,7 +4436,7 @@ agot_dragon_neck_length_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_neck_length
 						add = root.agotaddvalue_to_change
@@ -4485,7 +4485,7 @@ agot_dragon_neck_length_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_neck_length
 						subtract = root.agotsubvalue_to_change
@@ -4518,7 +4518,7 @@ agot_dragon_neck_length_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_neck_length
 					value = var:gene_dragon_neck_length_old
@@ -4568,7 +4568,7 @@ agot_dragon_scales_effect_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_metallic_scales_strength
 						add = root.agotaddvalue_to_change
@@ -4617,7 +4617,7 @@ agot_dragon_scales_effect_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_metallic_scales_strength
 						subtract = root.agotsubvalue_to_change
@@ -4650,7 +4650,7 @@ agot_dragon_scales_effect_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_metallic_scales_strength
 					value = var:gene_dragon_metallic_scales_strength_old
@@ -4700,7 +4700,7 @@ agot_dragon_wounded_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wounded
 						add = root.agotaddvalue_to_change
@@ -4749,7 +4749,7 @@ agot_dragon_wounded_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wounded
 						subtract = root.agotsubvalue_to_change
@@ -4782,7 +4782,7 @@ agot_dragon_wounded_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_wounded
 					value = var:gene_dragon_wounded_old
@@ -4833,7 +4833,7 @@ agot_dragon_tail_length_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tail_length
 						add = root.agotaddvalue_to_change
@@ -4882,7 +4882,7 @@ agot_dragon_tail_length_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_tail_length
 						subtract = root.agotsubvalue_to_change
@@ -4915,7 +4915,7 @@ agot_dragon_tail_length_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_tail_length
 					value = var:gene_dragon_tail_length_old
@@ -4961,7 +4961,7 @@ agot_main_horn_shape_template_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_main_horn_shape_template
 						add = 1
@@ -5006,7 +5006,7 @@ agot_main_horn_shape_template_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_main_horn_shape_template
 						add = -1
@@ -5039,7 +5039,7 @@ agot_main_horn_shape_template_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_main_horn_shape_template
 					value = var:gene_dragon_main_horn_shape_template_old
@@ -5089,7 +5089,7 @@ agot_main_horn_shape_value_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_main_horn_shape_value
 						add = root.agotaddvalue_to_change
@@ -5138,7 +5138,7 @@ agot_main_horn_shape_value_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_main_horn_shape_value
 						subtract = root.agotsubvalue_to_change
@@ -5171,7 +5171,7 @@ agot_main_horn_shape_value_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_main_horn_shape_value
 					value = var:gene_dragon_main_horn_shape_value_old
@@ -5217,7 +5217,7 @@ agot_dragon_body_shading_template_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_body_shading_template
 						add = 1
@@ -5262,7 +5262,7 @@ agot_dragon_body_shading_template_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_body_shading_template
 						add = -1
@@ -5295,7 +5295,7 @@ agot_dragon_body_shading_template_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_body_shading_template
 					value = var:gene_dragon_body_shading_template_old
@@ -5345,7 +5345,7 @@ agot_dragon_body_shading_value_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_body_shading_value
 						add = root.agotaddvalue_to_change
@@ -5394,7 +5394,7 @@ agot_dragon_body_shading_value_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_body_shading_value
 						subtract = root.agotsubvalue_to_change
@@ -5427,7 +5427,7 @@ agot_dragon_body_shading_value_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_body_shading_value
 					value = var:gene_dragon_body_shading_value_old
@@ -5474,7 +5474,7 @@ agot_dragon_wings_shading_template_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wings_shading_template
 						add = 1
@@ -5519,7 +5519,7 @@ agot_dragon_wings_shading_template_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wings_shading_template
 						add = -1
@@ -5552,7 +5552,7 @@ agot_dragon_wings_shading_template_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_wings_shading_template
 					value = var:gene_dragon_wings_shading_template_old
@@ -5602,7 +5602,7 @@ agot_dragon_wings_shading_value_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wings_shading_value
 						add = root.agotaddvalue_to_change
@@ -5651,7 +5651,7 @@ agot_dragon_wings_shading_value_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_wings_shading_value
 						subtract = root.agotsubvalue_to_change
@@ -5684,7 +5684,7 @@ agot_dragon_wings_shading_value_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_wings_shading_value
 					value = var:gene_dragon_wings_shading_value_old
@@ -5736,7 +5736,7 @@ agot_dragon_snout_profile_plus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_profile
 						add = root.agotaddvalue_to_change
@@ -5785,7 +5785,7 @@ agot_dragon_snout_profile_minus = {
 					}
 					save_scope_as = story
 				}
-				scope:story = {
+				scope:story ?= {
 					change_variable = {
 						name = gene_dragon_snout_profile
 						subtract = root.agotsubvalue_to_change
@@ -5818,7 +5818,7 @@ agot_dragon_snout_profile_reset = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_snout_profile
 					value = var:gene_dragon_snout_profile_old
@@ -6244,7 +6244,7 @@ agot_apply_dragon_dna = {
 					}
 				}
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_primary_color_hue
 					value = root.var:gene_dragon_primary_color_hue
@@ -6445,7 +6445,7 @@ agot_undo_applied_dragon_dna = {
 				}
 				save_scope_as = story
 			}
-			scope:story = {
+			scope:story ?= {
 				set_variable = {
 					name = gene_dragon_primary_color_hue
 					value = root.var:bk_gene_dragon_primary_color_hue

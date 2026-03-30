@@ -1198,7 +1198,7 @@ agot_travel_events_dragon.0009 = {
 			exists = var:bad
 		}
 
-		scope:bad_commoner = {
+		scope:bad_commoner ?= {
 			death = {
 				killer = root
 				death_reason = death_execution
