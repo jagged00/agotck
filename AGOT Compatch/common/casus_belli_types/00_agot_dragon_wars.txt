@@ -9,16 +9,7 @@
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_nw }
-		trigger_if = {
-			limit = {
-				has_targaryen_exile_story = yes
-			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
-		}
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -37,7 +28,7 @@
 					government_has_flag = government_is_feudal
 				}
 				scope:defender = {
-					government_has_flag = government_is_nw
+					government_has_flag = government_is_theocracy
 				}
 			}
 		}
@@ -351,16 +342,7 @@ dragon_duchy_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_nw }
-		trigger_if = {
-			limit = {
-				has_targaryen_exile_story = yes
-			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
-		}
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -377,7 +359,7 @@ dragon_duchy_conquest_cb = {
 					government_has_flag = government_is_feudal
 				}
 				scope:defender = {
-					government_has_flag = government_is_nw
+					government_has_flag = government_is_theocracy
 				}
 			}
 		}
@@ -743,16 +725,7 @@ dragon_ducal_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_nw }
-		trigger_if = {
-			limit = {
-				has_targaryen_exile_story = yes
-			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
-		}
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -762,7 +735,7 @@ dragon_ducal_conquest_cb = {
 					government_has_flag = government_is_feudal
 				}
 				scope:defender = {
-					government_has_flag = government_is_nw
+					government_has_flag = government_is_theocracy
 				}
 			}
 		}
@@ -1124,16 +1097,7 @@ dragon_kingdom_conquest_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_nw }
-		trigger_if = {
-			limit = {
-				has_targaryen_exile_story = yes
-			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
-		}
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_against_character = {
@@ -1150,7 +1114,7 @@ dragon_kingdom_conquest_cb = {
 					government_has_flag = government_is_feudal
 				}
 				scope:defender = {
-					government_has_flag = government_is_nw
+					government_has_flag = government_is_theocracy
 				}
 			}
 		}
@@ -1549,7 +1513,7 @@ dragon_kingdom_conquest_cb = {
 				limit = {
 					NOR = {
 						has_trait = adventurer
-						government_has_flag = government_is_nomadic
+						government_has_flag = government_is_tribal
 					}
 					is_landed = no
 				}
@@ -1713,16 +1677,7 @@ dragon_subjugation_cb = {
 	allowed_for_character = {
 		is_current_dragonrider = yes
 
-		NOT = { government_has_flag = government_is_nw }
-		trigger_if = {
-			limit = {
-				has_targaryen_exile_story = yes
-			}
-			NOR = {
-				scope:defender.primary_title ?= title:h_the_iron_throne
-				scope:defender.top_liege ?= title:h_the_iron_throne.holder
-			}
-		}
+		NOT = { government_has_flag = government_is_theocracy }
 	}
 
 	allowed_for_character_display_regardless = {
@@ -1765,7 +1720,7 @@ dragon_subjugation_cb = {
 					government_has_flag = government_is_feudal
 				}
 				scope:defender = {
-					government_has_flag = government_is_nw
+					government_has_flag = government_is_theocracy
 				}
 			}
 		}
@@ -1909,66 +1864,6 @@ dragon_subjugation_cb = {
 
 		if = {
 			limit = {
-				OR = {
-					scope:defender = { has_title = title:e_dorne }
-					scope:defender = { has_title = title:e_the_iron_islands }
-					scope:defender = { has_title = title:e_the_north }
-					scope:defender = { has_title = title:e_the_reach }
-					scope:defender = { has_title = title:e_the_riverlands }
-					scope:defender = { has_title = title:e_the_stormlands }
-					scope:defender = { has_title = title:e_the_vale }
-					scope:defender = { has_title = title:e_the_westerlands }
-				}
-				OR = {
-					scope:attacker = { has_title = title:h_the_iron_throne }
-					title:h_the_iron_throne = { is_title_created = no }
-				}
-			}
-			if = {
-				limit = {
-					title:h_the_iron_throne = { is_title_created = no }
-					scope:attacker.primary_title.tier <= tier_empire
-				}
-				create_title_and_vassal_change = {
-					type = created
-					save_scope_as = iron_throne_created
-					add_claim_on_loss = no
-				}
-				title:h_the_iron_throne = {
-					change_title_holder = {
-						holder = scope:attacker
-						change = scope:iron_throne_created
-					}
-				}
-				resolve_title_and_vassal_change = scope:iron_throne_created
-			}
-			scope:defender = {
-				every_held_title = {
-					limit = {
-						OR = {
-							this = title:e_dorne
-							this = title:e_the_iron_islands
-							this = title:e_the_north
-							this = title:e_the_reach
-							this = title:e_the_riverlands
-							this = title:e_the_stormlands
-							this = title:e_the_vale
-							this = title:e_the_westerlands
-						}
-					}
-					set_de_jure_liege_title = title:h_the_iron_throne
-				}
-			}
-			# Set liege for defender
-			scope:defender = {
-				change_liege = {
-					liege = scope:attacker
-					change = scope:change
-				}
-			}
-		}
-		else_if = {
-			limit = {
 				scope:defender.primary_title.tier < scope:attacker.primary_title.tier
 			}
 			scope:defender = {
@@ -1986,23 +1881,6 @@ dragon_subjugation_cb = {
 						limit = {
 							tier = scope:defender.primary_title.tier
 						}
-						# If the title is the three daughters and attacker is not already emperor, trigger event to choose capital
-						if = {
-							limit = {
-								this = title:e_three_daughters
-								tier > scope:attacker.primary_title.tier
-							}
-							scope:attacker = {
-								add_character_flag = {
-									flag = agot_choose_three_daughters_capital
-									days = 3
-								}
-								trigger_event = {
-									id = agot_dragon.0017
-									days = 1
-								}
-							}
-						}
 						# Change title holder
 						change_title_holder = {
 							holder = scope:attacker
@@ -2011,7 +1889,7 @@ dragon_subjugation_cb = {
 						# If election laws, get rid of them - dragons don't respect democracy
 						if = {
 							limit = {
-								scope:defender = { government_has_flag = government_is_free_city }
+								scope:defender = { government_has_flag = government_is_republic }
 							}
 							add_to_list = main_titles
 						}
@@ -2060,7 +1938,7 @@ dragon_subjugation_cb = {
 
 		if = {
 			limit = {
-				scope:attacker = { government_has_flag = government_is_free_city }
+				scope:attacker = { government_has_flag = government_is_republic }
 			}
 			every_in_list = {
 				list = main_titles
