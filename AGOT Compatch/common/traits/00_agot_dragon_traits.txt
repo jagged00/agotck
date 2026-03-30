@@ -1589,3 +1589,14 @@ dragon_depressed = {
 	flag = subtract_temperament_15
 	icon = depressed_1.dds
 }
+
+# Compatch trait: explicit dragon blood marker for non-AGOT setups
+agot_dragon_blooded = {
+	category = physical
+	icon = pure_blooded.dds
+	birth = 0
+	random_creation = 0.0
+	random_creation_weight = 0
+	ai_boldness = 10
+	monthly_prestige = 0.2
+}

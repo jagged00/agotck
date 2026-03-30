@@ -1128,7 +1128,7 @@ dragon_bond_events.3009 = {
 		scope:scheme = {
 			NOT = { has_variable = had_event_dragon_bond_consult_valyrian_lore }
 		}
-		culture = { has_cultural_pillar = heritage_valyrian }
+		agot_has_valyrian_blood_fallback_trigger = yes
 	}
 	immediate = {
 		scope:scheme = {
@@ -2282,7 +2282,7 @@ dragon_bond_events.3028 = { # find sleeping dragmon
 					}
 					modifier = {
 						scope:owner = {
-							culture = { has_cultural_pillar = heritage_valyrian }
+							agot_has_valyrian_blood_fallback_trigger = yes
 						}
 						add = 3
 					}

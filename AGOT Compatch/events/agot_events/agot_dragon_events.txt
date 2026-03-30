@@ -1133,9 +1133,7 @@ agot_dragon.0010 = { # Ride Your Dragon (Normal Outcome)
 						trigger = {
 							capital_county = title:c_kings_landing
 							game_start_date > 8000.1.1
-							culture = {
-								has_cultural_pillar = heritage_valyrian
-							}
+							agot_has_valyrian_blood_fallback_trigger = yes
 						}
 						desc = agot_dragon.0010.aemmly
 					}
@@ -2795,9 +2793,7 @@ agot_dragon.0023 = { # I get chased by a giant cannibal dragon!
 				trigger = {
 					capital_county = title:c_kings_landing
 					game_start_date > 8000.1.1
-					culture = {
-						has_cultural_pillar = heritage_valyrian
-					}
+					agot_has_valyrian_blood_fallback_trigger = yes
 				}
 				desc = agot_dragon.0023.aemmly
 			}
