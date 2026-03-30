@@ -55,9 +55,6 @@
 		}
 		scope:target = {
 			tier = tier_county
-			NOT = {
-				title_province = { geographical_region = world_westeros_beyond_the_wall }
-			}
 		}
 	}
 
@@ -379,12 +376,6 @@ dragon_duchy_conquest_cb = {
 		}
 		scope:target = {
 			tier = tier_duchy
-			NOT = {
-				any_in_de_jure_hierarchy = {
-					tier = tier_county
-					title_province = { geographical_region = world_westeros_beyond_the_wall }
-				}
-			}
 		}
 	}
 
@@ -714,9 +705,6 @@ dragon_ducal_conquest_cb = {
 	valid_to_start = {
 		scope:target = {
 			tier = tier_county
-			NOT = {
-				title_province = { geographical_region = world_westeros_beyond_the_wall }
-			}
 		}
 		scope:attacker = { # The attacker has a County in an uncreated Duchy
 			any_sub_realm_title = {
@@ -1103,7 +1091,6 @@ dragon_kingdom_conquest_cb = {
 			any_in_de_jure_hierarchy = {
 				tier = tier_county
 				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
-				NOT = { title_province = { geographical_region = world_westeros_beyond_the_wall } }
 			}
 		}
 		NOT = {
@@ -1111,12 +1098,6 @@ dragon_kingdom_conquest_cb = {
 		}
 		scope:target = {
 			tier = tier_kingdom
-			NOT = {
-				any_in_de_jure_hierarchy = {
-					tier = tier_county
-					title_province = { geographical_region = world_westeros_beyond_the_wall }
-				}
-			}
 		}
 	}
 
@@ -1664,7 +1645,6 @@ dragon_subjugation_cb = {
 	valid_to_start = {
 		scope:defender.capital_county = {
 			neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
-			NOT = { title_province = { geographical_region = world_westeros_beyond_the_wall } }
 		}
 	}
 

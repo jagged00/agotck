@@ -25,11 +25,6 @@
 				NOT = { has_game_rule = agot_story_sandbox }
 			}
 		}
-		NOT = {
-			capital_province ?= {
-				geographical_region = world_westeros_beyond_the_wall
-			}
-		}
 	}
 
 	can_always_plan = no
@@ -1026,7 +1021,6 @@
 			NOT = { scope:host.location = scope:activity.activity_location }
 			scope:host.location = {
 				is_riverside_province = yes
-				geographical_region = world_westeros_seven_kingdoms
 				OR = {
 					agot_is_farmlands_terrain = yes
 					agot_is_plains_terrain = yes
@@ -1576,11 +1570,6 @@ activity_dragon_hatching_no_dlc = {
 				game_start_date = 8258.12.21
 				years_from_game_start < 10
 				NOT = { has_game_rule = agot_story_sandbox }
-			}
-		}
-		NOT = {
-			capital_province ?= {
-				geographical_region = world_westeros_beyond_the_wall
 			}
 		}
 	}
@@ -2578,7 +2567,6 @@ activity_dragon_hatching_no_dlc = {
 			NOT = { scope:host.location = scope:activity.activity_location }
 			scope:host.location = {
 				is_riverside_province = yes
-				geographical_region = world_westeros_seven_kingdoms
 				OR = {
 					agot_is_farmlands_terrain = yes
 					agot_is_plains_terrain = yes
