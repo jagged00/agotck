@@ -375,10 +375,16 @@ agot_hatching_hatching_weights = {
 		exists = var:dragonlore
 		var:dragonlore = 1
 	}
-	modifier = { #valyrian blood
+	modifier = { #valyrian blood (fallback from trait/flags for non-AGOT culture setups)
 		add = 15
-		culture = {
-			this = culture:high_valyrian
+		OR = {
+			has_trait = pure_blooded
+			has_character_flag = historical_dragonseed
+			has_character_flag = dragonseed_potential_medium
+			has_character_flag = dragonseed_potential_low
+			culture = {
+				this = culture:high_valyrian
+			}
 		}
 	}
 	modifier = { #valyrian blood

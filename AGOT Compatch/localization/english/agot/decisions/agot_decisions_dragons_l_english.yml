@@ -81,3 +81,7 @@
  drink_wildfire_decision_confirm:0 "Bring me my cup!"
  drink_wildfire_decision_tooltip:0 "Become a dragon"
  drink_wildfire_decision_effect:0 "No man has ever survived such an attempt, but perhaps they did not possess the blood of the dragon"
+ embrace_valyrian_blood_decision:0 "Embrace Valyrian Blood"
+ embrace_valyrian_blood_decision_desc:0 "Even without a formal High Valyrian culture, the blood of dragonlords can be claimed through lineage, study, and rite. I will assert my place among those fit to approach dragons."
+ embrace_valyrian_blood_decision_tooltip:0 "Gain Valyrian blood potential for dragon systems"
+ embrace_valyrian_blood_decision_confirm:0 "I claim the blood of the dragon"
