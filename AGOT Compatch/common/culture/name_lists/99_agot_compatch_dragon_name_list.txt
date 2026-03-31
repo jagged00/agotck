@@ -1,0 +1,72 @@
+name_list_dragon = {
+	dynasty_names = {
+		" "
+		" "
+	}
+
+	male_names = {
+		Azuron Aderex Azantyr Azantys Acranion Artaxes Aderion Arhugon Angogon Anogaron Archon Aquos Adereon Aeksion Atsiox Aegax Aemax Althorio
+		Anogaros Anaxigon Aenion Aegal Aeriax Aetrox Ancylagon Archonei Aestion Ancalion Alatoraxes Bantis Braedazma Blackclaw Baelax Bakkalon Bantisdaria
+		Blackhorn Blazoron Belmurtys Braedax Braedion Banzolkal Blackfyre Baelal Baeliphax Bamuxes Blackwing Bloodfyre Bullbreaker
+		Chalfyre Chroyax
+		Drythron Daenal Darkscale Drakaryx Deltherion Darkfyre Draggox Duskfyre Darkwing Daomio Demagon Dynax Darondarys Daerax Daemax Deathwing Darys Darilaros Daenaryon
+		Egros Embarelion Eberron Errkos Essoval Essarix Elyrion Ebrion Elenixes Erinnon Elaenal
+		Firzon Fusrodax Firestorm Fyrax Firkrax Fafnar Falkael Forgesong Fasharyon Fangrys Famlyre
+		Fornaxes Firecatcher Fenrion Fellfang
+		Galeglider Gorthalon Goldfyre Goldscale Ghiscar Glimmer Gorgorkos Greyfyre Grymax Greencomet Gloombringer Gravefyre Gorgosson Galry Gelenka Gevives Gurogon Gemtail Glaurax Geliondaria Grace Greyscale
+		Haryz Hegagon Helfyre Heartfyre Henkirix Highagon Hurax Hugo Haedar
+		Issilgor Ilthax Illithinos Ignerion Idanax Ioragon Irudyx
+		Jaharix Johagon Jelmazma Jedrien Jadewing Jaedos Jaesax Jaqiarzir Jehikagon Jehikarys Jentyx Jaeherion Jaehio
+		Krythax Keligon Kastakonir Kaerinax Kastax Keliothor Konoron Korzion Kostobion Kepaxes
+		Loramon Limagon Likaxes Lovghar Lifefyre Laenion Laengar Lorcan Lys Laehurlion Laraxes Lilagon Lykax Litse
+		Mountdweller Moonshadow Monerys Morghon Malrax Maelar Maelstral Malys Moonfyre Myr Mantaryon Mhysa Melexes Merbugon Midnight Majesty Matarion Maegal Maekal Moonblaze Mandiax Munax
+		Nasex Nedys Nightfyre Neltharion Nightpyre Naqes Nedenkon Nektogon Nightwind Naerion Nightdancer Naejos
+		Ossenaxes Odikagon Osygon Orzadrize Oktinuqir Orion Oros Obaraxes Ondorion Onos Orbarion Ozzalagon Ondordarys
+		Pryagon Perzypeldax Pythax Porungar Pestyre Provorpion Predatorion Pentos Parklon Peldion Perzys Prumiax Pryjagon Pantera
+		Qilonarion Qelovaedar Qanax Qelos Qridron
+		Razys Rehitys Raqagon Rhaenal Rhaeal Rhaenar Ryax Rhaetherion Raselion Rhoynar Rhyos Raqiron Rhovagon Rizaxes Rovax Rune Rainfyre Rhaegax Rhaellax Rhaenion Rhaenyral Raqnon Rinax Ruklon
+		Solthys Starhunter Starfyre Spyrax Soulblaze Slythe Serporoth Skysailor Starwing Seawing Shraynor Skysong Steelwing Sphinx Selhoron Sarnor Sambaron Senagon Sonax Sovegon Suvion Sylviax Solstice Snow Sapphire Sililex Smaugon Stormwyrm Saagael Saphirax Skydancer Sundancer
+		Tormoxen Thaxilix Telfyre Tallfyre Taeral Taegar Taerion Tiamaxes Telarion Trogdax Timerion Tyrosh Tyriax Tolosion Tikun Timpax Turgon Tyvaron Tresyx Talaxes
+		Valeryx Vhaegal Vassarion Vezolkys Vezojaes Vaegelion Vaedar Vidysaor Visenion Vaelax Volgavys Vishyap Valryon Viserax Valyrion Volon Volantix Valysarion Velos Vesteros Vaedagon Vejes Verathion Vermithrax Valonqar Valzyryx Vandis Valax Velkrys
+		Whiteclaw Winged_Stranger Whitewing Wyrmchild Wolfbane Wraithwing
+		Yndros
+		Zuvdar Zobrinogar Zoksax Ziragon Zalagys Zaldrizarys Zobrigon Zobrughul Zaenor Zaeral Zalagon Zaldrizes Zoklax Zugerion Zaldrizaria
+	}
+	female_names = {
+		Azuron Aderex Azantyr Azantys Acranion Artaxes Aderion Arhugon Angogon Anogaron Archon Aquos Adereon Aeksion Atsiox Aegax Aemax Althorio
+		Anogaros Anaxigon Aenion Aegal Aeriax Aetrox Ancylagon Archonei Aestion Ancalion Alatoraxes Bantis Braedazma Blackclaw Baelax Bakkalon Bantisdaria
+		Blackhorn Blazoron Belmurtys Braedax Braedion Banzolkal Blackfyre Baelal Baeliphax Bamuxes Blackwing Bloodfyre Bullbreaker
+		Chalfyre Chroyax
+		Drythron Daenal Darkscale Drakaryx Deltherion Darkfyre Draggox Duskfyre Darkwing Daomio Demagon Dynax Darondarys Daerax Daemax Deathwing Darys Darilaros Daenaryon
+		Egros Embarelion Eberron Errkos Essoval Essarix Elyrion Ebrion Elenixes Erinnon Elaenal
+		Firzon Fusrodax Firestorm Fyrax Firkrax Fafnar Falkael Forgesong Fasharyon Fangrys Famlyre
+		Fornaxes Firecatcher Fenrion Fellfang
+		Galeglider Gorthalon Goldfyre Goldscale Ghiscar Glimmer Gorgorkos Greyfyre Grymax Greencomet Gloombringer Gravefyre Gorgosson Galry Gelenka Gevives Gurogon Gemtail Glaurax Geliondaria Grace Greyscale
+		Haryz Hegagon Helfyre Heartfyre Henkirix Highagon Hurax Hugo Haedar
+		Issilgor Ilthax Illithinos Ignerion Idanax Ioragon Irudyx
+		Jaharix Johagon Jelmazma Jedrien Jadewing Jaedos Jaesax Jaqiarzir Jehikagon Jehikarys Jentyx Jaeherion Jaehio
+		Krythax Keligon Kastakonir Kaerinax Kastax Keliothor Konoron Korzion Kostobion Kepaxes
+		Loramon Limagon Likaxes Lovghar Lifefyre Laenion Laengar Lorcan Lys Laehurlion Laraxes Lilagon Lykax Litse
+		Mountdweller Moonshadow Monerys Morghon Malrax Maelar Maelstral Malys Moonfyre Myr Mantaryon Mhysa Melexes Merbugon Midnight Majesty Matarion Maegal Maekal Moonblaze Mandiax Munax
+		Nasex Nedys Nightfyre Neltharion Nightpyre Naqes Nedenkon Nektogon Nightwind Naerion Nightdancer Naejos
+		Ossenaxes Odikagon Osygon Orzadrize Oktinuqir Orion Oros Obaraxes Ondorion Onos Orbarion Ozzalagon Ondordarys
+		Pryagon Perzypeldax Pythax Porungar Pestyre Provorpion Predatorion Pentos Parklon Peldion Perzys Prumiax Pryjagon Pantera
+		Qilonarion Qelovaedar Qanax Qelos Qridron
+		Razys Rehitys Raqagon Rhaenal Rhaeal Rhaenar Ryax Rhaetherion Raselion Rhoynar Rhyos Raqiron Rhovagon Rizaxes Rovax Rune Rainfyre Rhaegax Rhaellax Rhaenion Rhaenyral Raqnon Rinax Ruklon
+		Solthys Starhunter Starfyre Spyrax Soulblaze Slythe Serporoth Skysailor Starwing Seawing Shraynor Skysong Steelwing Sphinx Selhoron Sarnor Sambaron Senagon Sonax Sovegon Suvion Sylviax Solstice Snow Sapphire Sililex Smaugon Stormwyrm Saagael Saphirax Skydancer Sundancer
+		Tormoxen Thaxilix Telfyre Tallfyre Taeral Taegar Taerion Tiamaxes Telarion Trogdax Timerion Tyrosh Tyriax Tolosion Tikun Timpax Turgon Tyvaron Tresyx Talaxes
+		Valeryx Vhaegal Vassarion Vezolkys Vezojaes Vaegelion Vaedar Vidysaor Visenion Vaelax Volgavys Vishyap Valryon Viserax Valyrion Volon Volantix Valysarion Velos Vesteros Vaedagon Vejes Verathion Vermithrax Valonqar Valzyryx Vandis Valax Velkrys
+		Whiteclaw Winged_Stranger Whitewing Wyrmchild Wolfbane Wraithwing
+		Yndros
+		Zuvdar Zobrinogar Zoksax Ziragon Zalagys Zaldrizarys Zobrigon Zobrughul Zaenor Zaeral Zalagon Zaldrizes Zoklax Zugerion Zaldrizaria
+	}
+	dynasty_of_location_prefix = "dynnp_of"
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	mercenary_names = {
+	}
+}

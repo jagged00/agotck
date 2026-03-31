@@ -1,0 +1,44 @@
+# Vanilla-safe minimal AGOT game rules required by current compatch references.
+
+agot_story_outcome = {
+	default = agot_story_historical_events_historical_outcomes
+	categories = { agot agot_canon }
+
+	agot_story_sandbox = {}
+	agot_story_historical_events_historical_outcomes = {}
+}
+
+agot_dragons = {
+	default = dragon_dragonblood_3_gen
+	categories = { agot agot_dragons }
+
+	dragon_dragonblood_3_gen = {}
+	dragon_valyrian_2_gen = {}
+	dragon_valyrian_3_gen = {}
+	dragons_anyone = {}
+}
+
+agot_canon_dragons = {
+	default = agot_canon_dragons_enabled_traits
+	categories = { agot agot_canon agot_dragons }
+
+	agot_canon_dragons_enabled = {}
+	agot_canon_dragons_enabled_traits = {}
+}
+
+agot_dragon_trait_inheritance = {
+	default = agot_dragon_trait_inheritance_disabled
+	categories = { agot agot_dragons }
+
+	agot_dragon_trait_inheritance_reduced = {}
+	agot_dragon_trait_inheritance_half = {}
+	agot_dragon_trait_inheritance_disabled = {}
+}
+
+agot_silly = {
+	default = agot_no_silly
+	categories = { agot }
+
+	agot_silly_mode = {}
+	agot_no_silly = {}
+}

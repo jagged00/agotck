@@ -1,0 +1,34 @@
+# Compatibility bridge effects used by imported dragon/magic scripts.
+# Intentionally lightweight for vanilla compatch context.
+
+agot_update_glass_candles_effect = {
+	# No-op fallback: avoids missing scripted effect errors in vanilla-only loads.
+}
+
+# Minimal dragon horn artifact creator for vanilla compatch context.
+agot_create_artifact_dragon_horn_effect = {
+	$OWNER$ = { save_scope_as = owner }
+
+	create_artifact = {
+		name = artifact_dragon_horn
+		description = artifact_dragon_horn
+		visuals = dragon_horn
+		type = dragon_horn
+		template = dragon_horn_template
+		modifier = dragon_horn_modifier
+		generate_history = no
+		save_scope_as = newly_created_artifact
+	}
+
+	scope:owner ?= {
+		add_artifact = scope:newly_created_artifact
+	}
+
+	# Pre-bind the horn to the creator for the compatch flow.
+	scope:newly_created_artifact ?= {
+		set_variable = {
+			name = binder
+			value = scope:owner
+		}
+	}
+}

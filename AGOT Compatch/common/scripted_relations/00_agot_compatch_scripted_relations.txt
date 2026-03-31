@@ -1,0 +1,24 @@
+# Minimal AGOT relation types required by the dragon compatch in vanilla CK3.
+
+agot_dragon = {
+	title_grant_target = no
+	corresponding = agot_dragon
+	opinion = 60
+}
+
+agot_story_dragon = {
+	hidden = yes
+	corresponding = agot_story_dragon
+}
+
+agot_squire = {
+	corresponding = agot_knight
+	special_guest = no
+	title_grant_target = no
+}
+
+agot_knight = {
+	corresponding = agot_squire
+	special_guest = no
+	title_grant_target = no
+}

@@ -1,0 +1,57 @@
+﻿### Set this in Event Immediate's to set flags
+### Current Flags are dragon_roar, dragon_flying, dragon_idle, dragon_hover.
+### Set RIDING_DRAGON to yes if the character is riding a dragon.
+agot_set_dragon_animation_flag_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_character_flag = $FLAG$
+			}
+		}
+		add_character_flag = $FLAG$
+	}
+	if = {
+		limit = {
+			$RIDING_DRAGON$ = yes
+		}
+		add_character_flag = currently_riding_dragon
+	}
+}
+
+agot_clear_dragon_animation_flags = {
+	if = {
+		limit = {
+			is_alive = yes # since they could be dead and spamm eror log!
+			has_character_flag = dragon_hover
+		}
+		remove_character_flag = dragon_hover
+	}
+	if = {
+		limit = {
+			is_alive = yes # since they could be dead and spamm eror log!
+			has_character_flag = dragon_roar
+		}
+		remove_character_flag = dragon_roar
+	}
+	if = {
+		limit = {
+			is_alive = yes # since they could be dead and spamm eror log!
+			has_character_flag = dragon_flying
+		}
+		remove_character_flag = dragon_flying
+	}
+	if = {
+		limit = {
+			is_alive = yes # since they could be dead and spamm eror log!
+			has_character_flag = dragon_idle
+		}
+		remove_character_flag = dragon_idle
+	}
+	if = {
+		limit = {
+			is_alive = yes # since they could be dead and spamm eror log!
+			has_character_flag = currently_riding_dragon
+		}
+		remove_character_flag = currently_riding_dragon
+	}
+}

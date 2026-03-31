@@ -1,0 +1,6 @@
+# Vanilla-safe minimal AGOT illustration trigger compatibility set.
+
+agot_graphical_wilderness_btw_trigger = {
+	# Beyond-the-Wall region is AGOT map specific; disable in vanilla context.
+	always = no
+}

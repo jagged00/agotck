@@ -1,0 +1,9 @@
+namespace = agot_silly_mode
+
+# Vanilla-safe compatibility stub: external references only.
+agot_silly_mode.0001 = {
+	type = character_event
+	hidden = yes
+
+	immediate = { }
+}
