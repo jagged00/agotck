@@ -1,0 +1,666 @@
+﻿agot_idle_egg_anims = {
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:black
+			}
+		}
+		animations_props = artifact_dragon_egg_black_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blackdarkred
+			}
+		}
+		animations_props = artifact_dragon_egg_blackdarkred_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:icefire
+			}
+		}
+		animations_props = artifact_dragon_egg_icefire_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:vhagar
+			}
+		}
+		animations_props = artifact_dragon_egg_vhagar_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:meraxes
+			}
+		}
+		animations_props = artifact_dragon_egg_meraxes_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:tan
+			}
+		}
+		animations_props = artifact_dragon_egg_tan_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:green
+			}
+		}
+		animations_props = artifact_dragon_egg_green_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:pink
+			}
+		}
+		animations_props = artifact_dragon_egg_pink_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:white
+			}
+		}
+		animations_props = artifact_dragon_egg_white_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:orange
+			}
+		}
+		animations_props = artifact_dragon_egg_orange_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:grey
+			}
+		}
+		animations_props = artifact_dragon_egg_grey_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:brown
+			}
+		}
+		animations_props = artifact_dragon_egg_brown_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:red
+			}
+		}
+		animations_props = artifact_dragon_egg_red_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:purple
+			}
+		}
+		animations_props = artifact_dragon_egg_purple_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blue
+			}
+		}
+		animations_props = artifact_dragon_egg_blue_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:yellow
+			}
+		}
+		animations_props = artifact_dragon_egg_yellow_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:rainbow
+			}
+		}
+		animations_props = artifact_dragon_egg_rainbow_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:gold
+			}
+		}
+		animations_props = artifact_dragon_egg_gold_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:whitegold
+			}
+		}
+		animations_props = artifact_dragon_egg_whitegold_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:purplegold
+			}
+		}
+		animations_props = artifact_dragon_egg_purplegold_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:flame
+			}
+		}
+		animations_props = artifact_dragon_egg_flame_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blackred
+			}
+		}
+		animations_props = artifact_dragon_egg_blackred_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:brownspots
+			}
+		}
+		animations_props = artifact_dragon_egg_brownspots_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:redblackgold
+			}
+		}
+		animations_props = artifact_dragon_egg_redblackgold_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:palered
+			}
+		}
+		animations_props = artifact_dragon_egg_palered_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:darkblue
+			}
+		}
+		animations_props = artifact_dragon_egg_darkblue_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:darkred
+			}
+		}
+		animations_props = artifact_dragon_egg_darkred_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:frost
+			}
+		}
+		animations_props = artifact_dragon_egg_frost_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:greengrey
+			}
+		}
+		animations_props = artifact_dragon_egg_greengrey_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:magma
+			}
+		}
+		animations_props = artifact_dragon_egg_magma_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:darkpurple
+			}
+		}
+		animations_props = artifact_dragon_egg_darkpurple_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:palepink
+			}
+		}
+		animations_props = artifact_dragon_egg_palepink_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:palebluepink
+			}
+		}
+		animations_props = artifact_dragon_egg_palebluepink_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:pinkspot
+			}
+		}
+		animations_props = artifact_dragon_egg_pinkspot_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:rainbowgold
+			}
+		}
+		animations_props = artifact_dragon_egg_rainbowgold_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:sunburst
+			}
+		}
+		animations_props = artifact_dragon_egg_sunburst_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:goldpink
+			}
+		}
+		animations_props = artifact_dragon_egg_goldpink_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:bluebronze
+			}
+		}
+		animations_props = artifact_dragon_egg_bluebronze_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:greenorange
+			}
+		}
+		animations_props = artifact_dragon_egg_greenorange_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:bronze
+			}
+		}
+		animations_props = artifact_dragon_egg_bronze_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blackgreen
+			}
+		}
+		animations_props = artifact_dragon_egg_blackgreen_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:greygreenyellow
+			}
+		}
+		animations_props = artifact_dragon_egg_greygreenyellow_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blackyellow
+			}
+		}
+		animations_props = artifact_dragon_egg_blackyellow_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:yellowgreen
+			}
+		}
+		animations_props = artifact_dragon_egg_yellowgreen_prop
+	}
+
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:silver
+			}
+		}
+		animations_props = artifact_dragon_egg_silver_prop
+	}
+portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:america
+			}
+		}
+		animations_props = artifact_dragon_egg_america_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:greyBlue
+			}
+		}
+		animations_props = artifact_dragon_egg_greyBlue_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:redGreen
+			}
+		}
+		animations_props = artifact_dragon_egg_redGreen_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:lightBrown
+			}
+		}
+		animations_props = artifact_dragon_egg_lightBrown_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:redYellow
+			}
+		}
+		animations_props = artifact_dragon_egg_redYellow_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:blackWhite
+			}
+		}
+		animations_props = artifact_dragon_egg_blackWhite_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:spotPurple
+			}
+		}
+		animations_props = artifact_dragon_egg_spotPurple_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:teal
+			}
+		}
+		animations_props = artifact_dragon_egg_teal_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:tealSpot
+			}
+		}
+		animations_props = artifact_dragon_egg_tealSpot_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:weirwood
+			}
+		}
+		animations_props = artifact_dragon_egg_weirwood_prop
+	}
+
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg_color
+				var:dragon_egg_color = flag:lime
+			}
+		}
+		animations_props = artifact_dragon_egg_lime_prop
+	}
+
+	##Fallback
+	portrait_modifier = {
+		trigger = {
+			any_equipped_character_artifact = {
+				has_variable = dragon_egg
+			}
+		}
+		animations_props = artifact_dragon_egg_brown_prop
+	}
+}
+agot_weirwood_longbow_rest_arrow = {
+
+	portrait_modifier = { # Equipped
+		# trigger = {
+		# 	any_equipped_character_artifact = {
+		# 		has_variable = weirwood_longbow_artifact
+		# 	}
+		# }
+		animations_props = agot_weirwood_longbow_left_attachment
+		animations = council_marshal_decal
+	}
+}
+
+agot_weirwood_longbow_aim_arrow = {
+
+	portrait_modifier = { # Equipped
+		# trigger = {
+		# 	any_equipped_character_artifact = {
+		# 		has_variable = weirwood_longbow_artifact
+		# 	}
+		# }
+		animations_props = agot_weirwood_longbow_drawn_left_attachment
+		animations = council_marshal_decal
+	}
+}
+
+agot_dragonbone_longbow_rest_arrow = {
+
+	portrait_modifier = { # Equipped
+		# trigger = {
+		# 	any_equipped_character_artifact = {
+		# 		has_variable = dragonbone_longbow_artifact
+		# 	}
+		# }
+		animations_props = agot_dragonbone_longbow_left_attachment
+		animations = council_marshal_decal
+	}
+}
+
+agot_dragonbone_longbow_aim_arrow = {
+
+	portrait_modifier = { # Equipped
+		# trigger = {
+		# 	any_equipped_character_artifact = {
+		# 		has_variable = dragonbone_longbow_artifact
+		# 	}
+		# }
+		animations_props = agot_dragonbone_longbow_drawn_left_attachment
+		animations = council_marshal_decal
+	}
+}

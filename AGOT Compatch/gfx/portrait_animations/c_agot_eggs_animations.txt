@@ -1,0 +1,5394 @@
+﻿agot_egg_black = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_black_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_black_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_black_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_black_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blackdarkred = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackdarkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackdarkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackdarkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackdarkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_icefire = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_icefire_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_icefire_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_icefire_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_icefire_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_tan = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tan_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tan_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tan_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tan_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_vhagar = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_vhagar_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_vhagar_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_vhagar_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_vhagar_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_meraxes = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_meraxes_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_meraxes_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_meraxes_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_meraxes_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_green = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_green_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_green_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_green_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_green_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_pink = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pink_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_white = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_white_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_white_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_white_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_white_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_orange = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_orange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_orange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_orange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_orange_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_grey = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_grey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_grey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_grey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_grey_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_brown = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brown_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_red = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_red_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_red_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_red_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_red_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_purple = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purple_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blue = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blue_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_yellow = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_rainbow = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbow_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_gold = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_gold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_gold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_gold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_gold_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_whitegold = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_whitegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_whitegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_whitegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_whitegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_purplegold = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purplegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purplegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purplegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_purplegold_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_flame = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_flame_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_flame_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_flame_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_flame_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blackred = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackred_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_brownspots = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brownspots_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brownspots_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brownspots_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_brownspots_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_redblackgold = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redblackgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redblackgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redblackgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redblackgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_palered = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palered_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palered_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palered_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palered_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_darkblue = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkblue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkblue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkblue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkblue_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_darkred = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkred_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_frost = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_frost_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_frost_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_frost_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_frost_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_greengrey = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greengrey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greengrey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greengrey_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greengrey_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_magma = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_magma_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_magma_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_magma_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_magma_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_darkpurple = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkpurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkpurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkpurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_darkpurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_palepink = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_palebluepink = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palebluepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palebluepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palebluepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_palebluepink_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_pinkspot = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pinkspot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pinkspot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pinkspot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_pinkspot_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_rainbowgold = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbowgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbowgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbowgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_rainbowgold_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_sunburst = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_sunburst_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_sunburst_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_sunburst_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_sunburst_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_goldpink = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_goldpink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_goldpink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_goldpink_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_goldpink_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_bluebronze = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bluebronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bluebronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bluebronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bluebronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_greenorange = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greenorange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greenorange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greenorange_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greenorange_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_bronze = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_bronze_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blackgreen = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_greygreenyellow = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greygreenyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greygreenyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greygreenyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greygreenyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blackyellow = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackyellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_yellowgreen = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellowgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellowgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellowgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_yellowgreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_silver = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_silver_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_silver_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_silver_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_silver_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_america = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_america_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_america_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_america_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_america_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_greyBlue = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greyBlue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greyBlue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greyBlue_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_greyBlue_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_redGreen = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redGreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redGreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redGreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redGreen_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_lightBrown = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lightBrown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lightBrown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lightBrown_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lightBrown_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_redYellow = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redYellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redYellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redYellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_redYellow_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_blackWhite = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackWhite_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackWhite_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackWhite_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_blackWhite_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_spotPurple = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_spotPurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_spotPurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_spotPurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_spotPurple_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_teal = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_teal_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_teal_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_teal_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_teal_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_tealSpot = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tealSpot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tealSpot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tealSpot_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_tealSpot_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_weirwood = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_weirwood_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_weirwood_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_weirwood_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_weirwood_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+agot_egg_lime = {
+	male = {
+		default = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+		misc_newborn = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_egg" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lime_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 50
+						NOT = { portrait_has_trait_trigger = { TRAIT = dwarf } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lime_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFat" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight < 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lime_prop
+				animations = misc_newborn_decal
+			}
+		}
+
+		misc_newborn_fat_dwarf = {
+			animation = { head = "hold_dragon_egg" torso = "hold_dragon_eggFatDwarf" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					AND = {
+						scope:current_weight > 30
+						portrait_has_trait_trigger = { TRAIT = dwarf }
+						NOT = { portrait_has_trait_trigger = { TRAIT = pregnant } }
+					}
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = artifact_dragon_egg_lime_prop
+				animations = misc_newborn_decal
+			}
+		}
+	}
+
+	boy = male
+	female = male
+	girl = boy
+}

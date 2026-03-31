@@ -1,0 +1,128 @@
+pdxmesh = {
+	name = "dragon_doll_01_mesh"
+	file = "dragon_doll.mesh"
+
+	meshsettings = {
+		name = "dragon_dollShape"
+		index = 0
+		texture_diffuse = "dragon_doll_01_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_01_entity"
+	pdxmesh = "dragon_doll_01_mesh"
+}
+
+pdxmesh = {
+	name = "dragon_doll_02_mesh"
+	file = "dragon_doll.mesh"
+
+	meshsettings = {
+		name = "dragon_dollShape"
+		index = 0
+		texture_diffuse = "dragon_doll_02_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_02_entity"
+	pdxmesh = "dragon_doll_02_mesh"
+
+	game_data = {
+		portrait_entity_user_data = {
+			portrait_accessory = {
+				pattern_mask = "gfx/models/artifacts/agot/dragondolls/dragon_doll_masks.dds"    #Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+				variation = "dragon_doll_01"	#A "variation" object in gfx/portraits/accessory_variations/
+			}
+		}
+	}
+}
+
+pdxmesh = {
+	name = "dragon_doll_03_mesh"
+	file = "dragon_doll.mesh"
+
+	meshsettings = {
+		name = "dragon_dollShape"
+		index = 0
+		texture_diffuse = "dragon_doll_03_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_03_entity"
+	pdxmesh = "dragon_doll_03_mesh"
+}
+
+pdxmesh = {
+	name = "dragon_doll_04_mesh"
+	file = "dragon_doll.mesh"
+
+	meshsettings = {
+		name = "dragon_dollShape"
+		index = 0
+		texture_diffuse = "dragon_doll_04_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_04_entity"
+	pdxmesh = "dragon_doll_04_mesh"
+}
+
+pdxmesh = {
+	name = "dragon_doll_05_mesh"
+	file = "dragon_doll.mesh"
+
+	meshsettings = {
+		name = "dragon_dollShape"
+		index = 0
+		texture_diffuse = "dragon_doll_05_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_05_entity"
+	pdxmesh = "dragon_doll_05_mesh"
+}
+
+pdxmesh = {
+	name = "dragon_doll_06_mesh"
+	file = "dragon_doll_maleficent.mesh"
+
+	meshsettings = {
+		name = "dragon_doll_maleficentShape"
+		index = 0
+		texture_diffuse = "dragon_doll_06_diffuse.dds"
+		texture_normal = "dragon_doll_normal.dds"
+		texture_specular = "dragon_doll_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "dragon_doll_06_entity"
+	pdxmesh = "dragon_doll_06_mesh"
+}

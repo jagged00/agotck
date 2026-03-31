@@ -1,0 +1,224 @@
+﻿##Dragon Eggs
+dragon_egg_black_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_black_equip_entity" }
+}
+
+dragon_egg_blackdarkred_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg2_equip_entity" }
+}
+
+dragon_egg_icefire_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_icefire_equip_entity" }
+}
+
+dragon_egg_vhagar_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg1_equip_entity" }
+}
+
+dragon_egg_meraxes_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_meraxes_equip_entity" }
+}
+
+dragon_egg_tan_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg3_equip_entity" }
+}
+
+dragon_egg_green_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_green_equip_entity" }
+}
+
+dragon_egg_pink_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_pink_equip_entity" }
+}
+
+dragon_egg_white_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_white_equip_entity" }
+}
+
+dragon_egg_orange_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_orange_equip_entity" }
+}
+
+dragon_egg_grey_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_grey_equip_entity" }
+}
+
+dragon_egg_brown_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_brown_equip_entity" }
+}
+
+dragon_egg_red_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_red_equip_entity" }
+}
+
+dragon_egg_purple_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_purple_equip_entity" }
+}
+
+dragon_egg_blue_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_blue_equip_entity" }
+}
+
+dragon_egg_yellow_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_yellow_equip_entity" }
+}
+
+dragon_egg_rainbow_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_rainbow_equip_entity" }
+}
+
+dragon_egg_gold_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_gold_equip_entity" }
+}
+
+dragon_egg_whitegold_prop_01 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "dragon_egg_whitegold_equip_entity" }
+}
+
+dragon_egg_purplegold_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_purplegold_equip_entity" }
+}
+
+dragon_egg_flame_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_flame_equip_entity" }
+}
+
+dragon_egg_blackred_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_blackred_equip_entity" }
+}
+
+dragon_egg_brownspots_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_brownspots_equip_entity" }
+}
+
+dragon_egg_redblackgold_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_redblackgold_equip_entity" }
+}
+
+dragon_egg_palered_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_palered_equip_entity" }
+}
+
+dragon_egg_darkblue_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_darkblue_equip_entity" }
+}
+
+dragon_egg_darkred_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_darkred_equip_entity" }
+}
+
+dragon_egg_frost_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_frost_equip_entity" }
+}
+
+dragon_egg_greengrey_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_greengrey_equip_entity" }
+}
+
+dragon_egg_magma_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_magma_equip_entity" }
+}
+
+dragon_egg_darkpurple_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_darkpurple_equip_entity" }
+}
+
+dragon_egg_palepink_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_palepink_equip_entity" }
+}
+
+dragon_egg_palebluepink_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_palebluepink_equip_entity" }
+}
+
+dragon_egg_pinkspot_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_pinkspot_equip_entity" }
+}
+
+dragon_egg_rainbowgold_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_rainbowgold_equip_entity" }
+}
+
+dragon_egg_sunburst_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_sunburst_equip_entity" }
+}
+
+dragon_egg_goldpink_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_goldpink_equip_entity" }
+}
+
+dragon_egg_bluebronze_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_bluebronze_equip_entity" }
+}
+
+dragon_egg_greenorange_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_greenorange_equip_entity" }
+}
+
+dragon_egg_bronze_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_bronze_equip_entity" }
+}
+
+dragon_egg_blackgreen_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_blackgreen_equip_entity" }
+}
+
+dragon_egg_greygreenyellow_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_greygreenyellow_equip_entity" }
+}
+
+dragon_egg_blackyellow_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_blackyellow_equip_entity" }
+}
+
+dragon_egg_yellowgreen_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_yellowgreen_equip_entity" }
+}
+
+dragon_egg_silver_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_silver_equip_entity" }
+}
+
+dragon_egg_america_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_america_equip_entity" }
+}
+
+dragon_egg_greyBlue_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_greyBlue_equip_entity" }
+}
+
+dragon_egg_redGreen_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_redGreen_equip_entity" }
+}
+
+dragon_egg_lightBrown_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_lightBrown_equip_entity" }
+}
+
+dragon_egg_redYellow_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_redYellow_equip_entity" }
+}
+
+dragon_egg_blackWhite_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_blackWhite_equip_entity" }
+}
+
+dragon_egg_spotPurple_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_spotPurple_equip_entity" }
+}
+
+dragon_egg_teal_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_teal_equip_entity" }
+}
+
+dragon_egg_tealSpot_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_tealSpot_equip_entity" }
+}
+
+dragon_egg_weirwood_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_weirwood_equip_entity" }
+}
+
+dragon_egg_lime_prop_01 = {
+	entity = { required_tags = "" node = "bn_l_prop" entity = "dragon_egg_lime_equip_entity" }
+}

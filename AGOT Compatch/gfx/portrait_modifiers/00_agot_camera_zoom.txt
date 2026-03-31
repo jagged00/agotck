@@ -1,0 +1,224 @@
+﻿camera_zoom = {
+	usage = game
+	priority = 12
+
+	#For main portrait window
+	dragon_camera_1_zoom = {
+		 dna_modifiers = {
+			morph = {
+				mode = modify_multiply
+				gene = gene_camera_zoom
+				template = dragon_size_portrait_camera
+				value = 1.0
+			}
+		}
+		weight = {
+			base = 0
+		}
+	}
+
+	#For head cameras
+	dragon_camera_2_zoom = {
+		dna_modifiers = {
+			morph = {
+				mode = modify_multiply
+				gene = gene_camera_zoom
+				template = dragon_size_fixed_frame_zoom
+				value = 1.0
+			}
+
+			morph = {
+				mode = modify_multiply
+				gene = gene_dragon_neck_length
+				template = dragon_neck_length_camera_zoom
+				value = 1.0
+			}
+		}
+			weight = {
+			base = 0
+		}
+	}
+
+	linear_camera_zoom = {
+		dna_modifiers = {
+			morph = {
+				mode = modify_multiply
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 1.0
+			}
+		}
+		outfit_tags = { linear_camera_zoom }
+		weight = {
+			base = 0
+		}
+	}
+
+
+
+	dynamic_camera_zoom_0.0 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.0
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.0 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.1 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.1
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.1 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.2 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.2
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.2 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.3 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.3
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.3 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.4 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.4
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.4 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.5 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.5
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.5 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.6 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.6
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.6 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.7 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.7
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.7 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.8 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.8
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.8 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_0.9 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 0.9
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_0.9 }
+		weight = {
+			base = 0
+		}
+	}
+
+	dynamic_camera_zoom_1.0 = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				template = linear_camera_zoom
+				value = 1.0
+			}
+		}
+		outfit_tags = { dynamic_camera_zoom_1.0 }
+		weight = {
+			base = 0
+		}
+	}
+}
+

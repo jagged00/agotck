@@ -1,0 +1,1343 @@
+﻿dragon_no_clothes = {
+	usage = game
+	selection_behavior = weighted_random
+	priority = 10
+
+	no_clothes = {
+		dna_modifiers = {
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = no_clothes_forced
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = props_left
+				template = no_props
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = props_right
+				template = no_props
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = animated_props
+				template = no_props
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+				mode = add
+				gene = beards
+				template = no_beard
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+
+		# outfit_tags = { no_clothes }
+		#ignore_outfit_tags = yes
+
+		weight = {
+			base = 0
+
+			modifier = {
+				add = 1000
+				portrait_has_trait_trigger = { TRAIT = dragon }
+			}
+
+		}
+	}
+
+}
+
+dragonrider = {
+	usage = game
+	selection_behavior = weighted_random
+	priority = 11
+
+	dragonrider = {
+		dna_modifiers = {
+			#Remove second head if flying dragon
+			accessory = {
+				mode = add
+				gene = agot_two_headed
+				template = no_two_headed
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			#Dragon Model
+			accessory = {
+				mode = modify
+				gene = gene_dragon
+				template = dragon
+				value = 1.0
+			}
+
+			#Saddle Model
+			accessory = {
+				mode = modify
+				gene = gene_dragon_saddle
+				template = saddle
+				value = 1.0
+			}
+
+			#Dragon color genes
+			morph = {
+				mode = replace
+				gene = gene_dragon_primary_color_hue
+				value = gene_dragon_primary_color_hue_svalue
+			 	template = dragon_primary_color_hue
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_primary_color_value
+				value = gene_dragon_primary_color_value_svalue
+			 	template = dragon_primary_color_value
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_secondary_hue
+				value = gene_dragon_secondary_hue_svalue
+			 	template = dragon_secondary_hue
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_secondary_value
+				value = gene_dragon_secondary_value_svalue
+			 	template = dragon_secondary_value
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_tertiary_hue
+				value = gene_dragon_tertiary_hue_svalue
+			 	template = dragon_tertiary_hue
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_tertiary_value
+				value = gene_dragon_tertiary_value_svalue
+			 	template = dragon_tertiary_value
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_eye_color_hue
+				value = gene_dragon_eye_color_hue_svalue
+			 	template = dragon_eye_color_hue
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_eye_color_value
+				value = gene_dragon_eye_color_value_svalue
+			 	template = dragon_eye_color_value
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_horn_color_hue
+				value = gene_dragon_horn_color_hue_svalue
+			 	template = dragon_horn_color_hue
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_horn_color_value
+				value = gene_dragon_horn_color_value_svalue
+			 	template = dragon_horn_color_value
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_camera_zoom
+				value = dragon_size_svalue
+				template = dragon_size_portrait_camera
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_size
+				value = dragon_size_svalue
+				template = dragon_size
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_brow_width
+				value = gene_dragon_brow_width_svalue
+				template = dragon_brow_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_cheek_width
+				value = gene_dragon_cheek_width_svalue
+				template = dragon_cheek_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_chin_profile
+				value = gene_dragon_chin_profile_svalue
+				template = dragon_chin_profile
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_crest_depth
+				value = gene_dragon_crest_depth_svalue
+				template = dragon_crest_depth
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_head_roundness
+				value = gene_dragon_head_roundness_svalue
+				template = dragon_head_roundness
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_horns_eyebrow_length
+				value = gene_dragon_horns_eyebrow_length_svalue
+				template = dragon_horns_eyebrow_length
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_jaw_width
+				value = gene_dragon_jaw_width_svalue
+				template = dragon_jaw_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_lower_jaw_height
+				value = gene_dragon_lower_jaw_height_svalue
+				template = dragon_lower_jaw_height
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_lower_jaw_width
+				value = gene_dragon_lower_jaw_width_svalue
+				template = dragon_lower_jaw_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_old_neck
+				value = gene_dragon_old_neck_svalue
+				template = dragon_old_neck
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_outer_brow_height
+				value = gene_dragon_outer_brow_height_svalue
+				template = dragon_outer_brow_height
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_snout_height
+				value = gene_dragon_snout_height_svalue
+				template = dragon_snout_height
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_snout_length
+				value = gene_dragon_snout_height_svalue
+				template = dragon_snout_length
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_snout_profile
+				value = gene_dragon_snout_profile_svalue
+				template = dragon_snout_profile
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_snout_width
+				value = gene_dragon_snout_width_svalue
+				template = dragon_snout_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_upper_jaw_width
+				value = gene_dragon_upper_jaw_width_svalue
+				template = dragon_upper_jaw_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_center_fin_size
+				value = gene_dragon_center_fin_size_svalue
+				template = dragon_center_fin_size
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_back_spike_size
+				value = gene_dragon_back_spike_size_svalue
+				template = dragon_back_spike_size
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_horns_eyebrow
+				value = gene_dragon_horns_eyebrow_svalue
+				template = dragon_horns_eyebrow
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_neck_spike_size
+				value = gene_dragon_neck_spike_size_svalue
+				template = dragon_neck_spike_size
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_side_fin_size
+				value = gene_dragon_side_fin_size_svalue
+				template = dragon_side_fin_size
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_snout_end_width
+				value = gene_dragon_snout_end_width_svalue
+				template = dragon_snout_end_width
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_neck_length
+				value = gene_dragon_neck_length_svalue
+				template = dragon_neck_length
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_metallic_scales_strength
+				value = gene_dragon_metallic_scales_strength_svalue
+				template = dragon_scales_metallic
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_wounded
+				value = gene_dragon_wounded_svalue
+				template = dragon_scarred
+			}
+
+			morph = {
+				mode = replace
+				gene = gene_dragon_tail_length
+				value = gene_dragon_tail_length_svalue
+				template = dragon_tail_length
+			}
+		}
+
+		outfit_tags = { dragonrider }
+
+		weight = {
+			base = 0
+		}
+	}
+}
+
+# Use the following for switching dragon genes with multiple templates.
+# In order to synchronise the appearance of dragons as characters, and the dragonriders when we display them riding their dragon, we must bypass the vanilla gene system almost entirely.
+# We are bypassing everything, aging, inheritable genes, etc. Game script assigns gene values, and we then use portrait and trait portrait modifiers to display them.
+# When a dragon is created it is assigned a set of variables in 00_agot_dragon_templates.txt, that file contains ranges of gene strengths and their probabilities just like ethnicity files normally do.
+# Straightforward genes with only one gene template are assigned in dragon_trait_modifiers.txt. As far as I (Buck) can tell, we cannot have weighted random selection in trait portrait modifiers.
+# Therefore more complicated genes with multiple templates will use this file for selecting a template. A value for a template will be assigned in 00_agot_dragon_templates.txt, then in this file the corresponding template will be set.
+# These are always followed by a version of the gene for the rider.
+
+gene_dragon_main_horn_shape = {
+
+	usage = game
+	selection_behavior = weighted_random
+	priority = 10
+
+	dragon_horns_meleys = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_meleys
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 1
+			}
+		}
+	}
+
+	dragon_horns_balerion = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_balerion
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 2
+			}
+		}
+	}
+
+	dragon_horns_cannibal = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_cannibal
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 3
+			}
+		}
+	}
+
+	dragon_horns_curvy = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_curvy
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 4
+			}
+		}
+	}
+
+	dragon_horns_dreamfyre = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_dreamfyre
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 5
+			}
+		}
+	}
+
+	dragon_horns_grey_ghost = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_grey_ghost
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 6
+			}
+		}
+	}
+
+	dragon_horns_long = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_long
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 7
+			}
+		}
+	}
+
+	dragon_horns_meraxes = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_meraxes
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 8
+			}
+		}
+	}
+
+	dragon_horns_silverwing = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_silverwing
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 9
+			}
+		}
+	}
+
+	dragon_horns_drogon = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_main_horn_shape
+				template = dragon_horns_drogon
+				value = gene_dragon_main_horn_shape_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_main_horn_shape_template
+				gene_dragon_main_horn_shape_template_svalue = 10
+			}
+		}
+	}
+}
+
+gene_dragon_body_shading = {
+
+	usage = game
+	selection_behavior = weighted_random
+	priority = 10
+
+	dragon_body_shading_lower_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_lower_black
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 1
+			}
+		}
+	}
+
+	dragon_body_shading_lower_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_lower_white
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 2
+			}
+		}
+	}
+
+	dragon_body_shading_lower_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_lower_secondary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 3
+			}
+		}
+	}
+
+	dragon_body_shading_lower_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_lower_tertiary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 4
+			}
+		}
+	}
+
+	dragon_body_shading_upper_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_upper_black
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 5
+			}
+		}
+	}
+
+	dragon_body_shading_upper_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_upper_white
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 6
+			}
+		}
+	}
+
+	dragon_body_shading_upper_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_upper_secondary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 7
+			}
+		}
+	}
+
+	dragon_body_shading_upper_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_upper_tertiary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 8
+			}
+		}
+	}
+
+	dragon_body_shading_front_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_front_black
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 9
+			}
+		}
+	}
+
+	dragon_body_shading_front_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_front_white
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 10
+			}
+		}
+	}
+
+	dragon_body_shading_front_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_front_secondary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 11
+			}
+		}
+	}
+
+	dragon_body_shading_front_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_front_tertiary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 12
+			}
+		}
+	}
+
+	dragon_body_shading_back_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_back_black
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 13
+			}
+		}
+	}
+
+	dragon_body_shading_back_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_back_white
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 14
+			}
+		}
+	}
+
+	dragon_body_shading_back_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_back_secondary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 15
+			}
+		}
+	}
+
+	dragon_body_shading_back_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_body_shading
+				template = dragon_body_shading_back_tertiary
+				value = gene_dragon_body_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_body_shading_template
+				gene_dragon_body_shading_template_svalue = 16
+			}
+		}
+	}
+}
+
+gene_dragon_wings_shading = {
+
+	usage = game
+	selection_behavior = weighted_random
+	priority = 10
+
+	dragon_wings_shading_back_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_back_black
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 1
+			}
+		}
+	}
+
+	dragon_wings_shading_back_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_back_white
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 2
+			}
+		}
+	}
+
+	dragon_wings_shading_back_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_back_secondary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 3
+			}
+		}
+	}
+
+	dragon_wings_shading_back_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_back_tertiary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 4
+			}
+		}
+	}
+
+	dragon_wings_shading_front_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_front_black
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 5
+			}
+		}
+	}
+
+	dragon_wings_shading_front_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_front_white
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 6
+			}
+		}
+	}
+
+	dragon_wings_shading_front_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_front_secondary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 7
+			}
+		}
+	}
+
+	dragon_wings_shading_front_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_front_tertiary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 8
+			}
+		}
+	}
+
+	dragon_wings_shading_outside_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_outside_black
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 9
+			}
+		}
+	}
+
+	dragon_wings_shading_outside_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_outside_white
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 10
+			}
+		}
+	}
+
+	dragon_wings_shading_outside_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_outside_secondary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 11
+			}
+		}
+	}
+
+	dragon_wings_shading_outside_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_outside_tertiary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 12
+			}
+		}
+	}
+
+	dragon_wings_shading_inside_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_inside_black
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 13
+			}
+		}
+	}
+
+	dragon_wings_shading_inside_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_inside_white
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 14
+			}
+		}
+	}
+
+	dragon_wings_shading_inside_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_inside_secondary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 15
+			}
+		}
+	}
+
+	dragon_wings_shading_inside_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_inside_tertiary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 16
+			}
+		}
+	}
+
+	dragon_wings_shading_full_black = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_full_black
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 17
+			}
+		}
+	}
+
+	dragon_wings_shading_full_white = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_full_white
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 18
+			}
+		}
+	}
+
+	dragon_wings_shading_full_secondary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_full_secondary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 19
+			}
+		}
+	}
+
+	dragon_wings_shading_full_tertiary = {
+		dna_modifiers = {
+			morph = {
+				mode = replace
+				gene = gene_dragon_wings_shading
+				template = dragon_wings_shading_full_tertiary
+				value = gene_dragon_wings_shading_value_svalue
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				#has_variable = gene_dragon_wings_shading_template
+				gene_dragon_wings_shading_template_svalue = 20
+			}
+		}
+	}
+}

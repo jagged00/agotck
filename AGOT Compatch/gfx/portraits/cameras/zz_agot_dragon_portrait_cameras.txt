@@ -1,0 +1,964 @@
+﻿#########################################################################
+#########################################################################
+#																		                  #
+#								MAIN CAMERAS							               #
+#																		                  #
+#########################################################################
+#########################################################################
+# Camera position can be cylindrical( r h a ) or cartesian ( x y z )
+
+camera_dragon = {
+	camera = {
+		position = cylindrical{ 200 40 15 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 40 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 35
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_customizer = {
+	camera = {
+		position = cylindrical{ 1 40 22 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 40 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 24
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_small = {
+	camera = {
+		position = cylindrical{ 1000 -40 15 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	-70 -40 00 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 30
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_event_left = {
+	camera = {
+		position = cylindrical{ 150 15 15 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 25
+		camera_near_far = { 1 5000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_event_right = {
+	camera = {
+		position = cylindrical{ 270 170 15 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 170 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 30
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_event_standing = {
+	camera = {
+		position = cylindrical{ 270 170 15 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 170 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 30
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_event_standing_baby = {
+	camera = {
+		position = cylindrical{ 200 60 -50 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	-50 60 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 50
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_head = {
+	camera = {
+		position = cylindrical{ 50 -0 -30 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 10 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 5
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_head.dds"
+}
+
+#cartesian ( x y z )
+camera_dragon_event_center = {
+	camera = {
+		position = cylindrical{ 0 -3 5 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	1.5 -03 20 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 5
+		camera_near_far = { 1 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+#cartesian ( x y z )
+camera_dragon_event_riding_left = {
+	camera = {
+		position = cylindrical{ 335 -22 150 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 46
+		camera_near_far = { 10 800 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+#cartesian ( x y z )
+camera_dragon_event_combat_left = {
+	camera = {
+		position = cylindrical{ 00 10 1 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	1100000 280000 -200000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 50
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_event_combat_right = {
+	camera = {
+		position = cylindrical{ 1000 10 -75 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	-1100000 280000 -200000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 50
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_hover_left_pointing_center = {
+	camera = {
+		position = cylindrical{ 2000 500 30 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 15
+		camera_near_far = { 100 100000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_hover_left = {
+	camera = {
+		position = cylindrical{ 2000 500 150 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 100 100000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_hover_right = {
+	camera = {
+		position = cylindrical{ 2000 500 -25 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 100 100000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_hover_distant = {
+	camera = {
+		position = cylindrical{ 2000 0 -20 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 100 100000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_slay_dragon_event_left = {
+	camera = {
+		position = cylindrical{ 250 200 -30 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 200 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 55
+		camera_near_far = { 10 10000 }
+	}
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_slay_dragon_event_right = {
+	camera = {
+		position = cylindrical{ 250 200 -20 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 200 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 30
+		camera_near_far = { 10 10000 }
+	}
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_slay_dragon_human_event_left = {
+	camera = {
+		position = cylindrical{ 250 120 90 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	0 120 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 70
+		camera_near_far = { 10 500 }
+	}
+	unknown = camera_torso
+}
+
+# Dragonrider Normal Events
+
+# left side 3rd person, short/medium distance
+camera_dragonrider_ride_dragon_decision = {
+	camera = {
+		position = cartesian{ 100 -50 400 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	0 -100 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 10
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+# front-left of drag looking up at it, medium distance
+camera_dragonrider_normal_event = {
+	camera = {
+		position = cartesian{ 300 0 20 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	1000 300 1000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 20
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+# front-right of drag looking in-line at it, medium/long distance
+camera_dragonrider_flying_event_front = {
+	camera = {
+		position = cylindrical{ 400 100 -20 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 40
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+# right side 3rd person, short distance
+camera_dragonrider_flying_event_back = {
+	camera = {
+		position = cylindrical{ 2000 5 160 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	0 40 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 2
+		camera_near_far = { 100 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+#########################################################################
+#########################################################################
+#																		                  #
+#							CHARACTER VIEW								               #
+#																		                  #
+#########################################################################
+#########################################################################
+
+camera_dragon_character_view_main = {
+	camera = {
+		position = cylindrical{ 190 5 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 5 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 300 }
+	}
+
+	unknown = camera_torso
+}
+
+#########################################################################
+#########################################################################
+#																		                  #
+#								OTHER									                  #
+#																		                  #
+#########################################################################
+#########################################################################
+
+camera_dragon_war_overview = {
+	camera = {
+		position = cylindrical{ 300 0 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_combat_window = {
+	camera = {
+		position = cylindrical{ 220 0 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 -20 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_center = {
+	camera = {
+		position = cylindrical{ 270 0 5 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 -22 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_left = {
+	camera = {
+		position = cylindrical{ 270 0 10 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 5 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_very_left = {
+	camera = {
+		position = cylindrical{ 270 0 40 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 5 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_left_wedding = {
+	camera = {
+		position = cylindrical{ 250 0 -30 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 5 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_right = {
+	camera = {
+		position = cylindrical{ 100 175 10 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	300 175 1000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 10
+		camera_near_far = { 1 10000 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_right_pointing_left = {
+	camera = {
+		position = cylindrical{ 270 0 50 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { -40 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_right_wedding = {
+	camera = {
+		position = cylindrical{ 250 -30 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_duel_left = {
+	camera = {
+		position = cylindrical{ 255 0 10 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 65 -30 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_duel_right = {
+	camera = {
+		position = cylindrical{ 255 0 -50 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { -180 -40 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_tournament_left = {
+	camera = {
+		position = cylindrical { 450 0 20 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 25 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_event_tournament_right = {
+	camera = {
+		position = cylindrical { 450 0 -40 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 25 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_legend_chronicle = {
+	camera = {
+		position = cylindrical{ 400 -22 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 -22 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 20
+		camera_near_far = { 10 800 }
+	}
+
+	unknown = camera_body
+}
+
+#########################################################################
+#########################################################################
+#																		                  #
+#							PORTRAIT EDITOR								            #
+#																		                  #
+#########################################################################
+#########################################################################
+
+dragon_portrait_editor = {
+	camera = {
+		position = cylindrical	{ 260 0 0 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 10
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = camera_torso
+}
+
+#########################################################################
+#########################################################################
+#																		                  #
+#								EVENTS									               #
+#																		                  #
+#########################################################################
+#########################################################################
+
+camera_trp_right_caraxes = {
+	camera = {
+		position = cylindrical{ 100 175 10 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	300 175 1000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 10
+		camera_near_far = { 1 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_human_back_to_camera = {
+	camera = {
+		position = cylindrical{ 270 0 135 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { -30 -15 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_facing_human = {
+	camera = {
+		position = cylindrical{ 400 175 -20 } # Radius, height, angle
+		position_node = {
+			default = dragon_origin
+		}
+
+		look_at = {	50 175 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = dragon_origin
+		}
+		fov = 10
+		camera_near_far = { 50 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragonrider_up_close_looking_left = {
+	camera = {
+		position = cartesian{ 30 -70 -150 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	-350 -125 500 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 25
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragonrider_over_battlefield = {
+	camera = {
+		position = cartesian{ 100 100 130 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	0 0 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 30
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragonrider_up_close_looking_right = {
+	camera = {
+		position = cartesian{ 300 -200 20 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	1000 100 1000 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 15
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_soldier_on_battlefield = {
+	camera = {
+		position = cylindrical{ 300 100 40 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 100 -500 -150 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 150
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_soldier_on_battlefield_facing_away = {
+	camera = {
+		position = cylindrical{ -400 100 40 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { 100 -500 150 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 150
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+camera_dragon_divebombing_distant_facing_camera = {
+	camera = {
+		position = cartesian{ 30 -900 -150 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	-150 -1700 500 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 100
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragon_divebombing_distant_facing_away = {
+	camera = {
+		position = cartesian{ -30 -900 90 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	0 -900 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 120
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_dragonrider_riding_left_portrait = {
+	camera = {
+		position = cartesian{ -250 -50 500 } # Radius, height, angle
+		position_node = {
+			default = body_root
+		}
+
+		look_at = {	-100 -50 0 } # L/R, U/D, F/B
+		look_at_node = {
+			default = body_root
+		}
+		fov = 10
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown_unclickable_small.dds"
+}
+
+camera_human_riding_towards_dragon_right_portrait = {
+	camera = {
+		position = cylindrical{ -500 0 160 } # Radius, height, angle
+		position_node = {
+			default = camera_torso_look_at
+		}
+
+		look_at = { -500 -500 100 } # L/R, U/D, F/B
+		look_at_node = {
+			default = camera_torso_look_at
+		}
+		fov = 140
+		camera_near_far = { 10 1400 }
+	}
+
+	unknown = camera_torso
+}

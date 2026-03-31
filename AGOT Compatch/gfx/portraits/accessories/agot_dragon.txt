@@ -1,0 +1,11 @@
+﻿dragon = {
+	entity = {	    node = "dragon_origin"	entity = "dragon_entity" }
+}
+
+dragon_shadow = {
+	entity = {	    node = "dragon_origin"	entity = "dragon_shadow_entity" }
+}
+
+saddle = {
+	entity = {	    node = "dragon_origin"	entity = "saddle_entity" }
+}

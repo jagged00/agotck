@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "prop_hornofwinter_mesh"
+	file = "prop_hornofwinter.mesh"
+
+	meshsettings = {
+		name = "prop_hornofwinterShape"
+		index = 0
+		texture_diffuse = "prop_hornofwinter_diffuse.dds"
+		texture_normal = "prop_hornofwinter_normal.dds"
+		texture_specular = "prop_hornofwinter_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "prop_hornofwinter_entity"
+	pdxmesh = "prop_hornofwinter_mesh"
+}

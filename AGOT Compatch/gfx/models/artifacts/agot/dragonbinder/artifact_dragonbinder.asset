@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "artifact_dragonbinder_mesh"
+	file = "artifact_dragonbinder.mesh"
+
+	meshsettings = {
+		name = "artifact_dragonbinderShape"
+		index = 0
+		texture_diffuse = "artifact_dragonbinder_diffuse.dds"
+		texture_normal = "artifact_dragonbinder_normal.dds"
+		texture_specular = "artifact_dragonbinder_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "artifact_dragonbinder_entity"
+	pdxmesh = "artifact_dragonbinder_mesh"
+}

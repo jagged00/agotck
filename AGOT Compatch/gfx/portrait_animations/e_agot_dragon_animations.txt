@@ -1,0 +1,178 @@
+﻿dragon_main = { #This is used for main dragon portrait widget, it scales somewhat, but baby dragons are visibly smaller on screen, and giant dragons are a bit larger in the frame
+	male = {
+		default = { head = "idle" torso = "dragon_idle" }
+
+		dragon_idle = {
+			animation = { head = "idle" torso = "dragon_idle" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					OR = {
+						AND = {
+							portrait_has_trait_trigger = { TRAIT = dragon }
+							NOT = {
+								has_character_flag = dragon_flying
+								has_character_flag = dragon_roar
+								has_character_flag = dragon_hover
+							}
+						}
+						has_character_flag = dragon_idle
+					}
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_1_zoom
+			}
+		}
+
+		dragon_flying = {
+			animation = { head = "idle" torso = "dragon_flying" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_flying
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_1_zoom
+			}
+		}
+
+		dragon_roar = {
+			animation = { head = "idle" torso = "dragon_roar" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_roar
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_1_zoom
+			}
+		}
+
+		dragon_hover = {
+			animation = { head = "idle" torso = "dragon_hover" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_hover
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_1_zoom
+			}
+		}
+	}
+	boy = male
+	female = male
+	girl = boy
+}
+
+dragon_head = { #This is used for widgets where you want to focus on the head of the dragon, camera is zoomed out and moved to center the head of the dragon on to the frame and keep it roughly the same size.
+	male = {
+		default = { head = "idle" torso = "dragon_static" }
+
+		dragon_idle = {
+			animation = { head = "idle" torso = "dragon_idle" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					OR = {
+						AND = {
+							portrait_has_trait_trigger = { TRAIT = dragon }
+							NOT = {
+								has_character_flag = dragon_flying
+								has_character_flag = dragon_roar
+								has_character_flag = dragon_hover
+							}
+						}
+						has_character_flag = dragon_idle
+					}
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_2_zoom
+			}
+		}
+
+		dragon_flying = {
+			animation = { head = "idle" torso = "dragon_flying" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_flying
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_2_zoom
+			}
+		}
+
+		dragon_roar = {
+			animation = { head = "idle" torso = "dragon_roar" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_roar
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_2_zoom
+			}
+		}
+
+		dragon_hover = {
+			animation = { head = "idle" torso = "dragon_hover" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 500
+					has_character_flag = dragon_hover
+				}
+			}
+
+			portrait_modifier = {
+				camera_zoom = dragon_camera_2_zoom
+			}
+		}
+	}
+
+
+	boy = male
+	female = male
+	girl = boy
+}
+
+
+
