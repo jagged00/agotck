@@ -1,6 +1,6 @@
 ﻿dragon_county_conquest_cb = {
 	icon = dragon_county_conquest_cb
-	group = dragon_conquest
+	group = conquest
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -50,9 +50,7 @@
 		scope:target ?= {
 			neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
 		}
-		NOT = {
-			scope:target ?= { agot_invalid_war_target = yes }
-		}
+		
 		scope:target ?= {
 			tier = tier_county
 		}
@@ -178,7 +176,6 @@
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker ?= { fp1_remember_recent_conquest_victory_effect = yes }
 
-		agot_war_victory_effects = yes
 	}
 
 	on_white_peace_desc = {
@@ -318,7 +315,7 @@
 
 dragon_duchy_conquest_cb = {
 	icon = dragon_duchy_conquest_cb
-	group = dragon_conquest
+	group = conquest
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -371,9 +368,7 @@ dragon_duchy_conquest_cb = {
 				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
 			}
 		}
-		NOT = {
-			scope:target ?= { agot_invalid_war_target = yes }
-		}
+		
 		scope:target ?= {
 			tier = tier_duchy
 		}
@@ -556,7 +551,6 @@ dragon_duchy_conquest_cb = {
 			else = { custom_tooltip = conquest_title_create_tt }
 		}
 
-		agot_war_victory_effects = yes
 	}
 
 	on_white_peace_desc = {
@@ -683,7 +677,7 @@ dragon_duchy_conquest_cb = {
 
 dragon_ducal_conquest_cb = {
 	icon = dragon_duchy_conquest_cb
-	group = dragon_conquest
+	group = conquest
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -717,9 +711,7 @@ dragon_ducal_conquest_cb = {
 				}
 			}
 		}
-		NOT = {
-			scope:target ?= { agot_invalid_war_target = yes }
-		}
+		
 	}
 
 	allowed_for_character_display_regardless = {
@@ -916,7 +908,6 @@ dragon_ducal_conquest_cb = {
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker ?= { fp1_remember_recent_conquest_victory_effect = yes }
 
-		agot_war_victory_effects = yes
 	}
 
 	on_white_peace_desc = {
@@ -1040,7 +1031,7 @@ dragon_ducal_conquest_cb = {
 
 dragon_kingdom_conquest_cb = {
 	icon = dragon_kingdom_conquest_cb
-	group = dragon_conquest
+	group = conquest
 
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
@@ -1093,9 +1084,7 @@ dragon_kingdom_conquest_cb = {
 				neighboring_county_or_viking_conquest_trigger = { CHARACTER = root }
 			}
 		}
-		NOT = {
-			scope:target ?= { agot_invalid_war_target = yes }
-		}
+		
 		scope:target ?= {
 			tier = tier_kingdom
 		}
@@ -1477,7 +1466,6 @@ dragon_kingdom_conquest_cb = {
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker ?= { fp1_remember_recent_conquest_victory_effect = yes }
 
-		agot_war_victory_effects = yes
 	}
 
 	on_white_peace_desc = {
@@ -1604,7 +1592,7 @@ dragon_kingdom_conquest_cb = {
 
 dragon_subjugation_cb = {
 	icon = dragon_subjugation
-	group = dragon_conquest
+	group = conquest
 	ai_only_against_neighbors = yes
 
 	allowed_for_character = {
@@ -1883,7 +1871,6 @@ dragon_subjugation_cb = {
 		# FP1: note the victory for future memorialisation via stele (if applicable).
 		scope:attacker ?= { fp1_remember_recent_conquest_victory_effect = yes }
 
-		agot_war_victory_effects = yes
 	}
 
 	on_white_peace_desc = {

@@ -24,14 +24,14 @@ widget = {
 			}
 			# Copy and Paste
 			hbox = {
-				button_store_values = {
+				button_standard = {
 					size = { 32 32 }
 					onclick = "[GetScriptedGui('agot_store_dragon_dna').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('dragon',Scope.GetCharacter.MakeScope).End)]"
 					onclick = "[GetVariableSystem.Set('applied_dragon_dna', 'false')]"
 					tooltip = DRAGON_DESIGNER_STORE_DNA_TOOLTIP
 					using = tooltip_above
 				}
-				button_apply_values = {
+				button_standard = {
 					size = { 32 32 }
 					enabled = "[And(GetScriptedGui('agot_has_saved_dragon_dna').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue('applied_dragon_dna', 'false'))]"
 					onclick = "[GetScriptedGui('agot_apply_dragon_dna').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('dragon',Scope.GetCharacter.MakeScope).End)]"
@@ -39,7 +39,7 @@ widget = {
 					tooltip = DRAGON_DESIGNER_APPLY_DNA_TOOLTIP
 					using = tooltip_above
 				}
-				button_restore_values = {
+				button_standard = {
 					size = { 32 32 }
 					enabled = "[GetVariableSystem.HasValue('applied_dragon_dna', 'true')]"
 					onclick = "[GetScriptedGui('agot_undo_applied_dragon_dna').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('dragon',Scope.GetCharacter.MakeScope).End)]"
@@ -731,7 +731,7 @@ widget = {
 					text_single = {
 						block "value" {
 							# outputs "gene_dragon_horn_shape_template_" with a number corresponding to template
-							text = "[Localize(Concatenate('gene_dragon_horn_shape_template_',GetString_CFixedPoint(Scope.Var('editing_dragon').ScriptValue('gene_dragon_main_horn_shape_template_svalue'))))]"
+							text = "[Scope.Var('editing_dragon').ScriptValue('gene_dragon_main_horn_shape_template_svalue')|0]"
 						}
 					}
 
@@ -861,7 +861,7 @@ widget = {
 					text_single = {
 						block "value" {
 							# outputs "gene_dragon_body_shading_template_" with a number corresponding to template
-							text = "[Localize(Concatenate('gene_dragon_body_shading_template_',GetString_CFixedPoint(Scope.Var('editing_dragon').ScriptValue('gene_dragon_body_shading_template_svalue'))))]"
+							text = "[Scope.Var('editing_dragon').ScriptValue('gene_dragon_body_shading_template_svalue')|0]"
 						}
 					}
 
@@ -991,7 +991,7 @@ widget = {
 					text_single = {
 						block "value" {
 							# outputs "gene_dragon_wings_shading_template_" with a number corresponding to template
-							text = "[Localize(Concatenate('gene_dragon_wings_shading_template_',GetString_CFixedPoint(Scope.Var('editing_dragon').ScriptValue('gene_dragon_wings_shading_template_svalue'))))]"
+							text = "[Scope.Var('editing_dragon').ScriptValue('gene_dragon_wings_shading_template_svalue')|0]"
 						}
 					}
 

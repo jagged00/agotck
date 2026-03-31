@@ -841,7 +841,7 @@
 							}
 						}
 
-						agot_text_label_center = {
+						text_single = {
 							parentanchor = bottom|hcenter
 							position = { 20 -5 }
 							alwaystransparent = yes
@@ -912,7 +912,7 @@
 						}
 
 
-						agot_text_label_center = {
+						text_single = {
 							parentanchor = bottom|hcenter
 							position = { 20 -5 }
 							alwaystransparent = yes
@@ -995,7 +995,7 @@
 							}
 						}
 
-						agot_text_label_center = {
+						text_single = {
 							parentanchor = bottom|hcenter
 							position = { 20 -5 }
 							alwaystransparent = yes
