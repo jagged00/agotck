@@ -10,7 +10,7 @@ types CharacterWindow
 	type agot_dragons_character_view = vbox {
 		name = "main_content_dragon"
 		using = Window_Margins_Sidebar
-		visible = "[IsCharacterDragon]"
+		visible = "[GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(CharacterWindow.GetCharacter.MakeScope).End)]"
 
 		###############
 		# Character box
@@ -1420,7 +1420,7 @@ types CharacterWindow
 			text_single = {
 				maximumsize = { 149 -1 }
 				name = "ai_personality"
-				visible = "[And( Not( Character.IsPlayer ), Not(IsCharacterDragon))]"
+				visible = "[And( Not( Character.IsPlayer ), Not(GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End)))]"
 
 				raw_text = " • #L [Character.GetAIPersonalityNoTooltip]#!"
 				tooltip = "AI_PERSONALITY_TT"
@@ -1463,7 +1463,7 @@ types CharacterWindow
 	type agot_dragon_relation_and_ai = text_single
 	{
 		maximumsize = { 149 -1 }
-		visible = "[And( IsCharacterDragon, Character.IsAlive )]"
+		visible = "[And( GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End), Character.IsAlive )]"
 		raw_text = " • [Character.Custom('GetDragonTypeGuiTooltip')]"
 		using = tooltip_se
 		fontsize_min = 13
@@ -1473,7 +1473,7 @@ types CharacterWindow
 	type agot_dragon_dead_relation_and_ai = text_single
 	{
 		maximumsize = { 149 -1 }
-		visible = "[And( IsCharacterDragon, Character.IsDeadAndValid )]"
+		visible = "[And( GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End), Character.IsDeadAndValid )]"
 		raw_text = "[dragon|E;L]"
 		using = tooltip_se
 		fontsize_min = 13
@@ -1927,13 +1927,65 @@ types CharacterWindow
 			parentanchor = center
 		}
 	}
+
+
+	type agot_portrait_editor_button = button_standard_hover
+	{
+		size = { 40 40 }
+		tooltip = "CV_CUSTOMIZE_AGOT_DRAGON"
+		icon = {
+			texture = "gfx/interface/icons/icon_painting_brush.dds"
+			size = { 28 28 }
+			parentanchor = center
+		}
+	}
+
+	type button_past_dragonriders = button_standard_hover
+	{
+		icon = {
+			texture = "gfx/interface/icons/flat_icons/past_dragonriders.dds"
+			size = { 24 24 }
+			parentanchor = center
+		}
+	}
+
+	type button_capture_wild_dragon = button_standard_hover
+	{
+		icon = {
+			texture = "gfx/interface/icons/flat_icons/capture_wild_dragon.dds"
+			size = { 24 24 }
+			parentanchor = center
+		}
+	}
+
+	type button_send_to_dragonpit = button_standard_hover
+	{
+		icon = {
+			texture = "gfx/interface/icons/flat_icons/send_to_dragonpit.dds"
+			size = { 24 24 }
+			parentanchor = center
+		}
+	}
+
+	type button_remove_from_dragonpit = button_standard_hover
+	{
+		icon = {
+			texture = "gfx/interface/icons/flat_icons/remove_from_dragonpit.dds"
+			size = { 24 24 }
+			parentanchor = center
+		}
+	}
+
+	type agot_expanded_traits_vbox = expanded_traits_vbox {}
+
+	type agot_expanded_modifiers_vbox = expanded_modifiers_vbox {}
 }
 
 #####################
 # DRAGONS TEMPLATES #
 #####################
 template visible_if_dragon {
-	visible = "[IsCharacterDragon]"
+	visible = "[GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 }
 
 template visible_if_dragon_normal {
@@ -1945,7 +1997,7 @@ template visible_if_dragon_small {
 }
 
 template visible_if_not_dragon {
-	visible = "[Not(IsCharacterDragon)]"
+	visible = "[Not(GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
 }
 
 template visible_if_dragonrider_flight {

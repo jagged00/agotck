@@ -126,3 +126,13 @@
  has_a_dragon_egg_artifact_tooltip:0 "Has a [dragon|E] egg [artifact|e]"
  dragon_rider_is_in_sieging_army_tooltip:0 "Is a riding a [dragon|E] in a sieging army"
  dragons_are_extant_desc_tooltip:0 "[dragons_plural|E] are extant in the World"
+ # Missing GUI labels for compatch dragon window
+ CV_CUSTOMIZE_AGOT_DRAGON:0 "Customize Dragon"
+ VIEW_PAST_RIDERS:0 "View Past Riders"
+ SEND_TO_DRAGONPIT_TT:0 "Send this dragon to a [dragonpit|E]."
+ MOVE_OR_REMOVE_FROM_DRAGONPIT_TT:0 "Move this dragon to another [dragonpit|E], or remove it from its current pit."
+ REMOVE_FROM_DRAGONPIT_TT:0 "Remove this dragon from its [dragonpit|E]."
+ DRAGON_RELATION_HAS_RIDER:0 "Has Rider"
+ DRAGON_RELATION_HAS_BONDED:0 "Has Bonded Human"
+ DRAGON_RELATION_IS_PITTED:0 "Is in Dragonpit"
+ DRAGON_RELATION_IS_WANDERING:0 "Is Wandering"
