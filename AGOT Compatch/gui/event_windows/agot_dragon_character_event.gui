@@ -1731,25 +1731,25 @@ types Events
 }
 
 template left_portrait_no_dragon {
-	visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), EventWindowData.HasPortraitCharacter('right_portrait')), Not(IsCharacterDragon))]"
+	visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), EventWindowData.HasPortraitCharacter('right_portrait')), Not(GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('right_portrait').MakeScope).End)))]"
 }
 
 template left_portrait_dragon {
-    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), EventWindowData.HasPortraitCharacter('right_portrait')), IsCharacterDragon)]"
+    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), EventWindowData.HasPortraitCharacter('right_portrait')), GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('right_portrait').MakeScope).End))]"
 }
 
 template right_portrait_no_dragon {
-   visible = "[And(EventWindowData.HasPortraitCharacter('right_portrait'), Not(IsCharacterDragon))]"
+   visible = "[And(EventWindowData.HasPortraitCharacter('right_portrait'), Not(GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('right_portrait').MakeScope).End)))]"
 }
 
 template right_portrait_dragon {
-    visible = "[And(EventWindowData.HasPortraitCharacter('right_portrait'), IsCharacterDragon)]"
+    visible = "[And(EventWindowData.HasPortraitCharacter('right_portrait'), GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('right_portrait').MakeScope).End))]"
 }
 
 template center_portrait_no_dragon {
-    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), Not(EventWindowData.HasPortraitCharacter('right_portrait'))), Not(IsCharacterDragon))]"
+    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), Not(EventWindowData.HasPortraitCharacter('right_portrait'))), Not(GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('left_portrait').MakeScope).End)))]"
 }
 
 template center_portrait_dragon {
-    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), Not(EventWindowData.HasPortraitCharacter('right_portrait'))), IsCharacterDragon)]"
+    visible = "[And(And(EventWindowData.HasPortraitCharacter('left_portrait'), Not(EventWindowData.HasPortraitCharacter('right_portrait'))), GetScriptedGui('main_dragon').IsShown(GuiScope.SetRoot(EventWindowData.GetPortraitCharacter('left_portrait').MakeScope).End))]"
 }
