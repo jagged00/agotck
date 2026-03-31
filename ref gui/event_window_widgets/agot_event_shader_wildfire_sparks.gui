@@ -1,5 +1,0 @@
-agot_event_shader_widget = {
-	name = "agot_event_shader_wildfire_sparks"
-
-	blockoverride "effect_name" { effectname = "WildfireSparks" }
-}

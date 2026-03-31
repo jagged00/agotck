@@ -1,7 +1,0 @@
-﻿rf_grasslands = {
-	graphical_faith = free_cities_god_gfx
-	piety_icon_group = "islam"
-	hostility_doctrine = grasslands_hostility_doctrine
-	doctrine_background_icon = core_tenet_banner_eastern.dds
-	is_pagan = yes
-}

@@ -1,9 +1,0 @@
-﻿# spy network triggers
-
-agot_court_eligible_for_spy_network = {
-	is_human = yes
-	NOR = {
-		has_trait = nightswatch
-		has_trait = nightswatch_temp
-	}
-}

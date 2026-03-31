@@ -1,3 +1,0 @@
-﻿dragon_skull_size = {}
-glass_candle_color = {}
-dragon_doll_color = {}

@@ -1,8 +1,0 @@
-﻿velaryon_legacy_track = {
-	is_shown = {
-		OR = {
-			dynasty = dynasty:dynn_Velaryon
-			dynasty = { has_dynasty_perk = velaryon_legacy_1 }
-		}
-	}
-}
