@@ -45,13 +45,6 @@ dragon = {
 					value = 0.5
 				}
 
-				#Remove Body Portrait
-				morph = {
-					mode = replace
-					gene = gene_no_portrait
-					value = 1.0
-					template = no_portrait
-				}
 
 				#Remove child aging effects which mess with the camera
 				morph = {
