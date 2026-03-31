@@ -267,9 +267,6 @@
 		10 = { name = normal_height          range = { 0.5 0.5 } }
 	}
 
-	gene_no_portrait = {
-		10 = { name = no_portrait          range = { 0.0 1.0 } }
-	}
 
 	eyelashes_accessory = {
 		10 = { name = no_eyelashes          range = { 0.0 1.0 } }

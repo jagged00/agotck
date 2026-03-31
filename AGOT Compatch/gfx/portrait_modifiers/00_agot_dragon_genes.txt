@@ -85,35 +85,6 @@
 	}
 
 }
-
-
-
-dragon_hide_human_body = {
-	usage = game
-	selection_behavior = weighted_random
-	priority = 10
-
-	hide_human_body = {
-		dna_modifiers = {
-			morph = {
-				mode = replace
-				gene = gene_no_portrait
-				value = 1.0
-				template = no_portrait
-			}
-		}
-
-		weight = {
-			base = 0
-
-			modifier = {
-				add = 1000
-				portrait_has_trait_trigger = { TRAIT = dragon }
-			}
-		}
-	}
-}
-
 dragonrider = {
 	usage = game
 	selection_behavior = weighted_random
