@@ -1,0 +1,42 @@
+namespace = agot_decisions_events
+
+# Vanilla-safe but functional horn-binding event.
+# Keeps behavior lightweight while still allowing horn ownership/binder setup.
+agot_decisions_events.0100 = {
+	type = character_event
+	title = agot_decisions_events.0100.t
+	desc = agot_decisions_events.0100.desc
+	theme = dragon
+
+	option = {
+		name = agot_decisions_events.0100.a
+		trigger = {
+			exists = scope:dragon_horn
+		}
+		hidden_effect = {
+			scope:dragon_horn = {
+				set_variable = {
+					name = binder
+					value = root
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = wounded_1
+					has_trait = wounded_2
+					has_trait = wounded_3
+				}
+			}
+			add_trait = wounded_1
+		}
+	}
+
+	option = {
+		name = agot_decisions_events.0100.d
+		hidden_effect = {
+			remove_decision_cooldown = bind_dragon_horn_decision
+		}
+	}
+}
