@@ -1976,9 +1976,9 @@ types CharacterWindow
 		}
 	}
 
-	type agot_expanded_traits_vbox = expanded_traits_vbox {}
+	type agot_expanded_traits_vbox = vbox {}
 
-	type agot_expanded_modifiers_vbox = expanded_modifiers_vbox {}
+	type agot_expanded_modifiers_vbox = vbox {}
 }
 
 #####################
